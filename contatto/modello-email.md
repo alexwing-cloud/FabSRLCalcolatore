@@ -17,8 +17,9 @@ I campi fra `{parentesi}` si compilano per ogni immobile.
 > vi scrivo per l'immobile di **{indirizzo}** (rif. {riferimento}).
 >
 > Sono Alex Morsellino di **FAB S.r.l.**, gestiamo appartamenti in locazione turistica
-> breve con il marchio **STAY Apartments**. Oggi seguiamo **{n_appartamenti} appartamenti**
-> fra {zone_attuali}.
+> breve con il marchio **STAY Apartments**, fra Trieste, Muggia e Barcola. Siamo in fase
+> di espansione: il portafoglio a regime, comprese le operazioni in corso di acquisizione
+> con decorrenza 2027, è di **45 appartamenti**.
 >
 > **Come lavoriamo.** Prendiamo l'immobile in locazione diretta con facoltà di
 > sublocazione, contratto **6+6** o **8+8**. Per la proprietà significa:
@@ -64,9 +65,10 @@ Stessa struttura, ma la prima cosa che legge deve essere il suo vantaggio, non c
 > canone fisso ogni mese per sei anni**, versato da una società, senza che lei debba più
 > occuparsi di nulla — né di inquilini, né di manutenzione ordinaria, né di sfitto.
 >
-> Siamo **FAB S.r.l.**, gestiamo {n_appartamenti} appartamenti in locazione turistica breve
-> con il marchio STAY Apartments ({zone_attuali}). Prendiamo immobili in affitto con
-> facoltà di sublocazione: l'immobile resta suo, il rischio di occupazione è nostro.
+> Siamo **FAB S.r.l.**, gestiamo appartamenti in locazione turistica breve con il marchio
+> STAY Apartments fra Trieste, Muggia e Barcola, e siamo in fase di espansione: a regime,
+> comprese le acquisizioni in corso, sono 45 appartamenti. Prendiamo immobili in affitto
+> con facoltà di sublocazione: l'immobile resta suo, il rischio di occupazione è nostro.
 >
 > {motivo_zona}
 >
@@ -86,8 +88,21 @@ Stessa struttura, ma la prima cosa che legge deve essere il suo vantaggio, non c
 | Campo | Da dove viene |
 |---|---|
 | `{indirizzo}` `{riferimento}` `{citta}` | dall'annuncio |
-| `{n_appartamenti}` `{zone_attuali}` | dal portafoglio — **vanno tenuti aggiornati e devono essere veri** |
 | `{motivo_zona}` | dalla Carta dei Mercati, una frase concreta |
+
+### Sul numero del portafoglio
+
+La mail dice **45 appartamenti a regime, comprese le acquisizioni in corso**. Le sette
+strutture del foglio sono 5+3+12+9+11+4+1 = 45.
+
+Non tutte sono già operative: Serravallo ha decorrenza 1° gennaio 2027 e altre sono in
+valutazione. Per questo la frase dice *a regime* e *comprese le acquisizioni in corso*,
+e non *gestiamo*. È l'unica formulazione che regge se un agente chiede di vedere i
+contratti — e comunica più slancio di un numero piccolo al presente: a chi affitta
+interessa che tu stia crescendo e che il canone lo paghi, non quante chiavi hai in mano
+oggi.
+
+Se le strutture operative cambiano, va cambiato il 45. Il resto della frase regge da sé.
 
 Esempi di `{motivo_zona}`, da adattare:
 
