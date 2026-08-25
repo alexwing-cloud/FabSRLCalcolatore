@@ -14,7 +14,9 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/home-immobiliare-srl-bolzano-tc-83125",
-  "punteggio": 58.0
+  "punteggio": 58.0,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -32,7 +34,9 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/rimmo-real-estate-bolzano-tc-56279",
-  "punteggio": 58.0
+  "punteggio": 58.0,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -48,7 +52,28 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/lifandi-srl-bolzano-tc-63387",
-  "punteggio": 54.7
+  "punteggio": 54.7,
+  "sito": "www.lifandi.it",
+  "email": "20info@lifandi.it"
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Amigassi Immobiliare",
+  "indirizzo": "Via DIVISIONE TRIDENTINA, 3, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "3493947472"
+  ],
+  "annunci": 267,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/amigassi-immobiliare-bergamo-tc-70551",
+  "punteggio": 54.7,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -65,7 +90,67 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/immobilien-dr-martin-pichler-bolzano-tc-86932",
-  "punteggio": 51.0
+  "punteggio": 51.0,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Agenzia Immobiliare Mangili snc",
+  "indirizzo": "Via Ruggeri da Stabello, 7c, 24123 - Bergamo (BG)",
+  "telefoni": [
+   "035570244"
+  ],
+  "annunci": 229,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-mangili-snc-bergamo-tc-11049",
+  "punteggio": 50.9,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "verona",
+  "nome": "Aziendale Srls",
+  "indirizzo": "Stradone Porta Palio, 74/b, 37122 - Verona (VR)",
+  "telefoni": [
+   "0452591245",
+   "3343859581"
+  ],
+  "annunci": 188,
+  "tratta": [
+   "case",
+   "case-vacanza",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/aziendale-srls-verona-tc-67683",
+  "punteggio": 49.8,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Dove.it - Bergamo",
+  "indirizzo": "Via Torquato Taramelli, 25, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "0350460643"
+  ],
+  "annunci": 175,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/dove-it-bergamo-tc-94491",
+  "punteggio": 45.5,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -82,7 +167,27 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/ruth-immobiliare-bolzano-tc-47877",
-  "punteggio": 43.7
+  "punteggio": 43.7,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Affiliato Tecnocasa: BG PER L'IMPRESA SRL",
+  "indirizzo": "Via Piatti, 2, 24125 - Bergamo (BG)",
+  "telefoni": [
+   "0350344573"
+  ],
+  "annunci": 187,
+  "tratta": [
+   "box-e-posti-auto",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-bg-per-l-impresa-srl-bergamo-tc-65433",
+  "punteggio": 43.7,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -98,7 +203,9 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/immobili-bolzano-tc-33322",
-  "punteggio": 43.1
+  "punteggio": 43.1,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -115,7 +222,44 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/seeber-immobilien-srl-bolzano-tc-4283",
-  "punteggio": 41.5
+  "punteggio": 41.5,
+  "sito": "www.seeber-immobilien.it",
+  "email": "info@seeber-immobilien.com"
+ },
+ {
+  "citta": "verona",
+  "nome": "Azienda Si",
+  "indirizzo": "via Selinunte, 5, 37138 - Verona (VR)",
+  "telefoni": [
+   "3299552089"
+  ],
+  "annunci": 165,
+  "tratta": [
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/azienda-si-verona-tc-29467",
+  "punteggio": 41.5,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "trieste",
+  "nome": "Gallery Immobiliare Trieste",
+  "indirizzo": "via San Nicolo', 23/D, 34121 - Trieste (TS)",
+  "telefoni": [
+   "0407600250"
+  ],
+  "annunci": 130,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/gallery-immobiliare-trieste-tc-5145",
+  "punteggio": 41.0,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -132,7 +276,67 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/castellanum-bozen-bolzano-tc-95264",
-  "punteggio": 40.3
+  "punteggio": 40.3,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Coldwell Banker BGSTAR",
+  "indirizzo": "Via Broseta, 49, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "035219571",
+   "3487405534"
+  ],
+  "annunci": 117,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/coldwell-banker-bgstar-bergamo-tc-89765",
+  "punteggio": 39.7,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "trieste",
+  "nome": "Tirabora Immobiliare",
+  "indirizzo": "Corso Italia, 24, 34122 - Trieste (TS)",
+  "telefoni": [
+   "040634112",
+   "040631754"
+  ],
+  "annunci": 114,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tirabora-immobiliare-trieste-tc-39948",
+  "punteggio": 39.4,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Studio Paris Michael",
+  "indirizzo": "via, 24047 - Bergamo (BG)",
+  "telefoni": [
+   "3496813104"
+  ],
+  "annunci": 110,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-paris-michael-bergamo-tc-5907",
+  "punteggio": 39.0,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -150,7 +354,104 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/casahaus-bolzano-tc-42305",
-  "punteggio": 38.3
+  "punteggio": 38.3,
+  "sito": "www.casahaus.it",
+  "email": "espo@casahaus.it"
+ },
+ {
+  "citta": "como",
+  "nome": "Engel & Völkers Lago di Como",
+  "indirizzo": "via giovio, 17, 22100 - Como (CO)",
+  "telefoni": [
+   "0315477165"
+  ],
+  "annunci": 95,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/engel-volkers-lago-di-como-tc-83436",
+  "punteggio": 37.5,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "CLUB IMMOBILIARE DI GAMBA OSVALDO",
+  "indirizzo": "Via Corridoni 49, 24127 - Bergamo (BG)",
+  "telefoni": [
+   "3932228770"
+  ],
+  "annunci": 93,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/club-immobiliare-di-gamba-osvaldo-bergamo-tc-26417",
+  "punteggio": 37.3,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Vanoni Immobiliare",
+  "indirizzo": "via Ezio Zambianchi, 6, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "3477356716",
+   "035218499"
+  ],
+  "annunci": 93,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/vanoni-immobiliare-bergamo-tc-1066",
+  "punteggio": 37.3,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "como",
+  "nome": "The RE/MAX Collection Aquadulza",
+  "indirizzo": "Via Giuseppe Parini, 6, 22100 - Como (CO)",
+  "telefoni": [
+   "0315475050"
+  ],
+  "annunci": 92,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/the-re-max-collection-aquadulza-como-tc-17746",
+  "punteggio": 37.2,
+  "sito": "www.remax.it",
+  "email": "info@remax.it"
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Pianetacasa s.r.l",
+  "indirizzo": "Via Rovelli, 28 L, 24125 - Bergamo (BG)",
+  "telefoni": [
+   "0354220169",
+   "035237587"
+  ],
+  "annunci": 92,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/pianetacasa-s-r-l-bergamo-tc-74026",
+  "punteggio": 37.2,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -167,7 +468,66 @@
    "immobili-commerciali"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-bonetto-bolzano-tc-49362",
-  "punteggio": 37.0
+  "punteggio": 37.0,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "como",
+  "nome": "POLIS REAL ESTATE SRL",
+  "indirizzo": "Via Carcano 10,  - Como (CO)",
+  "telefoni": [
+   "3926053815"
+  ],
+  "annunci": 56,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "case-vacanza",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/polis-real-estate-srl-como-tc-90124",
+  "punteggio": 36.6,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "trieste",
+  "nome": "Immobiliare 4B - For Business",
+  "indirizzo": "Via della Ginnastica, 30/b, 34125 - Trieste (TS)",
+  "telefoni": [
+   "0409719003"
+  ],
+  "annunci": 83,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-4b-for-business-trieste-tc-90723",
+  "punteggio": 36.3,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "verona",
+  "nome": "Italy Sotheby's International Realty - Verona",
+  "indirizzo": "Corso Castelvecchio, 25, 37122 - Verona (VR)",
+  "telefoni": [
+   "0458242300"
+  ],
+  "annunci": 82,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/italy-sotheby-s-international-realty-verona-tc-89427",
+  "punteggio": 36.2,
+  "sito": null,
+  "email": null
  },
  {
   "citta": "bolzano",
@@ -184,7 +544,29 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-immobiliare-di-zingerle-stefan-sas-bolzano-tc-13014",
-  "punteggio": 35.8
+  "punteggio": 35.8,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "verona",
+  "nome": "Grandi Agenti Immobiliari Rete d'imprese",
+  "indirizzo": "Vicolo San Matteo, 2, 37121 - Verona (VR)",
+  "telefoni": [
+   "0458036579",
+   "3803641823"
+  ],
+  "annunci": 78,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/grandi-agenti-immobiliari-rete-d-imprese-verona-tc-69769",
+  "punteggio": 35.8,
+  "sito": "www.dimoregentili.it",
+  "email": "info@dimoregentili.it."
  },
  {
   "citta": "bolzano",
@@ -202,7 +584,306 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/bolzano-progetto-immobiliare-tc-920",
-  "punteggio": 34.7
+  "punteggio": 34.7,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Cortesi Immobiliare Srl",
+  "indirizzo": "Via Giuseppe Verdi, 18, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "035231231",
+   "3396707953"
+  ],
+  "annunci": 67,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/cortesi-immobiliare-srl-bergamo-tc-46753",
+  "punteggio": 34.7,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Ital Home Bergamo 1",
+  "indirizzo": "Via Suardi, 7/F, 24124 - Bergamo (BG)",
+  "telefoni": [
+   "035210897"
+  ],
+  "annunci": 67,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/ital-home-bergamo-1-tc-15372",
+  "punteggio": 34.7,
+  "sito": "www.italcasa.it",
+  "email": "you@company.com"
+ },
+ {
+  "citta": "como",
+  "nome": "TEMPOCASA Como",
+  "indirizzo": "Via Alessandro Manzoni, 10/d, 22100 - Como (CO)",
+  "telefoni": [
+   "0312256224"
+  ],
+  "annunci": 66,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tempocasa-como-tc-72347",
+  "punteggio": 34.6,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "verona",
+  "nome": "Rinaldi Case",
+  "indirizzo": "Via Laghetto Squarà, 1/A, 37141 - Verona (VR)",
+  "telefoni": [
+   "045557622"
+  ],
+  "annunci": 64,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/rinaldi-case-verona-tc-46694",
+  "punteggio": 34.4,
+  "sito": null,
+  "email": null
+ },
+ {
+  "citta": "verona",
+  "nome": "Engel & Völkers Verona City",
+  "indirizzo": "Via Carlo Cattaneo, 24/C, 37121 - Verona (VR)",
+  "telefoni": [
+   "0458013026"
+  ],
+  "annunci": 63,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/engel-volkers-verona-city-tc-59260",
+  "punteggio": 34.3
+ },
+ {
+  "citta": "como",
+  "nome": "Target House",
+  "indirizzo": "Via Vittorio Emanuele II, 31, 22100 - Como (CO)",
+  "telefoni": [
+   "0313384941",
+   "3930569311"
+  ],
+  "annunci": 60,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/target-house-como-tc-50291",
+  "punteggio": 34.0
+ },
+ {
+  "citta": "como",
+  "nome": "IMMOBILFIN SAS di Butti Fabio & C.",
+  "indirizzo": "Via Mentana, 4, 22100 - Como (CO)",
+  "telefoni": [
+   "031265315"
+  ],
+  "annunci": 58,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobilfin-sas-di-butti-fabio-c-como-tc-46914",
+  "punteggio": 33.8
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Ranucci Immobiliare",
+  "indirizzo": "Via Broseta, 59, 24128 - Bergamo (BG)",
+  "telefoni": [
+   "035260401",
+   "3928352948"
+  ],
+  "annunci": 57,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/ranucci-immobiliare-bergamo-tc-42204",
+  "punteggio": 33.7
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Turchese Immobiliare",
+  "indirizzo": "Via Gianforte Suardi, 23, 24124 - Bergamo (BG)",
+  "telefoni": [
+   "0355472913"
+  ],
+  "annunci": 56,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/turchese-immobiliare-bergamo-tc-84482",
+  "punteggio": 33.6
+ },
+ {
+  "citta": "trieste",
+  "nome": "Paradisi Immobiliare srl",
+  "indirizzo": "Via di Cologna, 47b, 34133 - Trieste (TS)",
+  "telefoni": [
+   "0402653127"
+  ],
+  "annunci": 55,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/paradisi-immobiliare-srl-trieste-tc-79016",
+  "punteggio": 33.5
+ },
+ {
+  "citta": "como",
+  "nome": "Studio Immobiliare Duerre",
+  "indirizzo": "via Varesina, 189, 22100 - Como (CO)",
+  "telefoni": [
+   "0315001442",
+   "3485155406"
+  ],
+  "annunci": 55,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-immobiliare-duerre-como-tc-42525",
+  "punteggio": 33.5
+ },
+ {
+  "citta": "trieste",
+  "nome": "Primo Piano Trieste",
+  "indirizzo": "Piazza Niccolò Tommaseo, 4, 34121 - Trieste (TS)",
+  "telefoni": [
+   "3394165961"
+  ],
+  "annunci": 54,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/primo-piano-trieste-tc-88971",
+  "punteggio": 33.4
+ },
+ {
+  "citta": "como",
+  "nome": "Tettamanti RE srl",
+  "indirizzo": "viale Fratelli Rosselli, 16, 22100 - Como (CO)",
+  "telefoni": [
+   "3477099843",
+   "0312245266"
+  ],
+  "annunci": 54,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tettamanti-re-srl-como-tc-69189",
+  "punteggio": 33.4
+ },
+ {
+  "citta": "como",
+  "nome": "Como Immobiliare SRL",
+  "indirizzo": "Via Malvito, 10, 22100 - Como (CO)",
+  "telefoni": [
+   "0312078291"
+  ],
+  "annunci": 53,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/como-immobiliare-srl-tc-70405",
+  "punteggio": 33.3
+ },
+ {
+  "citta": "trieste",
+  "nome": "Rigatti Immobiliare di Davide Rigatti",
+  "indirizzo": "via di mercato vecchio, 1, 34124 - Trieste (TS)",
+  "telefoni": [
+   "0409776352",
+   "3892083861"
+  ],
+  "annunci": 51,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/rigatti-immobiliare-di-davide-rigatti-trieste-tc-59795",
+  "punteggio": 33.1
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Engel & Völkers  - Bergamo",
+  "indirizzo": "Via Largo Belotti, 34, 24100 - Bergamo (BG)",
+  "telefoni": [
+   "035218429"
+  ],
+  "annunci": 51,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/engel-volkers-bergamo-tc-55061",
+  "punteggio": 33.1
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Grandimora",
+  "indirizzo": "Via Masone, 19, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "3342132338"
+  ],
+  "annunci": 50,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/grandimora-bergamo-tc-7087",
+  "punteggio": 33.0
  },
  {
   "citta": "bolzano",
@@ -222,6 +903,208 @@
   "punteggio": 32.9
  },
  {
+  "citta": "bergamo",
+  "nome": "International House Consulting",
+  "indirizzo": "Via Jacopo Palma il Vecchio, 14C, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "035217955",
+   "3356764666"
+  ],
+  "annunci": 49,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/international-house-consulting-bergamo-tc-6664",
+  "punteggio": 32.9
+ },
+ {
+  "citta": "verona",
+  "nome": "GIV Gruppo Immobiliare Verona",
+  "indirizzo": "Vicolo Broglio, 3, 37100 - Verona (VR)",
+  "telefoni": [
+   "3355303460",
+   "3498136778"
+  ],
+  "annunci": 48,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/giv-gruppo-immobiliare-verona-tc-43076",
+  "punteggio": 32.8
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Milanesi&Partners S.r.l.",
+  "indirizzo": "Via Sant'Orsola, 31, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "0354284641"
+  ],
+  "annunci": 48,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/milanesi-partners-s-r-l-bergamo-tc-42994",
+  "punteggio": 32.8
+ },
+ {
+  "citta": "verona",
+  "nome": "\"PUCCIO - Case\"  di Puccio Francesco",
+  "indirizzo": "Via del Risorgimento, 28, 37126 - Verona (VR)",
+  "telefoni": [
+   "3332555321",
+   "3899167811"
+  ],
+  "annunci": 47,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/-puccio-case-di-puccio-francesco-verona-tc-78529",
+  "punteggio": 32.7
+ },
+ {
+  "citta": "trieste",
+  "nome": "Opera Immobiliare snc",
+  "indirizzo": "Piazza del Ponterosso, 4/a, 34121 - Trieste (TS)",
+  "telefoni": [
+   "0400644081"
+  ],
+  "annunci": 47,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/opera-immobiliare-snc-trieste-tc-57241",
+  "punteggio": 32.7
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Studio Casa Bergamo",
+  "indirizzo": "Via Angelo Maj, 1/N, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "035242409",
+   "3396035535"
+  ],
+  "annunci": 47,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-casa-bergamo-tc-65995",
+  "punteggio": 32.7
+ },
+ {
+  "citta": "verona",
+  "nome": "Class Immobiliare di Daniele Vanin",
+  "indirizzo": "Via Napoleone, 22, 37138 - Verona (VR)",
+  "telefoni": [
+   "0458104496"
+  ],
+  "annunci": 46,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/class-immobiliare-di-daniele-vanin-verona-tc-5693",
+  "punteggio": 32.6
+ },
+ {
+  "citta": "verona",
+  "nome": "Agenzia Arena - CANGURO SRL",
+  "indirizzo": "Corso Porta Nuova, 34A, 37122 - Verona (VR)",
+  "telefoni": [
+   "0455545406",
+   "3482213102"
+  ],
+  "annunci": 46,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-arena-canguro-srl-verona-tc-72366",
+  "punteggio": 32.6
+ },
+ {
+  "citta": "bergamo",
+  "nome": "DHOMUS - Dove la Casa Incontra l'Uomo",
+  "indirizzo": "Via Garibaldi, 4/C, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "07731841010",
+   "03519721893"
+  ],
+  "annunci": 46,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/dhomus-dove-la-casa-incontra-l-uomo-bergamo-tc-86676",
+  "punteggio": 32.6
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Atmosfera Case",
+  "indirizzo": "Via Bianzana, 3, 24124 - Bergamo (BG)",
+  "telefoni": [
+   "035240174"
+  ],
+  "annunci": 45,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/atmosfera-case-bergamo-tc-73101",
+  "punteggio": 32.5
+ },
+ {
+  "citta": "verona",
+  "nome": "Savoja-Nuovi Concetti Immobiliari",
+  "indirizzo": "Via Ugo Sesini, 10, 37138 - Verona (VR)",
+  "telefoni": [
+   "0452223380"
+  ],
+  "annunci": 44,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/savoja-nuovi-concetti-immobiliari-verona-tc-45614",
+  "punteggio": 32.4
+ },
+ {
+  "citta": "verona",
+  "nome": "CENTURY 21 Arena Living",
+  "indirizzo": "Via albere 17A, 37100 - Verona (VR)",
+  "telefoni": [
+   "390459990101"
+  ],
+  "annunci": 44,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "stanze-e-posti-letto",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/century-21-arena-living-verona-tc-96237",
+  "punteggio": 32.4
+ },
+ {
   "citta": "bolzano",
   "nome": "abitaREhaus",
   "indirizzo": "Piave, 31, 39100 - Bolzano (BZ)",
@@ -237,6 +1120,55 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/abitarehaus-bolzano-tc-55128",
+  "punteggio": 32.3
+ },
+ {
+  "citta": "verona",
+  "nome": "MGR Realty",
+  "indirizzo": "via Carlo Cattaneo, 15, 37121 - Verona (VR)",
+  "telefoni": [
+   "3457408545"
+  ],
+  "annunci": 43,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/mgr-realty-verona-tc-21067",
+  "punteggio": 32.3
+ },
+ {
+  "citta": "trieste",
+  "nome": "RE/MAX Enterprise",
+  "indirizzo": "Via San Nicolò, 11, 34121 - Trieste (TS)",
+  "telefoni": [
+   "0403419590",
+   "0402458049"
+  ],
+  "annunci": 43,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/re-max-enterprise-trieste-tc-6169",
+  "punteggio": 32.3
+ },
+ {
+  "citta": "como",
+  "nome": "Immobiliare Vista Lago",
+  "indirizzo": "Via Alessandro Volta, 1, 22100 - Como (CO)",
+  "telefoni": [
+   "0313370660"
+  ],
+  "annunci": 43,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-vista-lago-como-tc-25520",
   "punteggio": 32.3
  },
  {
@@ -290,6 +1222,56 @@
   "punteggio": 32.1
  },
  {
+  "citta": "como",
+  "nome": "COLDWELL BANKER RODA REAL ESTATE COMO",
+  "indirizzo": "Via Fratelli Cairoli, 21, 22100 - Como (CO)",
+  "telefoni": [
+   "031265388",
+   "3891055284"
+  ],
+  "annunci": 40,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/coldwell-banker-roda-real-estate-como-tc-20707",
+  "punteggio": 32.0
+ },
+ {
+  "citta": "como",
+  "nome": "Case & Living",
+  "indirizzo": "via varesina, 277, 22100 - Como (CO)",
+  "telefoni": [
+   "031505693"
+  ],
+  "annunci": 40,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/case-living-como-tc-73071",
+  "punteggio": 32.0
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Studio Immobiliare di Bonacina Luca",
+  "indirizzo": "Via S.G.Bosco, 29/D, 24126 - Bergamo (BG)",
+  "telefoni": [
+   "035322688"
+  ],
+  "annunci": 40,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-immobiliare-di-bonacina-luca-bergamo-tc-25505",
+  "punteggio": 32.0
+ },
+ {
   "citta": "bolzano",
   "nome": "Studio Alfa Bolzano srl",
   "indirizzo": "via Orazio, 61, 39100 - Bolzano (BZ)",
@@ -322,546 +1304,6 @@
   "punteggio": 31.9
  },
  {
-  "citta": "bolzano",
-  "nome": "22 ottobre srls",
-  "indirizzo": "Via Torino , 80, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471919898",
-   "0471047191989"
-  ],
-  "annunci": 35,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/22-ottobre-srls-bolzano-tc-59024",
-  "punteggio": 31.5
- },
- {
-  "citta": "bolzano",
-  "nome": "Realpro",
-  "indirizzo": "Viale Duca d'Aosta, 87, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471261159"
-  ],
-  "annunci": 32,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/realpro-bolzano-tc-32777",
-  "punteggio": 31.2
- },
- {
-  "citta": "bolzano",
-  "nome": "Gutzmer + Partner Immobilien Immobiliare Real Estate",
-  "indirizzo": "Via della Rena, 11, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471977907"
-  ],
-  "annunci": 29,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/gutzmer-partner-immobilien-immobiliare-real-estate-bolzano-tc-56059",
-  "punteggio": 30.9
- },
- {
-  "citta": "bolzano",
-  "nome": "Agenzia Immobiliare Montecchio",
-  "indirizzo": "Via San Quirino, 40A, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471270828"
-  ],
-  "annunci": 28,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-montecchio-bolzano-tc-46649",
-  "punteggio": 30.8
- },
- {
-  "citta": "bolzano",
-  "nome": "Spadafora Realty",
-  "indirizzo": "Viale Amedeo Duca d'Aosta, 64, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "3485303092"
-  ],
-  "annunci": 27,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/spadafora-realty-bolzano-tc-88553",
-  "punteggio": 30.7
- },
- {
-  "citta": "bolzano",
-  "nome": "Area Domus Real Estate",
-  "indirizzo": "Via Dante, 20 A, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "04711535143"
-  ],
-  "annunci": 24,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/area-domus-real-estate-bolzano-tc-77188",
-  "punteggio": 30.4
- },
- {
-  "citta": "bolzano",
-  "nome": "Bolzano Immobiliare Dolomiti",
-  "indirizzo": "Vic della Parrocchia 13,  - Bolzano (BZ)",
-  "telefoni": [
-   "0471981178"
-  ],
-  "annunci": 22,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/bolzano-immobiliare-dolomiti-tc-79182",
-  "punteggio": 30.2
- },
- {
-  "citta": "bolzano",
-  "nome": "Immobiliare Ehrenstein",
-  "indirizzo": "Via De Lai, 4, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471983452"
-  ],
-  "annunci": 20,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-ehrenstein-bolzano-tc-337",
-  "punteggio": 30.0
- },
- {
-  "citta": "bolzano",
-  "nome": "LAMAISON Immobilien",
-  "indirizzo": "Galleria Telser, 9, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "3492985382"
-  ],
-  "annunci": 15,
-  "tratta": [
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/lamaison-immobilien-bolzano-tc-66552",
-  "punteggio": 29.5
- },
- {
-  "citta": "bolzano",
-  "nome": "Cibin Luca agente immobiliare",
-  "indirizzo": "Corso Italia, 22, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "3482472184"
-  ],
-  "annunci": 15,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/cibin-luca-agente-immobiliare-bolzano-tc-79400",
-  "punteggio": 29.5
- },
- {
-  "citta": "bolzano",
-  "nome": "Immobiliare Italia srl",
-  "indirizzo": "vl. Druso, 66, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471910800"
-  ],
-  "annunci": 12,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-italia-srl-bolzano-tc-71646",
-  "punteggio": 29.2
- },
- {
-  "citta": "bolzano",
-  "nome": "Immobiliare D'Onofrio",
-  "indirizzo": "Corso Italia, 35, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "3297449596"
-  ],
-  "annunci": 12,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-d-onofrio-bolzano-tc-24244",
-  "punteggio": 29.2
- },
- {
-  "citta": "bolzano",
-  "nome": "Agenzia Immobiliare Dimensione Casa srl",
-  "indirizzo": "via Cesare Battisti 25, 25, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471274100",
-   "0471285511"
-  ],
-  "annunci": 11,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-dimensione-casa-srl-bolzano-tc-27994",
-  "punteggio": 29.1
- },
- {
-  "citta": "bolzano",
-  "nome": "Bolzano Immobiliare s.r.l.s.",
-  "indirizzo": "Corso della Libertà, 50, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471279572",
-   "3470195817"
-  ],
-  "annunci": 11,
-  "tratta": [
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/bolzano-immobiliare-s-r-l-s--tc-55542",
-  "punteggio": 29.1
- },
- {
-  "citta": "bolzano",
-  "nome": "Agenzia Immobiliare Oberrauch",
-  "indirizzo": "Piazza Walther, 22, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471974909",
-   "0471054718"
-  ],
-  "annunci": 44,
-  "tratta": [
-   "case"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-oberrauch-bolzano-tc-38888",
-  "punteggio": 7.4
- },
- {
-  "citta": "bolzano",
-  "nome": "Casa Mya immobiliare",
-  "indirizzo": "Via Rovigo, 20/c, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471342540",
-   "3394768297"
-  ],
-  "annunci": 35,
-  "tratta": [
-   "box-e-posti-auto",
-   "case"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/casa-mya-immobiliare-bolzano-tc-78168",
-  "punteggio": 6.5
- },
- {
-  "citta": "bolzano",
-  "nome": "SANLUI Real Estate Srl",
-  "indirizzo": "Via Camillo Benso di Cavour, 23B, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "04711775533",
-   "3483845180"
-  ],
-  "annunci": 12,
-  "tratta": [
-   "case"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/sanlui-real-estate-srl-bolzano-tc-95337",
-  "punteggio": 4.2
- },
- {
-  "citta": "bolzano",
-  "nome": "Engel & Völkers Bolzano - Bozen",
-  "indirizzo": "Piazza Walther, 8, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "0471979510"
-  ],
-  "annunci": 10,
-  "tratta": [
-   "box-e-posti-auto",
-   "case"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/engel-volkers-bolzano-bozen-tc-59162",
-  "punteggio": 4.0
- },
- {
-  "citta": "bolzano",
-  "nome": "Immobilcasa",
-  "indirizzo": "Piazza Giuseppe Verdi, 15, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "3275489657"
-  ],
-  "annunci": 7,
-  "tratta": [
-   "box-e-posti-auto",
-   "case"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobilcasa-bolzano-tc-76205",
-  "punteggio": 3.7
- },
- {
-  "citta": "bolzano",
-  "nome": "Ferrari Tower GmbH/Srl",
-  "indirizzo": "Via del Macello, 28, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "04711552600"
-  ],
-  "annunci": 2,
-  "tratta": [
-   "case"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/ferrari-tower-gmbh-srl-bolzano-tc-95991",
-  "punteggio": 3.2
- },
- {
-  "citta": "bolzano",
-  "nome": "Ing. Denata Zaloshnja",
-  "indirizzo": "Via Armando Diaz, 12, 39100 - Bolzano (BZ)",
-  "telefoni": [
-   "3480090308"
-  ],
-  "annunci": 1,
-  "tratta": [
-   "case"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/ing-denata-zaloshnja-bolzano-tc-97072",
-  "punteggio": 3.1
- },
- {
-  "citta": "verona",
-  "nome": "Aziendale Srls",
-  "indirizzo": "Stradone Porta Palio, 74/b, 37122 - Verona (VR)",
-  "telefoni": [
-   "0452591245",
-   "3343859581"
-  ],
-  "annunci": 188,
-  "tratta": [
-   "case",
-   "case-vacanza",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/aziendale-srls-verona-tc-67683",
-  "punteggio": 49.8
- },
- {
-  "citta": "verona",
-  "nome": "Azienda Si",
-  "indirizzo": "via Selinunte, 5, 37138 - Verona (VR)",
-  "telefoni": [
-   "3299552089"
-  ],
-  "annunci": 165,
-  "tratta": [
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/azienda-si-verona-tc-29467",
-  "punteggio": 41.5
- },
- {
-  "citta": "verona",
-  "nome": "Italy Sotheby's International Realty - Verona",
-  "indirizzo": "Corso Castelvecchio, 25, 37122 - Verona (VR)",
-  "telefoni": [
-   "0458242300"
-  ],
-  "annunci": 82,
-  "tratta": [
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/italy-sotheby-s-international-realty-verona-tc-89427",
-  "punteggio": 36.2
- },
- {
-  "citta": "verona",
-  "nome": "Grandi Agenti Immobiliari Rete d'imprese",
-  "indirizzo": "Vicolo San Matteo, 2, 37121 - Verona (VR)",
-  "telefoni": [
-   "0458036579",
-   "3803641823"
-  ],
-  "annunci": 78,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/grandi-agenti-immobiliari-rete-d-imprese-verona-tc-69769",
-  "punteggio": 35.8
- },
- {
-  "citta": "verona",
-  "nome": "Rinaldi Case",
-  "indirizzo": "Via Laghetto Squarà, 1/A, 37141 - Verona (VR)",
-  "telefoni": [
-   "045557622"
-  ],
-  "annunci": 64,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/rinaldi-case-verona-tc-46694",
-  "punteggio": 34.4
- },
- {
-  "citta": "verona",
-  "nome": "Engel & Völkers Verona City",
-  "indirizzo": "Via Carlo Cattaneo, 24/C, 37121 - Verona (VR)",
-  "telefoni": [
-   "0458013026"
-  ],
-  "annunci": 63,
-  "tratta": [
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/engel-volkers-verona-city-tc-59260",
-  "punteggio": 34.3
- },
- {
-  "citta": "verona",
-  "nome": "GIV Gruppo Immobiliare Verona",
-  "indirizzo": "Vicolo Broglio, 3, 37100 - Verona (VR)",
-  "telefoni": [
-   "3355303460",
-   "3498136778"
-  ],
-  "annunci": 48,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/giv-gruppo-immobiliare-verona-tc-43076",
-  "punteggio": 32.8
- },
- {
-  "citta": "verona",
-  "nome": "\"PUCCIO - Case\"  di Puccio Francesco",
-  "indirizzo": "Via del Risorgimento, 28, 37126 - Verona (VR)",
-  "telefoni": [
-   "3332555321",
-   "3899167811"
-  ],
-  "annunci": 47,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/-puccio-case-di-puccio-francesco-verona-tc-78529",
-  "punteggio": 32.7
- },
- {
-  "citta": "verona",
-  "nome": "Class Immobiliare di Daniele Vanin",
-  "indirizzo": "Via Napoleone, 22, 37138 - Verona (VR)",
-  "telefoni": [
-   "0458104496"
-  ],
-  "annunci": 46,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/class-immobiliare-di-daniele-vanin-verona-tc-5693",
-  "punteggio": 32.6
- },
- {
-  "citta": "verona",
-  "nome": "Agenzia Arena - CANGURO SRL",
-  "indirizzo": "Corso Porta Nuova, 34A, 37122 - Verona (VR)",
-  "telefoni": [
-   "0455545406",
-   "3482213102"
-  ],
-  "annunci": 46,
-  "tratta": [
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-arena-canguro-srl-verona-tc-72366",
-  "punteggio": 32.6
- },
- {
-  "citta": "verona",
-  "nome": "Savoja-Nuovi Concetti Immobiliari",
-  "indirizzo": "Via Ugo Sesini, 10, 37138 - Verona (VR)",
-  "telefoni": [
-   "0452223380"
-  ],
-  "annunci": 44,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/savoja-nuovi-concetti-immobiliari-verona-tc-45614",
-  "punteggio": 32.4
- },
- {
-  "citta": "verona",
-  "nome": "CENTURY 21 Arena Living",
-  "indirizzo": "Via albere 17A, 37100 - Verona (VR)",
-  "telefoni": [
-   "390459990101"
-  ],
-  "annunci": 44,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali",
-   "stanze-e-posti-letto",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/century-21-arena-living-verona-tc-96237",
-  "punteggio": 32.4
- },
- {
-  "citta": "verona",
-  "nome": "MGR Realty",
-  "indirizzo": "via Carlo Cattaneo, 15, 37121 - Verona (VR)",
-  "telefoni": [
-   "3457408545"
-  ],
-  "annunci": 43,
-  "tratta": [
-   "box-e-posti-auto",
-   "case",
-   "immobili-commerciali",
-   "terreni"
-  ],
-  "url": "https://www.trovacasa.it/agenzie-immobiliari/mgr-realty-verona-tc-21067",
-  "punteggio": 32.3
- },
- {
   "citta": "verona",
   "nome": "Verona - Centro",
   "indirizzo": "Corso di Porta Nuova 79/83,  - Verona (VR)",
@@ -876,6 +1318,24 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/verona-centro-tc-47088",
   "punteggio": 31.9
+ },
+ {
+  "citta": "como",
+  "nome": "LaPrima Immobiliare srl",
+  "indirizzo": "Via Tolomeo Gallio, 8/A, 22100 - Como (CO)",
+  "telefoni": [
+   "031243222",
+   "3939165067"
+  ],
+  "annunci": 38,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/laprima-immobiliare-srl-como-tc-4428",
+  "punteggio": 31.8
  },
  {
   "citta": "verona",
@@ -895,6 +1355,73 @@
   "punteggio": 31.7
  },
  {
+  "citta": "trieste",
+  "nome": "DI CASA IN CASA Soluzioni Immobiliari di Massimiliano Dinoi – Partner of L’immobiliare.com - Trieste",
+  "indirizzo": "Via Giosuè Carducci, 19/a, 34122 - Trieste (TS)",
+  "telefoni": [
+   "0402655602",
+   "3713451050"
+  ],
+  "annunci": 37,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/di-casa-in-casa-soluzioni-immobiliari-di-massimiliano-dinoi-partner-of-l-immobiliare-com-trieste-tc-75051",
+  "punteggio": 31.7
+ },
+ {
+  "citta": "como",
+  "nome": "Como House",
+  "indirizzo": "Viale G. Cesare, 16/A, 22100 - Como (CO)",
+  "telefoni": [
+   "031240472"
+  ],
+  "annunci": 37,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/como-house-tc-31890",
+  "punteggio": 31.7
+ },
+ {
+  "citta": "trieste",
+  "nome": "Studio Roiano srl",
+  "indirizzo": "VIA DI ROIANO, 5/c, 34135 - Trieste (TS)",
+  "telefoni": [
+   "040411808"
+  ],
+  "annunci": 36,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-roiano-srl-trieste-tc-44224",
+  "punteggio": 31.6
+ },
+ {
+  "citta": "bolzano",
+  "nome": "22 ottobre srls",
+  "indirizzo": "Via Torino , 80, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471919898",
+   "0471047191989"
+  ],
+  "annunci": 35,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/22-ottobre-srls-bolzano-tc-59024",
+  "punteggio": 31.5
+ },
+ {
   "citta": "verona",
   "nome": "Interimmobiliare",
   "indirizzo": "Via Andrea Doria, 18, 37138 - Verona (VR)",
@@ -912,6 +1439,39 @@
   "punteggio": 31.5
  },
  {
+  "citta": "trieste",
+  "nome": "atHOUSE Immobiliare",
+  "indirizzo": "Via Amilcare Ponchielli, 1, 34122 - Trieste (TS)",
+  "telefoni": [
+   "0407600986"
+  ],
+  "annunci": 35,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/athouse-immobiliare-trieste-tc-56586",
+  "punteggio": 31.5
+ },
+ {
+  "citta": "trieste",
+  "nome": "Andrea Oliva & partners srl",
+  "indirizzo": "via di Cavana, 15, 34124 - Trieste (TS)",
+  "telefoni": [
+   "0403229321"
+  ],
+  "annunci": 35,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/andrea-oliva-partners-srl-trieste-tc-16634",
+  "punteggio": 31.5
+ },
+ {
   "citta": "verona",
   "nome": "Immobiliare Ledri",
   "indirizzo": "Corso Cavour, 12, 37121 - Verona (VR)",
@@ -926,6 +1486,101 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-ledri-verona-tc-62994",
   "punteggio": 31.3
+ },
+ {
+  "citta": "trieste",
+  "nome": "Antica Trieste",
+  "indirizzo": "Via 30 Ottobre, 4, 34132 - Trieste (TS)",
+  "telefoni": [
+   "3755867628"
+  ],
+  "annunci": 33,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/antica-trieste-tc-93198",
+  "punteggio": 31.3
+ },
+ {
+  "citta": "trieste",
+  "nome": "Tam Immobiliare",
+  "indirizzo": "VIA PIER LUIGI DA PALESTRINA, 5, 34133 - Trieste (TS)",
+  "telefoni": [
+   "0403498398"
+  ],
+  "annunci": 33,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tam-immobiliare-trieste-tc-16070",
+  "punteggio": 31.3
+ },
+ {
+  "citta": "trieste",
+  "nome": "Urban Real Estate",
+  "indirizzo": "Via San Lazzaro, 5, 34122 - Trieste (TS)",
+  "telefoni": [
+   "040761383",
+   "3339066539"
+  ],
+  "annunci": 33,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/urban-real-estate-trieste-tc-10291",
+  "punteggio": 31.3
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Realpro",
+  "indirizzo": "Viale Duca d'Aosta, 87, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471261159"
+  ],
+  "annunci": 32,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/realpro-bolzano-tc-32777",
+  "punteggio": 31.2
+ },
+ {
+  "citta": "trieste",
+  "nome": "Agenzia Immobiliare CALCARA",
+  "indirizzo": "Via Aurelio e Fabio Nordio, 3/a, 34125 - Trieste (TS)",
+  "telefoni": [
+   "040632666"
+  ],
+  "annunci": 32,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-calcara-trieste-tc-32092",
+  "punteggio": 31.2
+ },
+ {
+  "citta": "como",
+  "nome": "Immobiliarecomo s.r.l.",
+  "indirizzo": "Via Fontana Domenico, 1, 22100 - Como (CO)",
+  "telefoni": [
+   "031260034"
+  ],
+  "annunci": 32,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliarecomo-s-r-l--tc-15437",
+  "punteggio": 31.2
  },
  {
   "citta": "verona",
@@ -959,6 +1614,101 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/tempocasa-verona-borgo-milano-tc-84442",
   "punteggio": 31.1
+ },
+ {
+  "citta": "trieste",
+  "nome": "Zenith Real Estate",
+  "indirizzo": "Via dei Salici, 1, 34151 - Trieste (TS)",
+  "telefoni": [
+   "0402470097"
+  ],
+  "annunci": 31,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/zenith-real-estate-trieste-tc-77909",
+  "punteggio": 31.1
+ },
+ {
+  "citta": "bergamo",
+  "nome": "TEMPOCASA Bergamo - Stadio",
+  "indirizzo": "Via G. Suardi, 73, 24124 - Bergamo (BG)",
+  "telefoni": [
+   "0350745406"
+  ],
+  "annunci": 31,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tempocasa-bergamo-stadio-tc-73897",
+  "punteggio": 31.1
+ },
+ {
+  "citta": "como",
+  "nome": "Nuova Dimora Immobiliare Srl",
+  "indirizzo": "Via Carloni, 20, 22100 - Como (CO)",
+  "telefoni": [
+   "3758156344"
+  ],
+  "annunci": 30,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/nuova-dimora-immobiliare-srl-como-tc-88498",
+  "punteggio": 31.0
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Ital Home Broseta",
+  "indirizzo": "Via Broseta, 26, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "0350400280"
+  ],
+  "annunci": 30,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/ital-home-broseta-bergamo-tc-58045",
+  "punteggio": 31.0
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Laura Scaglia S.r.l.",
+  "indirizzo": "Via Gabriele Camozzi, 77, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "035244836",
+   "3519635665"
+  ],
+  "annunci": 30,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/laura-scaglia-s-r-l-bergamo-tc-91689",
+  "punteggio": 31.0
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Gutzmer + Partner Immobilien Immobiliare Real Estate",
+  "indirizzo": "Via della Rena, 11, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471977907"
+  ],
+  "annunci": 29,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/gutzmer-partner-immobilien-immobiliare-real-estate-bolzano-tc-56059",
+  "punteggio": 30.9
  },
  {
   "citta": "verona",
@@ -1009,6 +1759,73 @@
   "punteggio": 30.9
  },
  {
+  "citta": "trieste",
+  "nome": "Tirabora Industriale",
+  "indirizzo": "Galleria Arrigo Protti, 1, 34121 - Trieste (TS)",
+  "telefoni": [
+   "0409871164"
+  ],
+  "annunci": 29,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tirabora-industriale-trieste-tc-94920",
+  "punteggio": 30.9
+ },
+ {
+  "citta": "trieste",
+  "nome": "Studio Immobiliare Benedetti",
+  "indirizzo": "Via Valdirivo, 19, 34132 - Trieste (TS)",
+  "telefoni": [
+   "0403476251"
+  ],
+  "annunci": 29,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-immobiliare-benedetti-trieste-tc-19779",
+  "punteggio": 30.9
+ },
+ {
+  "citta": "como",
+  "nome": "Affiliato Tecnocasa: AGENZIA IMMOBILIARE COMO SAS",
+  "indirizzo": "Via XX Settembre, 8, 22100 - Como (CO)",
+  "telefoni": [
+   "0314138607",
+   "3476922607"
+  ],
+  "annunci": 29,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-agenzia-immobiliare-como-sas-tc-72733",
+  "punteggio": 30.9
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Agenzia Immobiliare Montecchio",
+  "indirizzo": "Via San Quirino, 40A, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471270828"
+  ],
+  "annunci": 28,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-montecchio-bolzano-tc-46649",
+  "punteggio": 30.8
+ },
+ {
   "citta": "verona",
   "nome": "Borgo Trento Case Srl",
   "indirizzo": "Via Mario Todeschini, 20/B, 37126 - Verona (VR)",
@@ -1039,6 +1856,70 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/toscano-spa-agenzia-di-verona-tc-30442",
   "punteggio": 30.8
+ },
+ {
+  "citta": "trieste",
+  "nome": "Equipe Immobiliare srl",
+  "indirizzo": "Via Slataper, 22, 34125 - Trieste (TS)",
+  "telefoni": [
+   "040660081",
+   "3801550849"
+  ],
+  "annunci": 28,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/equipe-immobiliare-srl-trieste-tc-22393",
+  "punteggio": 30.8
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Spadafora Realty",
+  "indirizzo": "Viale Amedeo Duca d'Aosta, 64, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "3485303092"
+  ],
+  "annunci": 27,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/spadafora-realty-bolzano-tc-88553",
+  "punteggio": 30.7
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Eleven Real Estate",
+  "indirizzo": "Via 24 Maggio, 38, 24128 - Bergamo (BG)",
+  "telefoni": [
+   "3756290593"
+  ],
+  "annunci": 27,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/eleven-real-estate-bergamo-tc-79165",
+  "punteggio": 30.7
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Zerotrentacinque Casa",
+  "indirizzo": "Via Angelo Maj, 13/c, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "035219991",
+   "3355950626"
+  ],
+  "annunci": 27,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/zerotrentacinque-casa-bergamo-tc-56930",
+  "punteggio": 30.7
  },
  {
   "citta": "verona",
@@ -1105,6 +1986,22 @@
   "punteggio": 30.5
  },
  {
+  "citta": "bolzano",
+  "nome": "Area Domus Real Estate",
+  "indirizzo": "Via Dante, 20 A, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "04711535143"
+  ],
+  "annunci": 24,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/area-domus-real-estate-bolzano-tc-77188",
+  "punteggio": 30.4
+ },
+ {
   "citta": "verona",
   "nome": "Vendocasa - Agenzia di Verona",
   "indirizzo": "VIALE NINO BIXIO, 1/A, 37126 - Verona (VR)",
@@ -1123,6 +2020,72 @@
   "punteggio": 30.4
  },
  {
+  "citta": "trieste",
+  "nome": "Solo Affitti - Trieste1",
+  "indirizzo": "via del Ronco n 3, 3, 34133 - Trieste (TS)",
+  "telefoni": [
+   "0403498720"
+  ],
+  "annunci": 24,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/solo-affitti-trieste1-tc-13723",
+  "punteggio": 30.4
+ },
+ {
+  "citta": "como",
+  "nome": "Affiliato Tecnocasa: AGENZIA IMMOBILIARE ALBATE D.I.",
+  "indirizzo": "Via Canturina, 214, 22100 - Como (CO)",
+  "telefoni": [
+   "031594687",
+   "3497124392"
+  ],
+  "annunci": 24,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-agenzia-immobiliare-albate-d-i-como-tc-33487",
+  "punteggio": 30.4
+ },
+ {
+  "citta": "trieste",
+  "nome": "Gabetti Franchising Trieste San Giusto",
+  "indirizzo": "Via G. Carducci, 23, 34122 - Trieste (TS)",
+  "telefoni": [
+   "0400643391",
+   "393929541637"
+  ],
+  "annunci": 23,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/gabetti-franchising-trieste-san-giusto-tc-26133",
+  "punteggio": 30.3
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Bolzano Immobiliare Dolomiti",
+  "indirizzo": "Vic della Parrocchia 13,  - Bolzano (BZ)",
+  "telefoni": [
+   "0471981178"
+  ],
+  "annunci": 22,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/bolzano-immobiliare-dolomiti-tc-79182",
+  "punteggio": 30.2
+ },
+ {
   "citta": "verona",
   "nome": "Property - Real Estate",
   "indirizzo": "Via Campagnetta, 2, 37126 - Verona (VR)",
@@ -1137,6 +2100,248 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/property-real-estate-verona-tc-29565",
   "punteggio": 30.2
+ },
+ {
+  "citta": "trieste",
+  "nome": "Project Immobiliare di Enrico Geom. Fonda",
+  "indirizzo": "Via MILANO, 27/A, 34132 - Trieste (TS)",
+  "telefoni": [
+   "040762297",
+   "3481433481"
+  ],
+  "annunci": 22,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/project-immobiliare-di-enrico-geom-fonda-trieste-tc-24494",
+  "punteggio": 30.2
+ },
+ {
+  "citta": "trieste",
+  "nome": "Tag srl",
+  "indirizzo": "Via Valdirivo, 23/B, 34132 - Trieste (TS)",
+  "telefoni": [
+   "3483649399",
+   "0403401579"
+  ],
+  "annunci": 21,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tag-srl-trieste-tc-64652",
+  "punteggio": 30.1
+ },
+ {
+  "citta": "trieste",
+  "nome": "Mazzini Immobiliare",
+  "indirizzo": "via Mazzini, 44, 34122 - Trieste (TS)",
+  "telefoni": [
+   "040660166",
+   "3939303790"
+  ],
+  "annunci": 21,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/mazzini-immobiliare-trieste-tc-40993",
+  "punteggio": 30.1
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Immobiliare Ehrenstein",
+  "indirizzo": "Via De Lai, 4, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471983452"
+  ],
+  "annunci": 20,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-ehrenstein-bolzano-tc-337",
+  "punteggio": 30.0
+ },
+ {
+  "citta": "trieste",
+  "nome": "Cheni e Tutta Immobiliare S.n.c.",
+  "indirizzo": "Via Gatteri, 30, 34125 - Trieste (TS)",
+  "telefoni": [
+   "040767021",
+   "040767270"
+  ],
+  "annunci": 20,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/cheni-e-tutta-immobiliare-s-n-c-trieste-tc-16813",
+  "punteggio": 30.0
+ },
+ {
+  "citta": "bergamo",
+  "nome": "TEMPOCASA - Bergamo Centro",
+  "indirizzo": "Via Gianbattista Moroni, 114, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "03519903750",
+   "3520088296"
+  ],
+  "annunci": 20,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tempocasa-bergamo-centro-tc-88190",
+  "punteggio": 30.0
+ },
+ {
+  "citta": "trieste",
+  "nome": "Hometrieste San Vito",
+  "indirizzo": "Largo Papa Giovanni XXIII, 5/b, 34123 - Trieste (TS)",
+  "telefoni": [
+   "040308754"
+  ],
+  "annunci": 19,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/hometrieste-san-vito-tc-47380",
+  "punteggio": 29.9
+ },
+ {
+  "citta": "como",
+  "nome": "Affiliato Toscano - Agenzia di Como Sud",
+  "indirizzo": "Via Napoleona, 86, 22100 - Como (CO)",
+  "telefoni": [
+   "0318123183"
+  ],
+  "annunci": 19,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-toscano-agenzia-di-como-sud-tc-91971",
+  "punteggio": 29.9
+ },
+ {
+  "citta": "como",
+  "nome": "studio immobiliare geom Mario Pedretti",
+  "indirizzo": "Via Anzani, 9, 22100 - Como (CO)",
+  "telefoni": [
+   "3713982063"
+  ],
+  "annunci": 18,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/studio-immobiliare-geom-mario-pedretti-como-tc-74153",
+  "punteggio": 29.8
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Royal Immobili & Investimenti",
+  "indirizzo": "Via Paglia, 18, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "035245782",
+   "3666195741"
+  ],
+  "annunci": 18,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/royal-immobili-investimenti-bergamo-tc-11119",
+  "punteggio": 29.8
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Affiliato Tecnocasa: BSC IMMOBILIARE SRL",
+  "indirizzo": "Via Borgo Santa Caterina, 53/B, 24124 - Bergamo (BG)",
+  "telefoni": [
+   "0350789660"
+  ],
+  "annunci": 17,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-bsc-immobiliare-srl-bergamo-tc-56104",
+  "punteggio": 29.7
+ },
+ {
+  "citta": "como",
+  "nome": "Affiliato Toscano - Agenzia di Como Borghi",
+  "indirizzo": "Via Mentana, 13/G, 22100 - Como (CO)",
+  "telefoni": [
+   "0315380009"
+  ],
+  "annunci": 16,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-toscano-agenzia-di-como-borghi-tc-49509",
+  "punteggio": 29.6
+ },
+ {
+  "citta": "como",
+  "nome": "immobiliare Severini",
+  "indirizzo": "Via Garibaldi, 31, 22100 - Como (CO)",
+  "telefoni": [
+   "031261646",
+   "3395324086"
+  ],
+  "annunci": 16,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-severini-como-tc-70864",
+  "punteggio": 29.6
+ },
+ {
+  "citta": "bolzano",
+  "nome": "LAMAISON Immobilien",
+  "indirizzo": "Galleria Telser, 9, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "3492985382"
+  ],
+  "annunci": 15,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/lamaison-immobilien-bolzano-tc-66552",
+  "punteggio": 29.5
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Cibin Luca agente immobiliare",
+  "indirizzo": "Corso Italia, 22, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "3482472184"
+  ],
+  "annunci": 15,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/cibin-luca-agente-immobiliare-bolzano-tc-79400",
+  "punteggio": 29.5
  },
  {
   "citta": "verona",
@@ -1156,6 +2361,393 @@
   "punteggio": 29.5
  },
  {
+  "citta": "bergamo",
+  "nome": "Riva & Cadei immobiliare",
+  "indirizzo": "Via Giovan Battista Moroni, 124, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "3317279200"
+  ],
+  "annunci": 15,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/riva-cadei-immobiliare-bergamo-tc-57477",
+  "punteggio": 29.5
+ },
+ {
+  "citta": "como",
+  "nome": "Affiliato Toscano - Agenzia di Como Centro",
+  "indirizzo": "Via Alessandro Manzoni, 20, 22100 - Como (CO)",
+  "telefoni": [
+   "031302901"
+  ],
+  "annunci": 14,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-toscano-agenzia-di-como-centro-tc-23814",
+  "punteggio": 29.4
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Next Home Immobiliare",
+  "indirizzo": ",  - Bergamo (BG)",
+  "telefoni": [
+   "3357738638"
+  ],
+  "annunci": 14,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/next-home-immobiliare-bergamo-tc-95834",
+  "punteggio": 29.4
+ },
+ {
+  "citta": "trieste",
+  "nome": "norbedo immobiliare srl",
+  "indirizzo": "piazza san giovanni, 2, 34122 - Trieste (TS)",
+  "telefoni": [
+   "3804193949"
+  ],
+  "annunci": 13,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/norbedo-immobiliare-srl-trieste-tc-1721",
+  "punteggio": 29.3
+ },
+ {
+  "citta": "como",
+  "nome": "Affiliato Toscano - Agenzia di Como Nord",
+  "indirizzo": "Via Bellinzona, 23/25, 22100 - Como (CO)",
+  "telefoni": [
+   "0314972680"
+  ],
+  "annunci": 13,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-toscano-agenzia-di-como-nord-tc-58878",
+  "punteggio": 29.3
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Immobiliare Italia srl",
+  "indirizzo": "vl. Druso, 66, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471910800"
+  ],
+  "annunci": 12,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-italia-srl-bolzano-tc-71646",
+  "punteggio": 29.2
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Immobiliare D'Onofrio",
+  "indirizzo": "Corso Italia, 35, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "3297449596"
+  ],
+  "annunci": 12,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-d-onofrio-bolzano-tc-24244",
+  "punteggio": 29.2
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Agenzia Immobiliare Dimensione Casa srl",
+  "indirizzo": "via Cesare Battisti 25, 25, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471274100",
+   "0471285511"
+  ],
+  "annunci": 11,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-dimensione-casa-srl-bolzano-tc-27994",
+  "punteggio": 29.1
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Bolzano Immobiliare s.r.l.s.",
+  "indirizzo": "Corso della Libertà, 50, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471279572",
+   "3470195817"
+  ],
+  "annunci": 11,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/bolzano-immobiliare-s-r-l-s--tc-55542",
+  "punteggio": 29.1
+ },
+ {
+  "citta": "trieste",
+  "nome": "Trieste Properties Srl",
+  "indirizzo": "Via Punta del Forno, 9, 34121 - Trieste (TS)",
+  "telefoni": [
+   "0403220211"
+  ],
+  "annunci": 11,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/trieste-properties-srl-tc-43926",
+  "punteggio": 29.1
+ },
+ {
+  "citta": "trieste",
+  "nome": "Pozzecco Immobiliare di Renato Pozzecco",
+  "indirizzo": "Via San Francesco, 11, 34133 - Trieste (TS)",
+  "telefoni": [
+   "040660386",
+   "0403720635"
+  ],
+  "annunci": 10,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/pozzecco-immobiliare-di-renato-pozzecco-trieste-tc-5204",
+  "punteggio": 29.0
+ },
+ {
+  "citta": "como",
+  "nome": "Alius Casa",
+  "indirizzo": "Via Pio XI, 40, 22100 - Como (CO)",
+  "telefoni": [
+   "031531467",
+   "3332384667"
+  ],
+  "annunci": 10,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/alius-casa-como-tc-11961",
+  "punteggio": 29.0
+ },
+ {
+  "citta": "como",
+  "nome": "Leader Immobiliare",
+  "indirizzo": "Via Gerolamo Borsieri, 21, 22100 - Como (CO)",
+  "telefoni": [
+   "031573575"
+  ],
+  "annunci": 9,
+  "tratta": [
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/leader-immobiliare-como-tc-26782",
+  "punteggio": 28.9
+ },
+ {
+  "citta": "trieste",
+  "nome": "Pizzarello s.a.s.",
+  "indirizzo": "Via di Donota, 4, 34121 - Trieste (TS)",
+  "telefoni": [
+   "040766676",
+   "040636474"
+  ],
+  "annunci": 8,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/pizzarello-s-a-s-trieste-tc-31629",
+  "punteggio": 28.8
+ },
+ {
+  "citta": "trieste",
+  "nome": "L'Igloo Immobiliare Di Michela Kraus",
+  "indirizzo": "Via Giustiniano, 9, 34133 - Trieste (TS)",
+  "telefoni": [
+   "040661777"
+  ],
+  "annunci": 7,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/l-igloo-immobiliare-di-michela-kraus-trieste-tc-11428",
+  "punteggio": 28.7
+ },
+ {
+  "citta": "como",
+  "nome": "SPI Servizi Immobiliari Professionali Como",
+  "indirizzo": "Via Belvedere, 69, 22100 - Como (CO)",
+  "telefoni": [
+   "3517156966"
+  ],
+  "annunci": 6,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/spi-servizi-immobiliari-professionali-como-tc-83507",
+  "punteggio": 28.6
+ },
+ {
+  "citta": "bergamo",
+  "nome": "HEXA INVESTMENT GROUP SRL",
+  "indirizzo": ",  - Bergamo (BG)",
+  "telefoni": [
+   "3516128261"
+  ],
+  "annunci": 6,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/hexa-investment-group-srl-bergamo-tc-96818",
+  "punteggio": 28.6
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Rovetta Immobiliare",
+  "indirizzo": "Piazza Pontida, 28, 24128 - Bergamo (BG)",
+  "telefoni": [
+   "3482244938"
+  ],
+  "annunci": 5,
+  "tratta": [
+   "case",
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/rovetta-immobiliare-bergamo-tc-37709",
+  "punteggio": 28.5
+ },
+ {
+  "citta": "trieste",
+  "nome": "Affiliato Tecnocasa: STUDIO INDUSTRIALE TRIESTE SRL",
+  "indirizzo": "Via Marco Tullio Cicerone, 8/B, 34133 - Trieste (TS)",
+  "telefoni": [
+   "0409859381",
+   "3925921224"
+  ],
+  "annunci": 27,
+  "tratta": [
+   "immobili-commerciali",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-studio-industriale-trieste-srl-tc-84440",
+  "punteggio": 27.7
+ },
+ {
+  "citta": "trieste",
+  "nome": "V Realty agenzia immobiliare",
+  "indirizzo": "Via Matteo Imbriani, 5, 34122 - Trieste (TS)",
+  "telefoni": [
+   "040765454"
+  ],
+  "annunci": 9,
+  "tratta": [
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/v-realty-agenzia-immobiliare-trieste-tc-8806",
+  "punteggio": 25.9
+ },
+ {
+  "citta": "como",
+  "nome": "Premier Property Advice",
+  "indirizzo": "Via Milano, 2, 22100 - Como (CO)",
+  "telefoni": [
+   "3478576383"
+  ],
+  "annunci": 7,
+  "tratta": [
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/premier-property-advice-como-tc-61686",
+  "punteggio": 25.7
+ },
+ {
+  "citta": "como",
+  "nome": "Fabiola Pezzullo",
+  "indirizzo": ",  - Como (CO)",
+  "telefoni": [
+   "3479115114"
+  ],
+  "annunci": 1,
+  "tratta": [
+   "immobili-commerciali"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/fabiola-pezzullo-como-tc-83170",
+  "punteggio": 25.1
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Affiliato Tecnocasa: BERGAMO CENTRO SRL",
+  "indirizzo": "Via Verdi, 28, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "0350347068"
+  ],
+  "annunci": 49,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-bergamo-centro-srl-tc-64571",
+  "punteggio": 7.9
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Agenzia Immobiliare Oberrauch",
+  "indirizzo": "Piazza Walther, 22, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471974909",
+   "0471054718"
+  ],
+  "annunci": 44,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-oberrauch-bolzano-tc-38888",
+  "punteggio": 7.4
+ },
+ {
+  "citta": "como",
+  "nome": "La Reale Domus - Knight Frank",
+  "indirizzo": "Via Crespi, 14, 22100 - Como (CO)",
+  "telefoni": [
+   "0313100186"
+  ],
+  "annunci": 39,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/la-reale-domus-knight-frank-como-tc-25536",
+  "punteggio": 6.9
+ },
+ {
   "citta": "verona",
   "nome": "L'Arte di abitare - Agenzia di San Zeno",
   "indirizzo": "Piazzetta Portichetti, 2/a, 37123 - Verona (VR)",
@@ -1170,6 +2762,36 @@
   "punteggio": 6.7
  },
  {
+  "citta": "bolzano",
+  "nome": "Casa Mya immobiliare",
+  "indirizzo": "Via Rovigo, 20/c, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471342540",
+   "3394768297"
+  ],
+  "annunci": 35,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/casa-mya-immobiliare-bolzano-tc-78168",
+  "punteggio": 6.5
+ },
+ {
+  "citta": "como",
+  "nome": "Agenzia Immobiliare Blu Buy",
+  "indirizzo": "Via Bellinzona, 208, 22100 - Como (CO)",
+  "telefoni": [
+   "3472818568"
+  ],
+  "annunci": 32,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-blu-buy-como-tc-8666",
+  "punteggio": 6.2
+ },
+ {
   "citta": "verona",
   "nome": "L'Immobiliare Verona Centrale",
   "indirizzo": "Stradone San Fermo, 10, 37121 - Verona (VR)",
@@ -1182,6 +2804,20 @@
    "case"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/l-immobiliare-verona-centrale-tc-22728",
+  "punteggio": 5.7
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Affiliato Tecnocasa: BP 33 SRL",
+  "indirizzo": "Via Borgo Palazzo, 31, 24125 - Bergamo (BG)",
+  "telefoni": [
+   "0350176052"
+  ],
+  "annunci": 27,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-bp-33-srl-bergamo-tc-79174",
   "punteggio": 5.7
  },
  {
@@ -1200,6 +2836,20 @@
   "punteggio": 5.6
  },
  {
+  "citta": "como",
+  "nome": "Italy Sotheby's International Realty - Lake Como",
+  "indirizzo": "Via Olginati, 3, 22100 - Como (CO)",
+  "telefoni": [
+   "0315388888"
+  ],
+  "annunci": 26,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/italy-sotheby-s-international-realty-lake-como-tc-89395",
+  "punteggio": 5.6
+ },
+ {
   "citta": "verona",
   "nome": "Affiliato Tecnocasa: IMMOBILIARE SAN ZENO SRL",
   "indirizzo": "Via Stradone Porta Palio, 45, 37122 - Verona (VR)",
@@ -1215,6 +2865,38 @@
   "punteggio": 5.4
  },
  {
+  "citta": "como",
+  "nome": "Russomanno Studio Immobiliare",
+  "indirizzo": "Viale Giulio Cesare, 2A, 22100 - Como (CO)",
+  "telefoni": [
+   "0316690109",
+   "3663630174"
+  ],
+  "annunci": 22,
+  "tratta": [
+   "box-e-posti-auto",
+   "case",
+   "terreni"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/russomanno-studio-immobiliare-como-tc-56164",
+  "punteggio": 5.2
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Affiliato Tecnocasa: TECNOBERGAMO SRL",
+  "indirizzo": "Via Moroni, 156, 24122 - Bergamo (BG)",
+  "telefoni": [
+   "0350443103"
+  ],
+  "annunci": 21,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-tecnobergamo-srl-tc-60772",
+  "punteggio": 5.1
+ },
+ {
   "citta": "verona",
   "nome": "L’Arte di Abitare - Megastore Verona",
   "indirizzo": "Via Ca' di Cozzi, 2, 37125 - Verona (VR)",
@@ -1228,6 +2910,21 @@
    "terreni"
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/l-arte-di-abitare-megastore-verona-tc-91484",
+  "punteggio": 5.0
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Ruberti Maria Chiara",
+  "indirizzo": "Viale Papa Giovanni XXIII, 106, 24121 - Bergamo (BG)",
+  "telefoni": [
+   "035232775",
+   "3804966259"
+  ],
+  "annunci": 20,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/ruberti-maria-chiara-bergamo-tc-6051",
   "punteggio": 5.0
  },
  {
@@ -1275,6 +2972,35 @@
   "punteggio": 4.6
  },
  {
+  "citta": "bergamo",
+  "nome": "Affiliato Tecnocasa: STUDIO LORETO SRL",
+  "indirizzo": "Via Broseta, 73, 24128 - Bergamo (BG)",
+  "telefoni": [
+   "0354373460"
+  ],
+  "annunci": 16,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-studio-loreto-srl-bergamo-tc-25239",
+  "punteggio": 4.6
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Onlyhouse Immobiliare",
+  "indirizzo": "Piazza risorgimento, 13/b, 24128 - Bergamo (BG)",
+  "telefoni": [
+   "035261908"
+  ],
+  "annunci": 16,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/onlyhouse-immobiliare-bergamo-tc-39895",
+  "punteggio": 4.6
+ },
+ {
   "citta": "verona",
   "nome": "Affiliato Tecnorete: STUDIO MDC SAS",
   "indirizzo": "P.zza Madonna di Campagna, 15, 37132 - Verona (VR)",
@@ -1288,5 +3014,279 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnorete-studio-mdc-sas-verona-tc-56732",
   "punteggio": 4.5
+ },
+ {
+  "citta": "como",
+  "nome": "Affiliato Tecnocasa: STUDIO COMO 4 D.I.",
+  "indirizzo": "Via Bellinzona, 182, 22100 - Como (CO)",
+  "telefoni": [
+   "031540983"
+  ],
+  "annunci": 14,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-studio-como-4-d-i--tc-48261",
+  "punteggio": 4.4
+ },
+ {
+  "citta": "trieste",
+  "nome": "La Rue Immobiliare s.r.l.",
+  "indirizzo": "Piazza Giambattista Vico, 8, 34131 - Trieste (TS)",
+  "telefoni": [
+   "0409658896"
+  ],
+  "annunci": 13,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/la-rue-immobiliare-s-r-l-trieste-tc-86684",
+  "punteggio": 4.3
+ },
+ {
+  "citta": "bolzano",
+  "nome": "SANLUI Real Estate Srl",
+  "indirizzo": "Via Camillo Benso di Cavour, 23B, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "04711775533",
+   "3483845180"
+  ],
+  "annunci": 12,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/sanlui-real-estate-srl-bolzano-tc-95337",
+  "punteggio": 4.2
+ },
+ {
+  "citta": "trieste",
+  "nome": "Affiliato Tecnocasa: IMMOBILIARE SAN GIOVANNI SRL",
+  "indirizzo": "Via Giulia, 108, 34126 - Trieste (TS)",
+  "telefoni": [
+   "040578083"
+  ],
+  "annunci": 11,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-immobiliare-san-giovanni-srl-trieste-tc-74486",
+  "punteggio": 4.1
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Engel & Völkers Bolzano - Bozen",
+  "indirizzo": "Piazza Walther, 8, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "0471979510"
+  ],
+  "annunci": 10,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/engel-volkers-bolzano-bozen-tc-59162",
+  "punteggio": 4.0
+ },
+ {
+  "citta": "como",
+  "nome": "G.O. Immobiliare",
+  "indirizzo": "Via Milano, 167, 22100 - Como (CO)",
+  "telefoni": [
+   "3758816975"
+  ],
+  "annunci": 9,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/g-o-immobiliare-como-tc-96510",
+  "punteggio": 3.9
+ },
+ {
+  "citta": "bergamo",
+  "nome": "Tempoagency - Bergamo - Borgo Palazzo",
+  "indirizzo": "Via Borgo Palazzo, 87, 24125 - Bergamo (BG)",
+  "telefoni": [
+   "0350100520",
+   "3487017386"
+  ],
+  "annunci": 9,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/tempoagency-bergamo-borgo-palazzo-tc-97155",
+  "punteggio": 3.9
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Immobilcasa",
+  "indirizzo": "Piazza Giuseppe Verdi, 15, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "3275489657"
+  ],
+  "annunci": 7,
+  "tratta": [
+   "box-e-posti-auto",
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobilcasa-bolzano-tc-76205",
+  "punteggio": 3.7
+ },
+ {
+  "citta": "trieste",
+  "nome": "Affiliato Tecnocasa: STUDIO 3 SRL",
+  "indirizzo": "Via dell'Istria, 76, 34137 - Trieste (TS)",
+  "telefoni": [
+   "040365078"
+  ],
+  "annunci": 5,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-studio-3-srl-trieste-tc-44461",
+  "punteggio": 3.5
+ },
+ {
+  "citta": "como",
+  "nome": "Rent All Como",
+  "indirizzo": "Via Garibaldi, 30, 22100 - Como (CO)",
+  "telefoni": [
+   "0315478841",
+   "3469738220"
+  ],
+  "annunci": 5,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/rent-all-como-tc-75541",
+  "punteggio": 3.5
+ },
+ {
+  "citta": "trieste",
+  "nome": "Unopiù Immobiliare  di Rita Giancristofaro",
+  "indirizzo": "Via Torrebianca, 33, 34122 - Trieste (TS)",
+  "telefoni": [
+   "3496376115"
+  ],
+  "annunci": 4,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/unopiu-immobiliare-di-rita-giancristofaro-trieste-tc-56060",
+  "punteggio": 3.4
+ },
+ {
+  "citta": "como",
+  "nome": "SoloAffitti - Agenzia Como",
+  "indirizzo": "Via Cadorna, 5, 22100 - Como (CO)",
+  "telefoni": [
+   "031263180"
+  ],
+  "annunci": 3,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/soloaffitti-agenzia-como-tc-13694",
+  "punteggio": 3.3
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Ferrari Tower GmbH/Srl",
+  "indirizzo": "Via del Macello, 28, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "04711552600"
+  ],
+  "annunci": 2,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/ferrari-tower-gmbh-srl-bolzano-tc-95991",
+  "punteggio": 3.2
+ },
+ {
+  "citta": "trieste",
+  "nome": "Living Trieste Di Stefano Sedmak",
+  "indirizzo": "VIA SAN LAZZARO, 8, 34122 - Trieste (TS)",
+  "telefoni": [
+   "0402602987",
+   "3271421947"
+  ],
+  "annunci": 2,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/living-trieste-di-stefano-sedmak-tc-30592",
+  "punteggio": 3.2
+ },
+ {
+  "citta": "bolzano",
+  "nome": "Ing. Denata Zaloshnja",
+  "indirizzo": "Via Armando Diaz, 12, 39100 - Bolzano (BZ)",
+  "telefoni": [
+   "3480090308"
+  ],
+  "annunci": 1,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/ing-denata-zaloshnja-bolzano-tc-97072",
+  "punteggio": 3.1
+ },
+ {
+  "citta": "como",
+  "nome": "immobiliare Plinio",
+  "indirizzo": "via Ortelli, 01, 22100 - Como (CO)",
+  "telefoni": [
+   "031306955",
+   "3397445368"
+  ],
+  "annunci": 1,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-plinio-como-tc-15612",
+  "punteggio": 3.1
+ },
+ {
+  "citta": "como",
+  "nome": "italpadana immobiliare como srl",
+  "indirizzo": "viale Varese, 83, 22100 - Como (CO)",
+  "telefoni": [
+   "031271020",
+   "3477853704"
+  ],
+  "annunci": 1,
+  "tratta": [
+   "case"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/italpadana-immobiliare-como-srl-tc-53256",
+  "punteggio": 3.1
+ },
+ {
+  "citta": "trieste",
+  "nome": "MAVI SRL",
+  "indirizzo": ",  - Trieste (TS)",
+  "telefoni": [
+   "3391524615"
+  ],
+  "annunci": 5,
+  "tratta": [
+   "box-e-posti-auto"
+  ],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/mavi-srl-trieste-tc-94273",
+  "punteggio": 0.5
+ },
+ {
+  "citta": "como",
+  "nome": "GER srl",
+  "indirizzo": "Via Varesina, 96, 22100 - Como (CO)",
+  "telefoni": [
+   "3516774484"
+  ],
+  "annunci": 0,
+  "tratta": [],
+  "url": "https://www.trovacasa.it/agenzie-immobiliari/ger-srl-como-tc-95923",
+  "punteggio": 0.0
  }
 ]
