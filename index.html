@@ -376,14 +376,17 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
     <details class="gruppo">
       <summary>Le tue soglie</summary>
       <div class="campi">
-        <div class="campo"><label for="sCanone">Canone / lordo max (%)</label><input type="number" id="sCanone" value="25" step="0.5"></div>
+        <div class="campo"><label for="sCanone">Canone / lordo max, blocco piccolo (%)</label><input type="number" id="sCanone" value="25" step="0.5"></div>
+        <div class="campo"><label for="sCanoneMax">Tolleranza sui blocchi grandi (%)</label><input type="number" id="sCanoneMax" value="30" step="0.5"></div>
         <div class="campo"><label for="sUnita">Appartamenti minimi</label><input type="number" id="sUnita" value="3" step="1"></div>
+        <div class="campo"><label for="sUnitaPiena">Appartamenti per tolleranza piena</label><input type="number" id="sUnitaPiena" value="20" step="1"></div>
         <div class="campo"><label for="sMargine">Margine operativo min (%)</label><input type="number" id="sMargine" value="30" step="1"></div>
         <div class="campo"><label for="sUtileRic">Utile netto / lordo min (%)</label><input type="number" id="sUtileRic" value="25" step="0.5"></div>
         <div class="campo"><label for="sSicurezza">Margine di sicurezza min (%)</label><input type="number" id="sSicurezza" value="25" step="1"></div>
         <div class="campo"><label for="sPayback">Rientro capex max (mesi)</label><input type="number" id="sPayback" value="18" step="1"></div>
         <div class="campo campo--largo"><label for="sConc">Peso massimo del blocco sul fatturato (%)</label><input type="number" id="sConc" value="35" step="1"></div>
       </div>
+      <p class="notaCampo">La soglia sul canone si allarga con la dimensione del blocco: 25% fino a 3 appartamenti, 30% da 20 in su, in mezzo cresce in proporzione. Il motivo è che i costi fissi si spalmano su più unità. La soglia sull'utile invece <b>non</b> si muove: è quella che impedisce alla tolleranza di mangiarsi il deal.</p>
     </details>
   </form>
 
@@ -509,7 +512,8 @@ function leggi(){
     wifi:num('wifi'), tari:num('tari'), manutenzione:num('manutenzione'), altre:num('altre'), hub:num('hub'),
     capex:num('capex'), ramp:num('ramp'), occAvvio:num('occAvvio')/100, tasse:num('tasse')/100,
     portFatt:num('portFatt'), portUtile:num('portUtile'),
-    sCanone:num('sCanone')/100, sUnita:num('sUnita'), sMargine:num('sMargine')/100,
+    sCanone:num('sCanone')/100, sCanoneMax:num('sCanoneMax')/100,
+    sUnita:num('sUnita'), sUnitaPiena:num('sUnitaPiena'), sMargine:num('sMargine')/100,
     sUtileRic:num('sUtileRic')/100, sSicurezza:num('sSicurezza')/100, sPayback:num('sPayback'), sConc:num('sConc')/100
   };
 }
@@ -546,6 +550,12 @@ function calcola(i){
   r.canoneSuLordo = r.lordoTotale ? r.canoneAnno/r.lordoTotale : 1;
   r.utilePerUnita = i.unita ? r.utileNetto/i.unita : 0;
   r.utileSuLordo  = r.lordoTotale ? r.utileNetto/r.lordoTotale : 0;   /* specchio della regola sul canone */
+
+  /* La soglia sul canone si allarga con la scala: un blocco grande spalma i costi fissi
+     su più unità, quindi regge un canone più alto a parità di utile. Cresce in linea
+     retta fra il numero minimo di appartamenti e quello di "tolleranza piena". */
+  const passo = (i.sUnitaPiena > i.sUnita) ? (i.unita - i.sUnita)/(i.sUnitaPiena - i.sUnita) : 1;
+  r.sogliaCanone = i.sCanone + (i.sCanoneMax - i.sCanone)*Math.min(1, Math.max(0, passo));
   r.utilePerLetto = i.postiLetto ? r.utileNetto/i.postiLetto : 0;
 
   /* --- dove si rompe: il GOP è lineare nell'occupazione, GOP = occ*K - F --- */
@@ -562,7 +572,7 @@ function calcola(i){
 
   /* canone massimo sostenibile e canone che rispetta la soglia */
   r.canoneMaxPareggio = (r.canoneAnno + r.gop)/12;
-  r.canoneSoglia      = r.lordoTotale*i.sCanone/12;
+  r.canoneSoglia      = r.lordoTotale*r.sogliaCanone/12;
 
   /* --- la cassa mese per mese sull'intero primo periodo --- */
   const pesi = pesiCorrenti();
@@ -612,8 +622,8 @@ function pagella(i,r){
     return v>=buono ? 'ok' : (v>=medio ? 'warn' : 'ko');
   };
   c.push({liv:'Livello 1', ko:true, nome:'Canone sul fatturato lordo',
-    misura:pct(r.canoneSuLordo), soglia:'max '+pct(i.sCanone,0),
-    st: r.canoneSuLordo<=i.sCanone ? 'ok' : (r.canoneSuLordo<=i.sCanone+0.03 ? 'warn' : 'ko')});
+    misura:pct(r.canoneSuLordo), soglia:'max '+pct(r.sogliaCanone),
+    st: r.canoneSuLordo<=r.sogliaCanone ? 'ok' : (r.canoneSuLordo<=r.sogliaCanone+0.03 ? 'warn' : 'ko')});
   c.push({liv:'Livello 1', ko:true, nome:'Dimensione del blocco',
     misura:n0(i.unita)+' appt', soglia:'min '+n0(i.sUnita),
     st: i.unita>=i.sUnita ? 'ok' : 'ko'});
@@ -660,14 +670,14 @@ function mostra(){
   } else if(dubbi.length){
     msg = 'Passa i controlli che bloccano, ma <b>'+dubbi.length+'</b> voci restano sotto standard: '+dubbi.map(c=>c.nome.toLowerCase()).join(', ')+'. Il pareggio arriva al <b>'+pct(r.occBE)+'</b> di occupazione.';
   } else {
-    msg = 'Tutti i controlli passano. Di ogni 100 € lordi, <b>'+pct(r.canoneSuLordo,0)+'</b> vanno al proprietario e <b>'+pct(r.utileSuLordo,0)+'</b> restano a te. Il pareggio arriva al <b>'+pct(r.occBE)+'</b> di occupazione, contro il '+pct(i.occ)+' di target.';
+    msg = 'Tutti i controlli passano. Di ogni 100 € lordi, <b>'+pct(r.canoneSuLordo,0)+'</b> vanno al proprietario (la soglia per '+n0(i.unita)+' appartamenti è '+pct(r.sogliaCanone)+') e <b>'+pct(r.utileSuLordo,0)+'</b> restano a te. Il pareggio arriva al <b>'+pct(r.occBE)+'</b> di occupazione, contro il '+pct(i.occ)+' di target.';
   }
   $('motivo').innerHTML = msg;
 
   /* --- KPI --- */
   const cls=(v,b,m,basso=false)=> basso ? (v<=b?'ok':(v<=m?'warn':'ko')) : (v>=b?'ok':(v>=m?'warn':'ko'));
   const kpi=[
-    {lab:'Canone / lordo', val:pct(r.canoneSuLordo), note:'soglia '+pct(i.sCanone,0), st:cls(r.canoneSuLordo,i.sCanone,i.sCanone+0.03,true)},
+    {lab:'Canone / lordo', val:pct(r.canoneSuLordo), note:'soglia '+pct(r.sogliaCanone)+' · '+n0(i.unita)+' appt', st:cls(r.canoneSuLordo,r.sogliaCanone,r.sogliaCanone+0.03,true)},
     {lab:'Utile netto / lordo', val:pct(r.utileSuLordo), note:eur(r.utileNetto)+' su '+eur(r.lordoTotale)+' lordi', st:cls(r.utileSuLordo,i.sUtileRic,i.sUtileRic-0.07)},
     {lab:'Margine operativo', val:pct(r.margine), note:'ante imposte, su '+eur(r.ricaviNetti)+' netti IVA', st:cls(r.margine,i.sMargine,i.sMargine-0.10)},
     {lab:'Pareggio a', val:isFinite(r.occBE)?pct(r.occBE):'—', note:'oggi punti al '+pct(i.occ), st:cls(r.sicurezza,i.sSicurezza,i.sSicurezza*0.5)},
@@ -694,7 +704,7 @@ function mostra(){
     riga('Occupazione annua', pct(i.occ), isFinite(r.occBE)?pct(r.occBE):'irraggiungibile', isFinite(r.occBE)?((( (i.occ-r.occBE)*100 ).toLocaleString('it-IT',{maximumFractionDigits:1}))+' punti'):'—')+
     riga('Prezzo medio a notte', eur(i.adr), isFinite(r.adrBE)?eur(r.adrBE):'irraggiungibile', isFinite(r.adrBE)?('-'+pct((i.adr-r.adrBE)/i.adr)):'—')+
     riga('Canone mensile', eur(i.canone), eur(r.canoneMaxPareggio), eur(r.canoneMaxPareggio-i.canone))+
-    riga('Canone alla tua soglia del '+pct(i.sCanone,0), eur(i.canone), eur(r.canoneSoglia), eur(r.canoneSoglia-i.canone))+
+    riga('Canone alla soglia del '+pct(r.sogliaCanone)+' ('+n0(i.unita)+' appt)', eur(i.canone), eur(r.canoneSoglia), eur(r.canoneSoglia-i.canone))+
     riga('Margine per notte venduta', eur(r.contributoNotte), '—', n0(r.nottiVendute)+' notti/anno')+
     riga('Commissioni OTA', eur(r.commissioni), '—', '+'+eur(r.lordoCamera*i.ota*0.10*(1-i.tasse))+' ogni 10 pt di diretto')+
     '</tbody>';
@@ -892,7 +902,7 @@ $('copia').onclick = async ()=>{
     i.nome+' — '+i.citta+' · '+n0(i.unita)+' appartamenti, '+n0(i.postiLetto)+' posti letto',
     'Verdetto: '+$('esito').textContent.toUpperCase(),
     '',
-    'Canone            '+eur(i.canone)+'/mese  ('+pct(r.canoneSuLordo)+' del lordo, soglia '+pct(i.sCanone,0)+')',
+    'Canone            '+eur(i.canone)+'/mese  ('+pct(r.canoneSuLordo)+' del lordo, soglia '+pct(r.sogliaCanone)+' per '+n0(i.unita)+' appt)',
     'Fatturato lordo   '+eur(r.lordoTotale),
     'Ricavi netti IVA  '+eur(r.ricaviNetti),
     'Margine operativo '+eur(r.gop)+'  ('+pct(r.margine)+')',
