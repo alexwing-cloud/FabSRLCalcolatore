@@ -83,6 +83,7 @@ h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif; font-weight:600
 .top .sub{color:var(--text-soft); font-size:13px; max-width:62ch}
 .top .spacer{flex:1}
 .top .azioni{display:flex; flex-wrap:wrap; gap:8px}
+select.btn{font-size:13px; padding:6px 9px; max-width:220px}
 /* Su telefono le tre parti vanno in colonna: titolo, spiegazione, pulsanti.
    Senza questo lo spaziatore spinge i pulsanti accanto al titolo. */
 @media (max-width:700px){
@@ -134,6 +135,9 @@ details.gruppo>summary:hover{color:var(--text)}
 .campi{padding:2px 14px 14px; display:grid; grid-template-columns:1fr 1fr; gap:9px 10px}
 .campo{display:flex; flex-direction:column; gap:3px; min-width:0}
 .campo--largo{grid-column:1/-1}
+.campi--mesi{grid-template-columns:repeat(4,1fr); gap:7px 8px}
+.campi--mesi .campo input{padding:5px 6px; font-size:12.5px; text-align:right}
+.notaCampo{margin:0; padding:0 14px 12px; font-size:11px; color:var(--text-faint); line-height:1.45}
 .campo label{font-size:11px; color:var(--text-faint); letter-spacing:.02em}
 .campo input, .campo select{
   font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;
@@ -150,6 +154,15 @@ details.gruppo>summary:hover{color:var(--text)}
 .driver .nome{font-size:12px; color:var(--text-soft)}
 .driver .val{font-size:15px; font-weight:600}
 .driver input[type=range]{width:100%; accent-color:var(--accent); margin:2px 0 0}
+/* riferimento di mercato: dove cade l'ipotesi rispetto agli annunci di Trieste */
+.mercato{margin-top:7px}
+.mercato .barra{position:relative; height:5px; border-radius:99px; background:var(--surface-2); border:1px solid var(--line)}
+.mercato .barra span{position:absolute; top:-2px; width:1px; height:9px; background:var(--line-strong)}
+.mercato .barra .q1{left:21.3%} .mercato .barra .med{left:52%} .mercato .barra .q3{left:78.7%} .mercato .barra .top{left:98.7%}
+.mercato .barra .tu{position:absolute; top:-4px; width:3px; height:13px; border-radius:2px; background:var(--accent); transform:translateX(-1px)}
+.mercato .scala{display:flex; justify-content:space-between; gap:4px; margin-top:5px; font-size:9.5px; color:var(--text-faint); letter-spacing:.01em}
+.mercato .scala span:nth-child(2),.mercato .scala span:nth-child(3){text-align:center}
+.mercato .scala span:last-child{text-align:right}
 
 /* ---------- verdetto ---------- */
 .verdetto{padding:18px 22px; display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center; border-left:5px solid var(--line-strong)}
@@ -223,8 +236,16 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
   <div class="sub">Metti i numeri di un blocco in affitto con facoltà di sublocazione e leggi il verdetto. La regola che comanda tutto: <b>canone entro il 25% del fatturato lordo IVA compresa</b>.</div>
   <div class="spacer"></div>
   <div class="azioni">
-    <button class="btn" id="presetVenezian">Carica Venezian</button>
-    <button class="btn" id="presetMachiavelli">Carica Machiavelli</button>
+    <select class="btn" id="preset" aria-label="Carica una struttura esistente">
+      <option value="">Carica una struttura…</option>
+      <option value="muggia">Muggia · 3 appt</option>
+      <option value="venezian">Venezian · 4 appt</option>
+      <option value="machiavelli">Machiavelli · 26 appt</option>
+      <option value="serravalle">Le Residenze dei Serravalle · 9 appt</option>
+      <option value="piazzavenezia">Piazza Venezia · 11 appt</option>
+      <option value="artisti">Via Degli Artisti · 4 appt</option>
+      <option value="marziale">Via Marziale · 1 appt</option>
+    </select>
     <button class="btn" id="copia">Copia riepilogo</button>
     <button class="btn" id="tema">Tema</button>
   </div>
@@ -247,6 +268,11 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
     <div class="driver">
       <div class="riga"><span class="nome">Occupazione annua</span><span class="val mono" id="vOcc">—</span></div>
       <input type="range" id="rOcc" min="20" max="95" step="0.5">
+      <!-- Dove cade la tua ipotesi rispetto al mercato di Trieste -->
+      <div class="mercato" id="mercatoOcc">
+        <div class="barra"><span class="q1"></span><span class="med"></span><span class="q3"></span><span class="top"></span><b class="tu" id="tuOcc"></b></div>
+        <div class="scala"><span>36% ultimo quarto</span><span>59% mediana</span><span>79% top 25%</span><span>94% top 10%</span></div>
+      </div>
     </div>
 
     <details class="gruppo" open>
@@ -277,12 +303,13 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
         <div class="campo"><label for="adr">Prezzo medio a notte (€)</label><input type="number" id="adr" value="135" step="1"></div>
         <div class="campo"><label for="occ">Occupazione (%)</label><input type="number" id="occ" value="72" step="0.5"></div>
         <div class="campo"><label for="accessori">Accessori annui lordi (€)</label><input type="number" id="accessori" value="0" step="500"></div>
-        <div class="campo"><label for="stagione">Stagionalità</label>
+        <div class="campo"><label for="stagione">Profilo di stagionalità</label>
           <select id="stagione">
-            <option value="arte" selected>Città d'arte</option>
-            <option value="mare">Località balneare</option>
-            <option value="business">Città business</option>
+            <option value="stay" selected>Media STAY (reale)</option>
+            <option value="venezian">Trieste centro — Venezian (reale)</option>
+            <option value="muggia">Muggia (reale)</option>
             <option value="piatta">Uniforme</option>
+            <option value="custom">Personalizzato</option>
           </select>
         </div>
         <div class="campo"><label for="ivaCamera">IVA camera (%)</label><input type="number" id="ivaCamera" value="10" step="1"></div>
@@ -316,6 +343,12 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
     </details>
 
     <details class="gruppo">
+      <summary>Stagionalità, mese per mese</summary>
+      <div class="campi campi--mesi" id="mesi"></div>
+      <p class="notaCampo">1,00 = mese nella media. I profili Venezian e Muggia vengono dai tuoi incassi 2026. Modifica un valore e il profilo diventa "personalizzato".</p>
+    </details>
+
+    <details class="gruppo">
       <summary>Investimento e avvio</summary>
       <div class="campi">
         <div class="campo"><label for="capex">Capex iniziale (€)</label><input type="number" id="capex" value="25000" step="1000"></div>
@@ -328,9 +361,10 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
     <details class="gruppo">
       <summary>Portafoglio attuale</summary>
       <div class="campi">
-        <div class="campo"><label for="portFatt">Fatturato lordo (€/anno)</label><input type="number" id="portFatt" value="1487500" step="10000"></div>
-        <div class="campo"><label for="portUtile">Utile netto (€/anno)</label><input type="number" id="portUtile" value="273708" step="1000"></div>
+        <div class="campo"><label for="portFatt">Fatturato lordo (€/anno)</label><input type="number" id="portFatt" value="2724800" step="10000"></div>
+        <div class="campo"><label for="portUtile">Utile netto (€/anno)</label><input type="number" id="portUtile" value="496274" step="1000"></div>
       </div>
+      <p class="notaCampo">Somma delle sette strutture a regime: Machiavelli, Venezian, Muggia, Serravalle, Piazza Venezia, Via Degli Artisti, Via Marziale. Sono piani, non consuntivi.</p>
     </details>
 
     <details class="gruppo">
@@ -339,7 +373,7 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
         <div class="campo"><label for="sCanone">Canone / lordo max (%)</label><input type="number" id="sCanone" value="25" step="0.5"></div>
         <div class="campo"><label for="sUnita">Appartamenti minimi</label><input type="number" id="sUnita" value="3" step="1"></div>
         <div class="campo"><label for="sMargine">Margine operativo min (%)</label><input type="number" id="sMargine" value="30" step="1"></div>
-        <div class="campo"><label for="sUtile">Utile netto min (€/anno)</label><input type="number" id="sUtile" value="25000" step="1000"></div>
+        <div class="campo"><label for="sUtileRic">Utile netto / lordo min (%)</label><input type="number" id="sUtileRic" value="25" step="0.5"></div>
         <div class="campo"><label for="sSicurezza">Margine di sicurezza min (%)</label><input type="number" id="sSicurezza" value="25" step="1"></div>
         <div class="campo"><label for="sPayback">Rientro capex max (mesi)</label><input type="number" id="sPayback" value="18" step="1"></div>
         <div class="campo campo--largo"><label for="sConc">Peso massimo del blocco sul fatturato (%)</label><input type="number" id="sConc" value="35" step="1"></div>
@@ -406,7 +440,9 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
 </div>
 
 <footer class="note">
-  I preset Venezian e Machiavelli sono ricostruzioni dai conti economici del file <span class="mono">STAY_Host_Hub_OKR</span>: il prezzo a notte è quello implicito nei ricavi dichiarati. Il modello assume che pulizie e lavanderia siano erogate internamente e valorizzate a costo industriale.
+  <b>Da dove vengono i numeri.</b> Le sette strutture sono ricostruite dai conti economici per struttura del file <span class="mono">STAY_Host_Hub_OKR</span>: restano fermi gli appartamenti e i giorni venduti dichiarati, il prezzo a notte è quello che riconcilia il fatturato. I profili di stagionalità Venezian e Muggia escono dagli incassi mensili 2026 del <span class="mono">Cashflow</span>. I posti letto sono stimati a 2,6 per appartamento dove il foglio non li dichiara (Machiavelli li dichiara: 130).<br><br>
+  <b>Il riferimento di mercato.</b> La scala sotto il cursore dell'occupazione viene dagli annunci Airbnb di Trieste — 1.369 annunci nel periodo agosto 2025 – luglio 2026: mediana 59%, top 25% 79%, top 10% 94%, ultimo quarto 36%, prezzo medio 118 €. È un metro di paragone su annunci in gran parte non professionali, non un obiettivo: le tue strutture girano fra il 78% e il 90%. Per Muggia non esistono dati pubblici disaggregati, e il profilo Muggia del cruscotto resta la fonte migliore che hai.<br><br>
+  <b>Cosa manca di proposito.</b> Il foglio ha un secondo scenario di Via degli Artisti — quattro mansarde a provvigione, senza canone di locazione: è il modello property management che stai lasciando, e questo cruscotto non sa rappresentarlo (senza canone la regola del 25% non ha senso). "Muggia (2)" è un duplicato identico di "Muggia". I conti delle strutture sono piani a regime, non consuntivi.
 </footer>
 
 <script>
@@ -425,16 +461,31 @@ const eur1 = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{style:'currency'
 const pct  = (n,d=1) => (isFinite(n) ? n*100 : 0).toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
 const n0   = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{maximumFractionDigits:0,useGrouping:'always'});
 
-/* Profili di stagionalità: 12 pesi che vengono normalizzati a media 1 */
+/* Profili di stagionalità.
+   Venezian e Muggia NON sono inventati: escono dagli incassi mensili 2026 del tuo
+   cash flow, divisi per la media dell'anno. 1,00 = mese nella media.
+   Le due curve sono diverse sul serio — Muggia fa 1,93 ad agosto contro lo 0,53
+   di febbraio, Venezian sta fra 1,42 e 0,48: sono due mercati, non uno. */
+const MESI = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
 const STAGIONI = {
-  arte:     [.55,.60,.85,1.20,1.30,1.15,1.00,0.95,1.25,1.20,.60,.55],
-  mare:     [.25,.25,.45,.80,1.15,1.55,1.90,1.95,1.15,.60,.25,.25],
-  business: [.85,1.05,1.15,1.05,1.15,1.00,.55,.40,1.20,1.20,1.00,.70],
+  venezian: [0.638,0.483,0.688,0.982,1.353,1.086,1.326,1.418,1.113,1.174,0.872,0.869],
+  muggia:   [0.644,0.533,0.589,0.841,1.155,0.952,1.541,1.926,1.210,1.056,0.726,0.825],
+  stay:     [0.639,0.496,0.663,0.946,1.302,1.051,1.381,1.548,1.138,1.143,0.834,0.858],
   piatta:   [1,1,1,1,1,1,1,1,1,1,1,1]
 };
-function pesiStagione(chiave){
-  const g = STAGIONI[chiave] || STAGIONI.piatta;
-  const media = g.reduce((a,b)=>a+b,0)/12;
+/* I dodici campi sono la fonte di verità: il menu li riempie, tu li puoi correggere */
+function costruisciMesi(){
+  $('mesi').innerHTML = MESI.map((m,k)=>
+    '<div class="campo"><label for="m'+k+'">'+m+'</label>'+
+    '<input type="number" id="m'+k+'" step="0.01" min="0" value="'+STAGIONI.stay[k]+'"></div>').join('');
+}
+function applicaProfilo(chiave){
+  const g = STAGIONI[chiave]; if(!g) return;
+  g.forEach((v,k)=> $('m'+k).value = v);
+}
+function pesiCorrenti(){
+  const g = MESI.map((_,k)=> Math.max(0, num('m'+k)));
+  const media = g.reduce((a,b)=>a+b,0)/12 || 1;
   return g.map(x=>x/media);      /* media 1: la stagionalità sposta, non gonfia */
 }
 
@@ -453,7 +504,7 @@ function leggi(){
     capex:num('capex'), ramp:num('ramp'), occAvvio:num('occAvvio')/100, tasse:num('tasse')/100,
     portFatt:num('portFatt'), portUtile:num('portUtile'),
     sCanone:num('sCanone')/100, sUnita:num('sUnita'), sMargine:num('sMargine')/100,
-    sUtile:num('sUtile'), sSicurezza:num('sSicurezza')/100, sPayback:num('sPayback'), sConc:num('sConc')/100
+    sUtileRic:num('sUtileRic')/100, sSicurezza:num('sSicurezza')/100, sPayback:num('sPayback'), sConc:num('sConc')/100
   };
 }
 
@@ -488,6 +539,7 @@ function calcola(i){
   r.margine    = r.ricaviNetti ? r.gop/r.ricaviNetti : 0;
   r.canoneSuLordo = r.lordoTotale ? r.canoneAnno/r.lordoTotale : 1;
   r.utilePerUnita = i.unita ? r.utileNetto/i.unita : 0;
+  r.utileSuLordo  = r.lordoTotale ? r.utileNetto/r.lordoTotale : 0;   /* specchio della regola sul canone */
   r.utilePerLetto = i.postiLetto ? r.utileNetto/i.postiLetto : 0;
 
   /* --- dove si rompe: il GOP è lineare nell'occupazione, GOP = occ*K - F --- */
@@ -507,7 +559,7 @@ function calcola(i){
   r.canoneSoglia      = r.lordoTotale*i.sCanone/12;
 
   /* --- la cassa mese per mese sull'intero primo periodo --- */
-  const pesi = pesiStagione(i.stagione);
+  const pesi = pesiCorrenti();
   const mesi = Math.round(i.durata*12);
   const serie = [];
   let cassa = -(i.capex + i.cauzione*i.canone);   /* mese 0: esci di tasca */
@@ -562,9 +614,9 @@ function pagella(i,r){
   c.push({liv:'Livello 2', nome:'Margine operativo sui ricavi',
     misura:pct(r.margine), soglia:'min '+pct(i.sMargine,0),
     st: stato(r.margine, i.sMargine, i.sMargine-0.10)});
-  c.push({liv:'Livello 2', nome:'Utile netto annuo',
-    misura:eur(r.utileNetto), soglia:'min '+eur(i.sUtile),
-    st: stato(r.utileNetto, i.sUtile, i.sUtile*0.6)});
+  c.push({liv:'Livello 2', ko:true, nome:'Utile netto sul fatturato lordo',
+    misura:pct(r.utileSuLordo), soglia:'min '+pct(i.sUtileRic,0),
+    st: stato(r.utileSuLordo, i.sUtileRic, i.sUtileRic-0.07)});
   c.push({liv:'Livello 3', ko:true, nome:'Margine di sicurezza sull’occupazione',
     misura: isFinite(r.occBE) ? pct(r.sicurezza) : 'mai in utile', soglia:'min '+pct(i.sSicurezza,0),
     st: stato(r.sicurezza, i.sSicurezza, i.sSicurezza*0.5)});
@@ -587,6 +639,7 @@ function mostra(){
   $('vCanone').textContent=eur(i.canone)+'/mese';
   $('vAdr').textContent=eur(i.adr);
   $('vOcc').textContent=pct(i.occ,1);
+  $('tuOcc').style.left = Math.max(0,Math.min(100,(i.occ*100-20)/75*100)).toFixed(1)+'%';
 
   /* --- verdetto --- */
   const bocciato = checks.some(c=>c.ko && c.st==='ko');
@@ -601,7 +654,7 @@ function mostra(){
   } else if(dubbi.length){
     msg = 'Passa i controlli che bloccano, ma <b>'+dubbi.length+'</b> voci restano sotto standard: '+dubbi.map(c=>c.nome.toLowerCase()).join(', ')+'. Il pareggio arriva al <b>'+pct(r.occBE)+'</b> di occupazione.';
   } else {
-    msg = 'Tutti i controlli passano. Il blocco lascia <b>'+eur(r.utileNetto)+'</b> netti l’anno e va in pareggio al <b>'+pct(r.occBE)+'</b> di occupazione, contro il '+pct(i.occ)+' di target.';
+    msg = 'Tutti i controlli passano. Di ogni 100 € lordi, <b>'+pct(r.canoneSuLordo,0)+'</b> vanno al proprietario e <b>'+pct(r.utileSuLordo,0)+'</b> restano a te. Il pareggio arriva al <b>'+pct(r.occBE)+'</b> di occupazione, contro il '+pct(i.occ)+' di target.';
   }
   $('motivo').innerHTML = msg;
 
@@ -609,7 +662,7 @@ function mostra(){
   const cls=(v,b,m,basso=false)=> basso ? (v<=b?'ok':(v<=m?'warn':'ko')) : (v>=b?'ok':(v>=m?'warn':'ko'));
   const kpi=[
     {lab:'Canone / lordo', val:pct(r.canoneSuLordo), note:'soglia '+pct(i.sCanone,0), st:cls(r.canoneSuLordo,i.sCanone,i.sCanone+0.03,true)},
-    {lab:'Utile netto annuo', val:eur(r.utileNetto), note:eur(r.utilePerUnita)+' per appartamento', st:cls(r.utileNetto,i.sUtile,i.sUtile*0.6)},
+    {lab:'Utile netto / lordo', val:pct(r.utileSuLordo), note:eur(r.utileNetto)+' · soglia '+pct(i.sUtileRic,0), st:cls(r.utileSuLordo,i.sUtileRic,i.sUtileRic-0.07)},
     {lab:'Margine operativo', val:pct(r.margine), note:'su '+eur(r.ricaviNetti)+' netti', st:cls(r.margine,i.sMargine,i.sMargine-0.10)},
     {lab:'Pareggio a', val:isFinite(r.occBE)?pct(r.occBE):'—', note:'oggi punti al '+pct(i.occ), st:cls(r.sicurezza,i.sSicurezza,i.sSicurezza*0.5)},
     {lab:'Cassa da mettere', val:eur(-r.maxAssorbito), note:'picco al mese '+n0(r.meseMaxAssorbito), st:'', },
@@ -733,7 +786,8 @@ function sensibilita(i,r){
     adri.forEach(a=>{
       const alt=Object.assign({},i,{occ:o,adr:a});
       const u=calcolaVeloce(alt,r);
-      const forte = u>=i.sUtile, medio = u>0;
+      const lordo=a*alt.unita*365*o + i.accessori;
+      const forte = lordo>0 && u/lordo >= i.sUtileRic, medio = u>0;
       const bg = forte?'var(--ok-bg)':(medio?'var(--warn-bg)':'var(--ko-bg)');
       const fg = forte?'var(--ok)':(medio?'var(--warn)':'var(--ko)');
       const qui = (Math.abs(o-i.occ)<1e-9 && Math.abs(a-i.adr)<1e-9) ? ' qui':'';
@@ -753,22 +807,60 @@ function calcolaVeloce(i,base){
 }
 
 /* ------------------------------------------------------------- i preset */
+/* Ricostruzioni dai fogli per-struttura di STAY_Host_Hub_OKR.
+   Regola applicata a tutte: restano fermi il numero di appartamenti e i giorni
+   venduti dichiarati nel foglio; il prezzo a notte è quello che riconcilia il
+   fatturato dichiarato. I costi sono le voci che entrano nel TOTALE COSTI. */
 const PRESET={
+  muggia:{nome:'Muggia',citta:'Muggia',unita:3,postiLetto:8,soggiorno:2.2,canone:2650,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:157.2,occ:78.08,accessori:0,ivaCamera:10,ivaAcc:22,
+    ota:17.89,otaQuota:100,pulizia:21.9,lavanderia:11.6,consumabili:2.53,utenze:417.7,personale:0,
+    assicurazione:800,wifi:410,tari:500,manutenzione:0,altre:700,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:27.9,stagione:'muggia'},
   venezian:{nome:'Venezian',citta:'Trieste',unita:4,postiLetto:10,soggiorno:2.2,canone:12833,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:274,occ:89.9,accessori:21600,ivaCamera:10,ivaAcc:10,ota:17.8,otaQuota:100,
-    pulizia:32.7,lavanderia:14.2,consumabili:5,utenze:1639,personale:0,assicurazione:2000,wifi:600,
-    tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,stagione:'arte'},
+    freeRent:0,cauzione:3,istat:2,adr:274.3,occ:89.86,accessori:21600,ivaCamera:10,ivaAcc:10,
+    ota:17.8,otaQuota:100,pulizia:32.7,lavanderia:14.2,consumabili:5,utenze:1639,personale:0,
+    assicurazione:2000,wifi:600,tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:27.9,stagione:'venezian'},
   machiavelli:{nome:'Machiavelli',citta:'Trieste',unita:26,postiLetto:130,soggiorno:2.2,canone:26000,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:135,occ:79.5,accessori:88000,ivaCamera:10,ivaAcc:0,ota:19.5,otaQuota:90,
-    pulizia:20.4,lavanderia:8.9,consumabili:2.9,utenze:2560,personale:61200,assicurazione:2500,wifi:1500,
-    tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,stagione:'arte'}
+    freeRent:0,cauzione:3,istat:2,adr:135,occ:79.45,accessori:88000,ivaCamera:10,ivaAcc:0,
+    ota:19.5,otaQuota:90,pulizia:20.4,lavanderia:8.9,consumabili:2.9,utenze:2560,personale:61200,
+    assicurazione:2500,wifi:1500,tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:27.9,stagione:'venezian'},
+  serravalle:{nome:'Le Residenze dei Serravalle',citta:'Barcola',unita:9,postiLetto:23,soggiorno:2.2,canone:6666.67,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:133.3,occ:82.19,accessori:18000,ivaCamera:10,ivaAcc:10,
+    ota:20,otaQuota:90,pulizia:15.89,lavanderia:12.22,consumabili:4.89,utenze:2000,personale:0,
+    assicurazione:2000,wifi:1800,tari:9000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:27.9,stagione:'stay'},
+  piazzavenezia:{nome:'Piazza Venezia',citta:'Trieste',unita:11,postiLetto:29,soggiorno:2.2,canone:11666.67,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:112,occ:82.19,accessori:0,ivaCamera:10,ivaAcc:22,
+    ota:20,otaQuota:90,pulizia:18.19,lavanderia:7.51,consumabili:3.01,utenze:0,personale:0,
+    assicurazione:1200,wifi:600,tari:8300,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:27.9,stagione:'venezian'},
+  artisti:{nome:'Via Degli Artisti',citta:'Trieste',unita:4,postiLetto:10,soggiorno:2.2,canone:8333.33,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:239.1,occ:82.19,accessori:18000,ivaCamera:10,ivaAcc:10,
+    ota:20,otaQuota:90,pulizia:32.76,lavanderia:22,consumabili:11,utenze:2000,personale:0,
+    assicurazione:2000,wifi:1800,tari:9000,manutenzione:0,altre:0,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:27.9,stagione:'venezian'},
+  /* Via Marziale è l'unica in cedolare secca al 23% e senza scorporo IVA: il foglio
+     ragiona sull'incasso lordo. Riprodotto mettendo IVA camera a 0. */
+  marziale:{nome:'Via Marziale',citta:'Trieste',unita:1,postiLetto:3,soggiorno:2.2,canone:1750,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:161.3,occ:84.93,accessori:0,ivaCamera:0,ivaAcc:22,
+    ota:23,otaQuota:100,pulizia:0,lavanderia:0,consumabili:2.2,utenze:200,personale:0,
+    assicurazione:0,wifi:300,tari:300,manutenzione:0,altre:0,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:23,stagione:'venezian'}
 };
 function carica(p){
-  Object.entries(PRESET[p]).forEach(([k,v])=>{ if($(k)) $(k).value=v; });
+  const d=PRESET[p]; if(!d) return;
+  Object.entries(d).forEach(([k,v])=>{ if($(k)) $(k).value=v; });
+  applicaProfilo(d.stagione);      /* il profilo mensile segue la struttura */
   mostra();
 }
 
 /* ------------------------------------------------------- collegamenti UI */
+costruisciMesi();          /* i dodici campi vanno creati prima del primo calcolo */
+applicaProfilo('stay');
+
 $('form').addEventListener('input', e=>{
   /* i cursori scrivono nei campi numerici, non hanno uno stato proprio */
   if(e.target.id==='rCanone') $('canone').value=e.target.value;
@@ -776,8 +868,12 @@ $('form').addEventListener('input', e=>{
   if(e.target.id==='rOcc')    $('occ').value=e.target.value;
   mostra();
 });
-$('presetVenezian').onclick    = ()=>carica('venezian');
-$('presetMachiavelli').onclick = ()=>carica('machiavelli');
+$('preset').onchange = e => { if(e.target.value) carica(e.target.value); };
+$('stagione').onchange = e => {
+  if(e.target.value!=='custom'){ applicaProfilo(e.target.value); mostra(); }
+};
+/* toccare un mese qualsiasi porta il profilo su "personalizzato" */
+$('mesi').addEventListener('input', ()=>{ $('stagione').value='custom'; });
 $('tema').onclick = ()=>{
   const ora = document.documentElement.getAttribute('data-theme');
   const scuro = ora ? ora==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
@@ -794,7 +890,7 @@ $('copia').onclick = async ()=>{
     'Fatturato lordo   '+eur(r.lordoTotale),
     'Ricavi netti IVA  '+eur(r.ricaviNetti),
     'Margine operativo '+eur(r.gop)+'  ('+pct(r.margine)+')',
-    'Utile netto       '+eur(r.utileNetto)+'  ('+eur(r.utilePerUnita)+' per appartamento)',
+    'Utile netto       '+eur(r.utileNetto)+'  ('+pct(r.utileSuLordo)+' del lordo, soglia '+pct(i.sUtileRic,0)+')',
     'Pareggio          '+pct(r.occBE)+' di occupazione · prezzo minimo '+eur(r.adrBE),
     'Sicurezza         '+pct(r.sicurezza),
     'Cassa da mettere  '+eur(-r.maxAssorbito)+' · rientro '+(r.payback>0?r.payback+' mesi':'oltre contratto'),

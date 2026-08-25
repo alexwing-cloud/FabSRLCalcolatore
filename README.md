@@ -75,3 +75,14 @@ git add . && git commit -m "cosa ho cambiato" && git push
 - Non gestisce blocchi con tipologie miste a canoni diversi: il canone è unico.
 - La stagionalità usa profili standard, non lo storico reale delle tue strutture.
 - Non confronta due deal affiancati.
+
+## Da dove vengono i dati
+
+- **Conti economici per struttura** — i fogli per struttura di `STAY_Host_Hub_OKR`.
+  Il cruscotto li riproduce entro lo 0,4%.
+- **Stagionalità** — gli incassi mensili 2026 di Muggia e Venezian nel `Cashflow`,
+  divisi per la media dell'anno. Le due curve sono diverse sul serio: Muggia fa
+  1,93 ad agosto contro 0,53 a febbraio, Venezian sta fra 1,42 e 0,48.
+- **Riferimento di mercato Trieste** — 1.369 annunci Airbnb, agosto 2025 – luglio 2026:
+  occupazione mediana 59%, top 25% 79%, top 10% 94%, prezzo medio 118 €.
+  Fonte: guestfavorites.com. Serve da metro di paragone, non da obiettivo.
