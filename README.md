@@ -120,3 +120,45 @@ I dati vengono tutti dalla stessa fonte e dallo stesso periodo. Mescolare metodo
 diverse rovescia le conclusioni: InsideAirbnb stima l'occupazione dalle recensioni e
 per Bergamo città dà il 19,7% dove un'altra fonte dà il 67%. Non sono numeri
 confrontabili, e usarli insieme avrebbe fatto scartare un mercato buono.
+
+## La ricerca degli annunci
+
+`dati/annunci.py` cerca immobili in locazione su tutto il territorio, tiene solo quelli
+da tre locali in su e li confronta col canone massimo sostenibile della loro città.
+
+```bash
+cd dati && python3 annunci.py --pagine 3
+```
+
+Senza argomenti guarda le città che reggono il confronto con Trieste (`vs25 >= -4%`).
+Con `--citta bolzano verona trieste` si restringe.
+
+### Da dove arrivano gli annunci
+
+`immobiliare.it`, `casa.it`, `idealista.it`, `wikicasa.it` e `attico.it` rispondono
+**403 con CAPTCHA** a qualsiasi richiesta automatica: sono fuori, e non vanno riprovati.
+La fonte usata è **trovacasa.it**, che consente l'accesso alle pagine di elenco
+(il suo robots.txt vieta solo `/membership/`, `/my/`, `*?idtags=` e `*/similarpartial/*`).
+Rispondono anche `mioaffitto.it`, `tecnocasa.it` e `gabetti.it`: sono i prossimi da aggiungere.
+
+### I controlli di plausibilità, e perché servono
+
+L'elenco grezzo non è pulito: mescola camere singole, posti letto, affitti turistici a
+canone mensile e qualche annuncio di vendita con la descrizione riciclata. Senza filtri
+il vaglio promuove un cinque locali a 350 € — che non è un immobile intero.
+
+Quindi si scarta ciò che ha meno di 40 m², chi supera i 45 €/mq, chi parla di vendita
+nella descrizione, e chi sta **sotto metà della mediana della sua stessa città**.
+
+Quest'ultima soglia è relativa e non fissa per un motivo preciso: 6 €/mq è caro a Cuneo
+e regalato a Bolzano. E la mediana va calcolata solo sugli annunci già plausibili — a
+Trieste l'elenco contiene affitti turistici a 5.000 € per 50 m², cioè 100 €/mq, che da
+soli portavano la mediana cittadina a 34 €/mq e facevano scartare tutti gli affitti veri
+da 8-12 €/mq.
+
+### Cosa NON è
+
+Una prima scrematura, non una valutazione. Serve a buttare via il 95% degli annunci.
+Il canone sostenibile qui è stimato come `camere × canone massimo della città`, dove le
+camere sono i locali meno uno. Quelli che sopravvivono si valutano uno per uno nel
+Vaglio Deal, con i numeri veri dell'immobile.
