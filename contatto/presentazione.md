@@ -112,11 +112,27 @@ definiamo insieme ai commercialisti — inventario, contratti in essere, persona
 autorizzazioni — con **Federico Conforti** a seguire la parte legale ed economica e
 il supporto del nostro studio esterno.
 
+
+## Perché vi stiamo scrivendo
+
+Abbiamo costruito qualcosa che funziona in una città. Adesso vogliamo crescere fuori da
+lì, e **da soli non ci arriviamo**.
+
+Quello che cerchiamo non passa dai portali. Abbiamo passato settimane a spulciarli:
+palazzine intere, stabili, strutture ricettive da rilevare — **lì dentro non ci sono**.
+Le vedete voi, prima che diventino un annuncio, e spesso un annuncio non lo diventano mai.
+
+Per questo vi chiediamo una mano. Se vi passa fra le mani qualcosa di simile — anche un
+immobile che fate fatica a collocare perché è grande, ha troppi locali o sta in uno
+stabile misto — pensateci a noi. Sono spesso proprio quelli che a noi servono.
+
+Cerchiamo **pochi partner e duraturi**, non un giro di contatti. Un'agenzia che ci segnala
+l'immobile giusto una volta l'anno vale più di dieci che ci mandano tutto.
+
 ---
 
 ## Note d'uso
 
-- **Il cognome di Gabriele** manca: va aggiunto nella tabella della squadra.
 - **Una referenza verificabile** — un proprietario che possa confermare, o una
   struttura citabile per nome — vale più di qualsiasi aggettivo in questo documento.
   Quando ne hai una, si aggiunge in fondo alla mezza pagina.
