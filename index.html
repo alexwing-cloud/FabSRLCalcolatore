@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vaglio Deal FAB</title>
+<meta name="description" content="Cruscotto decisionale per l'acquisizione di blocchi di appartamenti in rent-to-rent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ============================================================================
+   VAGLIO DEAL FAB — foglio di stile
+   ----------------------------------------------------------------------------
+   I colori NON sono scritti dentro i componenti: stanno tutti qui sotto come
+   "token" (variabili CSS). I componenti leggono i token. Così cambiando tre
+   righe qui cambia tutta la pagina, e il tema scuro funziona da solo.
+   ========================================================================== */
+
+/* --- TEMA CHIARO: qui vive la palette completa ---------------------------- */
+:root{
+  --ground:      #FAFBFC;   /* fondo pagina */
+  --surface:     #FFFFFF;   /* schede */
+  --surface-2:   #F1F4F7;   /* fondi secondari, input */
+  --line:        #DCE3EA;   /* bordi: grigio con vena blu, non neutro puro */
+  --line-strong: #B9C6D2;
+  --text:        #131A21;   /* quasi-nero bluastro */
+  --text-soft:   #56646F;   /* testo secondario */
+  --text-faint:  #8794A0;   /* etichette */
+  --accent:      #17466B;   /* blu Adriatico: l'unico colore "di marca" */
+  --accent-soft: #E3ECF3;
+  --ok:          #2F7D53;   /* semantici: separati dall'accento, per stato */
+  --ok-bg:       #E4F1E9;
+  --warn:        #A9711A;
+  --warn-bg:     #FAEFDB;
+  --ko:          #AF4136;
+  --ko-bg:       #F9E4E1;
+  --shadow:      0 1px 2px rgba(19,26,33,.05), 0 8px 24px -16px rgba(19,26,33,.25);
+  --radius: 10px;
+}
+/* --- TEMA SCURO di sistema (nessun data-theme impostato) ------------------- */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E141A; --surface:#151D25; --surface-2:#1D2831; --line:#2A3742;
+    --line-strong:#3D4D5A; --text:#E6ECF1; --text-soft:#9FB0BD; --text-faint:#75899A;
+    --accent:#7CB4DC; --accent-soft:#1B2C3B;
+    --ok:#63B98A; --ok-bg:#16301F; --warn:#D9A648; --warn-bg:#33270F;
+    --ko:#E0776B; --ko-bg:#361B18;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+/* --- TEMA SCURO scelto esplicitamente ------------------------------------- */
+:root[data-theme="dark"]{
+  --ground:#0E141A; --surface:#151D25; --surface-2:#1D2831; --line:#2A3742;
+  --line-strong:#3D4D5A; --text:#E6ECF1; --text-soft:#9FB0BD; --text-faint:#75899A;
+  --accent:#7CB4DC; --accent-soft:#1B2C3B;
+  --ok:#63B98A; --ok-bg:#16301F; --warn:#D9A648; --warn-bg:#33270F;
+  --ko:#E0776B; --ko-bg:#361B18;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);           /* esplicito: senza questo la pagina è trasparente */
+  color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+  font-size:15px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif; font-weight:600; text-wrap:balance; margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+
+/* ---------- intestazione ---------- */
+.top{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:12px 20px;
+  padding:20px clamp(16px,4vw,36px);
+  border-bottom:1px solid var(--line); background:var(--surface);
+}
+.top h1{font-size:24px; letter-spacing:-.01em}
+.top .sub{color:var(--text-soft); font-size:13px; max-width:62ch}
+.top .spacer{flex:1}
+.eyebrow{
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--text-faint); font-weight:600;
+}
+button{font:inherit; cursor:pointer}
+.btn{
+  background:var(--surface-2); color:var(--text); border:1px solid var(--line);
+  border-radius:7px; padding:6px 11px; font-size:13px; transition:border-color .15s, background .15s;
+}
+.btn:hover{border-color:var(--line-strong); background:var(--surface)}
+.btn--accent{background:var(--accent); color:var(--surface); border-color:var(--accent)}
+.btn--accent:hover{background:var(--accent); opacity:.9; color:var(--surface)}
+
+/* ---------- impianto a due colonne ---------- */
+.wrap{
+  display:grid; grid-template-columns:minmax(300px,380px) 1fr; gap:clamp(16px,2vw,28px);
+  align-items:start; padding:clamp(16px,3vw,28px) clamp(16px,4vw,36px) 64px;
+  max-width:1560px; margin:0 auto;
+}
+@media (max-width:960px){ .wrap{grid-template-columns:1fr} .panel{order:2} .esiti{order:1} }
+
+.card{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.panel{display:flex; flex-direction:column; gap:12px; position:sticky; top:16px}
+@media (max-width:960px){ .panel{position:static} }
+.esiti{display:flex; flex-direction:column; gap:16px; min-width:0}
+
+/* ---------- gruppi di input ---------- */
+details.gruppo{border-bottom:1px solid var(--line)}
+details.gruppo:last-of-type{border-bottom:0}
+details.gruppo>summary{
+  list-style:none; cursor:pointer; padding:11px 14px;
+  font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--text-soft); display:flex; justify-content:space-between; align-items:center;
+}
+details.gruppo>summary::-webkit-details-marker{display:none}
+details.gruppo>summary::after{content:"+"; color:var(--text-faint); font-size:15px}
+details.gruppo[open]>summary::after{content:"–"}
+details.gruppo>summary:hover{color:var(--text)}
+.campi{padding:2px 14px 14px; display:grid; grid-template-columns:1fr 1fr; gap:9px 10px}
+.campo{display:flex; flex-direction:column; gap:3px; min-width:0}
+.campo--largo{grid-column:1/-1}
+.campo label{font-size:11px; color:var(--text-faint); letter-spacing:.02em}
+.campo input, .campo select{
+  font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;
+  font-size:13.5px; padding:6px 8px; width:100%;
+  background:var(--surface-2); color:var(--text);
+  border:1px solid var(--line); border-radius:6px;
+}
+.campo input[type=text]{font-family:"IBM Plex Sans",sans-serif}
+.campo input:hover, .campo select:hover{border-color:var(--line-strong)}
+
+/* ---------- cursori dei tre driver principali ---------- */
+.driver{padding:12px 14px; display:flex; flex-direction:column; gap:4px; border-bottom:1px solid var(--line)}
+.driver .riga{display:flex; justify-content:space-between; align-items:baseline; gap:8px}
+.driver .nome{font-size:12px; color:var(--text-soft)}
+.driver .val{font-size:15px; font-weight:600}
+.driver input[type=range]{width:100%; accent-color:var(--accent); margin:2px 0 0}
+
+/* ---------- verdetto ---------- */
+.verdetto{padding:18px 22px; display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center; border-left:5px solid var(--line-strong)}
+.verdetto.go{border-left-color:var(--ok); background:var(--ok-bg)}
+.verdetto.cond{border-left-color:var(--warn); background:var(--warn-bg)}
+.verdetto.no{border-left-color:var(--ko); background:var(--ko-bg)}
+.verdetto .esito{font-family:Newsreader,serif; font-size:34px; line-height:1.05; letter-spacing:-.02em}
+.verdetto.go .esito{color:var(--ok)} .verdetto.cond .esito{color:var(--warn)} .verdetto.no .esito{color:var(--ko)}
+.verdetto .motivo{font-size:13.5px; color:var(--text-soft); max-width:56ch; flex:1; min-width:220px}
+.verdetto .motivo b{color:var(--text)}
+
+/* ---------- griglia KPI ---------- */
+/* 8 KPI: due colonne in stretto, quattro in largo. Griglie "auto-fit" lascerebbero
+   celle orfane con il fondo della griglia a vista. */
+.kpi-griglia{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border-radius:var(--radius); overflow:hidden}
+@media (min-width:1180px){ .kpi-griglia{grid-template-columns:repeat(4,1fr)} }
+@media (max-width:420px){ .kpi-griglia{grid-template-columns:1fr} }
+.kpi{background:var(--surface); padding:13px 15px; display:flex; flex-direction:column; gap:3px}
+.kpi .k-lab{font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--text-faint); font-weight:600}
+.kpi .k-val{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:21px; font-weight:500; letter-spacing:-.02em}
+.kpi .k-note{font-size:11.5px; color:var(--text-soft)}
+.kpi.ok .k-val{color:var(--ok)} .kpi.warn .k-val{color:var(--warn)} .kpi.ko .k-val{color:var(--ko)}
+
+/* ---------- schede con titolo ---------- */
+.sez{padding:16px 18px}
+.sez>header{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:12px; flex-wrap:wrap}
+.sez h2{font-size:17px}
+.sez .hint{font-size:11.5px; color:var(--text-faint); max-width:52ch}
+
+/* ---------- pagella dei controlli ---------- */
+.check{display:grid; grid-template-columns:auto 1fr auto auto; gap:8px 12px; align-items:center; padding:9px 0; border-top:1px solid var(--line)}
+.check:first-of-type{border-top:0}
+.pallino{width:9px; height:9px; border-radius:50%; background:var(--line-strong)}
+.pallino.ok{background:var(--ok)} .pallino.warn{background:var(--warn)} .pallino.ko{background:var(--ko)}
+.check .nome{font-size:13.5px}
+.check .liv{font-size:10px; color:var(--text-faint); letter-spacing:.08em; text-transform:uppercase}
+.check .misura{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:13px; text-align:right; white-space:nowrap}
+.check .soglia{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--text-faint); text-align:right; white-space:nowrap}
+.pill{font-size:10px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:99px}
+.pill.ok{background:var(--ok-bg); color:var(--ok)} .pill.warn{background:var(--warn-bg); color:var(--warn)} .pill.ko{background:var(--ko-bg); color:var(--ko)}
+
+/* ---------- tabelle ---------- */
+.tab-scroll{overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:13px}
+th,td{padding:6px 9px; text-align:right; white-space:nowrap}
+td:first-child, thead th:first-child{white-space:normal; min-width:11ch}
+th:first-child, td:first-child{text-align:left}
+thead th{font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); font-weight:600; border-bottom:1px solid var(--line)}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:last-child{border-bottom:0}
+td.num{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums}
+tr.tot{font-weight:600} tr.tot td{border-top:1px solid var(--line-strong)}
+
+/* griglia di sensitività */
+.sens td.cella{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; text-align:center; border-radius:4px}
+.sens td.qui{outline:2px solid var(--accent); outline-offset:-2px; font-weight:600}
+
+canvas{width:100%; height:210px; display:block}
+.legenda{display:flex; flex-wrap:wrap; gap:14px; font-size:11.5px; color:var(--text-soft); margin-top:8px}
+.legenda i{display:inline-block; width:16px; height:2px; vertical-align:middle; margin-right:5px}
+footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--text-faint); font-size:12px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div>
+    <div class="eyebrow">FAB S.r.l. · STAY Apartments</div>
+    <h1>Vaglio Deal</h1>
+  </div>
+  <div class="sub">Metti i numeri di un blocco in affitto con facoltà di sublocazione e leggi il verdetto. La regola che comanda tutto: <b>canone entro il 25% del fatturato lordo IVA compresa</b>.</div>
+  <div class="spacer"></div>
+  <button class="btn" id="presetVenezian">Carica Venezian</button>
+  <button class="btn" id="presetMachiavelli">Carica Machiavelli</button>
+  <button class="btn" id="copia">Copia riepilogo</button>
+  <button class="btn" id="tema">Tema</button>
+</header>
+
+<div class="wrap">
+
+  <!-- ================= COLONNA SINISTRA: GLI INPUT ================= -->
+  <form class="panel card" id="form" autocomplete="off">
+
+    <!-- I tre driver che muovono davvero il risultato, in evidenza -->
+    <div class="driver">
+      <div class="riga"><span class="nome">Canone mensile</span><span class="val mono" id="vCanone">—</span></div>
+      <input type="range" id="rCanone" min="500" max="30000" step="50">
+    </div>
+    <div class="driver">
+      <div class="riga"><span class="nome">Prezzo medio a notte (IVA incl.)</span><span class="val mono" id="vAdr">—</span></div>
+      <input type="range" id="rAdr" min="40" max="400" step="1">
+    </div>
+    <div class="driver">
+      <div class="riga"><span class="nome">Occupazione annua</span><span class="val mono" id="vOcc">—</span></div>
+      <input type="range" id="rOcc" min="20" max="95" step="0.5">
+    </div>
+
+    <details class="gruppo" open>
+      <summary>Il blocco</summary>
+      <div class="campi">
+        <div class="campo campo--largo"><label for="nome">Nome del blocco</label><input type="text" id="nome" value="Nuovo blocco"></div>
+        <div class="campo"><label for="citta">Città</label><input type="text" id="citta" value="Trieste"></div>
+        <div class="campo"><label for="unita">Appartamenti (n.)</label><input type="number" id="unita" value="5" min="1" step="1"></div>
+        <div class="campo"><label for="postiLetto">Posti letto totali</label><input type="number" id="postiLetto" value="13" min="1" step="1"></div>
+        <div class="campo"><label for="soggiorno">Soggiorno medio (notti)</label><input type="number" id="soggiorno" value="2.2" min="1" step="0.1"></div>
+      </div>
+    </details>
+
+    <details class="gruppo">
+      <summary>Il contratto</summary>
+      <div class="campi">
+        <div class="campo"><label for="canone">Canone mensile (€)</label><input type="number" id="canone" value="3500" step="50"></div>
+        <div class="campo"><label for="durata">Primo periodo (anni)</label><input type="number" id="durata" value="6" min="1" step="1"></div>
+        <div class="campo"><label for="freeRent">Mesi di canone azzerato</label><input type="number" id="freeRent" value="2" min="0" step="1"></div>
+        <div class="campo"><label for="cauzione">Cauzione (mensilità)</label><input type="number" id="cauzione" value="3" min="0" step="1"></div>
+        <div class="campo"><label for="istat">Adeguamento annuo (%)</label><input type="number" id="istat" value="2" step="0.1"></div>
+      </div>
+    </details>
+
+    <details class="gruppo">
+      <summary>I ricavi</summary>
+      <div class="campi">
+        <div class="campo"><label for="adr">Prezzo medio a notte (€)</label><input type="number" id="adr" value="135" step="1"></div>
+        <div class="campo"><label for="occ">Occupazione (%)</label><input type="number" id="occ" value="72" step="0.5"></div>
+        <div class="campo"><label for="accessori">Accessori annui lordi (€)</label><input type="number" id="accessori" value="0" step="500"></div>
+        <div class="campo"><label for="stagione">Stagionalità</label>
+          <select id="stagione">
+            <option value="arte" selected>Città d'arte</option>
+            <option value="mare">Località balneare</option>
+            <option value="business">Città business</option>
+            <option value="piatta">Uniforme</option>
+          </select>
+        </div>
+        <div class="campo"><label for="ivaCamera">IVA camera (%)</label><input type="number" id="ivaCamera" value="10" step="1"></div>
+        <div class="campo"><label for="ivaAcc">IVA accessori (%)</label><input type="number" id="ivaAcc" value="22" step="1"></div>
+      </div>
+    </details>
+
+    <details class="gruppo">
+      <summary>Costi che seguono le notti vendute</summary>
+      <div class="campi">
+        <div class="campo"><label for="ota">Commissione OTA (%)</label><input type="number" id="ota" value="18" step="0.1"></div>
+        <div class="campo"><label for="otaQuota">Prenotazioni via OTA (%)</label><input type="number" id="otaQuota" value="85" step="1"></div>
+        <div class="campo"><label for="pulizia">Pulizia, costo interno (€/cambio)</label><input type="number" id="pulizia" value="28" step="1"></div>
+        <div class="campo"><label for="lavanderia">Lavanderia (€/cambio)</label><input type="number" id="lavanderia" value="12" step="0.5"></div>
+        <div class="campo"><label for="consumabili">Consumabili (€/cambio)</label><input type="number" id="consumabili" value="5" step="0.5"></div>
+      </div>
+    </details>
+
+    <details class="gruppo">
+      <summary>Costi che restano comunque</summary>
+      <div class="campi">
+        <div class="campo"><label for="utenze">Utenze (€/mese, blocco)</label><input type="number" id="utenze" value="600" step="25"></div>
+        <div class="campo"><label for="personale">Personale dedicato (€/anno)</label><input type="number" id="personale" value="0" step="500"></div>
+        <div class="campo"><label for="assicurazione">Assicurazione (€/anno)</label><input type="number" id="assicurazione" value="1200" step="100"></div>
+        <div class="campo"><label for="wifi">Wi-Fi e software (€/anno)</label><input type="number" id="wifi" value="900" step="100"></div>
+        <div class="campo"><label for="tari">TARI (€/anno)</label><input type="number" id="tari" value="1500" step="100"></div>
+        <div class="campo"><label for="manutenzione">Manutenzione (€/anno)</label><input type="number" id="manutenzione" value="2500" step="100"></div>
+        <div class="campo"><label for="altre">Altre spese (€/anno)</label><input type="number" id="altre" value="800" step="100"></div>
+        <div class="campo"><label for="hub">Quota costi hub (€/anno)</label><input type="number" id="hub" value="0" step="500"></div>
+      </div>
+    </details>
+
+    <details class="gruppo">
+      <summary>Investimento e avvio</summary>
+      <div class="campi">
+        <div class="campo"><label for="capex">Capex iniziale (€)</label><input type="number" id="capex" value="25000" step="1000"></div>
+        <div class="campo"><label for="ramp">Mesi per andare a regime</label><input type="number" id="ramp" value="6" min="0" step="1"></div>
+        <div class="campo"><label for="occAvvio">Occupazione al mese 1 (%)</label><input type="number" id="occAvvio" value="35" step="1"></div>
+        <div class="campo"><label for="tasse">Imposte S.r.l. (%)</label><input type="number" id="tasse" value="27.9" step="0.1"></div>
+      </div>
+    </details>
+
+    <details class="gruppo">
+      <summary>Portafoglio attuale</summary>
+      <div class="campi">
+        <div class="campo"><label for="portFatt">Fatturato lordo (€/anno)</label><input type="number" id="portFatt" value="1487500" step="10000"></div>
+        <div class="campo"><label for="portUtile">Utile netto (€/anno)</label><input type="number" id="portUtile" value="273708" step="1000"></div>
+      </div>
+    </details>
+
+    <details class="gruppo">
+      <summary>Le tue soglie</summary>
+      <div class="campi">
+        <div class="campo"><label for="sCanone">Canone / lordo max (%)</label><input type="number" id="sCanone" value="25" step="0.5"></div>
+        <div class="campo"><label for="sUnita">Appartamenti minimi</label><input type="number" id="sUnita" value="3" step="1"></div>
+        <div class="campo"><label for="sMargine">Margine operativo min (%)</label><input type="number" id="sMargine" value="30" step="1"></div>
+        <div class="campo"><label for="sUtile">Utile netto min (€/anno)</label><input type="number" id="sUtile" value="25000" step="1000"></div>
+        <div class="campo"><label for="sSicurezza">Margine di sicurezza min (%)</label><input type="number" id="sSicurezza" value="25" step="1"></div>
+        <div class="campo"><label for="sPayback">Rientro capex max (mesi)</label><input type="number" id="sPayback" value="18" step="1"></div>
+        <div class="campo campo--largo"><label for="sConc">Peso massimo del blocco sul fatturato (%)</label><input type="number" id="sConc" value="35" step="1"></div>
+      </div>
+    </details>
+  </form>
+
+  <!-- ================= COLONNA DESTRA: GLI ESITI ================= -->
+  <div class="esiti">
+
+    <div class="card verdetto" id="verdetto">
+      <div><div class="eyebrow">Verdetto</div><div class="esito" id="esito">—</div></div>
+      <div class="motivo" id="motivo">—</div>
+    </div>
+
+    <div class="kpi-griglia" id="kpiGriglia"></div>
+
+    <section class="card sez">
+      <header>
+        <h2>La pagella</h2>
+        <div class="hint">Un controllo di livello 1 che fallisce ferma il deal da solo. Gli altri pesano sul giudizio.</div>
+      </header>
+      <div id="pagella"></div>
+    </section>
+
+    <section class="card sez">
+      <header>
+        <h2>Dove si rompe</h2>
+        <div class="hint">In affitto con sublocazione il canone è fisso e i ricavi no: il valore vero è quanto puoi scendere prima di perdere.</div>
+      </header>
+      <div class="tab-scroll"><table id="rottura"></table></div>
+    </section>
+
+    <section class="card sez">
+      <header>
+        <h2>Conto economico a regime</h2>
+        <div class="hint">Anno tipo, a occupazione di target.</div>
+      </header>
+      <div class="tab-scroll"><table id="ce"></table></div>
+    </section>
+
+    <section class="card sez">
+      <header>
+        <h2>La cassa nel tempo</h2>
+        <div class="hint" id="cassaHint">Cassa cumulata mese per mese, con avvio graduale e stagionalità.</div>
+      </header>
+      <canvas id="grafico"></canvas>
+      <div class="legenda">
+        <span><i style="background:var(--accent)"></i>Cassa cumulata</span>
+        <span><i style="background:var(--ok)"></i>Punto di rientro</span>
+        <span><i style="background:var(--ko)"></i>Massimo assorbito</span>
+      </div>
+    </section>
+
+    <section class="card sez">
+      <header>
+        <h2>Se il mercato gira</h2>
+        <div class="hint">Utile netto annuo al variare di occupazione (righe) e prezzo medio (colonne). Il riquadro blu è il tuo scenario.</div>
+      </header>
+      <div class="tab-scroll"><table class="sens" id="sens"></table></div>
+    </section>
+
+  </div>
+</div>
+
+<footer class="note">
+  I preset Venezian e Machiavelli sono ricostruzioni dai conti economici del file <span class="mono">STAY_Host_Hub_OKR</span>: il prezzo a notte è quello implicito nei ricavi dichiarati. Il modello assume che pulizie e lavanderia siano erogate internamente e valorizzate a costo industriale.
+</footer>
+
+<script>
+/* ============================================================================
+   VAGLIO DEAL FAB — la logica
+   Tre funzioni in fila: leggi() prende i numeri dai campi, calcola() li
+   trasforma in KPI, mostra() li scrive a schermo. Ogni modifica rifà il giro.
+   ========================================================================== */
+
+const $ = id => document.getElementById(id);
+const num = id => parseFloat($(id).value) || 0;
+
+/* Formattatori italiani, definiti una volta sola */
+const eur  = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+const eur1 = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+const pct  = (n,d=1) => (isFinite(n) ? n*100 : 0).toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const n0   = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{maximumFractionDigits:0});
+
+/* Profili di stagionalità: 12 pesi che vengono normalizzati a media 1 */
+const STAGIONI = {
+  arte:     [.55,.60,.85,1.20,1.30,1.15,1.00,0.95,1.25,1.20,.60,.55],
+  mare:     [.25,.25,.45,.80,1.15,1.55,1.90,1.95,1.15,.60,.25,.25],
+  business: [.85,1.05,1.15,1.05,1.15,1.00,.55,.40,1.20,1.20,1.00,.70],
+  piatta:   [1,1,1,1,1,1,1,1,1,1,1,1]
+};
+function pesiStagione(chiave){
+  const g = STAGIONI[chiave] || STAGIONI.piatta;
+  const media = g.reduce((a,b)=>a+b,0)/12;
+  return g.map(x=>x/media);      /* media 1: la stagionalità sposta, non gonfia */
+}
+
+/* ---------------------------------------------------------------- leggi() */
+function leggi(){
+  return {
+    nome:$('nome').value, citta:$('citta').value,
+    unita:num('unita'), postiLetto:num('postiLetto'), soggiorno:Math.max(1,num('soggiorno')),
+    canone:num('canone'), durata:Math.max(1,num('durata')), freeRent:num('freeRent'),
+    cauzione:num('cauzione'), istat:num('istat')/100,
+    adr:num('adr'), occ:num('occ')/100, accessori:num('accessori'),
+    stagione:$('stagione').value, ivaCamera:num('ivaCamera')/100, ivaAcc:num('ivaAcc')/100,
+    ota:num('ota')/100, otaQuota:num('otaQuota')/100, pulizia:num('pulizia'), lavanderia:num('lavanderia'), consumabili:num('consumabili'),
+    utenze:num('utenze'), personale:num('personale'), assicurazione:num('assicurazione'),
+    wifi:num('wifi'), tari:num('tari'), manutenzione:num('manutenzione'), altre:num('altre'), hub:num('hub'),
+    capex:num('capex'), ramp:num('ramp'), occAvvio:num('occAvvio')/100, tasse:num('tasse')/100,
+    portFatt:num('portFatt'), portUtile:num('portUtile'),
+    sCanone:num('sCanone')/100, sUnita:num('sUnita'), sMargine:num('sMargine')/100,
+    sUtile:num('sUtile'), sSicurezza:num('sSicurezza')/100, sPayback:num('sPayback'), sConc:num('sConc')/100
+  };
+}
+
+/* -------------------------------------------------------------- calcola() */
+function calcola(i){
+  const r = {};
+
+  /* --- ricavi dell'anno a regime --- */
+  r.nottiDisponibili = i.unita*365;
+  r.nottiVendute     = r.nottiDisponibili*i.occ;
+  r.lordoCamera      = i.adr*r.nottiVendute;
+  r.lordoTotale      = r.lordoCamera + i.accessori;
+  r.nettoCamera      = r.lordoCamera/(1+i.ivaCamera);
+  r.nettoAccessori   = i.accessori/(1+i.ivaAcc);
+  r.ricaviNetti      = r.nettoCamera + r.nettoAccessori;
+  r.revpar           = r.lordoCamera/r.nottiDisponibili;
+
+  /* --- costi che seguono le notti --- */
+  r.cambi        = r.nottiVendute/i.soggiorno;
+  r.costoCambio  = i.pulizia + i.lavanderia + i.consumabili;
+  r.commissioni  = r.lordoCamera*i.ota*i.otaQuota;   /* solo la quota intermediata paga commissione */
+  r.costiVar     = r.commissioni + r.cambi*r.costoCambio;
+
+  /* --- costi che restano --- */
+  r.canoneAnno = i.canone*12;
+  r.altriFissi = i.utenze*12 + i.personale + i.assicurazione + i.wifi + i.tari + i.manutenzione + i.altre + i.hub;
+  r.costiFissi = r.canoneAnno + r.altriFissi;
+
+  /* --- risultato --- */
+  r.gop        = r.ricaviNetti - r.costiVar - r.costiFissi;
+  r.utileNetto = r.gop > 0 ? r.gop*(1-i.tasse) : r.gop;
+  r.margine    = r.ricaviNetti ? r.gop/r.ricaviNetti : 0;
+  r.canoneSuLordo = r.lordoTotale ? r.canoneAnno/r.lordoTotale : 1;
+  r.utilePerUnita = i.unita ? r.utileNetto/i.unita : 0;
+  r.utilePerLetto = i.postiLetto ? r.utileNetto/i.postiLetto : 0;
+
+  /* --- dove si rompe: il GOP è lineare nell'occupazione, GOP = occ*K - F --- */
+  const K = i.unita*365*( i.adr/(1+i.ivaCamera) - i.adr*i.ota*i.otaQuota - r.costoCambio/i.soggiorno );
+  const F = r.costiFissi - r.nettoAccessori;
+  r.contributoNotte = K/(i.unita*365);            /* margine di contribuzione per notte venduta */
+  r.occBE = K > 0 ? F/K : Infinity;
+  r.sicurezza = (i.occ > 0 && isFinite(r.occBE)) ? (i.occ - r.occBE)/i.occ : -1;
+
+  /* prezzo minimo a notte, tenendo ferma l'occupazione */
+  const notti = i.occ*i.unita*365;
+  const denomAdr = notti*(1/(1+i.ivaCamera) - i.ota*i.otaQuota);
+  r.adrBE = denomAdr > 0 ? (F + (notti/i.soggiorno)*r.costoCambio)/denomAdr : Infinity;
+
+  /* canone massimo sostenibile e canone che rispetta la soglia */
+  r.canoneMaxPareggio = (r.canoneAnno + r.gop)/12;
+  r.canoneSoglia      = r.lordoTotale*i.sCanone/12;
+
+  /* --- la cassa mese per mese sull'intero primo periodo --- */
+  const pesi = pesiStagione(i.stagione);
+  const mesi = Math.round(i.durata*12);
+  const serie = [];
+  let cassa = -(i.capex + i.cauzione*i.canone);   /* mese 0: esci di tasca */
+  serie.push(cassa);
+  let gopAnno = 0;
+  for(let m=0; m<mesi; m++){
+    const anno = Math.floor(m/12);
+    const avvio = i.ramp>0 ? Math.min(1, i.occAvvio + (1-i.occAvvio)*(m/i.ramp)) : 1;
+    const occM  = Math.min(0.97, i.occ*avvio*pesi[m%12]);
+    const nottiM = i.unita*(365/12)*occM;
+    const lordoM = i.adr*nottiM;
+    const nettoM = lordoM/(1+i.ivaCamera) + (r.nettoAccessori/12);
+    const varM   = lordoM*i.ota*i.otaQuota + (nottiM/i.soggiorno)*r.costoCambio;
+    const canoneM = (m < i.freeRent ? 0 : i.canone*Math.pow(1+i.istat, anno));
+    const fissiM = canoneM + r.altriFissi/12;
+    const flusso = nettoM - varM - fissiM;
+    gopAnno += flusso;
+    let imposte = 0;
+    if(m%12 === 11){ imposte = gopAnno > 0 ? gopAnno*i.tasse : 0; gopAnno = 0; }
+    cassa += flusso - imposte;
+    serie.push(cassa);
+  }
+  r.serie = serie;
+  r.cassaFinale = serie[serie.length-1];
+  r.maxAssorbito = Math.min(...serie);
+  r.meseMaxAssorbito = serie.indexOf(r.maxAssorbito);
+  r.payback = serie.findIndex((v,idx)=> idx>0 && v>=0);
+  r.esposizione = i.canone*12*i.durata;           /* canoni dell'intero primo periodo */
+
+  /* --- effetto sul portafoglio --- */
+  r.fattPost   = i.portFatt + r.lordoTotale;
+  r.utilePost  = i.portUtile + r.utileNetto;
+  r.pesoBlocco = r.fattPost ? r.lordoTotale/r.fattPost : 0;
+  r.deltaUtile = i.portUtile ? r.utileNetto/i.portUtile : 0;
+
+  return r;
+}
+
+/* --------------------------------------------------- la pagella dei check */
+function pagella(i,r){
+  const c = [];
+  const stato = (v, buono, medio, versoBasso=false) => {
+    if(versoBasso) return v<=buono ? 'ok' : (v<=medio ? 'warn' : 'ko');
+    return v>=buono ? 'ok' : (v>=medio ? 'warn' : 'ko');
+  };
+  c.push({liv:'Livello 1', ko:true, nome:'Canone sul fatturato lordo',
+    misura:pct(r.canoneSuLordo), soglia:'max '+pct(i.sCanone,0),
+    st: r.canoneSuLordo<=i.sCanone ? 'ok' : (r.canoneSuLordo<=i.sCanone+0.03 ? 'warn' : 'ko')});
+  c.push({liv:'Livello 1', ko:true, nome:'Dimensione del blocco',
+    misura:n0(i.unita)+' appt', soglia:'min '+n0(i.sUnita),
+    st: i.unita>=i.sUnita ? 'ok' : 'ko'});
+  c.push({liv:'Livello 2', nome:'Margine operativo sui ricavi',
+    misura:pct(r.margine), soglia:'min '+pct(i.sMargine,0),
+    st: stato(r.margine, i.sMargine, i.sMargine-0.10)});
+  c.push({liv:'Livello 2', nome:'Utile netto annuo',
+    misura:eur(r.utileNetto), soglia:'min '+eur(i.sUtile),
+    st: stato(r.utileNetto, i.sUtile, i.sUtile*0.6)});
+  c.push({liv:'Livello 3', ko:true, nome:'Margine di sicurezza sull’occupazione',
+    misura: isFinite(r.occBE) ? pct(r.sicurezza) : 'mai in utile', soglia:'min '+pct(i.sSicurezza,0),
+    st: stato(r.sicurezza, i.sSicurezza, i.sSicurezza*0.5)});
+  c.push({liv:'Livello 3', nome:'Rientro del capex',
+    misura: r.payback>0 ? n0(r.payback)+' mesi' : 'oltre il contratto',
+    soglia:'max '+n0(i.sPayback)+' mesi',
+    st: r.payback>0 ? stato(r.payback, i.sPayback, i.sPayback*1.7, true) : 'ko'});
+  c.push({liv:'Livello 4', nome:'Peso del blocco sul fatturato',
+    misura:pct(r.pesoBlocco), soglia:'max '+pct(i.sConc,0),
+    st: stato(r.pesoBlocco, i.sConc, i.sConc*1.4, true)});
+  return c;
+}
+
+/* ---------------------------------------------------------------- mostra() */
+function mostra(){
+  const i = leggi(), r = calcola(i), checks = pagella(i,r);
+
+  /* cursori allineati ai campi numerici */
+  $('rCanone').value=i.canone; $('rAdr').value=i.adr; $('rOcc').value=(i.occ*100).toFixed(1);
+  $('vCanone').textContent=eur(i.canone)+'/mese';
+  $('vAdr').textContent=eur(i.adr);
+  $('vOcc').textContent=pct(i.occ,1);
+
+  /* --- verdetto --- */
+  const bocciato = checks.some(c=>c.ko && c.st==='ko');
+  const dubbi    = checks.filter(c=>c.st!=='ok');
+  const box=$('verdetto');
+  box.className='card verdetto '+(bocciato?'no':(dubbi.length?'cond':'go'));
+  $('esito').textContent = bocciato ? 'No' : (dubbi.length ? 'Sì, ma' : 'Sì');
+  let msg;
+  if(bocciato){
+    const rotti = checks.filter(c=>c.ko&&c.st==='ko').map(c=>c.nome.toLowerCase());
+    msg = 'Il deal cade su <b>'+rotti.join('</b> e su <b>')+'</b>. Il canone che rispetterebbe la tua soglia è <b>'+eur(r.canoneSoglia)+'/mese</b>: sotto quella cifra si torna a ragionare.';
+  } else if(dubbi.length){
+    msg = 'Passa i controlli che bloccano, ma <b>'+dubbi.length+'</b> voci restano sotto standard: '+dubbi.map(c=>c.nome.toLowerCase()).join(', ')+'. Il pareggio arriva al <b>'+pct(r.occBE)+'</b> di occupazione.';
+  } else {
+    msg = 'Tutti i controlli passano. Il blocco lascia <b>'+eur(r.utileNetto)+'</b> netti l’anno e va in pareggio al <b>'+pct(r.occBE)+'</b> di occupazione, contro il '+pct(i.occ)+' di target.';
+  }
+  $('motivo').innerHTML = msg;
+
+  /* --- KPI --- */
+  const cls=(v,b,m,basso=false)=> basso ? (v<=b?'ok':(v<=m?'warn':'ko')) : (v>=b?'ok':(v>=m?'warn':'ko'));
+  const kpi=[
+    {lab:'Canone / lordo', val:pct(r.canoneSuLordo), note:'soglia '+pct(i.sCanone,0), st:cls(r.canoneSuLordo,i.sCanone,i.sCanone+0.03,true)},
+    {lab:'Utile netto annuo', val:eur(r.utileNetto), note:eur(r.utilePerUnita)+' per appartamento', st:cls(r.utileNetto,i.sUtile,i.sUtile*0.6)},
+    {lab:'Margine operativo', val:pct(r.margine), note:'su '+eur(r.ricaviNetti)+' netti', st:cls(r.margine,i.sMargine,i.sMargine-0.10)},
+    {lab:'Pareggio a', val:isFinite(r.occBE)?pct(r.occBE):'—', note:'oggi punti al '+pct(i.occ), st:cls(r.sicurezza,i.sSicurezza,i.sSicurezza*0.5)},
+    {lab:'Cassa da mettere', val:eur(-r.maxAssorbito), note:'picco al mese '+n0(r.meseMaxAssorbito), st:'', },
+    {lab:'Rientro capex', val:r.payback>0?n0(r.payback)+' mesi':'—', note:'capex '+eur(i.capex), st:r.payback>0?cls(r.payback,i.sPayback,i.sPayback*1.7,true):'ko'},
+    {lab:'Cassa a fine contratto', val:eur(r.cassaFinale), note:n0(i.durata)+' anni, netto imposte', st:cls(r.cassaFinale,0.0001,0)},
+    {lab:'Esposizione canoni', val:eur(r.esposizione), note:'impegno del primo periodo', st:''}
+  ];
+  $('kpiGriglia').innerHTML = kpi.map(k=>
+    '<div class="kpi '+k.st+'"><div class="k-lab">'+k.lab+'</div><div class="k-val">'+k.val+'</div><div class="k-note">'+k.note+'</div></div>'
+  ).join('');
+
+  /* --- pagella --- */
+  $('pagella').innerHTML = checks.map(c=>
+    '<div class="check"><span class="pallino '+c.st+'"></span>'+
+    '<span><span class="nome">'+c.nome+'</span>'+(c.ko?' <span class="pill '+c.st+'">'+(c.st==='ko'?'blocca':'vincolante')+'</span>':'')+
+    '<br><span class="liv">'+c.liv+'</span></span>'+
+    '<span class="misura">'+c.misura+'</span><span class="soglia">'+c.soglia+'</span></div>'
+  ).join('');
+
+  /* --- dove si rompe --- */
+  $('rottura').innerHTML =
+    '<thead><tr><th>Leva</th><th>Oggi</th><th>Punto di rottura</th><th>Spazio</th></tr></thead><tbody>'+
+    riga('Occupazione annua', pct(i.occ), isFinite(r.occBE)?pct(r.occBE):'irraggiungibile', isFinite(r.occBE)?((( (i.occ-r.occBE)*100 ).toLocaleString('it-IT',{maximumFractionDigits:1}))+' punti'):'—')+
+    riga('Prezzo medio a notte', eur(i.adr), isFinite(r.adrBE)?eur(r.adrBE):'irraggiungibile', isFinite(r.adrBE)?('-'+pct((i.adr-r.adrBE)/i.adr)):'—')+
+    riga('Canone mensile', eur(i.canone), eur(r.canoneMaxPareggio), eur(r.canoneMaxPareggio-i.canone))+
+    riga('Canone alla tua soglia del '+pct(i.sCanone,0), eur(i.canone), eur(r.canoneSoglia), eur(r.canoneSoglia-i.canone))+
+    riga('Margine per notte venduta', eur(r.contributoNotte), '—', n0(r.nottiVendute)+' notti/anno')+
+    riga('Commissioni OTA', eur(r.commissioni), '—', '+'+eur(r.lordoCamera*i.ota*0.10*(1-i.tasse))+' ogni 10 pt di diretto')+
+    '</tbody>';
+
+  /* --- conto economico --- */
+  $('ce').innerHTML =
+    '<thead><tr><th>Voce</th><th>€/anno</th><th>% ricavi netti</th><th>€/appartamento</th></tr></thead><tbody>'+
+    ceRiga('Camera, al netto IVA', r.nettoCamera, r, i)+
+    ceRiga('Accessori, al netto IVA', r.nettoAccessori, r, i)+
+    ceRiga('Ricavi netti', r.ricaviNetti, r, i, true)+
+    ceRiga('Commissioni OTA ('+pct(i.otaQuota,0)+' delle notti)', -r.commissioni, r, i)+
+    ceRiga('Pulizie, lavanderia, consumabili ('+n0(r.cambi)+' cambi)', -r.cambi*r.costoCambio, r, i)+
+    ceRiga('Canone di locazione', -r.canoneAnno, r, i)+
+    ceRiga('Utenze, personale, fissi vari', -r.altriFissi, r, i)+
+    ceRiga('Margine operativo (GOP)', r.gop, r, i, true)+
+    ceRiga('Imposte '+pct(i.tasse,1), -(r.gop>0?r.gop*i.tasse:0), r, i)+
+    ceRiga('Utile netto', r.utileNetto, r, i, true)+
+    '</tbody>';
+
+  disegna(r,i);
+  sensibilita(i,r);
+  $('cassaHint').textContent = 'Cassa cumulata mese per mese su '+n0(i.durata)+' anni, con '+n0(i.ramp)+' mesi di avvio, '+n0(i.freeRent)+' mesi di canone azzerato e stagionalità '+$('stagione').selectedOptions[0].text.toLowerCase()+'.';
+  window.__ultimo = {i,r,checks};
+}
+function riga(a,b,c,d){ return '<tr><td>'+a+'</td><td class="num">'+b+'</td><td class="num">'+c+'</td><td class="num">'+d+'</td></tr>'; }
+function ceRiga(nome,val,r,i,tot){
+  return '<tr'+(tot?' class="tot"':'')+'><td>'+nome+'</td><td class="num">'+eur1(val)+'</td>'+
+         '<td class="num">'+(r.ricaviNetti?pct(val/r.ricaviNetti):'—')+'</td>'+
+         '<td class="num">'+(i.unita?eur1(val/i.unita):'—')+'</td></tr>';
+}
+
+/* ------------------------------------------------- il grafico della cassa */
+function disegna(r,i){
+  const cv=$('grafico'), dpr=window.devicePixelRatio||1;
+  const w=cv.clientWidth, h=210;
+  cv.width=w*dpr; cv.height=h*dpr;
+  const g=cv.getContext('2d'); g.scale(dpr,dpr); g.clearRect(0,0,w,h);
+  const stile = getComputedStyle(document.body);
+  const col = n => stile.getPropertyValue(n).trim();
+
+  const s=r.serie, n=s.length;
+  const min=Math.min(...s,0), max=Math.max(...s,0);
+  const padL=64, padR=12, padT=12, padB=22;
+  const x = k => padL + (w-padL-padR)*(k/(n-1));
+  const y = v => padT + (h-padT-padB)*(1-(v-min)/((max-min)||1));
+
+  /* griglia leggera e asse dello zero */
+  g.strokeStyle=col('--line'); g.lineWidth=1; g.font='10px "IBM Plex Mono", monospace'; g.fillStyle=col('--text-faint');
+  for(let k=0;k<=4;k++){
+    const v=min+(max-min)*k/4, yy=Math.round(y(v))+.5;
+    g.beginPath(); g.moveTo(padL,yy); g.lineTo(w-padR,yy); g.stroke();
+    g.textAlign='right'; g.fillText(Math.round(v/1000)+'k', padL-8, yy+3);
+  }
+  g.strokeStyle=col('--line-strong'); g.beginPath();
+  g.moveTo(padL,Math.round(y(0))+.5); g.lineTo(w-padR,Math.round(y(0))+.5); g.stroke();
+
+  /* area sotto la curva, poi la curva */
+  const grad=g.createLinearGradient(0,padT,0,h-padB);
+  grad.addColorStop(0, col('--accent')+'33'); grad.addColorStop(1, col('--accent')+'05');
+  g.beginPath(); g.moveTo(x(0),y(0));
+  s.forEach((v,k)=>g.lineTo(x(k),y(v)));
+  g.lineTo(x(n-1),y(0)); g.closePath(); g.fillStyle=grad; g.fill();
+
+  g.beginPath(); s.forEach((v,k)=> k?g.lineTo(x(k),y(v)):g.moveTo(x(k),y(v)));
+  g.strokeStyle=col('--accent'); g.lineWidth=2; g.lineJoin='round'; g.stroke();
+
+  /* i due momenti che contano */
+  const punto=(k,v,c,testo)=>{
+    g.beginPath(); g.arc(x(k),y(v),4,0,6.284); g.fillStyle=c; g.fill();
+    g.fillStyle=c; g.font='500 10px "IBM Plex Mono", monospace';
+    g.textAlign = k>n*0.7 ? 'right' : 'left';
+    const sotto = y(v) < padT+18;                    /* se il punto è in alto, l'etichetta va sotto */
+    g.fillText(testo, x(k)+(k>n*0.7?-8:8), y(v)+(sotto?14:-8));
+  };
+  if(r.meseMaxAssorbito>=0) punto(r.meseMaxAssorbito, r.maxAssorbito, col('--ko'), 'max assorbito '+Math.round(r.maxAssorbito/1000)+'k');
+  if(r.payback>0)           punto(r.payback, s[r.payback], col('--ok'), 'rientro mese '+r.payback);
+
+  /* etichette degli anni: l'ultima si allinea a destra, altrimenti esce dal riquadro */
+  g.fillStyle=col('--text-faint'); g.font='10px "IBM Plex Mono", monospace';
+  for(let a=0;a<=i.durata;a++){
+    const k=Math.min(a*12,n-1); if(a*12>=n) break;
+    const ultimo = (a===i.durata) || (a+1)*12>=n;
+    g.textAlign = ultimo ? 'right' : (a===0 ? 'left' : 'center');
+    g.fillText('anno '+a, x(k)+(ultimo?6:(a===0?-6:0)), h-6);
+  }
+}
+
+/* ------------------------------------------ griglia occupazione × prezzo */
+function sensibilita(i,r){
+  const occhi=[-15,-10,-5,0,5].map(d=>i.occ+d/100).filter(o=>o>0.05&&o<0.98);
+  const adri =[-20,-10,0,10].map(d=>i.adr*(1+d/100));
+  let html='<thead><tr><th>Occ. \\ Prezzo</th>'+adri.map(a=>'<th>'+eur(a)+'</th>').join('')+'</tr></thead><tbody>';
+  occhi.forEach(o=>{
+    html+='<tr><td>'+pct(o,0)+'</td>';
+    adri.forEach(a=>{
+      const alt=Object.assign({},i,{occ:o,adr:a});
+      const u=calcolaVeloce(alt,r);
+      const forte = u>=i.sUtile, medio = u>0;
+      const bg = forte?'var(--ok-bg)':(medio?'var(--warn-bg)':'var(--ko-bg)');
+      const fg = forte?'var(--ok)':(medio?'var(--warn)':'var(--ko)');
+      const qui = (Math.abs(o-i.occ)<1e-9 && Math.abs(a-i.adr)<1e-9) ? ' qui':'';
+      html+='<td class="cella'+qui+'" style="background:'+bg+';color:'+fg+'">'+eur(u)+'</td>';
+    });
+    html+='</tr>';
+  });
+  $('sens').innerHTML = html+'</tbody>';
+}
+/* versione snella del calcolo: solo l'utile netto, per riempire la griglia */
+function calcolaVeloce(i,base){
+  const notti=i.unita*365*i.occ, lordo=i.adr*notti;
+  const netti=lordo/(1+i.ivaCamera)+base.nettoAccessori;
+  const varia=lordo*i.ota*i.otaQuota+(notti/i.soggiorno)*base.costoCambio;
+  const gop=netti-varia-base.costiFissi;
+  return gop>0?gop*(1-i.tasse):gop;
+}
+
+/* ------------------------------------------------------------- i preset */
+const PRESET={
+  venezian:{nome:'Venezian',citta:'Trieste',unita:4,postiLetto:10,soggiorno:2.2,canone:12833,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:274,occ:89.9,accessori:21600,ivaCamera:10,ivaAcc:10,ota:17.8,otaQuota:100,
+    pulizia:32.7,lavanderia:14.2,consumabili:5,utenze:1639,personale:0,assicurazione:2000,wifi:600,
+    tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,stagione:'arte'},
+  machiavelli:{nome:'Machiavelli',citta:'Trieste',unita:26,postiLetto:130,soggiorno:2.2,canone:26000,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:135,occ:79.5,accessori:88000,ivaCamera:10,ivaAcc:0,ota:19.5,otaQuota:90,
+    pulizia:20.4,lavanderia:8.9,consumabili:2.9,utenze:2560,personale:61200,assicurazione:2500,wifi:1500,
+    tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,stagione:'arte'}
+};
+function carica(p){
+  Object.entries(PRESET[p]).forEach(([k,v])=>{ if($(k)) $(k).value=v; });
+  mostra();
+}
+
+/* ------------------------------------------------------- collegamenti UI */
+$('form').addEventListener('input', e=>{
+  /* i cursori scrivono nei campi numerici, non hanno uno stato proprio */
+  if(e.target.id==='rCanone') $('canone').value=e.target.value;
+  if(e.target.id==='rAdr')    $('adr').value=e.target.value;
+  if(e.target.id==='rOcc')    $('occ').value=e.target.value;
+  mostra();
+});
+$('presetVenezian').onclick    = ()=>carica('venezian');
+$('presetMachiavelli').onclick = ()=>carica('machiavelli');
+$('tema').onclick = ()=>{
+  const ora = document.documentElement.getAttribute('data-theme');
+  const scuro = ora ? ora==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', scuro?'light':'dark');
+  mostra();   /* il grafico rilegge i colori dal tema */
+};
+$('copia').onclick = async ()=>{
+  const {i,r,checks}=window.__ultimo;
+  const t=[
+    i.nome+' — '+i.citta+' · '+n0(i.unita)+' appartamenti, '+n0(i.postiLetto)+' posti letto',
+    'Verdetto: '+$('esito').textContent.toUpperCase(),
+    '',
+    'Canone            '+eur(i.canone)+'/mese  ('+pct(r.canoneSuLordo)+' del lordo, soglia '+pct(i.sCanone,0)+')',
+    'Fatturato lordo   '+eur(r.lordoTotale),
+    'Ricavi netti IVA  '+eur(r.ricaviNetti),
+    'Margine operativo '+eur(r.gop)+'  ('+pct(r.margine)+')',
+    'Utile netto       '+eur(r.utileNetto)+'  ('+eur(r.utilePerUnita)+' per appartamento)',
+    'Pareggio          '+pct(r.occBE)+' di occupazione · prezzo minimo '+eur(r.adrBE),
+    'Sicurezza         '+pct(r.sicurezza),
+    'Cassa da mettere  '+eur(-r.maxAssorbito)+' · rientro '+(r.payback>0?r.payback+' mesi':'oltre contratto'),
+    'Cassa a '+n0(i.durata)+' anni  '+eur(r.cassaFinale),
+    '',
+    ...checks.map(c=>'['+(c.st==='ok'?'ok  ':c.st==='warn'?'warn':'NO  ')+'] '+c.nome+': '+c.misura+' (soglia '+c.soglia+')')
+  ].join('\n');
+  try{ await navigator.clipboard.writeText(t); $('copia').textContent='Copiato'; setTimeout(()=>$('copia').textContent='Copia riepilogo',1600); }
+  catch(e){ $('copia').textContent='Non riesco a copiare'; setTimeout(()=>$('copia').textContent='Copia riepilogo',1600); }
+};
+addEventListener('resize', ()=>{ if(window.__ultimo) disegna(window.__ultimo.r, window.__ultimo.i); });
+
+mostra();   /* primo giro: la pagina si apre già calcolata */
+</script>
+</body>
+</html>
