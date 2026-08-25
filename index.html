@@ -82,10 +82,13 @@ h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif; font-weight:600
 .top h1{font-size:24px; letter-spacing:-.01em}
 .top .sub{color:var(--text-soft); font-size:13px; max-width:62ch}
 .top .spacer{flex:1}
+.top .azioni{display:flex; flex-wrap:wrap; gap:8px}
+/* Su telefono le tre parti vanno in colonna: titolo, spiegazione, pulsanti.
+   Senza questo lo spaziatore spinge i pulsanti accanto al titolo. */
 @media (max-width:700px){
-  .top .spacer{display:none}          /* su telefono i pulsanti restano allineati a sinistra */
-  .top{gap:10px 8px}
-  .top .sub{order:3; flex-basis:100%}
+  .top{flex-direction:column; align-items:stretch; gap:12px}
+  .top .spacer{display:none}
+  .top .sub{max-width:none}
 }
 .eyebrow{
   font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
@@ -219,10 +222,12 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
   </div>
   <div class="sub">Metti i numeri di un blocco in affitto con facoltà di sublocazione e leggi il verdetto. La regola che comanda tutto: <b>canone entro il 25% del fatturato lordo IVA compresa</b>.</div>
   <div class="spacer"></div>
-  <button class="btn" id="presetVenezian">Carica Venezian</button>
-  <button class="btn" id="presetMachiavelli">Carica Machiavelli</button>
-  <button class="btn" id="copia">Copia riepilogo</button>
-  <button class="btn" id="tema">Tema</button>
+  <div class="azioni">
+    <button class="btn" id="presetVenezian">Carica Venezian</button>
+    <button class="btn" id="presetMachiavelli">Carica Machiavelli</button>
+    <button class="btn" id="copia">Copia riepilogo</button>
+    <button class="btn" id="tema">Tema</button>
+  </div>
 </header>
 
 <div class="wrap">
