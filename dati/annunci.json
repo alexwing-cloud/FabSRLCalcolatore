@@ -79,6 +79,33 @@
   "eur_mq": 7.2
  },
  {
+  "citta": "siena",
+  "titolo": "Appartamento da privato a Siena via Colledoro, 17",
+  "zona": "Scacciapensieri",
+  "canone": 1300,
+  "locali": 6,
+  "mq": 180,
+  "tag": [
+   "Giardino",
+   "Box",
+   "Da Privato",
+   "Ingresso indipendente",
+   "Lavanderia",
+   "Sala da Pranzo"
+  ],
+  "arredato": false,
+  "descrizione": "Scacciapensieri - Immerso nel verde e disponibile da luglio 2026.\nGrazioso  appartamento  ammobiliato di 160mq su due livelli con giardino di 100 mq.\nL' appartamento  è così composto:\nAl piano terra rialzato, salone doppio, camera matrimoniale, camera...",
+  "privato": true,
+  "url": "https://www.trovacasa.it/annunci/si-tc-3427-68391993",
+  "foto": "https://pic.trovacasa.it/image/1776675768/m-c.jpg",
+  "camere": 4,
+  "canone_sostenibile": 2433,
+  "margine": 1133,
+  "incidenza": 0.5343197698314838,
+  "esito": "passa",
+  "eur_mq": 7.2
+ },
+ {
   "citta": "bari",
   "titolo": "Appartamento a Bari corso vittorio veneto",
   "zona": "",
@@ -86,15 +113,15 @@
   "locali": 5,
   "mq": 190,
   "tag": [
-   "Immobile di Prestigio",
    "Non Arredato/Vuoto",
    "Posto Auto",
    "Riscaldamento Autonomo",
+   "Immobile di Prestigio",
    "Fronte Mare",
    "Ascensore"
   ],
   "arredato": false,
-  "descrizione": " Bari  Cors Vittorio Veneto in   prestigioso  palazzo d'epoca  risalente al 1934  e in posizione fronte mare, signorile  appartamento   della superficie complessiva di mq. 190 ca ...",
+  "descrizione": " Bari  Cors Vittorio Veneto in  prestigioso palazzo d'epoca  risalente al 1934  e in posizione fronte mare, signorile  appartamento   della superficie complessiva di mq. 190 ca. Sito al secondo piano composto da ingresso, salone doppio , 3 camere, cam...",
   "privato": false,
   "url": "https://www.trovacasa.it/annunci/ba-tc-7985-72209964",
   "foto": "https://cdn.trovacasa.it/annunci/mlis/A_7985_72209964_1241634795/foto.jpg",
@@ -188,6 +215,33 @@
  },
  {
   "citta": "pisa",
+  "titolo": "Villa da privato a Pisa via Nazario Sauro, 27",
+  "zona": "Porta a Lucca",
+  "canone": 2700,
+  "locali": 7,
+  "mq": 322,
+  "tag": [
+   "Giardino",
+   "Box",
+   "Da Privato",
+   "Riscaldamento Autonomo",
+   "Caminetto",
+   "Zona Residenziale"
+  ],
+  "arredato": false,
+  "descrizione": "Villa d’epoca con giardino\n\nLa villa si trova nella zona residenziale della città, immersa in un bellissimo giardino di 1200 mq\n\nLa villa si sviluppa su 2 livelli, per un totale di circa 322 metri quadrati 4 camere 3 bagni.\n\nPiano terra: ampio sog...",
+  "privato": true,
+  "url": "https://www.trovacasa.it/annunci/pi-tc-3427-72671788",
+  "foto": "https://pic.trovacasa.it/image/1981145162/m-c.jpg",
+  "camere": 6,
+  "canone_sostenibile": 3454,
+  "margine": 754,
+  "incidenza": 0.781702374059062,
+  "esito": "passa",
+  "eur_mq": 8.4
+ },
+ {
+  "citta": "pisa",
   "titolo": "Mansarda a Pisa",
   "zona": "Landi",
   "canone": 2150,
@@ -229,7 +283,7 @@
    "Aria Condizionata"
   ],
   "arredato": true,
-  "descrizione": "Agenzia immobiliare Gabetti  Verona  Centro propone a due passi dall'Arena, luminoso tranquillo quarto piano, servito da ascensore, inserito in un contesto signorile. Appartamento di 170 mq composto da ingresso, salone, zona pranzo con cucinotto, du...",
+  "descrizione": "Agenzia immobiliare Gabetti  Verona  Centro propone a due passi dall'Arena, luminoso tranquillo quarto piano, servito da ascensore, inserito in un contesto signorile.  Appartamento  di 170 mq composto da ingresso, salone, zona pranzo con cucinotto, du...",
   "privato": false,
   "url": "https://www.trovacasa.it/annunci/vr-tc-47088-72765346",
   "foto": "https://cdn.trovacasa.it/annunci/mlis/A_47088_72765346_1253680999/foto.jpg",
@@ -269,33 +323,6 @@
  },
  {
   "citta": "lucca",
-  "titolo": "Appartamento a Lucca via della Stufa,, 55100",
-  "zona": "Piazza Napoleone - San Michele",
-  "canone": 2200,
-  "locali": 8,
-  "mq": 200,
-  "tag": [
-   "Terrazzo",
-   "Parzialmente Arredato",
-   "Caminetto",
-   "Ristrutturato",
-   "Riscaldamento a Pavimento",
-   "Centrale"
-  ],
-  "arredato": true,
-  "descrizione": "Rif. 9428 - elegante  appartamento  arredato di cucina all'interno delle mura - Nel cuore del centro storico, in zona facile accesso auto, affittasi bellissimo  appartamento  di circa 200 mq, posto al terzo piano con loggia e scale molto belle, comple...",
-  "privato": false,
-  "url": "https://www.trovacasa.it/annunci/lu-tc-9738-72233106",
-  "foto": "https://pic.trovacasa.it/image/1959871082/m-c.jpg",
-  "camere": 5,
-  "canone_sostenibile": 2790,
-  "margine": 590,
-  "incidenza": 0.7885304659498208,
-  "esito": "passa",
-  "eur_mq": 11.0
- },
- {
-  "citta": "lucca",
   "titolo": "Appartamento a Lucca via della stufa",
   "zona": "Piazza Napoleone - San Michele",
   "canone": 2200,
@@ -322,32 +349,6 @@
   "eur_mq": 10.5
  },
  {
-  "citta": "lucca",
-  "titolo": "Appartamento a Lucca via Jacopo della Quercia",
-  "zona": "San Marco - Acquacalda",
-  "canone": 2850,
-  "locali": 7,
-  "mq": 463,
-  "tag": [
-   "Arredato",
-   "Giardino",
-   "Luminoso",
-   "Studio",
-   "Sala da Pranzo"
-  ],
-  "arredato": true,
-  "descrizione": "[ita] Disponibile da: 25/08/2026\nMensilità minime prenotabili: 1\nMensilità massime prenotabili: 18\nPer prenotare l'annuncio clicca sul bottone \"Prenota Qui\"\n\n \n[eng] Available from: 25/08/2026\nMinimum months rental: 1\nMaximum months rental: 18\nTo...",
-  "privato": false,
-  "url": "https://www.trovacasa.it/annunci/lu-tc-79063-72838952",
-  "foto": "https://pic.trovacasa.it/image/1990972028/m-c.jpg",
-  "camere": 6,
-  "canone_sostenibile": 3348,
-  "margine": 498,
-  "incidenza": 0.8512544802867383,
-  "esito": "passa",
-  "eur_mq": 6.2
- },
- {
   "citta": "bari",
   "titolo": "Appartamento a Bari via Alessandro Maria Calefati, 113",
   "zona": "Murat",
@@ -363,7 +364,7 @@
    "Cucina Abitabile"
   ],
   "arredato": true,
-  "descrizione": "Via Alessandro Maria Calefati,  in Stabile Signorile,  Prestigioso   Appartamento  di metri quadri 190, piano alto, composto da 4 stanze, ampia zona living - soggiorno con Parete Cucina Completa, 3 ...",
+  "descrizione": "Via Alessandro Maria Calefati,  in Stabile Signorile, Prestigioso  Appartamento  di metri quadri 190, piano alto, composto da 4 stanze, ampia zona living - soggiorno con Parete Cucina Completa, 3 bagni, vano lavanderia, ripostiglio. Locazione non di...",
   "privato": false,
   "url": "https://www.trovacasa.it/annunci/ba-tc-11328-72202257",
   "foto": "https://pic.trovacasa.it/image/1958124452/m-c.jpg",
@@ -373,33 +374,6 @@
   "incidenza": 0.8038585209003215,
   "esito": "passa",
   "eur_mq": 10.5
- },
- {
-  "citta": "lucca",
-  "titolo": "Villa a Schiera a Lucca via Borgo Giannotti,, 55100",
-  "zona": "San Marco - Acquacalda",
-  "canone": 1750,
-  "locali": 7,
-  "mq": 180,
-  "tag": [
-   "Non Arredato/Vuoto",
-   "Giardino Privato",
-   "Posto Auto",
-   "Zona Residenziale",
-   "Aria Condizionata",
-   "Cancello Elettrico"
-  ],
-  "arredato": false,
-  "descrizione": "Rif. 9486 - villetta bifamiliare non ammobiliata 200 mt dal centro - a due passi dalle mura, zona residenziale, affittasi villetta bifamiliare di circa 180 mq con giardino privato su tre lati. L'appartamento si sviluppa tutto al secondo piano (35...",
-  "privato": true,
-  "url": "https://www.trovacasa.it/annunci/lu-tc-9738-72233104",
-  "foto": "https://pic.trovacasa.it/image/1959870856/m-c.jpg",
-  "camere": 4,
-  "canone_sostenibile": 2232,
-  "margine": 482,
-  "incidenza": 0.7840501792114696,
-  "esito": "passa",
-  "eur_mq": 9.7
  },
  {
   "citta": "trento",
@@ -427,6 +401,33 @@
   "incidenza": 0.9733307377846993,
   "esito": "passa",
   "eur_mq": 11.1
+ },
+ {
+  "citta": "verona",
+  "titolo": "Appartamento a Verona via Leoncino, 18",
+  "zona": "Centro Storico",
+  "canone": 3500,
+  "locali": 6,
+  "mq": 302,
+  "tag": [
+   "Arredato",
+   "Box",
+   "Caminetto",
+   "Ascensore",
+   "Centrale",
+   "Parquet"
+  ],
+  "arredato": true,
+  "descrizione": "Signorile  appartamento  arredato 270mq V.Ze arena/piazza bra\n\nIn collaborazione esclusiva con l'agenzia studio immobili  verona \n\nDisponibile da subito\n\nNel cuore del centro storico di  Verona , a pochi passi dall'Arena e da Piazza Bra, proponiamo in l...",
+  "privato": false,
+  "url": "https://www.trovacasa.it/annunci/vr-tc-21133-72456614",
+  "foto": "https://pic.trovacasa.it/image/1970545172/m-c.jpg",
+  "camere": 5,
+  "canone_sostenibile": 3631,
+  "margine": 131,
+  "incidenza": 0.9639217846323327,
+  "esito": "passa",
+  "eur_mq": 11.6
  },
  {
   "citta": "bari",
@@ -477,6 +478,33 @@
   "incidenza": 1.0336985734959685,
   "esito": "al limite",
   "eur_mq": 23.7
+ },
+ {
+  "citta": "como",
+  "titolo": "Appartamento a Como via Bellinzona",
+  "zona": "Monte Olimpino",
+  "canone": 3500,
+  "locali": 5,
+  "mq": 190,
+  "tag": [
+   "Box",
+   "Vista Lago",
+   "Parzialmente Arredato",
+   "Parquet",
+   "Cantina",
+   "Terrazzo Coperto"
+  ],
+  "arredato": true,
+  "descrizione": "In un esclusivo condominio nella zona di Villa Olmo a  Como , in un contesto di pregio dei primi anni 2000, proponiamo un bellissimo  appartamento  vista lago. L’ appartamento  ha un bell’ingresso, un grande soggiorno con ampio terrazzo coperto vista la...",
+  "privato": false,
+  "url": "https://www.trovacasa.it/annunci/co-tc-83436-72592538",
+  "foto": "https://pic.trovacasa.it/image/1976604142/m-c.jpg",
+  "camere": 4,
+  "canone_sostenibile": 3179,
+  "margine": -321,
+  "incidenza": 1.100975149418056,
+  "esito": "al limite",
+  "eur_mq": 18.4
  },
  {
   "citta": "verona",
