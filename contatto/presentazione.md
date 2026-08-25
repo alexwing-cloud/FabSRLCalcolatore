@@ -6,7 +6,9 @@ Testi di presentazione, in tre lunghezze. Sono pronti all'uso.
 
 ## 1. Le tre righe — per il corpo della mail
 
-> Sono **Alex Morsellino**, business developer e titolare di **FAB S.r.l.** Gestiamo
+> Sono **Alex Morsellino**, business developer e titolare di **FAB S.r.l.** — una società
+> nata fra ex giocatori di rugby professionisti, il che spiega parecchio di come lavoriamo.
+> Gestiamo
 > appartamenti in locazione turistica breve con il marchio **STAY Apartments**, fra
 > Trieste, Muggia e Barcola, con pulizie e lavanderia interne. Prendiamo immobili in
 > affitto con facoltà di sublocazione, contratti 6+6 o 8+8: alla proprietà garantiamo
@@ -37,6 +39,20 @@ Alle spalle ci sono **dieci anni di esperienza** nel settore.
 Quattro persone con quattro mestieri distinti: chi tratta l'immobile non è chi lo
 gestisce, e chi firma i contratti non è chi risponde agli ospiti. È il motivo per cui
 riusciamo a valutare in fretta e a mantenere gli standard nel tempo.
+
+### Da dove veniamo
+
+Prima di FAB abbiamo giocato a **rugby a livello professionistico**. Non è un aneddoto
+da mettere in fondo a una presentazione: è il motivo per cui questa squadra è fatta così.
+
+Nel rugby ogni ruolo è diverso e nessuno può fare quello dell'altro. La partita si vince
+in ottanta minuti, non in una giocata. E chi non si prende la sua parte di lavoro sporco
+si vede subito, perché lo pagano gli altri.
+
+Gestire quaranta appartamenti somiglia molto più a quello che a un investimento
+finanziario: sono standard tenuti tutti i giorni, per anni, da persone che sanno cosa
+tocca a chi. Ed è la stessa ragione per cui firmiamo contratti di sei anni invece di
+cercare l'affare veloce.
 
 ### Dove siamo
 
