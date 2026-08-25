@@ -70,6 +70,7 @@ def estrai(pag, citta):
         desc = uno(r'class="card__description">(.*?)</p>') or ""
         desc = re.sub(r"<[^>]+>", " ", desc)
         link = uno(r'<a href="(/annunci/[^"]+)"')
+        foto = uno(r'class="card__img[^"]*">\s*<img data-src="([^"]+)"')
 
         fuori.append({
             "citta": citta, "titolo": titolo, "zona": uno(r'class="card__quartiere">(.*?)</span>'),
@@ -78,6 +79,7 @@ def estrai(pag, citta):
             "descrizione": desc[:300],
             "privato": any("privato" in t.lower() for t in tag),
             "url": "https://www.trovacasa.it" + link if link else None,
+            "foto": foto,
         })
     return fuori
 

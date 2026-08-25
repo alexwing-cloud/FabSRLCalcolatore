@@ -1,6 +1,6 @@
 # Report giornaliero — 25/08/2026
 
-**250 annunci in elenco**, di cui 232 entro il canone sostenibile.
+**250 annunci nuovi**, di cui 232 entro il canone sostenibile.
 
 | Città | Zona | Canone | Locali | m² | €/mq | Sostenibile | Margine | Note |
 |---|---|---:|---:|---:|---:|---:|---:|---|

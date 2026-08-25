@@ -28,6 +28,7 @@ python3 annunci.py --pagine 3 || echo "!! annunci.py ha avuto problemi"
 
 echo "-- report"
 NUOVI=$(python3 report.py "$MODO" | awk -F': ' '/^nuovi/{print $2}')
+python3 vetrina.py || echo "!! vetrina.py fallito"
 
 cd "$REPO" || exit 1
 if [ -n "$(git status --porcelain)" ]; then
