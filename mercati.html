@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carta dei Mercati</title>
+<meta name="description" content="Le città italiane di seconda fascia ordinate per quanto incassa chi gestisce bene.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#FAFBFC; --surface:#FFFFFF; --surface-2:#F1F4F7; --line:#DCE3EA; --line-strong:#B9C6D2;
+  --text:#131A21; --text-soft:#56646F; --text-faint:#8794A0; --accent:#17466B; --accent-soft:#E3ECF3;
+  --ok:#2F7D53; --ok-bg:#E4F1E9; --warn:#A9711A; --warn-bg:#FAEFDB; --ko:#AF4136; --ko-bg:#F9E4E1;
+  --shadow:0 1px 2px rgba(19,26,33,.05), 0 8px 24px -16px rgba(19,26,33,.25); --radius:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#0E141A; --surface:#151D25; --surface-2:#1D2831; --line:#2A3742; --line-strong:#3D4D5A;
+  --text:#E6ECF1; --text-soft:#9FB0BD; --text-faint:#75899A; --accent:#7CB4DC; --accent-soft:#1B2C3B;
+  --ok:#63B98A; --ok-bg:#16301F; --warn:#D9A648; --warn-bg:#33270F; --ko:#E0776B; --ko-bg:#361B18;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+} }
+:root[data-theme="dark"]{
+  --ground:#0E141A; --surface:#151D25; --surface-2:#1D2831; --line:#2A3742; --line-strong:#3D4D5A;
+  --text:#E6ECF1; --text-soft:#9FB0BD; --text-faint:#75899A; --accent:#7CB4DC; --accent-soft:#1B2C3B;
+  --ok:#63B98A; --ok-bg:#16301F; --warn:#D9A648; --warn-bg:#33270F; --ko:#E0776B; --ko-bg:#361B18;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--ground); color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif; font-size:15px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;}
+h1,h2{font-family:Newsreader,Georgia,serif; font-weight:600; text-wrap:balance; margin:0}
+.num{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+.intestazione{padding:22px clamp(16px,4vw,36px); border-bottom:1px solid var(--line); background:var(--surface);
+  display:flex; flex-wrap:wrap; gap:14px 26px; align-items:baseline}
+.occhiello{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint); font-weight:600}
+.intestazione h1{font-size:26px; letter-spacing:-.01em}
+.intestazione .sub{color:var(--text-soft); font-size:13px; max-width:64ch; flex:1; min-width:260px}
+main{max-width:1180px; margin:0 auto; padding:clamp(16px,3vw,28px) clamp(16px,4vw,36px) 64px;
+  display:flex; flex-direction:column; gap:18px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
+.sez{padding:18px 20px}
+.sez>header{display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:14px}
+.sez h2{font-size:18px}
+.sez .nota{font-size:11.5px; color:var(--text-faint); max-width:54ch}
+.clusters{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px}
+.cl{display:flex; gap:13px; padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--surface); border-left-width:4px}
+.cl--salto{border-left-color:var(--ok)} .cl--sopra{border-left-color:var(--warn)}
+.cl--gemelli{border-left-color:var(--accent)} .cl--sotto{border-left-color:var(--line-strong)}
+.cl-n{font-family:"IBM Plex Mono",monospace; font-size:26px; font-weight:600; line-height:1; color:var(--text-faint)}
+.cl--salto .cl-n{color:var(--ok)} .cl--sopra .cl-n{color:var(--warn)} .cl--gemelli .cl-n{color:var(--accent)}
+.cl-t{font-weight:600; font-size:14px}
+.cl-c{font-size:12px; color:var(--text-soft); margin:2px 0 5px}
+.cl-s{font-size:11.5px; color:var(--text-faint); line-height:1.45}
+.filtri{display:flex; flex-wrap:wrap; gap:7px}
+.f{background:var(--surface-2); color:var(--text-soft); border:1px solid var(--line); border-radius:99px;
+  padding:5px 12px; font:inherit; font-size:12.5px; cursor:pointer}
+.f[aria-pressed="true"]{background:var(--accent); color:var(--surface); border-color:var(--accent)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:13.5px}
+th,td{padding:7px 10px; text-align:right; white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--text-faint);
+  font-weight:600; border-bottom:1px solid var(--line); cursor:pointer; user-select:none; position:sticky; top:0;
+  background:var(--surface)}
+thead th:hover{color:var(--text)}
+thead th[data-dir]::after{content:" ▾"; opacity:.7}
+thead th[data-dir="asc"]::after{content:" ▴"}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:last-child{border-bottom:0}
+tbody tr.qui{background:var(--accent-soft); font-weight:600}
+td.ok{color:var(--ok)} td.warn{color:var(--warn)} td.ko{color:var(--ko)}
+.metodo{font-size:12.5px; color:var(--text-soft); line-height:1.6}
+.metodo b{color:var(--text)}
+.metodo ul{margin:8px 0 0; padding-left:20px} .metodo li{margin-bottom:5px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="intestazione">
+  <div>
+    <div class="occhiello">FAB S.r.l. · aggiornato il 25/08/2026</div>
+    <h1>Carta dei Mercati</h1>
+  </div>
+  <div class="sub">49 città italiane di seconda fascia, ordinate per quanto incassa <b>chi gestisce bene</b> — non per la media di mercato. Con il canone massimo che puoi pagare per appartamento restando entro il 25%.</div>
+</header>
+
+<main>
+
+  <section class="card sez">
+    <header>
+      <h2>Come si dividono</h2>
+      <div class="nota">Confronto sul quartile alto, perché è lì che operi: le tue strutture girano fra il 77% e il 93% di occupazione.</div>
+    </header>
+    <div class="clusters"><div class="cl cl--salto"><div class="cl-n">3</div><div><div class="cl-t">Salto vero</div><div class="cl-c">Bolzano · Como · Verona</div><div class="cl-s">Il top 25% incassa almeno il 20% in più che a Trieste. Qui lo spostamento si ripaga.</div></div></div><div class="cl cl--sopra"><div class="cl-n">3</div><div><div class="cl-t">Sopra, di poco</div><div class="cl-c">Bari · Siena · Bergamo</div><div class="cl-s">Dal 4% all'8% meglio di Trieste. Non è il numero che giustifica un trasloco: serve un'altra ragione.</div></div></div><div class="cl cl--gemelli"><div class="cl-n">4</div><div><div class="cl-t">Gemelli di Trieste</div><div class="cl-c">Trieste · Pisa · Trento · Lucca</div><div class="cl-s">Entro il 4% in su o in giù. Stesso mestiere, stesso rendimento, nessun vantaggio.</div></div></div><div class="cl cl--sotto"><div class="cl-n">39</div><div><div class="cl-t">Sotto Trieste</div><div class="cl-c">39 città</div><div class="cl-s">Il top 25% incassa meno. Ci si va solo per motivi che non stanno in questa tabella.</div></div></div></div>
+  </section>
+
+  <section class="card sez">
+    <header>
+      <h2>Tutte le città</h2>
+      <div class="filtri">
+        <button class="f" data-f="tutte" aria-pressed="true">Tutte</button>
+        <button class="f" data-f="salto" aria-pressed="false">Salto vero</button>
+        <button class="f" data-f="sopra" aria-pressed="false">Sopra</button>
+        <button class="f" data-f="gemelli" aria-pressed="false">Gemelli</button>
+        <button class="f" data-f="sotto" aria-pressed="false">Sotto</button>
+      </div>
+    </header>
+    <div class="scroll">
+      <table id="t">
+        <thead><tr>
+          <th data-k="nome">Città</th>
+          <th data-k="adr">Prezzo/notte</th>
+          <th data-k="occ">Occupazione</th>
+          <th data-k="r25" data-dir="desc">Top 25% · ricavo/anno</th>
+          <th data-k="canone">Canone max al 25%</th>
+          <th data-k="vs">vs Trieste</th>
+          <th data-k="premio">Premio alla bravura</th>
+          <th data-k="annunci">Annunci</th>
+        </tr></thead>
+        <tbody><tr data-cluster="salto" data-r25="46433" data-canone="967" data-premio="1.465" data-annunci="255" data-vs="67.80" data-adr="171" data-occ="67" data-nome="Bolzano"><td>Bolzano</td><td class="num">171 €</td><td class="num">67%</td><td class="num">46.433 €</td><td class="num"><b>967 €</b></td><td class="num ok">+67,8%</td><td class="num">1,46×</td><td class="num">255</td></tr>
+<tr data-cluster="salto" data-r25="38152" data-canone="795" data-premio="1.571" data-annunci="1850" data-vs="37.88" data-adr="185" data-occ="61" data-nome="Como"><td>Como</td><td class="num">185 €</td><td class="num">61%</td><td class="num">38.152 €</td><td class="num"><b>795 €</b></td><td class="num ok">+37,9%</td><td class="num">1,57×</td><td class="num">1.850</td></tr>
+<tr data-cluster="salto" data-r25="34861" data-canone="726" data-premio="1.573" data-annunci="2725" data-vs="25.98" data-adr="155" data-occ="60" data-nome="Verona"><td>Verona</td><td class="num">155 €</td><td class="num">60%</td><td class="num">34.861 €</td><td class="num"><b>726 €</b></td><td class="num ok">+26,0%</td><td class="num">1,57×</td><td class="num">2.725</td></tr>
+<tr data-cluster="sopra" data-r25="29858" data-canone="622" data-premio="1.429" data-annunci="2696" data-vs="7.90" data-adr="115" data-occ="68" data-nome="Bari"><td>Bari</td><td class="num">115 €</td><td class="num">68%</td><td class="num">29.858 €</td><td class="num"><b>622 €</b></td><td class="num ok">+7,9%</td><td class="num">1,43×</td><td class="num">2.696</td></tr>
+<tr data-cluster="sopra" data-r25="29201" data-canone="608" data-premio="1.657" data-annunci="1061" data-vs="5.53" data-adr="158" data-occ="57" data-nome="Siena"><td>Siena</td><td class="num">158 €</td><td class="num">57%</td><td class="num">29.201 €</td><td class="num"><b>608 €</b></td><td class="num ok">+5,5%</td><td class="num">1,66×</td><td class="num">1.061</td></tr>
+<tr data-cluster="sopra" data-r25="29187" data-canone="608" data-premio="1.425" data-annunci="1254" data-vs="5.48" data-adr="115" data-occ="67" data-nome="Bergamo"><td>Bergamo</td><td class="num">115 €</td><td class="num">67%</td><td class="num">29.187 €</td><td class="num"><b>608 €</b></td><td class="num ok">+5,5%</td><td class="num">1,43×</td><td class="num">1.254</td></tr>
+<tr data-cluster="gemelli" data-r25="27671" data-canone="576" data-premio="1.509" data-annunci="1369" data-vs="0.00" data-adr="118" data-occ="62" data-nome="Trieste" class="qui"><td>Trieste</td><td class="num">118 €</td><td class="num">62%</td><td class="num">27.671 €</td><td class="num"><b>576 €</b></td><td class="num warn">+0,0%</td><td class="num">1,51×</td><td class="num">1.369</td></tr>
+<tr data-cluster="gemelli" data-r25="27631" data-canone="576" data-premio="1.559" data-annunci="1106" data-vs="-0.14" data-adr="117" data-occ="65" data-nome="Pisa"><td>Pisa</td><td class="num">117 €</td><td class="num">65%</td><td class="num">27.631 €</td><td class="num"><b>576 €</b></td><td class="num warn">−0,1%</td><td class="num">1,56×</td><td class="num">1.106</td></tr>
+<tr data-cluster="gemelli" data-r25="27397" data-canone="571" data-premio="1.531" data-annunci="389" data-vs="-0.99" data-adr="122" data-occ="59" data-nome="Trento"><td>Trento</td><td class="num">122 €</td><td class="num">59%</td><td class="num">27.397 €</td><td class="num"><b>571 €</b></td><td class="num warn">−1,0%</td><td class="num">1,53×</td><td class="num">389</td></tr>
+<tr data-cluster="gemelli" data-r25="26788" data-canone="558" data-premio="1.818" data-annunci="1754" data-vs="-3.19" data-adr="175" data-occ="57" data-nome="Lucca"><td>Lucca</td><td class="num">175 €</td><td class="num">57%</td><td class="num">26.788 €</td><td class="num"><b>558 €</b></td><td class="num warn">−3,2%</td><td class="num">1,82×</td><td class="num">1.754</td></tr>
+<tr data-cluster="sotto" data-r25="25904" data-canone="540" data-premio="1.429" data-annunci="796" data-vs="-6.39" data-adr="104" data-occ="66" data-nome="Padova"><td>Padova</td><td class="num">104 €</td><td class="num">66%</td><td class="num">25.904 €</td><td class="num"><b>540 €</b></td><td class="num ko">−6,4%</td><td class="num">1,43×</td><td class="num">796</td></tr>
+<tr data-cluster="sotto" data-r25="25376" data-canone="529" data-premio="1.426" data-annunci="385" data-vs="-8.29" data-adr="114" data-occ="59" data-nome="Treviso"><td>Treviso</td><td class="num">114 €</td><td class="num">59%</td><td class="num">25.376 €</td><td class="num"><b>529 €</b></td><td class="num ko">−8,3%</td><td class="num">1,43×</td><td class="num">385</td></tr>
+<tr data-cluster="sotto" data-r25="25215" data-canone="525" data-premio="1.541" data-annunci="944" data-vs="-8.88" data-adr="121" data-occ="61" data-nome="Salerno"><td>Salerno</td><td class="num">121 €</td><td class="num">61%</td><td class="num">25.215 €</td><td class="num"><b>525 €</b></td><td class="num ko">−8,9%</td><td class="num">1,54×</td><td class="num">944</td></tr>
+<tr data-cluster="sotto" data-r25="25102" data-canone="523" data-premio="2.137" data-annunci="581" data-vs="-9.28" data-adr="183" data-occ="51" data-nome="Arezzo"><td>Arezzo</td><td class="num">183 €</td><td class="num">51%</td><td class="num">25.102 €</td><td class="num"><b>523 €</b></td><td class="num ko">−9,3%</td><td class="num">2,14×</td><td class="num">581</td></tr>
+<tr data-cluster="sotto" data-r25="24838" data-canone="517" data-premio="1.532" data-annunci="547" data-vs="-10.24" data-adr="110" data-occ="60" data-nome="Modena"><td>Modena</td><td class="num">110 €</td><td class="num">60%</td><td class="num">24.838 €</td><td class="num"><b>517 €</b></td><td class="num ko">−10,2%</td><td class="num">1,53×</td><td class="num">547</td></tr>
+<tr data-cluster="sotto" data-r25="24257" data-canone="505" data-premio="1.876" data-annunci="2840" data-vs="-12.34" data-adr="147" data-occ="60" data-nome="Siracusa"><td>Siracusa</td><td class="num">147 €</td><td class="num">60%</td><td class="num">24.257 €</td><td class="num"><b>505 €</b></td><td class="num ko">−12,3%</td><td class="num">1,88×</td><td class="num">2.840</td></tr>
+<tr data-cluster="sotto" data-r25="23945" data-canone="499" data-premio="1.580" data-annunci="1613" data-vs="-13.47" data-adr="128" data-occ="60" data-nome="La Spezia"><td>La Spezia</td><td class="num">128 €</td><td class="num">60%</td><td class="num">23.945 €</td><td class="num"><b>499 €</b></td><td class="num ko">−13,5%</td><td class="num">1,58×</td><td class="num">1.613</td></tr>
+<tr data-cluster="sotto" data-r25="23602" data-canone="492" data-premio="1.680" data-annunci="1689" data-vs="-14.70" data-adr="121" data-occ="65" data-nome="Cagliari"><td>Cagliari</td><td class="num">121 €</td><td class="num">65%</td><td class="num">23.602 €</td><td class="num"><b>492 €</b></td><td class="num ko">−14,7%</td><td class="num">1,68×</td><td class="num">1.689</td></tr>
+<tr data-cluster="sotto" data-r25="23212" data-canone="484" data-premio="1.570" data-annunci="2900" data-vs="-16.11" data-adr="110" data-occ="58" data-nome="Genova"><td>Genova</td><td class="num">110 €</td><td class="num">58%</td><td class="num">23.212 €</td><td class="num"><b>484 €</b></td><td class="num ko">−16,1%</td><td class="num">1,57×</td><td class="num">2.900</td></tr>
+<tr data-cluster="sotto" data-r25="23068" data-canone="481" data-premio="1.447" data-annunci="287" data-vs="-16.63" data-adr="96" data-occ="62" data-nome="Udine"><td>Udine</td><td class="num">96 €</td><td class="num">62%</td><td class="num">23.068 €</td><td class="num"><b>481 €</b></td><td class="num ko">−16,6%</td><td class="num">1,45×</td><td class="num">287</td></tr>
+<tr data-cluster="sotto" data-r25="23041" data-canone="480" data-premio="1.643" data-annunci="266" data-vs="-16.73" data-adr="107" data-occ="61" data-nome="Monza"><td>Monza</td><td class="num">107 €</td><td class="num">61%</td><td class="num">23.041 €</td><td class="num"><b>480 €</b></td><td class="num ko">−16,7%</td><td class="num">1,64×</td><td class="num">266</td></tr>
+<tr data-cluster="sotto" data-r25="22837" data-canone="476" data-premio="1.898" data-annunci="666" data-vs="-17.47" data-adr="125" data-occ="58" data-nome="Ravenna"><td>Ravenna</td><td class="num">125 €</td><td class="num">58%</td><td class="num">22.837 €</td><td class="num"><b>476 €</b></td><td class="num ko">−17,5%</td><td class="num">1,90×</td><td class="num">666</td></tr>
+<tr data-cluster="sotto" data-r25="22534" data-canone="469" data-premio="1.402" data-annunci="188" data-vs="-18.56" data-adr="88" data-occ="67" data-nome="Pavia"><td>Pavia</td><td class="num">88 €</td><td class="num">67%</td><td class="num">22.534 €</td><td class="num"><b>469 €</b></td><td class="num ko">−18,6%</td><td class="num">1,40×</td><td class="num">188</td></tr>
+<tr data-cluster="sotto" data-r25="22465" data-canone="468" data-premio="1.593" data-annunci="185" data-vs="-18.81" data-adr="103" data-occ="53" data-nome="Mantova"><td>Mantova</td><td class="num">103 €</td><td class="num">53%</td><td class="num">22.465 €</td><td class="num"><b>468 €</b></td><td class="num ko">−18,8%</td><td class="num">1,59×</td><td class="num">185</td></tr>
+<tr data-cluster="sotto" data-r25="21793" data-canone="454" data-premio="1.663" data-annunci="963" data-vs="-21.24" data-adr="123" data-occ="55" data-nome="Perugia"><td>Perugia</td><td class="num">123 €</td><td class="num">55%</td><td class="num">21.793 €</td><td class="num"><b>454 €</b></td><td class="num ko">−21,2%</td><td class="num">1,66×</td><td class="num">963</td></tr>
+<tr data-cluster="sotto" data-r25="21573" data-canone="449" data-premio="1.541" data-annunci="4337" data-vs="-22.04" data-adr="96" data-occ="61" data-nome="Torino"><td>Torino</td><td class="num">96 €</td><td class="num">61%</td><td class="num">21.573 €</td><td class="num"><b>449 €</b></td><td class="num ko">−22,0%</td><td class="num">1,54×</td><td class="num">4.337</td></tr>
+<tr data-cluster="sotto" data-r25="21416" data-canone="446" data-premio="1.521" data-annunci="358" data-vs="-22.60" data-adr="98" data-occ="61" data-nome="Vicenza"><td>Vicenza</td><td class="num">98 €</td><td class="num">61%</td><td class="num">21.416 €</td><td class="num"><b>446 €</b></td><td class="num ko">−22,6%</td><td class="num">1,52×</td><td class="num">358</td></tr>
+<tr data-cluster="sotto" data-r25="21386" data-canone="446" data-premio="1.505" data-annunci="104" data-vs="-22.71" data-adr="91" data-occ="66" data-nome="Forlì"><td>Forlì</td><td class="num">91 €</td><td class="num">66%</td><td class="num">21.386 €</td><td class="num"><b>446 €</b></td><td class="num ko">−22,7%</td><td class="num">1,51×</td><td class="num">104</td></tr>
+<tr data-cluster="sotto" data-r25="21363" data-canone="445" data-premio="1.810" data-annunci="1300" data-vs="-22.80" data-adr="117" data-occ="60" data-nome="Lecce"><td>Lecce</td><td class="num">117 €</td><td class="num">60%</td><td class="num">21.363 €</td><td class="num"><b>445 €</b></td><td class="num ko">−22,8%</td><td class="num">1,81×</td><td class="num">1.300</td></tr>
+<tr data-cluster="sotto" data-r25="21300" data-canone="444" data-premio="1.821" data-annunci="1019" data-vs="-23.02" data-adr="134" data-occ="54" data-nome="Rimini"><td>Rimini</td><td class="num">134 €</td><td class="num">54%</td><td class="num">21.300 €</td><td class="num"><b>444 €</b></td><td class="num ko">−23,0%</td><td class="num">1,82×</td><td class="num">1.019</td></tr>
+<tr data-cluster="sotto" data-r25="21234" data-canone="442" data-premio="1.531" data-annunci="131" data-vs="-23.26" data-adr="87" data-occ="64" data-nome="Piacenza"><td>Piacenza</td><td class="num">87 €</td><td class="num">64%</td><td class="num">21.234 €</td><td class="num"><b>442 €</b></td><td class="num ko">−23,3%</td><td class="num">1,53×</td><td class="num">131</td></tr>
+<tr data-cluster="sotto" data-r25="21201" data-canone="442" data-premio="1.477" data-annunci="340" data-vs="-23.38" data-adr="91" data-occ="62" data-nome="Brescia"><td>Brescia</td><td class="num">91 €</td><td class="num">62%</td><td class="num">21.201 €</td><td class="num"><b>442 €</b></td><td class="num ko">−23,4%</td><td class="num">1,48×</td><td class="num">340</td></tr>
+<tr data-cluster="sotto" data-r25="21173" data-canone="441" data-premio="1.669" data-annunci="260" data-vs="-23.48" data-adr="94" data-occ="65" data-nome="Ancona"><td>Ancona</td><td class="num">94 €</td><td class="num">65%</td><td class="num">21.173 €</td><td class="num"><b>441 €</b></td><td class="num ko">−23,5%</td><td class="num">1,67×</td><td class="num">260</td></tr>
+<tr data-cluster="sotto" data-r25="20875" data-canone="435" data-premio="1.649" data-annunci="649" data-vs="-24.56" data-adr="101" data-occ="63" data-nome="Livorno"><td>Livorno</td><td class="num">101 €</td><td class="num">63%</td><td class="num">20.875 €</td><td class="num"><b>435 €</b></td><td class="num ko">−24,6%</td><td class="num">1,65×</td><td class="num">649</td></tr>
+<tr data-cluster="sotto" data-r25="20788" data-canone="433" data-premio="1.609" data-annunci="157" data-vs="-24.87" data-adr="102" data-occ="55" data-nome="Gorizia"><td>Gorizia</td><td class="num">102 €</td><td class="num">55%</td><td class="num">20.788 €</td><td class="num"><b>433 €</b></td><td class="num ko">−24,9%</td><td class="num">1,61×</td><td class="num">157</td></tr>
+<tr data-cluster="sotto" data-r25="20632" data-canone="430" data-premio="1.710" data-annunci="185" data-vs="-25.44" data-adr="99" data-occ="60" data-nome="Varese"><td>Varese</td><td class="num">99 €</td><td class="num">60%</td><td class="num">20.632 €</td><td class="num"><b>430 €</b></td><td class="num ko">−25,4%</td><td class="num">1,71×</td><td class="num">185</td></tr>
+<tr data-cluster="sotto" data-r25="20493" data-canone="427" data-premio="1.768" data-annunci="612" data-vs="-25.94" data-adr="110" data-occ="58" data-nome="Pescara"><td>Pescara</td><td class="num">110 €</td><td class="num">58%</td><td class="num">20.493 €</td><td class="num"><b>427 €</b></td><td class="num ko">−25,9%</td><td class="num">1,77×</td><td class="num">612</td></tr>
+<tr data-cluster="sotto" data-r25="20169" data-canone="420" data-premio="1.548" data-annunci="339" data-vs="-27.11" data-adr="95" data-occ="56" data-nome="Ferrara"><td>Ferrara</td><td class="num">95 €</td><td class="num">56%</td><td class="num">20.169 €</td><td class="num"><b>420 €</b></td><td class="num ko">−27,1%</td><td class="num">1,55×</td><td class="num">339</td></tr>
+<tr data-cluster="sotto" data-r25="20095" data-canone="419" data-premio="1.421" data-annunci="131" data-vs="-27.38" data-adr="79" data-occ="63" data-nome="Novara"><td>Novara</td><td class="num">79 €</td><td class="num">63%</td><td class="num">20.095 €</td><td class="num"><b>419 €</b></td><td class="num ko">−27,4%</td><td class="num">1,42×</td><td class="num">131</td></tr>
+<tr data-cluster="sotto" data-r25="19955" data-canone="416" data-premio="1.742" data-annunci="321" data-vs="-27.88" data-adr="95" data-occ="57" data-nome="Pordenone"><td>Pordenone</td><td class="num">95 €</td><td class="num">57%</td><td class="num">19.955 €</td><td class="num"><b>416 €</b></td><td class="num ko">−27,9%</td><td class="num">1,74×</td><td class="num">321</td></tr>
+<tr data-cluster="sotto" data-r25="19349" data-canone="403" data-premio="1.838" data-annunci="348" data-vs="-30.07" data-adr="112" data-occ="56" data-nome="Savona"><td>Savona</td><td class="num">112 €</td><td class="num">56%</td><td class="num">19.349 €</td><td class="num"><b>403 €</b></td><td class="num ko">−30,1%</td><td class="num">1,84×</td><td class="num">348</td></tr>
+<tr data-cluster="sotto" data-r25="19315" data-canone="402" data-premio="1.584" data-annunci="3022" data-vs="-30.20" data-adr="86" data-occ="61" data-nome="Catania"><td>Catania</td><td class="num">86 €</td><td class="num">61%</td><td class="num">19.315 €</td><td class="num"><b>402 €</b></td><td class="num ko">−30,2%</td><td class="num">1,58×</td><td class="num">3.022</td></tr>
+<tr data-cluster="sotto" data-r25="19245" data-canone="401" data-premio="1.510" data-annunci="631" data-vs="-30.45" data-adr="85" data-occ="60" data-nome="Parma"><td>Parma</td><td class="num">85 €</td><td class="num">60%</td><td class="num">19.245 €</td><td class="num"><b>401 €</b></td><td class="num ko">−30,5%</td><td class="num">1,51×</td><td class="num">631</td></tr>
+<tr data-cluster="sotto" data-r25="19201" data-canone="400" data-premio="1.555" data-annunci="186" data-vs="-30.61" data-adr="91" data-occ="58" data-nome="Cremona"><td>Cremona</td><td class="num">91 €</td><td class="num">58%</td><td class="num">19.201 €</td><td class="num"><b>400 €</b></td><td class="num ko">−30,6%</td><td class="num">1,56×</td><td class="num">186</td></tr>
+<tr data-cluster="sotto" data-r25="18706" data-canone="390" data-premio="1.655" data-annunci="137" data-vs="-32.40" data-adr="112" data-occ="55" data-nome="Belluno"><td>Belluno</td><td class="num">112 €</td><td class="num">55%</td><td class="num">18.706 €</td><td class="num"><b>390 €</b></td><td class="num ko">−32,4%</td><td class="num">1,66×</td><td class="num">137</td></tr>
+<tr data-cluster="sotto" data-r25="17967" data-canone="374" data-premio="2.302" data-annunci="991" data-vs="-35.07" data-adr="141" data-occ="51" data-nome="Alessandria"><td>Alessandria</td><td class="num">141 €</td><td class="num">51%</td><td class="num">17.967 €</td><td class="num"><b>374 €</b></td><td class="num ko">−35,1%</td><td class="num">2,30×</td><td class="num">991</td></tr>
+<tr data-cluster="sotto" data-r25="16860" data-canone="351" data-premio="1.444" data-annunci="137" data-vs="-39.07" data-adr="70" data-occ="62" data-nome="Cuneo"><td>Cuneo</td><td class="num">70 €</td><td class="num">62%</td><td class="num">16.860 €</td><td class="num"><b>351 €</b></td><td class="num ko">−39,1%</td><td class="num">1,44×</td><td class="num">137</td></tr>
+<tr data-cluster="sotto" data-r25="16417" data-canone="342" data-premio="1.739" data-annunci="253" data-vs="-40.67" data-adr="101" data-occ="50" data-nome="Asti"><td>Asti</td><td class="num">101 €</td><td class="num">50%</td><td class="num">16.417 €</td><td class="num"><b>342 €</b></td><td class="num ko">−40,7%</td><td class="num">1,74×</td><td class="num">253</td></tr>
+<tr data-cluster="sotto" data-r25="9878" data-canone="206" data-premio="2.775" data-annunci="905" data-vs="-64.30" data-adr="126" data-occ="56" data-nome="Rovigo"><td>Rovigo</td><td class="num">126 €</td><td class="num">56%</td><td class="num">9.878 €</td><td class="num"><b>206 €</b></td><td class="num ko">−64,3%</td><td class="num">2,77×</td><td class="num">905</td></tr>
+</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card sez">
+    <header><h2>Come leggerla</h2></header>
+    <div class="metodo">
+      <ul>
+        <li><b>Top 25% · ricavo/anno</b> — quanto incassa in un anno un appartamento gestito nel quartile alto di quel mercato. È il livello dove stai tu, quindi è il solo confronto che ti riguarda. La media di mercato mescola professionisti e improvvisati e ti farebbe scegliere male.</li>
+        <li><b>Canone max al 25%</b> — il canone mensile massimo per appartamento che rispetta la tua regola, a quel livello di ricavo. È il numero da portare in trattativa: sopra quella cifra il deal è già bocciato.</li>
+        <li><b>Premio alla bravura</b> — quanto il quartile alto incassa più della mediana. Sopra 1,7× vuol dire che in quel mercato la concorrenza è dilettantesca e un operatore serio prende quota. Sotto 1,4× vuol dire che sono già tutti bravi.</li>
+        <li><b>Annunci</b> — l'offerta esistente. Attenzione: il perimetro geografico non è garantito uguale fra città (in alcuni casi include la provincia), quindi usalo come indizio, non come misura.</li>
+      </ul>
+      <p><b>Fonte e metodo.</b> Una sola fonte per tutte le città (guestfavorites, periodo Agosto 2025 - Luglio 2026), perché mescolare metodologie diverse porta a conclusioni rovesciate — verificato sul campo con Bergamo. I dati sono medie di mercato Airbnb: dicono cosa incassa un appartamento, non quanto costa prenderlo in affitto in quella via. Il canone reale lo si trova solo trattando.</p>
+      <p>Il conto completo di un singolo blocco si fa nel <a href="./">Vaglio Deal</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* Filtri per cluster e ordinamento delle colonne. */
+const tb = document.querySelector('#t tbody');
+const righe = [...tb.rows];
+
+document.querySelectorAll('.f').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.f').forEach(x => x.setAttribute('aria-pressed', x === b));
+  const f = b.dataset.f;
+  righe.forEach(r => r.hidden = (f !== 'tutte' && r.dataset.cluster !== f));
+});
+
+document.querySelectorAll('#t thead th').forEach(th => th.onclick = () => {
+  const k = th.dataset.k;
+  const giu = th.dataset.dir !== 'asc';
+  document.querySelectorAll('#t thead th').forEach(x => x.removeAttribute('data-dir'));
+  th.dataset.dir = giu ? 'desc' : 'asc';
+  righe.sort((a, b) => {
+    const x = a.dataset[k], y = b.dataset[k];
+    const n = isNaN(parseFloat(x)) ? null : parseFloat(x) - parseFloat(y);
+    const v = n === null ? x.localeCompare(y, 'it') : n;
+    return giu ? -v : v;
+  });
+  righe.forEach(r => tb.appendChild(r));
+});
+</script>
+</body>
+</html>

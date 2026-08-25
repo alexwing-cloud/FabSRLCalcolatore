@@ -89,3 +89,34 @@ git add . && git commit -m "cosa ho cambiato" && git push
 - **Riferimento di mercato Trieste** — 1.369 annunci Airbnb, agosto 2025 – luglio 2026:
   occupazione mediana 59%, top 25% 79%, top 10% 94%, prezzo medio 118 €.
   Fonte: guestfavorites.com. Serve da metro di paragone, non da obiettivo.
+
+## La Carta dei Mercati
+
+`mercati.html` mette in fila 49 città italiane di seconda fascia per **quanto incassa
+chi gestisce bene** — il quartile alto, non la media di mercato — e per ognuna calcola
+il **canone massimo sostenibile** per appartamento al 25% del lordo.
+
+Si rigenera con due comandi:
+
+```bash
+cd dati && python3 raccogli.py && python3 genera.py
+```
+
+`raccogli.py` interroga la fonte di mercato (una sola per tutte le città, con pausa fra
+le richieste) e scrive `citta.json`. `genera.py` trasforma il JSON in `mercati.html`.
+È lo stesso giro che gira in automatico ogni domenica sera.
+
+### Perché il quartile alto e non la media
+
+La media di mercato mescola professionisti e improvvisati. Bergamo ha il 67% di
+occupazione media contro il 62% di Trieste, e sembra un mercato migliore: ma quasi tutto
+quel vantaggio è un effetto pavimento — là si riempiono anche gli annunci scarsi. Sul
+quartile alto, dove operiamo noi, il divario si riduce a pochi punti percentuali.
+Scegliere una città dal dato medio porta alla conclusione sbagliata.
+
+### Una sola fonte per tutte
+
+I dati vengono tutti dalla stessa fonte e dallo stesso periodo. Mescolare metodologie
+diverse rovescia le conclusioni: InsideAirbnb stima l'occupazione dalle recensioni e
+per Bergamo città dà il 19,7% dove un'altra fonte dà il 67%. Non sono numeri
+confrontabili, e usarli insieme avrebbe fatto scartare un mercato buono.
