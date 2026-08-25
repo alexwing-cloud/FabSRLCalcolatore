@@ -157,8 +157,11 @@ details.gruppo>summary:hover{color:var(--text)}
 /* riferimento di mercato: dove cade l'ipotesi rispetto agli annunci di Trieste */
 .mercato{margin-top:7px}
 .mercato .barra{position:relative; height:5px; border-radius:99px; background:var(--surface-2); border:1px solid var(--line)}
-.mercato .barra span{position:absolute; top:-2px; width:1px; height:9px; background:var(--line-strong)}
-.mercato .barra .q1{left:21.3%} .mercato .barra .med{left:52%} .mercato .barra .q3{left:78.7%} .mercato .barra .top{left:98.7%}
+.mercato .barra span{
+  position:absolute; top:-2px; width:1px; height:9px; background:var(--line-strong);
+  padding:0; margin:0; border:0; display:block;   /* blindate: nessuna regola generica le gonfia */
+}
+.mercato .barra .q1{left:21.3%} .mercato .barra .med{left:52%} .mercato .barra .q3{left:78.7%} .mercato .barra .d9{left:98.7%}
 .mercato .barra .tu{position:absolute; top:-4px; width:3px; height:13px; border-radius:2px; background:var(--accent); transform:translateX(-1px)}
 .mercato .scala{display:flex; justify-content:space-between; gap:4px; margin-top:5px; font-size:9.5px; color:var(--text-faint); letter-spacing:.01em}
 .mercato .scala span{width:0; overflow:visible; white-space:nowrap}
@@ -271,7 +274,7 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
       <input type="range" id="rOcc" min="20" max="95" step="0.5">
       <!-- Dove cade la tua ipotesi rispetto al mercato di Trieste -->
       <div class="mercato" id="mercatoOcc">
-        <div class="barra"><span class="q1"></span><span class="med"></span><span class="q3"></span><span class="top"></span><b class="tu" id="tuOcc"></b></div>
+        <div class="barra"><span class="q1"></span><span class="med"></span><span class="q3"></span><span class="d9"></span><b class="tu" id="tuOcc"></b></div>
         <div class="scala"><span>36%</span><span>59%</span><span>79%</span><span>94%</span></div>
         <div class="fonte">Trieste, distribuzione degli annunci: ultimo quarto · mediana · top 25% · top 10%</div>
       </div>
