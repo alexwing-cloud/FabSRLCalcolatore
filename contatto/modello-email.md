@@ -35,6 +35,8 @@ I campi fra `{parentesi}` si compilano per ogni immobile.
 >
 > **Perché {citta}.** {motivo_zona}
 >
+> **Se avete altri immobili simili, ci interessano.**
+>
 > Se l'immobile è ancora disponibile e la proprietà è aperta a una formula di questo tipo,
 > mi fa piacere sentirci.
 >
@@ -71,6 +73,8 @@ Stessa struttura, ma la prima cosa che legge deve essere il suo vantaggio, non c
 > con facoltà di sublocazione: l'immobile resta suo, il rischio di occupazione è nostro.
 >
 > {motivo_zona}
+>
+> **Se ha altri immobili, o conosce qualcuno nella stessa situazione, ci interessano.**
 >
 > Se le interessa capire che canone possiamo sostenere sul suo immobile, mi dica pure
 > quando la posso chiamare.
@@ -113,6 +117,15 @@ Esempi di `{motivo_zona}`, da adattare:
   entrarci con più unità nella stessa zona.»
 - **Blocco intero** — «Ci interessa in particolare perché sono {n} unità nello stesso
   stabile: è esattamente il formato su cui lavoriamo meglio.»
+
+## La riga che vale più delle altre
+
+> **Se avete altri immobili simili, ci interessano.**
+
+È fissa, va in ogni mail, e non si toglie mai. Trasforma la mail da richiesta a
+investimento: le agenzie hanno sempre immobili difficili da piazzare — grandi, con troppi
+locali, in stabili misti, sfitti da mesi — che per noi sono esattamente il formato giusto.
+Spesso il secondo immobile che ti propongono vale più di quello per cui hai scritto.
 
 ## Regole per non bruciarsi la reputazione
 
