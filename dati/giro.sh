@@ -24,7 +24,7 @@ if [ "$MODO" = "settimanale" ]; then
 fi
 
 echo "-- annunci"
-python3 annunci.py --pagine 3 || echo "!! annunci.py ha avuto problemi"
+python3 annunci.py --pagine 3 --mq-min 180 || echo "!! annunci.py ha avuto problemi"
 
 echo "-- report"
 NUOVI=$(python3 report.py "$MODO" | awk -F': ' '/^nuovi/{print $2}')

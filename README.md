@@ -219,3 +219,30 @@ cd dati && python3 vetrina_web.py && python3 vetrina.py --web
 
 250 immobili pesano circa 4 MB. Se si sfora, lo script toglie gli ultimi della lista
 finché la pagina non sta nei limiti: meglio una pagina che si apre.
+
+## Cosa cerchiamo, e dove non si trova
+
+La ricerca punta a **blocchi**, non a singoli appartamenti: superficie minima **180 m²**,
+almeno 3 locali, su tre categorie (appartamenti, appartamenti di pregio, case intere).
+
+**Le palazzine intere in affitto non stanno sui portali.** Le categorie
+`palazzi-in-affitto` e `alberghi-in-affitto` di trovacasa rispondono ma sono vuote
+ovunque — verificato su Bolzano, Verona e Roma. Su 791 annunci letti in dieci città,
+i candidati sopra i 180 m² sono 19, e nessuno è una palazzina.
+
+Quel mercato si muove tramite agenti, non tramite annunci. Per questo esiste
+`dati/agenzie.py`.
+
+## La lista delle agenzie
+
+```bash
+cd dati && python3 agenzie.py --citta bolzano verona --pagine 2
+```
+
+Estrae le agenzie della città con indirizzo, telefoni, numero di annunci e cosa
+trattano, e le ordina per rilevanza: pesa chi lavora su **immobili commerciali**
+(che è dove passano le cessioni di ramo d'azienda e le strutture ricettive), su
+palazzi e su ville, moltiplicato per il volume.
+
+Le email non stanno nell'elenco: si trovano sul sito di ogni agenzia, una per una.
+Ha senso farlo solo sulla rosa scelta.

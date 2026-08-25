@@ -40,8 +40,19 @@ def camere(locali, mq=None):
 CHIAVI_ARREDO = ("arredato", "parzialmente arredato")
 
 
-def pagina(citta, n):
-    url = f"https://www.trovacasa.it/appartamenti-in-affitto/{citta}"
+# Le palazzine intere in affitto non stanno sui portali: le categorie
+# palazzi-in-affitto e alberghi-in-affitto rispondono ma sono vuote ovunque
+# (verificato su Bolzano, Verona e Roma). Restano appartamenti grandi, case
+# intere e il filtro di pregio.
+CATEGORIE = [
+    "appartamenti-in-affitto/{c}",
+    "appartamenti-in-affitto/{c}/di-prestigio",
+    "case-in-affitto/{c}",
+]
+
+
+def pagina(citta, n, categoria="appartamenti-in-affitto/{c}"):
+    url = "https://www.trovacasa.it/" + categoria.format(c=citta)
     if n > 1:
         url += f"?page={n}"
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "it-IT,it;q=0.9"})
@@ -117,9 +128,11 @@ def plausibile(a, mediana_citta=None):
     return None
 
 
-def vaglia(a, canone_max_citta, locali_min, mediana_citta=None):
+def vaglia(a, canone_max_citta, locali_min, mediana_citta=None, mq_min=180):
     """Prima scrematura contro il canone massimo sostenibile della citta."""
     if not a["locali"] or a["locali"] < locali_min:
+        return None
+    if not a["mq"] or a["mq"] < mq_min:
         return None
     motivo = plausibile(a, mediana_citta)
     if motivo:
@@ -140,6 +153,8 @@ def main():
     ap.add_argument("--citta", nargs="*", help="slug delle città; default: quelle sopra Trieste più Trieste")
     ap.add_argument("--pagine", type=int, default=3, help="pagine per città (24 annunci l'una)")
     ap.add_argument("--locali-min", type=int, default=3)
+    ap.add_argument("--mq-min", type=int, default=180,
+                    help="superficie minima: cerchiamo blocchi, non monolocali")
     args = ap.parse_args()
 
     mercato = {c["slug"]: c for c in json.load(open(BASE / "citta.json", encoding="utf-8"))}
@@ -154,12 +169,15 @@ def main():
         cm = mercato.get(s, {}).get("canone25")
         if not cm:
             print(f"  {s:16s} nessun dato di mercato, salto"); continue
-        trovati = []
-        for n in range(1, args.pagine + 1):
-            p = pagina(s, n)
-            if not p: break
-            trovati += estrai(p, s)
-            time.sleep(PAUSA)
+        trovati, visti_url = [], set()
+        for cat in CATEGORIE:
+            for n in range(1, args.pagine + 1):
+                p = pagina(s, n, cat)
+                if not p: break
+                for a in estrai(p, s):
+                    if a["url"] and a["url"] not in visti_url:   # le categorie si sovrappongono
+                        visti_url.add(a["url"]); trovati.append(a)
+                time.sleep(PAUSA)
         # Mediana di riferimento della citta. Va calcolata SOLO sugli annunci gia
         # plausibili: a Trieste l'elenco contiene affitti turistici a 5.000 euro per
         # 50 mq (100 euro/mq) che da soli portavano la mediana a 34 e facevano
@@ -169,13 +187,13 @@ def main():
         mediana = qq[len(qq)//2] if qq else None
         buoni = []
         for a in trovati:
-            v = vaglia(a, cm, args.locali_min, mediana)
+            v = vaglia(a, cm, args.locali_min, mediana, args.mq_min)
             if v is None: scartati += 1
             elif v["esito"] == "scarta": scartati += 1
             else: buoni.append(v)
         tutti += buoni
         print(f"  {s:16s} {len(trovati):3d} annunci → {len(buoni):2d} da guardare "
-              f"(canone max {cm:.0f} €/camera · mediana {mediana:.1f} €/mq)"
+              f"(tetto {cm:.0f} €/unità · mediana {mediana:.1f} €/mq)"
               if mediana else f"  {s:16s} {len(trovati):3d} annunci → {len(buoni):2d} da guardare")
 
     tutti.sort(key=lambda a: -a["margine"])
