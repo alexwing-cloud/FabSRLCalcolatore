@@ -172,8 +172,9 @@ Gira sul Mac, da solo, senza autorizzazioni da rinnovare.
 | **Ogni giorno alle 7:30** | Cerca annunci nuovi, li vaglia, scrive il report, committa e pusha. Se trova qualcosa manda una notifica a schermo. |
 | **Domenica alle 20:00** | Come sopra, e in più rigenera i dati di mercato delle 49 città e la Carta dei Mercati. |
 
-I report finiscono in `report/AAAA-MM-GG-modo.md`. Il registro di cosa è successo è in
-`report/giro.log`.
+**Il file da aprire è sempre lo stesso: `report/ULTIMO.md`.** Contiene l'ultimo report
+prodotto, qualunque giorno sia. I report datati restano in `report/AAAA-MM-GG-modo.md`
+come archivio, e il registro tecnico è in `report/giro.log`.
 
 A mano, quando serve:
 

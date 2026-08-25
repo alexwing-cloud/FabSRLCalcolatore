@@ -57,11 +57,14 @@ def main(modo="giornaliero", tutti=False):
     # Un giro che non trova novita NON deve cancellare il report buono dello stesso
     # giorno: succede quando si rilancia il giro a mano dopo che e gia girato.
     if f.exists() and not nuovi and f.stat().st_size > 600:
+        (REPORT / "ULTIMO.md").write_text(f.read_text(encoding="utf-8"), encoding="utf-8")
         print(f"report: {f} (lasciato intatto, nessuna novità da aggiungere)")
         json.dump(sorted(visti | {a["url"] for a in annunci if a.get("url")}),
                   open(visti_f, "w"), indent=0)
         return 0
     f.write_text("\n".join(righe), encoding="utf-8")
+    # copia sempre allo stesso nome: e il file che Alex apre, e non cambia mai
+    (REPORT / "ULTIMO.md").write_text("\n".join(righe), encoding="utf-8")
 
     json.dump(sorted(visti | {a["url"] for a in annunci if a.get("url")}),
               open(visti_f, "w"), indent=0)
