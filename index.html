@@ -242,10 +242,10 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
   <div class="azioni">
     <select class="btn" id="preset" aria-label="Carica una struttura esistente">
       <option value="">Carica una struttura…</option>
-      <option value="muggia">Muggia · 3 appt</option>
-      <option value="venezian">Venezian · 4 appt</option>
-      <option value="machiavelli">Machiavelli · 26 appt</option>
-      <option value="serravalle">Le Residenze dei Serravalle · 9 appt</option>
+      <option value="muggiamare">Muggia Ai fronte Mare · 5 appt</option>
+      <option value="muggia2">Muggia 2 · 3 appt</option>
+      <option value="venezian">Venezian · 12 appt</option>
+      <option value="serravallo">Le Residenze dei Serravallo · 9 appt</option>
       <option value="piazzavenezia">Piazza Venezia · 11 appt</option>
       <option value="artisti">Via Degli Artisti · 4 appt</option>
       <option value="marziale">Via Marziale · 1 appt</option>
@@ -366,10 +366,10 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
     <details class="gruppo">
       <summary>Portafoglio attuale</summary>
       <div class="campi">
-        <div class="campo"><label for="portFatt">Fatturato lordo (€/anno)</label><input type="number" id="portFatt" value="2724800" step="10000"></div>
-        <div class="campo"><label for="portUtile">Utile netto (€/anno)</label><input type="number" id="portUtile" value="496274" step="1000"></div>
+        <div class="campo"><label for="portFatt">Fatturato lordo (€/anno)</label><input type="number" id="portFatt" value="1807684" step="10000"></div>
+        <div class="campo"><label for="portUtile">Utile netto (€/anno)</label><input type="number" id="portUtile" value="315702" step="1000"></div>
       </div>
-      <p class="notaCampo">Somma delle sette strutture a regime: Machiavelli, Venezian, Muggia, Serravalle, Piazza Venezia, Via Degli Artisti, Via Marziale. Sono piani, non consuntivi.</p>
+      <p class="notaCampo">Somma delle sette strutture a regime del foglio: Venezian, Serravallo, Piazza Venezia, Via Degli Artisti, Muggia Ai fronte Mare, Muggia 2, Via Marziale. Sono piani, non consuntivi.</p>
     </details>
 
     <details class="gruppo">
@@ -445,9 +445,9 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
 </div>
 
 <footer class="note">
-  <b>Da dove vengono i numeri.</b> Le sette strutture sono ricostruite dai conti economici per struttura del file <span class="mono">STAY_Host_Hub_OKR</span>: restano fermi gli appartamenti e i giorni venduti dichiarati, il prezzo a notte è quello che riconcilia il fatturato. I profili di stagionalità Venezian e Muggia escono dagli incassi mensili 2026 del <span class="mono">Cashflow</span>. I posti letto sono stimati a 2,6 per appartamento dove il foglio non li dichiara (Machiavelli li dichiara: 130).<br><br>
-  <b>Il riferimento di mercato.</b> La scala sotto il cursore dell'occupazione viene dagli annunci Airbnb di Trieste — 1.369 annunci nel periodo agosto 2025 – luglio 2026: mediana 59%, top 25% 79%, top 10% 94%, ultimo quarto 36%, prezzo medio 118 €. È un metro di paragone su annunci in gran parte non professionali, non un obiettivo: le tue strutture girano fra il 78% e il 90%. Per Muggia non esistono dati pubblici disaggregati, e il profilo Muggia del cruscotto resta la fonte migliore che hai.<br><br>
-  <b>Cosa manca di proposito.</b> Il foglio ha un secondo scenario di Via degli Artisti — quattro mansarde a provvigione, senza canone di locazione: è il modello property management che stai lasciando, e questo cruscotto non sa rappresentarlo (senza canone la regola del 25% non ha senso). "Muggia (2)" è un duplicato identico di "Muggia". I conti delle strutture sono piani a regime, non consuntivi.
+  <b>Da dove vengono i numeri.</b> Le sette strutture sono ricostruite dai conti economici del file <span class="mono">STAY_Host_Hub_OKR</span>: restano fermi gli appartamenti e i giorni venduti dichiarati nel foglio, il prezzo a notte è quello che riconcilia il fatturato. I profili di stagionalità Venezian e Muggia escono dagli incassi mensili 2026 del <span class="mono">Cashflow</span>. I posti letto sono stimati a 2,6 per appartamento: il foglio non li dichiara per nessuna struttura.<br><br>
+  <b>Dove il foglio non torna con se stesso.</b> Su cinque strutture su sette il prezzo dichiarato e il fatturato dichiarato coincidono. Su due no: <span class="mono">Muggia 2</span> dichiara 139 € per 285 giorni su 3 appartamenti, che farebbero 118.845 € invece dei 134.300 € indicati (prezzo implicito 157 €); <span class="mono">Via Degli Artisti</span> dichiara 134 € per 300 giorni su 4 appartamenti, che farebbero 160.800 € invece di 287.000 € (prezzo implicito 239 €). Probabilmente le unità che incassano sono più degli appartamenti — camere vendute separatamente. Il cruscotto tiene per buono il fatturato e ricalcola il prezzo, così i conti economici quadrano; ma su quelle due il prezzo a notte va letto come una media, non come il listino.<br><br>
+  <b>Cosa il modello non fa.</b> Il canone è unico per blocco, quindi non gestisce tipologie miste a canoni diversi. I conti sono piani a regime, non consuntivi.
 </footer>
 
 <script>
@@ -817,40 +817,40 @@ function calcolaVeloce(i,base){
    venduti dichiarati nel foglio; il prezzo a notte è quello che riconcilia il
    fatturato dichiarato. I costi sono le voci che entrano nel TOTALE COSTI. */
 const PRESET={
-  muggia:{nome:'Muggia',citta:'Muggia',unita:3,postiLetto:8,soggiorno:2.2,canone:2650,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:157.2,occ:78.08,accessori:0,ivaCamera:10,ivaAcc:22,
-    ota:17.89,otaQuota:100,pulizia:21.9,lavanderia:11.6,consumabili:2.53,utenze:417.7,personale:0,
-    assicurazione:800,wifi:410,tari:500,manutenzione:0,altre:700,hub:0,capex:0,ramp:0,occAvvio:100,
+  muggiamare:{nome:'Muggia Ai fronte Mare',citta:'Muggia',unita:5,postiLetto:13,soggiorno:2.2,canone:4700,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:135,occ:76.71,accessori:0,ivaCamera:10,ivaAcc:22,
+    ota:17.89,otaQuota:100,pulizia:13.36,lavanderia:7.08,consumabili:1.55,utenze:417.67,personale:0,
+    assicurazione:800,wifi:409.84,tari:500,manutenzione:0,altre:700,hub:0,capex:0,ramp:0,occAvvio:100,
     tasse:27.9,stagione:'muggia'},
-  venezian:{nome:'Venezian',citta:'Trieste',unita:4,postiLetto:10,soggiorno:2.2,canone:12833,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:274.3,occ:89.86,accessori:21600,ivaCamera:10,ivaAcc:10,
-    ota:17.8,otaQuota:100,pulizia:32.7,lavanderia:14.2,consumabili:5,utenze:1639,personale:0,
+  muggia2:{nome:'Muggia 2',citta:'Muggia',unita:3,postiLetto:8,soggiorno:2.2,canone:2650,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:157.08,occ:78.08,accessori:0,ivaCamera:10,ivaAcc:22,
+    ota:17.89,otaQuota:100,pulizia:21.87,lavanderia:11.6,consumabili:2.53,utenze:417.67,personale:0,
+    assicurazione:800,wifi:409.84,tari:500,manutenzione:0,altre:700,hub:0,capex:0,ramp:0,occAvvio:100,
+    tasse:27.9,stagione:'muggia'},
+  venezian:{nome:'Venezian',citta:'Trieste',unita:12,postiLetto:31,soggiorno:2.2,canone:12833.33,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:89,occ:92.6,accessori:20400,ivaCamera:10,ivaAcc:10,
+    ota:17.8,otaQuota:100,pulizia:10.58,lavanderia:4.61,consumabili:1.63,utenze:1639.34,personale:0,
     assicurazione:2000,wifi:600,tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
     tasse:27.9,stagione:'venezian'},
-  machiavelli:{nome:'Machiavelli',citta:'Trieste',unita:26,postiLetto:130,soggiorno:2.2,canone:26000,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:135,occ:79.45,accessori:88000,ivaCamera:10,ivaAcc:0,
-    ota:19.5,otaQuota:90,pulizia:20.4,lavanderia:8.9,consumabili:2.9,utenze:2560,personale:61200,
-    assicurazione:2500,wifi:1500,tari:5000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
-    tasse:27.9,stagione:'venezian'},
-  serravalle:{nome:'Le Residenze dei Serravalle',citta:'Barcola',unita:9,postiLetto:23,soggiorno:2.2,canone:6666.67,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:133.3,occ:82.19,accessori:18000,ivaCamera:10,ivaAcc:10,
+  serravallo:{nome:'Le Residenze dei Serravallo',citta:'Barcola',unita:9,postiLetto:23,soggiorno:2.2,canone:6666.67,durata:6,
+    freeRent:0,cauzione:3,istat:2,adr:133.33,occ:82.19,accessori:18000,ivaCamera:10,ivaAcc:10,
     ota:20,otaQuota:90,pulizia:15.89,lavanderia:12.22,consumabili:4.89,utenze:2000,personale:0,
     assicurazione:2000,wifi:1800,tari:9000,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
     tasse:27.9,stagione:'stay'},
   piazzavenezia:{nome:'Piazza Venezia',citta:'Trieste',unita:11,postiLetto:29,soggiorno:2.2,canone:11666.67,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:112,occ:82.19,accessori:0,ivaCamera:10,ivaAcc:22,
+    freeRent:0,cauzione:3,istat:2,adr:112.12,occ:82.19,accessori:0,ivaCamera:10,ivaAcc:22,
     ota:20,otaQuota:90,pulizia:18.19,lavanderia:7.51,consumabili:3.01,utenze:0,personale:0,
     assicurazione:1200,wifi:600,tari:8300,manutenzione:0,altre:1200,hub:0,capex:0,ramp:0,occAvvio:100,
     tasse:27.9,stagione:'venezian'},
   artisti:{nome:'Via Degli Artisti',citta:'Trieste',unita:4,postiLetto:10,soggiorno:2.2,canone:8333.33,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:239.1,occ:82.19,accessori:18000,ivaCamera:10,ivaAcc:10,
+    freeRent:0,cauzione:3,istat:2,adr:239.17,occ:82.19,accessori:18000,ivaCamera:10,ivaAcc:10,
     ota:20,otaQuota:90,pulizia:32.76,lavanderia:22,consumabili:11,utenze:2000,personale:0,
     assicurazione:2000,wifi:1800,tari:9000,manutenzione:0,altre:0,hub:0,capex:0,ramp:0,occAvvio:100,
     tasse:27.9,stagione:'venezian'},
   /* Via Marziale è l'unica in cedolare secca al 23% e senza scorporo IVA: il foglio
      ragiona sull'incasso lordo. Riprodotto mettendo IVA camera a 0. */
   marziale:{nome:'Via Marziale',citta:'Trieste',unita:1,postiLetto:3,soggiorno:2.2,canone:1750,durata:6,
-    freeRent:0,cauzione:3,istat:2,adr:161.3,occ:84.93,accessori:0,ivaCamera:0,ivaAcc:22,
+    freeRent:0,cauzione:3,istat:2,adr:161.29,occ:84.93,accessori:0,ivaCamera:0,ivaAcc:22,
     ota:23,otaQuota:100,pulizia:0,lavanderia:0,consumabili:2.2,utenze:200,personale:0,
     assicurazione:0,wifi:300,tari:300,manutenzione:0,altre:0,hub:0,capex:0,ramp:0,occAvvio:100,
     tasse:23,stagione:'venezian'}

@@ -19,12 +19,15 @@ possono bocciare un deal da soli. Le altre soglie si cambiano dal pannello
 | 3 · Rischio | pareggio, margine di sicurezza, cassa assorbita, rientro capex | quanto può andare storto |
 | 4 · Portafoglio | peso del blocco sul fatturato totale | quanto ti espone |
 
-## I due preset
+## I preset
 
-`Carica Venezian` e `Carica Machiavelli` ricostruiscono i due conti economici del
-file `STAY_Host_Hub_OKR`. Servono da metro di paragone: il modello riproduce i
-loro margini entro lo 0,3%. Machiavelli, alla soglia del 25%, viene bocciato —
-è il punto: la soglia è più severa del portafoglio esistente.
+Il menu in alto carica le **sette business unit** del file `STAY_Host_Hub_OKR`:
+Muggia Ai fronte Mare, Muggia 2, Venezian, Le Residenze dei Serravallo,
+Piazza Venezia, Via Degli Artisti, Via Marziale. Servono da metro di paragone —
+il modello riproduce i loro conti economici entro lo 0,02%.
+
+Alla soglia del 25% ne passano **due su sette** (Serravallo 21,2%, Muggia 2 23,7%).
+È il punto: la soglia è più severa del portafoglio esistente.
 
 ## Dentro il file
 
@@ -78,8 +81,8 @@ git add . && git commit -m "cosa ho cambiato" && git push
 
 ## Da dove vengono i dati
 
-- **Conti economici per struttura** — i fogli per struttura di `STAY_Host_Hub_OKR`.
-  Il cruscotto li riproduce entro lo 0,4%.
+- **Conti economici per struttura** — le sette schede di `STAY_Host_Hub_OKR`.
+  Il cruscotto le riproduce entro lo 0,02%.
 - **Stagionalità** — gli incassi mensili 2026 di Muggia e Venezian nel `Cashflow`,
   divisi per la media dell'anno. Le due curve sono diverse sul serio: Muggia fa
   1,93 ad agosto contro 0,53 a febbraio, Venezian sta fra 1,42 e 0,48.
