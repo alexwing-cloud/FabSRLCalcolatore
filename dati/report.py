@@ -13,12 +13,13 @@ REPORT.mkdir(exist_ok=True)
 
 def e(n):  return f"{n:,.0f}".replace(",", ".") + " €"
 
-def main(modo="giornaliero"):
+def main(modo="giornaliero", tutti=False):
     annunci = json.load(open(BASE / "annunci.json", encoding="utf-8"))
     visti_f = BASE / "visti.json"
     visti = set(json.load(open(visti_f))) if visti_f.exists() else set()
 
-    nuovi = [a for a in annunci if a.get("url") and a["url"] not in visti]
+    # con --tutti si rifà l'elenco completo, ignorando cosa è già stato segnalato
+    nuovi = [a for a in annunci if a.get("url") and (tutti or a["url"] not in visti)]
     nuovi.sort(key=lambda a: -a["margine"])
 
     oggi = datetime.date.today()
@@ -29,10 +30,11 @@ def main(modo="giornaliero"):
                   f"Il vaglio ha riguardato {len(annunci)} annunci già noti.", ""]
     else:
         forti = [a for a in nuovi if a["esito"] == "passa"]
-        righe += [f"**{len(nuovi)} annunci nuovi**, di cui {len(forti)} entro il canone sostenibile.", ""]
+        titolo = "annunci in elenco" if tutti else "annunci nuovi"
+        righe += [f"**{len(nuovi)} {titolo}**, di cui {len(forti)} entro il canone sostenibile.", ""]
         righe += ["| Città | Zona | Canone | Locali | m² | €/mq | Sostenibile | Margine | Note |",
                   "|---|---|---:|---:|---:|---:|---:|---:|---|"]
-        for a in nuovi[:25]:
+        for a in nuovi[:40]:
             note = []
             if a.get("arredato"): note.append("arredato")
             if a.get("privato"):  note.append("da privato")
@@ -42,7 +44,7 @@ def main(modo="giornaliero"):
                 f"{a['locali']} | {a['mq']} | {a.get('eur_mq','—')} | {e(a['canone_sostenibile'])} | "
                 f"{'+' if a['margine']>=0 else ''}{e(a['margine'])} | {', '.join(note) or '—'} |")
         righe += ["", "### I link", ""]
-        for a in nuovi[:25]:
+        for a in nuovi[:40]:
             righe.append(f"- [{a['titolo']}]({a['url']}) — {e(a['canone'])}, {a['locali']} locali")
 
     righe += ["", "---", "",
@@ -52,6 +54,13 @@ def main(modo="giornaliero"):
               f"Il conto vero si fa nel Vaglio Deal.", ""]
 
     f = REPORT / f"{oggi.isoformat()}-{modo}.md"
+    # Un giro che non trova novita NON deve cancellare il report buono dello stesso
+    # giorno: succede quando si rilancia il giro a mano dopo che e gia girato.
+    if f.exists() and not nuovi and f.stat().st_size > 600:
+        print(f"report: {f} (lasciato intatto, nessuna novità da aggiungere)")
+        json.dump(sorted(visti | {a["url"] for a in annunci if a.get("url")}),
+                  open(visti_f, "w"), indent=0)
+        return 0
     f.write_text("\n".join(righe), encoding="utf-8")
 
     json.dump(sorted(visti | {a["url"] for a in annunci if a.get("url")}),
@@ -61,4 +70,5 @@ def main(modo="giornaliero"):
     return len(nuovi)
 
 if __name__ == "__main__":
-    sys.exit(0 if main(sys.argv[1] if len(sys.argv) > 1 else "giornaliero") >= 0 else 1)
+    arg = [a for a in sys.argv[1:] if not a.startswith("--")]
+    main(arg[0] if arg else "giornaliero", tutti="--tutti" in sys.argv)
