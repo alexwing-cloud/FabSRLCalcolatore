@@ -31,6 +31,9 @@ display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
 .sc{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;
 box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative}
 .sc.scelta{outline:2px solid var(--accent);outline-offset:-2px}
+/* senza questa riga il filtro non funziona: display:flex qui sopra batte
+   l'attributo hidden, e le schede restano visibili */
+.sc[hidden]{display:none}
 .foto{aspect-ratio:4/3;background:var(--surface-2);overflow:hidden}
 .foto img{width:100%;height:100%;object-fit:cover;display:block}
 .nofoto{display:grid;place-items:center;height:100%;color:var(--text-faint);font-size:12px}
