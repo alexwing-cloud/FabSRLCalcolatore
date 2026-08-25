@@ -1,107 +1,108 @@
-# Chi siamo — testi di presentazione
+# FAB S.r.l. — STAY Apartments
 
-Tre lunghezze, per tre momenti diversi. Sotto, in fondo, quello che manca e che
-solo Alex può aggiungere: **i campi fra `[[doppie parentesi]]` sono da riempire o
-da togliere. Non vanno inventati.**
+Testi di presentazione, in tre lunghezze. Sono pronti all'uso.
 
 ---
 
 ## 1. Le tre righe — per il corpo della mail
 
-> Sono **Alex Morsellino**, titolare di **FAB S.r.l.** Gestiamo appartamenti in
-> locazione turistica breve con il marchio **STAY Apartments**, fra Trieste, Muggia
-> e Barcola, con pulizie e lavanderia interne. Prendiamo immobili in affitto con
-> facoltà di sublocazione, contratti 6+6 o 8+8: alla proprietà garantiamo un canone
-> fisso ogni mese, il rischio di occupazione è nostro.
-
-Questa entra nella mail. Le due sotto servono quando qualcuno chiede "mandatemi
-qualcosa".
+> Sono **Alex Morsellino**, business developer e titolare di **FAB S.r.l.** Gestiamo
+> appartamenti in locazione turistica breve con il marchio **STAY Apartments**, fra
+> Trieste, Muggia e Barcola, con pulizie e lavanderia interne. Prendiamo immobili in
+> affitto con facoltà di sublocazione, contratti 6+6 o 8+8: alla proprietà garantiamo
+> un canone fisso ogni mese, il rischio di occupazione resta nostro.
 
 ---
 
-## 2. La mezza pagina — da allegare, o da mandare al secondo scambio
+## 2. La mezza pagina — da allegare, o per il secondo scambio
 
-### Alex Morsellino
+### Chi siamo
 
-Titolare di FAB S.r.l. e responsabile diretto delle acquisizioni: le trattative sugli
-immobili le seguo io, dal primo sopralluogo alla firma. [[da aggiungere: da quanti anni
-lavori nel settore, e cosa facevi prima — bastano due righe, ma devono essere vere]]
+**FAB S.r.l.** gestisce appartamenti in **locazione turistica breve** con il marchio
+**STAY Apartments**. Non siamo un'agenzia e non facciamo intermediazione: **prendiamo
+gli immobili in affitto noi**, con facoltà di sublocazione, e li gestiamo con
+personale nostro.
 
-Opero fra Trieste e il confine sloveno, dove abbiamo costruito la struttura operativa,
-e sto portando il modello su altre città del Nord Italia.
+Alle spalle ci sono **dieci anni di esperienza** nel settore.
 
-Contatti diretti: [[telefono]] · alex@noura.training
+### La squadra
 
-### FAB S.r.l. — STAY Apartments
+| | |
+|---|---|
+| **Alex Morsellino** | Business Development — acquisizioni e trattative |
+| **Federico Conforti** | Legal & Economics — contratti, due diligence, conti |
+| **Mattia Carrese** | Operations — strutture, standard, manutenzione |
+| **Gabriele** | Customer Relationship — ospiti, recensioni, accoglienza |
 
-Gestiamo appartamenti in **locazione turistica breve**. Non siamo un'agenzia e non
-facciamo intermediazione: **prendiamo gli immobili in affitto noi**, con facoltà di
-sublocazione, e li gestiamo con personale nostro.
+Quattro persone con quattro mestieri distinti: chi tratta l'immobile non è chi lo
+gestisce, e chi firma i contratti non è chi risponde agli ospiti. È il motivo per cui
+riusciamo a valutare in fretta e a mantenere gli standard nel tempo.
 
-**Dove siamo.** Trieste, Muggia e Barcola. Il portafoglio a regime, comprese le
-operazioni in corso di acquisizione con decorrenza 2027, è di **45 appartamenti**.
+### Dove siamo
 
-**Come siamo fatti dentro.** Pulizie e lavanderia sono **servizi interni**, non
-appaltati: abbiamo squadra e impianti nostri, ed è il motivo per cui reggiamo standard
-costanti e costi prevedibili. Su Trieste serviamo anche strutture di terzi.
+Trieste, Muggia e Barcola. Il portafoglio a regime, comprese le operazioni in corso
+di acquisizione con decorrenza 2027, è di **45 appartamenti**.
 
-**Cosa cerchiamo.** Blocchi da **tre unità in su** — palazzine, stabili, strutture
-ricettive anche in cessione di ramo d'azienda. Preferiamo immobili già arredati o
-quasi: alla proprietà non chiediamo di investire, e gli interventi li teniamo al
-minimo perché il nostro mestiere è la gestione, non la ristrutturazione.
+**Pulizie e lavanderia sono servizi interni**, non appaltati: squadra e impianti sono
+nostri. È il motivo per cui reggiamo standard costanti e costi prevedibili — e su
+Trieste serviamo anche strutture di terzi.
 
-**Cosa offriamo a chi ci affitta.**
-- un canone fisso ogni mese, che non dipende da quanto l'immobile è occupato;
-- un contratto lungo, 6+6 o 8+8, con un interlocutore solo;
-- l'immobile manutenuto da noi, perché è il nostro strumento di lavoro;
-- nessuna gestione, nessuna morosità, nessun turnover di inquilini.
+### Cosa cerchiamo
 
-**Come decidiamo.** Valutiamo ogni immobile su un modello nostro che parte dai dati
-del mercato locale — prezzo medio a notte e occupazione della città — e stabilisce
-il canone che l'operazione regge. Per questo rispondiamo in giornata, anche quando
-la risposta è no.
+Blocchi da **tre unità in su**: palazzine, stabili, strutture ricettive anche in
+**cessione di ramo d'azienda**. Preferiamo immobili già arredati o quasi — alla
+proprietà non chiediamo di investire, e gli interventi li teniamo al minimo, perché
+il nostro mestiere è la gestione, non la ristrutturazione.
 
-www.stayapartments.it
+### Cosa offriamo a chi ci affitta
+
+- un **canone fisso ogni mese**, che non dipende da quanto l'immobile è occupato;
+- un **contratto lungo**, 6+6 o 8+8, con un interlocutore solo;
+- l'immobile **manutenuto da noi**, perché è il nostro strumento di lavoro;
+- nessuna gestione da seguire, nessuna morosità da rincorrere, nessun turnover.
+
+### Come decidiamo
+
+Valutiamo ogni immobile su un modello nostro che parte dai dati reali del mercato
+locale — prezzo medio a notte e occupazione della città — e stabilisce il canone che
+l'operazione regge. Per questo **rispondiamo in giornata**, anche quando la risposta
+è no.
+
+**www.stayapartments.it** · alex@noura.training
 
 ---
 
 ## 3. La pagina intera — per una proprietà importante o una cessione di ramo d'azienda
 
-Le sezioni di sopra, più:
+Tutto quanto sopra, più le due sezioni seguenti.
 
-### Perché il nostro modello è solido per la proprietà
+### Perché il modello è solido per la proprietà
 
 Nella locazione breve il rischio sta tutto sull'occupazione: se l'immobile resta
 vuoto, chi perde è chi gestisce. **Prendendolo in affitto ci mettiamo noi in mezzo**:
 la proprietà incassa lo stesso canone a gennaio e ad agosto, e non si espone al
 mercato turistico.
 
-Questo funziona solo se chi affitta sa fare i conti prima di firmare. Noi accettiamo
-un immobile solo se il canone resta entro una soglia precisa del fatturato che
-l'immobile può generare — è una regola che ci siamo dati e che ci fa dire di no più
-spesso che di sì. È anche la ragione per cui, quando diciamo di sì, il canone lo
+Questo funziona a una condizione: che chi affitta sappia fare i conti prima di
+firmare. Accettiamo un immobile solo se il canone resta entro una soglia precisa del
+fatturato che quell'immobile può generare — una regola che ci fa dire di no molto più
+spesso che di sì. È anche la ragione per cui, quando diciamo di sì, quel canone lo
 paghiamo per sei anni.
 
 ### Per le strutture ricettive
 
-Valutiamo anche **cessioni di ramo d'azienda** su strutture già avviate. In quel caso
-il perimetro lo definiamo insieme ai commercialisti — inventario, contratti in essere,
-personale, autorizzazioni — con il supporto del nostro studio. [[da confermare: se vuoi
-citare lo studio per nome, dimmelo]]
+Valutiamo **cessioni di ramo d'azienda** su strutture già avviate. Il perimetro lo
+definiamo insieme ai commercialisti — inventario, contratti in essere, personale,
+autorizzazioni — con **Federico Conforti** a seguire la parte legale ed economica e
+il supporto del nostro studio esterno.
 
 ---
 
-## Quello che manca, e serve
+## Note d'uso
 
-Perché la presentazione regga a una domanda, questi tre punti vanno riempiti con dati veri:
-
-1. **Da quanto tempo operate.** È la prima cosa che chiede un agente. Due righe.
-2. **Quante persone siete.** Anche solo "cinque persone fra gestione, pulizie e
-   accoglienza" cambia la percezione.
-3. **Un riferimento verificabile.** Un proprietario che possa confermare, o una
-   struttura citabile per nome. Vale più di qualsiasi aggettivo.
-
-E una regola che vale per tutto il documento: **i numeri devono essere veri.**
-Gli agenti immobiliari di una città si parlano fra loro. Un dato gonfiato scoperto
-una volta chiude le porte per anni, e il nostro argomento — pago un canone fisso per
-sei anni e non ti faccio perdere tempo — regge benissimo anche senza esagerare.
+- **Il cognome di Gabriele** manca: va aggiunto nella tabella della squadra.
+- **Una referenza verificabile** — un proprietario che possa confermare, o una
+  struttura citabile per nome — vale più di qualsiasi aggettivo in questo documento.
+  Quando ne hai una, si aggiunge in fondo alla mezza pagina.
+- I numeri qui dentro sono quelli veri. Vanno tenuti tali: gli agenti immobiliari di
+  una città si parlano, e un dato gonfiato scoperto una volta chiude le porte per anni.
