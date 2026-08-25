@@ -22,9 +22,20 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0 Safari/537.36")
 PAUSA = 1.2          # cortesia verso la fonte: una pagina ogni 1,2 secondi
 
-# Un locale e il soggiorno, gli altri diventano camere vendibili. Rozzo ma onesto:
-# e la stessa logica per cui Venezian conta 12 unita su 4 appartamenti.
-def camere(locali): return max(1, locali - 1)
+MQ_PER_UNITA = 40   # una unita affittabile ogni 40 mq: sotto non ci sta
+
+def camere(locali, mq=None):
+    """Quante unita affittabili ricaviamo da un annuncio.
+
+    Due criteri, e vince il piu prudente. Il primo e il numero di locali meno
+    il soggiorno. Il secondo e la superficie: un annuncio da 8 locali in 100 mq
+    esiste, ma sono stanze da dodici metri, non sette unita da mettere a reddito.
+    Contando solo i locali il tetto usciva quasi doppio del vero.
+    """
+    da_locali = max(1, locali - 1)
+    if not mq:
+        return da_locali
+    return max(1, min(da_locali, int(mq // MQ_PER_UNITA)))
 
 CHIAVI_ARREDO = ("arredato", "parzialmente arredato")
 
@@ -114,7 +125,7 @@ def vaglia(a, canone_max_citta, locali_min, mediana_citta=None):
     if motivo:
         a["scartato_perche"] = motivo
         return None
-    a["camere"] = camere(a["locali"])
+    a["camere"] = camere(a["locali"], a.get("mq"))
     a["canone_sostenibile"] = round(a["camere"] * canone_max_citta)
     a["margine"] = a["canone_sostenibile"] - a["canone"]
     a["incidenza"] = a["canone"] / a["canone_sostenibile"] if a["canone_sostenibile"] else 9

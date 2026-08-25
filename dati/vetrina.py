@@ -36,8 +36,8 @@ def scheda(a, i):
       <div><span class="et">€/m²</span><b>{str(a.get('eur_mq','—')).replace('.',',')}</b></div>
     </div>
     <div class="verdetto {stato}">
-      Sostenibile fino a <b>{e(a['canone_sostenibile'])}</b> · margine
-      <b>{'+' if a['margine']>=0 else ''}{e(a['margine'])}</b>
+      Tetto <b>{e(a['canone_sostenibile'])}/mese</b> su {a['camere']} unità affittabili ·
+      spazio sul canone <b>{'+' if a['margine']>=0 else ''}{e(a['margine'])}/mese</b>
       {'<span class="pill">al limite</span>' if a['esito'] != 'passa' else ''}
     </div>
     <div class="tag">{html.escape(tag)}</div>
@@ -80,6 +80,7 @@ display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline;position:sticky;t
 .occhiello{{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);font-weight:600}}
 header h1{{font-size:23px}}
 header .sub{{color:var(--text-soft);font-size:13px;flex:1;min-width:220px}}
+.avviso{{display:inline-block;margin-top:6px;font-size:11.5px;color:var(--text-faint);line-height:1.5}}
 .filtri{{display:flex;flex-wrap:wrap;gap:6px}}
 .f{{background:var(--surface-2);color:var(--text-soft);border:1px solid var(--line);border-radius:99px;
 padding:5px 11px;font:inherit;font-size:12.5px;cursor:pointer}}
@@ -127,7 +128,8 @@ padding:9px 16px;font:inherit;font-size:14px;font-weight:500;cursor:pointer}}
 
 <header class="top">
   <div><div class="occhiello">FAB S.r.l. · {oggi}</div><h1>Immobili da guardare</h1></div>
-  <div class="sub">{len(ann)} annunci passati al vaglio. Spunta quelli che ti interessano, poi premi <b>Copia i selezionati</b> e incolla in chat.</div>
+  <div class="sub">{len(ann)} annunci passati al vaglio. Spunta quelli che ti interessano, poi premi <b>Copia i selezionati</b> e incolla in chat.<br>
+  <span class="avviso">Il <b>tetto</b> è il canone mensile massimo che rispetta il 25%. Lo <b>spazio</b> è quanto sei sotto quel tetto, sempre al mese: è margine di trattativa, non utile. Il conto vero si fa nel Vaglio Deal.</span></div>
   <div class="filtri">
     <button class="f" data-f="tutte" aria-pressed="true">Tutte</button>
     {''.join(f'<button class="f" data-f="{c}" aria-pressed="false">{c.capitalize()}</button>' for c in citta)}
