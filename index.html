@@ -161,8 +161,9 @@ details.gruppo>summary:hover{color:var(--text)}
 .mercato .barra .q1{left:21.3%} .mercato .barra .med{left:52%} .mercato .barra .q3{left:78.7%} .mercato .barra .top{left:98.7%}
 .mercato .barra .tu{position:absolute; top:-4px; width:3px; height:13px; border-radius:2px; background:var(--accent); transform:translateX(-1px)}
 .mercato .scala{display:flex; justify-content:space-between; gap:4px; margin-top:5px; font-size:9.5px; color:var(--text-faint); letter-spacing:.01em}
+.mercato .scala span{width:0; overflow:visible; white-space:nowrap}
 .mercato .scala span:nth-child(2),.mercato .scala span:nth-child(3){text-align:center}
-.mercato .scala span:last-child{text-align:right}
+.mercato .fonte{margin-top:3px; font-size:9.5px; color:var(--text-faint); line-height:1.35}
 
 /* ---------- verdetto ---------- */
 .verdetto{padding:18px 22px; display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center; border-left:5px solid var(--line-strong)}
@@ -271,7 +272,8 @@ footer.note{padding:0 clamp(16px,4vw,36px) 40px; max-width:78ch; color:var(--tex
       <!-- Dove cade la tua ipotesi rispetto al mercato di Trieste -->
       <div class="mercato" id="mercatoOcc">
         <div class="barra"><span class="q1"></span><span class="med"></span><span class="q3"></span><span class="top"></span><b class="tu" id="tuOcc"></b></div>
-        <div class="scala"><span>36% ultimo quarto</span><span>59% mediana</span><span>79% top 25%</span><span>94% top 10%</span></div>
+        <div class="scala"><span>36%</span><span>59%</span><span>79%</span><span>94%</span></div>
+        <div class="fonte">Trieste, distribuzione degli annunci: ultimo quarto · mediana · top 25% · top 10%</div>
       </div>
     </div>
 
