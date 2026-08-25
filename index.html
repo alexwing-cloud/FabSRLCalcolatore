@@ -82,6 +82,11 @@ h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif; font-weight:600
 .top h1{font-size:24px; letter-spacing:-.01em}
 .top .sub{color:var(--text-soft); font-size:13px; max-width:62ch}
 .top .spacer{flex:1}
+@media (max-width:700px){
+  .top .spacer{display:none}          /* su telefono i pulsanti restano allineati a sinistra */
+  .top{gap:10px 8px}
+  .top .sub{order:3; flex-basis:100%}
+}
 .eyebrow{
   font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
   color:var(--text-faint); font-weight:600;
@@ -410,10 +415,10 @@ const $ = id => document.getElementById(id);
 const num = id => parseFloat($(id).value) || 0;
 
 /* Formattatori italiani, definiti una volta sola */
-const eur  = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0});
-const eur1 = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+const eur  = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0,useGrouping:'always'});
+const eur1 = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0,useGrouping:'always'});
 const pct  = (n,d=1) => (isFinite(n) ? n*100 : 0).toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
-const n0   = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{maximumFractionDigits:0});
+const n0   = n => (isFinite(n) ? n : 0).toLocaleString('it-IT',{maximumFractionDigits:0,useGrouping:'always'});
 
 /* Profili di stagionalità: 12 pesi che vengono normalizzati a media 1 */
 const STAGIONI = {
