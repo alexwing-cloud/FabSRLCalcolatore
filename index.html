@@ -667,8 +667,8 @@ function mostra(){
   const cls=(v,b,m,basso=false)=> basso ? (v<=b?'ok':(v<=m?'warn':'ko')) : (v>=b?'ok':(v>=m?'warn':'ko'));
   const kpi=[
     {lab:'Canone / lordo', val:pct(r.canoneSuLordo), note:'soglia '+pct(i.sCanone,0), st:cls(r.canoneSuLordo,i.sCanone,i.sCanone+0.03,true)},
-    {lab:'Utile netto / lordo', val:pct(r.utileSuLordo), note:eur(r.utileNetto)+' · soglia '+pct(i.sUtileRic,0), st:cls(r.utileSuLordo,i.sUtileRic,i.sUtileRic-0.07)},
-    {lab:'Margine operativo', val:pct(r.margine), note:'su '+eur(r.ricaviNetti)+' netti', st:cls(r.margine,i.sMargine,i.sMargine-0.10)},
+    {lab:'Utile netto / lordo', val:pct(r.utileSuLordo), note:eur(r.utileNetto)+' su '+eur(r.lordoTotale)+' lordi', st:cls(r.utileSuLordo,i.sUtileRic,i.sUtileRic-0.07)},
+    {lab:'Margine operativo', val:pct(r.margine), note:'ante imposte, su '+eur(r.ricaviNetti)+' netti IVA', st:cls(r.margine,i.sMargine,i.sMargine-0.10)},
     {lab:'Pareggio a', val:isFinite(r.occBE)?pct(r.occBE):'—', note:'oggi punti al '+pct(i.occ), st:cls(r.sicurezza,i.sSicurezza,i.sSicurezza*0.5)},
     {lab:'Cassa da mettere', val:eur(-r.maxAssorbito), note:'picco al mese '+n0(r.meseMaxAssorbito), st:'', },
     {lab:'Rientro capex', val:r.payback>0?n0(r.payback)+' mesi':'—', note:'capex '+eur(i.capex), st:r.payback>0?cls(r.payback,i.sPayback,i.sPayback*1.7,true):'ko'},
