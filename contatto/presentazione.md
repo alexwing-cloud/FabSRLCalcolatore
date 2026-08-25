@@ -34,7 +34,7 @@ Alle spalle ci sono **dieci anni di esperienza** nel settore.
 | **Alex Morsellino** | Business Development — acquisizioni e trattative |
 | **Federico Conforti** | Legal & Economics — contratti, due diligence, conti |
 | **Mattia Carrese** | Operations — strutture, standard, manutenzione |
-| **Gabriele** | Customer Relationship — ospiti, recensioni, accoglienza |
+| **Gabriele Massaria** | Customer Relationship — ospiti, recensioni, accoglienza |
 
 Quattro persone con quattro mestieri distinti: chi tratta l'immobile non è chi lo
 gestisce, e chi firma i contratti non è chi risponde agli ospiti. È il motivo per cui

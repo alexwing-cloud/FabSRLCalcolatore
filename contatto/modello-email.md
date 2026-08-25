@@ -1,61 +1,71 @@
 # Modello di primo contatto
 
-Una mail sola, corta, a chi pubblica l'annuncio. Non è una candidatura da inquilino:
-è una proposta commerciale fra professionisti. L'agente deve capire in dieci secondi
-chi siamo, cosa vogliamo e perché gli conviene rispondere.
+Una mail sola, corta, che **chiede una mano invece di proporre un affare**.
 
-I campi fra `{parentesi}` si compilano per ogni immobile.
+Non è una scelta di stile: è la situazione reale. Quello che cerchiamo — palazzine,
+stabili interi, strutture ricettive da rilevare — **non passa dai portali**. Su 1.245
+annunci letti in dieci città non è uscita una sola palazzina. Quella roba la vedono gli
+agenti prima che finisca online, e spesso online non ci finisce affatto.
+
+Quindi la mail dice esattamente questo. Funziona perché è vero, e perché a un
+professionista fa piacere sentirsi dire che sa una cosa che tu non sai.
+
+I campi fra `{parentesi}` si compilano per ogni destinatario.
 
 ---
 
 ## Versione ad agenzia immobiliare
 
-**Oggetto:** `{indirizzo}` — locazione con facoltà di sublocazione, contratto 6+6
+**Oggetto:** Cerchiamo blocchi di appartamenti a `{citta}` — vi chiedo una mano
 
 > Buongiorno,
 >
-> vi scrivo per l'immobile di **{indirizzo}** (rif. {riferimento}).
+> vi scrivo per chiedervi una mano, e provo a essere breve.
 >
-> Sono Alex Morsellino di **FAB S.r.l.**, gestiamo appartamenti in locazione turistica
-> breve con il marchio **STAY Apartments**, fra Trieste, Muggia e Barcola. Siamo in fase
-> di espansione: il portafoglio a regime, comprese le operazioni in corso di acquisizione
-> con decorrenza 2027, è di **45 appartamenti**.
+> Sono **Alex Morsellino** di **FAB S.r.l.** Gestiamo appartamenti in locazione
+> turistica breve con il marchio **STAY Apartments**, fra Trieste, Muggia e Barcola —
+> una società nata fra ex giocatori di rugby professionisti, il che spiega parecchio di
+> come lavoriamo. Dieci anni nel settore, quaranta appartamenti a regime, pulizie e
+> lavanderia gestite internamente.
 >
-> **Come lavoriamo.** Prendiamo l'immobile in locazione diretta con facoltà di
-> sublocazione, contratto **6+6** o **8+8**. Per la proprietà significa:
+> **Vogliamo crescere fuori da Trieste, e su {citta} non arriviamo da soli.**
 >
-> - un canone fisso ogni mese, che non dipende da quanto l'immobile è occupato;
-> - un interlocutore solo, per sei anni, invece di una successione di inquilini;
-> - l'immobile manutenuto da noi, perché è il nostro strumento di lavoro;
-> - nessuna gestione da seguire, nessuna morosità da rincorrere, nessun turnover.
+> Cerchiamo **blocchi da tre unità in su**: palazzine, stabili interi, strutture
+> ricettive anche in cessione di ramo d'azienda. Abbiamo passato settimane a guardare i
+> portali e abbiamo capito una cosa ovvia: **quella roba lì sui portali non c'è**. La
+> vedete voi, prima che diventi un annuncio — e spesso un annuncio non lo diventa mai.
 >
-> **Cosa cerchiamo.** Blocchi da **tre appartamenti in su**, già arredati o quasi.
-> Alla proprietà non chiediamo di investire: gli interventi li facciamo noi e li teniamo
-> al minimo, perché il nostro modello vive sulla gestione, non sulla ristrutturazione.
+> Per questo vi scrivo invece di aspettare.
 >
-> **Perché {citta}.** {motivo_zona}
+> **Cosa facciamo con l'immobile.** Lo prendiamo in affitto noi, con facoltà di
+> sublocazione, contratto **6+6** o **8+8**. Per la proprietà significa un canone fisso
+> ogni mese che non dipende dall'occupazione, un interlocutore solo per sei anni, e
+> l'immobile manutenuto da noi perché è il nostro strumento di lavoro. Il rischio del
+> mercato turistico ce lo teniamo noi.
+>
+> **Cosa chiediamo a voi.** Se vi passa fra le mani qualcosa di simile — anche un
+> immobile che fate fatica a collocare perché è grande, o ha troppi locali, o è in uno
+> stabile misto — pensateci a noi. Sono spesso proprio quelli che a noi servono.
 >
 > **Se avete altri immobili simili, ci interessano.**
 >
-> Se l'immobile è ancora disponibile e la proprietà è aperta a una formula di questo tipo,
-> mi fa piacere sentirci.
+> Mandateci due righe con metratura, canone richiesto e numero di unità e vi diamo una
+> risposta **in giornata**, anche negativa. Valutiamo su un modello nostro e sappiamo in
+> fretta se un immobile rientra o no: non vi facciamo perdere tempo, e non vi teniamo in
+> sospeso.
 >
-> Un'ultima cosa che di solito fa risparmiare tempo a tutti: **mandateci numero di unità,
-> superfici, canone richiesto e spese condominiali e vi diamo una risposta in giornata**,
-> anche negativa. Valutiamo su un modello nostro e sappiamo in fretta se un immobile
-> rientra o no. Non facciamo perdere tempo.
+> Cerchiamo pochi partner e duraturi, non un giro di mail. Se la cosa vi interessa, mi
+> fa piacere sentirvi anche solo per capire come si muove {citta}.
 >
 > Grazie,
 > **Alex Morsellino**
 > FAB S.r.l. — STAY Apartments
-> https://www.stayapartments.it/
-> alex@noura.training
+> {telefono} · alex@noura.training
+> www.stayapartments.it
 
 ---
 
 ## Versione a proprietario diretto
-
-Stessa struttura, ma la prima cosa che legge deve essere il suo vantaggio, non chi siamo.
 
 **Oggetto:** `{indirizzo}` — proposta di locazione pluriennale a canone garantito
 
@@ -67,7 +77,7 @@ Stessa struttura, ma la prima cosa che legge deve essere il suo vantaggio, non c
 > canone fisso ogni mese per sei anni**, versato da una società, senza che lei debba più
 > occuparsi di nulla — né di inquilini, né di manutenzione ordinaria, né di sfitto.
 >
-> Siamo **FAB S.r.l.**, gestiamo appartamenti in locazione turistica breve con il marchio
+> Siamo **FAB S.r.l.**, gestiamo appartamenti in locazione turistica breve col marchio
 > STAY Apartments fra Trieste, Muggia e Barcola, e siamo in fase di espansione: a regime,
 > comprese le acquisizioni in corso, sono 45 appartamenti. Prendiamo immobili in affitto
 > con facoltà di sublocazione: l'immobile resta suo, il rischio di occupazione è nostro.
@@ -82,59 +92,37 @@ Stessa struttura, ma la prima cosa che legge deve essere il suo vantaggio, non c
 > Grazie,
 > **Alex Morsellino**
 > FAB S.r.l. — STAY Apartments
-> https://www.stayapartments.it/
-> alex@noura.training
+> www.stayapartments.it · alex@noura.training
 
 ---
 
-## Come si compilano i campi
+## Perché è scritta così
 
-| Campo | Da dove viene |
-|---|---|
-| `{indirizzo}` `{riferimento}` `{citta}` | dall'annuncio |
-| `{motivo_zona}` | dalla Carta dei Mercati, una frase concreta |
+**Chiede aiuto, non propone un affare.** A un professionista fa piacere che gli si
+riconosca di sapere una cosa che tu non sai — e in questo caso è letteralmente vero.
+Chi riceve una richiesta di aiuto risponde più volentieri di chi riceve una proposta
+commerciale, perché la prima lo mette in una posizione di forza invece che di difesa.
 
-### Sul numero del portafoglio
+**L'umiltà è specifica, non generica.** «Su {citta} non arriviamo da soli» funziona;
+«siamo una piccola realtà» non dice niente e suona finto. La differenza è che la prima
+si può verificare.
 
-La mail dice **45 appartamenti a regime, comprese le acquisizioni in corso**. Le sette
-strutture del foglio sono 5+3+12+9+11+4+1 = 45.
+**Nomina gli immobili difficili.** «Grande, troppi locali, in stabile misto» sono le
+schede che un agente ha ferme da mesi. Dirgli che sono proprio quelle che cerchi lo fa
+andare a controllare il cassetto mentre legge.
 
-Non tutte sono già operative: Serravallo ha decorrenza 1° gennaio 2027 e altre sono in
-valutazione. Per questo la frase dice *a regime* e *comprese le acquisizioni in corso*,
-e non *gestiamo*. È l'unica formulazione che regge se un agente chiede di vedere i
-contratti — e comunica più slancio di un numero piccolo al presente: a chi affitta
-interessa che tu stia crescendo e che il canone lo paghi, non quante chiavi hai in mano
-oggi.
+**Chiude sulla scarsità giusta.** «Cerchiamo pochi partner e duraturi» dice che non è
+una mail spedita a duecento indirizzi — e infatti non lo è.
 
-Se le strutture operative cambiano, va cambiato il 45. Il resto della frase regge da sé.
-
-Esempi di `{motivo_zona}`, da adattare:
-
-- **Dove siamo già** — «Su Trieste gestiamo già più strutture, con lavanderia e squadra
-  di pulizie interne: un immobile in città entra subito a regime, senza rodaggio.»
-- **Mercato nuovo che regge i numeri** — «Stiamo aprendo su {citta} perché è uno dei
-  pochi mercati italiani dove i nostri conti tornano meglio che a Trieste, e vogliamo
-  entrarci con più unità nella stessa zona.»
-- **Blocco intero** — «Ci interessa in particolare perché sono {n} unità nello stesso
-  stabile: è esattamente il formato su cui lavoriamo meglio.»
-
-## La riga che vale più delle altre
-
-> **Se avete altri immobili simili, ci interessano.**
-
-È fissa, va in ogni mail, e non si toglie mai. Trasforma la mail da richiesta a
-investimento: le agenzie hanno sempre immobili difficili da piazzare — grandi, con troppi
-locali, in stabili misti, sfitti da mesi — che per noi sono esattamente il formato giusto.
-Spesso il secondo immobile che ti propongono vale più di quello per cui hai scritto.
+**Promette una risposta in giornata, anche negativa.** È la promessa che vale di più,
+ed è vera grazie al cruscotto. Ma conta solo se la mantieni **anche quando è no**: è
+quello che ti fa arrivare la segnalazione successiva prima che vada online.
 
 ## Regole per non bruciarsi la reputazione
 
-1. **Mai numeri non veri.** Portafoglio e fatturato nella mail devono essere consuntivi,
-   non piani. Un agente che scopre un numero gonfiato non richiama più, e gli agenti di
-   una città si parlano.
-2. **Una mail sola per immobile.** Niente solleciti automatici.
-3. **Se l'immobile non rientra nei parametri, si scrive e si dice.** La promessa della
-   risposta in giornata vale solo se è vera anche quando è un no: è quella che fa
-   arrivare il secondo annuncio prima che vada online.
+1. **Mai numeri non veri.** Gli agenti di una città si parlano fra loro.
+2. **Una mail sola per destinatario.** Niente solleciti automatici.
+3. **Se l'immobile non rientra, si scrive e si dice.** La promessa vale solo se vale
+   anche per i no.
 4. **Ogni mail va letta prima di partire.** Il sistema prepara le bozze, l'invio lo
    decide una persona.
