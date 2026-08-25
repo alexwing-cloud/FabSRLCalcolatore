@@ -205,3 +205,17 @@ Gli orari stanno in `~/Library/LaunchAgents/it.fab.vagliodeal.*.plist`, sotto
 
 I giri partono solo a Mac acceso. Se resta spento all'ora prevista, `launchd` recupera
 l'esecuzione appena si riaccende.
+
+### La versione web
+
+`dati/vetrina_web.py` scarica le miniature, le rimpicciolisce e le cuce dentro l'HTML
+come dati, perché una pagina pubblicata non può caricare immagini da altri siti.
+Produce `report/ULTIMO-web.html`, che si pubblica come Artifact — apribile da qualsiasi
+dispositivo, telefono compreso.
+
+```bash
+cd dati && python3 vetrina_web.py && python3 vetrina.py --web
+```
+
+250 immobili pesano circa 4 MB. Se si sfora, lo script toglie gli ultimi della lista
+finché la pagina non sta nei limiti: meglio una pagina che si apre.

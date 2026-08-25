@@ -45,9 +45,13 @@ def scheda(a, i):
   </div>
 </article>"""
 
-def main():
-    ann = json.load(open(BASE / "annunci.json", encoding="utf-8"))
+def main(web=False):
+    sorgente = "annunci_web.json" if web else "annunci.json"
+    ann = json.load(open(BASE / sorgente, encoding="utf-8"))
     ann = [a for a in ann if a.get("url")]
+    if web:                       # foto cucite dentro il file, non caricate da fuori
+        for a in ann:
+            a["foto"] = a.get("mini") or ""
     ann.sort(key=lambda a: -a["margine"])
     oggi = datetime.date.today().strftime("%d/%m/%Y")
     citta = sorted({a["citta"] for a in ann})
@@ -55,7 +59,7 @@ def main():
     HTML = f"""<!doctype html>
 <html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Report immobili — {oggi}</title>
+<title>Immobili da guardare</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
@@ -185,8 +189,19 @@ document.querySelectorAll('.f').forEach(b => b.onclick = () => {{
 }});
 </script>
 </body></html>"""
-    io.open(REPORT / "ULTIMO.html", "w", encoding="utf-8").write(HTML)
-    print(f"vetrina: {REPORT/'ULTIMO.html'} — {len(ann)} immobili")
+    if web:
+        # formato per la pubblicazione: senza involucro <html>, che lo mette il servizio
+        corpo = HTML.split("<head>", 1)[1].split("</head>", 1)[0]
+        corpo = corpo.replace('<meta charset="utf-8">', "").replace(
+            '<meta name="viewport" content="width=device-width, initial-scale=1">', "")
+        corpo += HTML.split("<body>", 1)[1].rsplit("</body>", 1)[0]
+        f = REPORT / "ULTIMO-web.html"
+        io.open(f, "w", encoding="utf-8").write(corpo)
+        print(f"vetrina pubblicabile: {f} — {len(ann)} immobili, {f.stat().st_size//1024//1024} MB")
+    else:
+        io.open(REPORT / "ULTIMO.html", "w", encoding="utf-8").write(HTML)
+        print(f"vetrina: {REPORT/'ULTIMO.html'} — {len(ann)} immobili")
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(web="--web" in sys.argv)
