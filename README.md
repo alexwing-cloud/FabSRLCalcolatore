@@ -162,3 +162,45 @@ Una prima scrematura, non una valutazione. Serve a buttare via il 95% degli annu
 Il canone sostenibile qui è stimato come `camere × canone massimo della città`, dove le
 camere sono i locali meno uno. Quelli che sopravvivono si valutano uno per uno nel
 Vaglio Deal, con i numeri veri dell'immobile.
+
+## Il giro automatico
+
+Gira sul Mac, da solo, senza autorizzazioni da rinnovare.
+
+| Quando | Cosa fa |
+|---|---|
+| **Ogni giorno alle 7:30** | Cerca annunci nuovi, li vaglia, scrive il report, committa e pusha. Se trova qualcosa manda una notifica a schermo. |
+| **Domenica alle 20:00** | Come sopra, e in più rigenera i dati di mercato delle 49 città e la Carta dei Mercati. |
+
+I report finiscono in `report/AAAA-MM-GG-modo.md`. Il registro di cosa è successo è in
+`report/giro.log`.
+
+A mano, quando serve:
+
+```bash
+~/fab-vaglio-deal/dati/giro.sh giornaliero
+```
+
+### Perché il repo non sta sulla Scrivania
+
+macOS protegge `~/Desktop`: un processo lanciato da `launchd` **non può eseguire niente
+da lì** senza Accesso Completo al Disco, e fallisce con exit 126 senza spiegare perché.
+Verificato con due script identici, uno sulla Scrivania e uno in home: il primo esce 126,
+il secondo 0.
+
+Quindi il repo vive in `~/fab-vaglio-deal` e sulla Scrivania c'è un collegamento che
+punta lì. Aprendo `Claude_Alex/cruscotto-fab` si trova tutto come prima.
+
+### Fermare o cambiare orario
+
+```bash
+launchctl bootout gui/$(id -u)/it.fab.vagliodeal.giornaliero
+launchctl bootout gui/$(id -u)/it.fab.vagliodeal.settimanale
+```
+
+Gli orari stanno in `~/Library/LaunchAgents/it.fab.vagliodeal.*.plist`, sotto
+`StartCalendarInterval`. Dopo averli modificati vanno ricaricati con `bootout` e poi
+`bootstrap gui/$(id -u) <percorso del plist>`.
+
+I giri partono solo a Mac acceso. Se resta spento all'ora prevista, `launchd` recupera
+l'esecuzione appena si riaccende.
