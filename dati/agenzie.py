@@ -65,8 +65,19 @@ def punteggio(a):
     return round(p, 1)
 
 
-SCARTA_MAIL = ("example", "sentry", "wixpress", "@2x", ".png", ".jpg", "domain.com",
-               "yourdomain", "email.com", "privacy@", "noreply", "no-reply")
+# Indirizzi finti che i temi dei siti si portano dietro, piu il rumore tecnico
+SCARTA_MAIL = ("example", "sentry", "wixpress", "@2x", ".png", ".jpg", ".gif",
+               "domain.com", "yourdomain", "email.com", "mail.com", "company.com",
+               "privacy@", "noreply", "no-reply", "test@", "nome@", "tuo@",
+               "sentry.io", "@sentry", "wordpress")
+
+
+def ripulisci(m):
+    """Le email escono attaccate a pezzi di URL o di codice: vanno smontate."""
+    m = m.strip().strip(".,;:)('\"")
+    m = re.sub(r"^(?:[0-9a-f]{2})+(?=[a-z])", "", m)   # resti di %20 e simili
+    m = re.sub(r"^\d+", "", m)
+    return m.lower()
 
 
 def sito_di(url_scheda):
@@ -81,6 +92,55 @@ def sito_di(url_scheda):
     return m.group(1) if m else None
 
 
+RUMORE = ("agenzia", "immobiliare", "immobiliari", "immobilien", "studio", "srl",
+          "snc", "sas", "spa", "s.r.l.", "di", "the", "real", "estate", "group",
+          "affiliato", "tecnocasa", "rete", "d'impresa")
+
+
+def domini_probabili(nome):
+    """Quando TrovaCasa non pubblica il sito, si prova a indovinarlo dal nome.
+    Ogni tentativo viene poi verificato: il sito deve nominare l'agenzia."""
+    pulito = re.sub(r"[^a-z0-9 ]", " ", nome.lower())
+    parole = [p for p in pulito.split() if len(p) > 2]
+    forti = [p for p in parole if p not in RUMORE] or parole
+    basi = ["".join(forti[:2]), "-".join(forti[:2]), "".join(forti),
+            "immobiliare" + forti[0], forti[0] + "immobiliare"]
+    # Una parola sola e corta ("martin", "gallery", "paris", "club") non identifica
+    # nessuno: www.martin.it e un sito qualsiasi, non l'agenzia Pichler.
+    if len(forti[0]) >= 7:
+        basi.insert(0, forti[0])
+    fuori = []
+    for b in dict.fromkeys(basi):
+        if 6 <= len(b) <= 28:
+            fuori += [f"www.{b}.it", f"{b}.it"]
+    return fuori[:10]
+
+
+def verifica(dominio, nome, citta):
+    """Il dominio e davvero di quell'agenzia?
+
+    Basta che compaia il nome OPPURE la citta. Pretenderli entrambi scartava siti
+    validi: rimmo.it e l'agenzia giusta ma la home e in tedesco e non dice Bolzano.
+    """
+    for schema in ("https://", "http://"):
+        try:
+            req = urllib.request.Request(schema + dominio, headers={"User-Agent": UA})
+            pag = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
+        except Exception:
+            continue
+        testo = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", pag)).lower()
+        chiave = [p for p in re.sub(r"[^a-z0-9 ]", " ", nome.lower()).split()
+                  if len(p) > 3 and p not in RUMORE]
+        # deve dire chi e (il nome) E cosa fa (immobiliare) o dove sta (la citta):
+        # con un solo indizio passavano siti che non c'entrano niente
+        nome_ok = any(k in testo for k in chiave[:2])
+        mestiere_ok = any(x in testo for x in
+                          ("immobil", "agenzia", "real estate", "makler", "case in vendita"))
+        if nome_ok and (mestiere_ok or citta.lower()[:5] in testo):
+            return True
+    return False
+
+
 def mail_dal_sito(dominio):
     """Cerca l'indirizzo sulla home e sulla pagina contatti dell'agenzia."""
     if not dominio:
@@ -93,13 +153,16 @@ def mail_dal_sito(dominio):
                 pag = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
             except Exception:
                 continue
-            trovate = re.findall(r"[\w.+-]+@[\w-]+\.[\w.]{2,10}", pag)
+            trovate = [ripulisci(m) for m in re.findall(r"[\w.+-]+@[\w-]+\.[\w.]{2,10}", pag)]
             pulite = [m for m in trovate
-                      if not any(x in m.lower() for x in SCARTA_MAIL) and len(m) < 60]
-            if pulite:
-                # meglio quella sul dominio dell'agenzia
-                proprie = [m for m in pulite if dominio.replace("www.", "") in m.lower()]
-                return (proprie or pulite)[0]
+                      if not any(x in m for x in SCARTA_MAIL)
+                      and 6 < len(m) < 60 and re.match(r"^[\w.+-]+@[\w.-]+\.[a-z]{2,6}$", m)]
+            # l'indirizzo deve stare sul dominio dell'agenzia: se il sito espone la
+            # mail di un fornitore o di una piattaforma, non e un contatto valido
+            radice = dominio.replace("www.", "").split(".")[0]
+            proprie = [m for m in pulite if radice in m.split("@")[-1]]
+            if proprie:
+                return proprie[0]
             break
         time.sleep(0.4)
     return None
@@ -135,8 +198,13 @@ def main():
     if args.contatti:
         print(f"\n  cerco i contatti delle prime {args.contatti}…")
         for i, a in enumerate(tutte[:args.contatti], 1):
-            a["sito"] = sito_di(a["url"]); time.sleep(0.8)
-            a["email"] = mail_dal_sito(a.get("sito")); time.sleep(0.5)
+            a["sito"] = sito_di(a["url"]); time.sleep(0.7)
+            if not a["sito"]:                       # non pubblicato: si prova a dedurlo
+                for d in domini_probabili(a["nome"]):
+                    if verifica(d, a["nome"], a["citta"]):
+                        a["sito"] = d; a["dedotto"] = True; break
+                    time.sleep(0.2)
+            a["email"] = mail_dal_sito(a.get("sito")); time.sleep(0.4)
             print(f"    {i:3d}/{args.contatti} {a['nome'][:30]:30s} "
                   f"{a.get('sito') or '—':28s} {a.get('email') or '—'}")
 

@@ -15,8 +15,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/home-immobiliare-srl-bolzano-tc-83125",
   "punteggio": 58.0,
-  "sito": null,
-  "email": null
+  "sito": "www.immobiliarehome.it",
+  "dedotto": true,
+  "email": "postmaster@immobiliarehome.com"
  },
  {
   "citta": "bolzano",
@@ -35,8 +36,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/rimmo-real-estate-bolzano-tc-56279",
   "punteggio": 58.0,
-  "sito": null,
-  "email": null
+  "sito": "www.rimmo.it",
+  "email": "info@rimmo.it",
+  "verificata": true
  },
  {
   "citta": "bolzano",
@@ -54,7 +56,7 @@
   "url": "https://www.trovacasa.it/agenzie-immobiliari/lifandi-srl-bolzano-tc-63387",
   "punteggio": 54.7,
   "sito": "www.lifandi.it",
-  "email": "20info@lifandi.it"
+  "email": "info@lifandi.it"
  },
  {
   "citta": "bergamo",
@@ -72,8 +74,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/amigassi-immobiliare-bergamo-tc-70551",
   "punteggio": 54.7,
-  "sito": null,
-  "email": null
+  "sito": "www.amigassiimmobiliare.it",
+  "dedotto": true,
+  "email": "valuta@amigassiimmobiliare.it"
  },
  {
   "citta": "bolzano",
@@ -91,7 +94,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/immobilien-dr-martin-pichler-bolzano-tc-86932",
   "punteggio": 51.0,
-  "sito": null,
+  "sito": "www.immobiliaremartin.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -110,8 +114,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/agenzia-immobiliare-mangili-snc-bergamo-tc-11049",
   "punteggio": 50.9,
-  "sito": null,
-  "email": null
+  "sito": "www.mangili.it",
+  "dedotto": true,
+  "email": "agenzia@mangili.it"
  },
  {
   "citta": "verona",
@@ -130,7 +135,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/aziendale-srls-verona-tc-67683",
   "punteggio": 49.8,
-  "sito": null,
+  "sito": "www.aziendale.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -149,7 +155,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/dove-it-bergamo-tc-94491",
   "punteggio": 45.5,
-  "sito": null,
+  "sito": "www.doveimmobiliare.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -186,7 +193,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/affiliato-tecnocasa-bg-per-l-impresa-srl-bergamo-tc-65433",
   "punteggio": 43.7,
-  "sito": null,
+  "sito": "www.perimpresa.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -239,8 +247,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/azienda-si-verona-tc-29467",
   "punteggio": 41.5,
-  "sito": null,
-  "email": null
+  "sito": "www.aziendaimmobiliare.it",
+  "dedotto": true,
+  "email": "jussi@aziendaimmobiliare.it"
  },
  {
   "citta": "trieste",
@@ -258,8 +267,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/gallery-immobiliare-trieste-tc-5145",
   "punteggio": 41.0,
-  "sito": null,
-  "email": null
+  "sito": "www.galleryimmobiliare.it",
+  "dedotto": true,
+  "email": "info@galleryimmobiliare.it"
  },
  {
   "citta": "bolzano",
@@ -277,7 +287,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/castellanum-bozen-bolzano-tc-95264",
   "punteggio": 40.3,
-  "sito": null,
+  "sito": "www.castellanum.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -317,8 +328,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/tirabora-immobiliare-trieste-tc-39948",
   "punteggio": 39.4,
-  "sito": null,
-  "email": null
+  "sito": "www.tirabora.it",
+  "dedotto": true,
+  "email": "info@tirabora.it"
  },
  {
   "citta": "bergamo",
@@ -392,7 +404,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/club-immobiliare-di-gamba-osvaldo-bergamo-tc-26417",
   "punteggio": 37.3,
-  "sito": null,
+  "sito": "www.clubimmobiliare.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -450,7 +463,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/pianetacasa-s-r-l-bergamo-tc-74026",
   "punteggio": 37.2,
-  "sito": null,
+  "sito": "www.immobiliarepianetacasa.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -469,8 +483,9 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/immobiliare-bonetto-bolzano-tc-49362",
   "punteggio": 37.0,
-  "sito": null,
-  "email": null
+  "sito": "www.immobiliarebonetto.it",
+  "dedotto": true,
+  "email": "info@immobiliarebonetto.it"
  },
  {
   "citta": "como",
@@ -489,7 +504,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/polis-real-estate-srl-como-tc-90124",
   "punteggio": 36.6,
-  "sito": null,
+  "sito": "www.immobiliarepolis.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -526,7 +542,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/italy-sotheby-s-international-realty-verona-tc-89427",
   "punteggio": 36.2,
-  "sito": null,
+  "sito": "www.immobiliareitaly.it",
+  "dedotto": true,
   "email": null
  },
  {
@@ -566,7 +583,7 @@
   "url": "https://www.trovacasa.it/agenzie-immobiliari/grandi-agenti-immobiliari-rete-d-imprese-verona-tc-69769",
   "punteggio": 35.8,
   "sito": "www.dimoregentili.it",
-  "email": "info@dimoregentili.it."
+  "email": "info@dimoregentili.it"
  },
  {
   "citta": "bolzano",
@@ -624,7 +641,7 @@
   "url": "https://www.trovacasa.it/agenzie-immobiliari/ital-home-bergamo-1-tc-15372",
   "punteggio": 34.7,
   "sito": "www.italcasa.it",
-  "email": "you@company.com"
+  "email": null
  },
  {
   "citta": "como",
@@ -661,7 +678,8 @@
   ],
   "url": "https://www.trovacasa.it/agenzie-immobiliari/rinaldi-case-verona-tc-46694",
   "punteggio": 34.4,
-  "sito": null,
+  "sito": "www.rinaldicase.it",
+  "dedotto": true,
   "email": null
  },
  {
