@@ -29,6 +29,8 @@ python3 annunci.py --pagine 3 --mq-min 180 || echo "!! annunci.py ha avuto probl
 echo "-- report"
 NUOVI=$(python3 report.py "$MODO" | awk -F': ' '/^nuovi/{print $2}')
 python3 vetrina.py || echo "!! vetrina.py fallito"
+# anche la versione con le foto incorporate, cosi la pagina online e sempre pronta
+python3 vetrina_web.py && python3 vetrina.py --web || echo "!! vetrina web non rigenerata"
 
 cd "$REPO" || exit 1
 if [ -n "$(git status --porcelain)" ]; then
