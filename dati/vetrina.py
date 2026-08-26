@@ -45,11 +45,22 @@ def scheda(a, i):
   </div>
 </article>"""
 
-def main(web=False):
-    sorgente = "annunci_web.json" if web else "annunci.json"
+def main(web=False, tutti=False):
+    """Di base mostra solo gli annunci mai proposti prima.
+
+    Quello che e stato mostrato una volta e non e stato scelto e considerato
+    scartato: riproporlo il giorno dopo fa ricontrollare cose gia decise.
+    Con --tutti si rivede comunque l'elenco completo di quelli ancora attivi.
+    """
+    sorgente = "annunci_web.json" if web else ("annunci.json" if tutti else "nuovi.json")
+    if not (BASE / sorgente).exists():
+        sorgente = "annunci.json"
     ann = json.load(open(BASE / sorgente, encoding="utf-8"))
     ann = [a for a in ann if a.get("url")]
     if web:                       # foto cucite dentro il file, non caricate da fuori
+        if not tutti and (BASE / "nuovi.json").exists():
+            url_nuovi = {a["url"] for a in json.load(open(BASE / "nuovi.json", encoding="utf-8"))}
+            ann = [a for a in ann if a["url"] in url_nuovi]
         for a in ann:
             a["foto"] = a.get("mini") or ""
     ann.sort(key=lambda a: -a["margine"])
@@ -128,7 +139,7 @@ padding:9px 16px;font:inherit;font-size:14px;font-weight:500;cursor:pointer}}
 
 <header class="top">
   <div><div class="occhiello">FAB S.r.l. · {oggi}</div><h1>Immobili da guardare</h1></div>
-  <div class="sub">{len(ann)} annunci passati al vaglio. Spunta quelli che ti interessano, poi premi <b>Copia i selezionati</b> e incolla in chat.<br>
+  <div class="sub">{len(ann)} {"annunci in elenco" if tutti else "annunci nuovi da ieri"}. Spunta quelli che ti interessano, poi premi <b>Copia i selezionati</b> e incolla in chat.<br>
   <span class="avviso">Il <b>tetto</b> è il canone mensile massimo che rispetta il 25%. Lo <b>spazio</b> è quanto sei sotto quel tetto, sempre al mese: è margine di trattativa, non utile. Il conto vero si fa nel Vaglio Deal.</span></div>
   <div class="filtri">
     <button class="f" data-f="tutte" aria-pressed="true">Tutte</button>
@@ -209,4 +220,4 @@ document.querySelectorAll('.f').forEach(b => b.onclick = () => {{
 
 if __name__ == "__main__":
     import sys
-    main(web="--web" in sys.argv)
+    main(web="--web" in sys.argv, tutti="--tutti" in sys.argv)

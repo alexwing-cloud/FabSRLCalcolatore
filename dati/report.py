@@ -58,6 +58,8 @@ def main(modo="giornaliero", tutti=False):
     # giorno: succede quando si rilancia il giro a mano dopo che e gia girato.
     if f.exists() and not nuovi and f.stat().st_size > 600:
         (REPORT / "ULTIMO.md").write_text(f.read_text(encoding="utf-8"), encoding="utf-8")
+        # nuovi.json NON va toccato qui: tiene l'elenco del giro che le novita le
+        # aveva trovate, ed e quello che la vetrina deve continuare a mostrare
         print(f"report: {f} (lasciato intatto, nessuna novità da aggiungere)")
         json.dump(sorted(visti | {a["url"] for a in annunci if a.get("url")}),
                   open(visti_f, "w"), indent=0)
@@ -65,6 +67,8 @@ def main(modo="giornaliero", tutti=False):
     f.write_text("\n".join(righe), encoding="utf-8")
     # copia sempre allo stesso nome: e il file che Alex apre, e non cambia mai
     (REPORT / "ULTIMO.md").write_text("\n".join(righe), encoding="utf-8")
+    # la vetrina deve mostrare esattamente questi, non tutto lo storico
+    json.dump(nuovi, open(BASE / "nuovi.json", "w"), ensure_ascii=False)
 
     json.dump(sorted(visti | {a["url"] for a in annunci if a.get("url")}),
               open(visti_f, "w"), indent=0)
