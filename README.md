@@ -246,3 +246,15 @@ palazzi e su ville, moltiplicato per il volume.
 
 Le email non stanno nell'elenco: si trovano sul sito di ogni agenzia, una per una.
 Ha senso farlo solo sulla rosa scelta.
+
+## Generare il PDF della proposta
+
+```bash
+cd contatto && "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=8000 \
+  --print-to-pdf="$PWD/Proposta-Centrolanza.pdf" "file://$PWD/proposta-centrolanza.html"
+```
+
+Chrome in modalità headless stampa l'HTML rispettando gli stili di stampa del documento.
+Il `virtual-time-budget` serve a dare tempo ai font di caricarsi: senza, il PDF esce con
+i caratteri di sistema.
