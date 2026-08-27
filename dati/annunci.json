@@ -187,33 +187,6 @@
   "eur_mq": 10.5
  },
  {
-  "citta": "pisa",
-  "titolo": "Mansarda a Pisa",
-  "zona": "Landi",
-  "canone": 2150,
-  "locali": 7,
-  "mq": 205,
-  "tag": [
-   "Arredato",
-   "Terrazzo",
-   "Ristrutturato",
-   "Lavatrice",
-   "Lavastoviglie",
-   "Balcone"
-  ],
-  "arredato": true,
-  "descrizione": "Affittasi ottimo  appartamento  per studenti vicino alle facoltà di Economia, Agraria, Veterinaria - l' appartamento  ristrutturato e con arredi nuovi è composto  da ingresso tradizionale, salone con terrazzo, cucina abitabile, cinque camere singole (...",
-  "privato": false,
-  "url": "https://www.trovacasa.it/annunci/pi-tc-28190-72716192",
-  "foto": "https://pic.trovacasa.it/image/1983370930/m-c.jpg",
-  "camere": 5,
-  "canone_sostenibile": 2878,
-  "margine": 728,
-  "incidenza": 0.7470465601111883,
-  "esito": "passa",
-  "eur_mq": 10.5
- },
- {
   "citta": "verona",
   "titolo": "Appartamento a Verona verona dei mutilati,10",
   "zona": "",
