@@ -3,139 +3,205 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Centro Lanza — proposta di locazione</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
 :root{--ground:#FAFBFC;--surface:#fff;--surface-2:#F1F4F7;--line:#DCE3EA;--line-2:#B9C6D2;
---text:#131A21;--soft:#56646F;--faint:#8794A0;--accent:#17466B;--accent-soft:#E3ECF3}
+--text:#131A21;--soft:#4C5A68;--faint:#8794A0;--accent:#17466B;--accent-soft:#E3ECF3}
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--text);
-font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15.5px;line-height:1.6}
-.foglio{max-width:790px;margin:0 auto;background:var(--surface);
-padding:56px clamp(22px,6vw,66px) 60px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
-h1,h2{font-family:Newsreader,Georgia,serif;font-weight:600;margin:0;text-wrap:balance}
-h1{font-size:36px;letter-spacing:-.015em;line-height:1.08}
-h2{font-size:20px;margin:38px 0 12px;padding-top:22px;border-top:1px solid var(--line)}
-h2:first-of-type{border-top:0;padding-top:0}
-.occhiello{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:600}
-.somm{font-size:17.5px;color:var(--soft);margin:16px 0 0;max-width:56ch;line-height:1.5}
-p{margin:0 0 12px;max-width:66ch}
-ul{margin:0 0 12px;padding-left:20px;max-width:66ch} li{margin-bottom:7px}
-table{border-collapse:collapse;width:100%;margin:10px 0 16px;font-size:14px}
+font-family:Newsreader,Charter,Georgia,serif;font-size:17px;line-height:1.68}
+.foglio{max-width:800px;margin:0 auto;background:var(--surface);
+padding:64px clamp(22px,6vw,72px) 64px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+h1,h2,h3{font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;margin:0;text-wrap:balance}
+h1{font-size:33px;letter-spacing:-.02em;line-height:1.12}
+h2{font-size:15px;letter-spacing:.01em;margin:42px 0 14px;padding-top:24px;border-top:1px solid var(--line);
+text-transform:uppercase;font-size:12.5px;letter-spacing:.12em;color:var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+.occhiello{font-family:"IBM Plex Sans",sans-serif;font-size:10.5px;letter-spacing:.16em;
+text-transform:uppercase;color:var(--faint);font-weight:600}
+.somm{font-size:19px;color:var(--soft);margin:18px 0 0;max-width:54ch;line-height:1.5}
+p{margin:0 0 14px;max-width:68ch}
+ul{margin:0 0 14px;padding-left:22px;max-width:68ch} li{margin-bottom:9px}
+b,strong{font-weight:600}
+table{border-collapse:collapse;width:100%;margin:14px 0 18px;font-size:14px;
+font-family:"IBM Plex Sans",sans-serif}
 th{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);
-font-weight:600;text-align:right;padding:0 0 7px 10px;border-bottom:1px solid var(--line-2)}
+font-weight:600;text-align:right;padding:0 0 8px 10px;border-bottom:1px solid var(--line-2)}
 th:first-child,td:first-child{text-align:left;padding-left:0}
-td{padding:9px 0 9px 10px;text-align:right;border-bottom:1px solid var(--line);
+td{padding:10px 0 10px 10px;text-align:right;border-bottom:1px solid var(--line);
 font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
 td:first-child{font-family:"IBM Plex Sans",sans-serif}
 tr.ora td{background:var(--accent-soft);font-weight:600}
-.grande{background:var(--accent-soft);border-radius:8px;padding:24px 26px;margin:20px 0;
-display:flex;flex-wrap:wrap;gap:26px 44px}
-.grande div{min-width:150px}
+.grande{background:var(--accent-soft);border-radius:8px;padding:26px 28px;margin:22px 0;
+display:flex;flex-wrap:wrap;gap:28px 46px;font-family:"IBM Plex Sans",sans-serif}
+.grande div{min-width:152px}
 .grande .et{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:600}
-.grande .n{font-family:"IBM Plex Mono",monospace;font-size:30px;font-weight:600;
-color:var(--accent);letter-spacing:-.02em;line-height:1.15;margin-top:4px}
+.grande .n{font-family:"IBM Plex Mono",monospace;font-size:31px;font-weight:600;
+color:var(--accent);letter-spacing:-.02em;line-height:1.15;margin-top:5px}
 .grande .g{font-size:12.5px;color:var(--soft)}
-.sintesi{background:var(--surface-2);border-radius:8px;padding:20px 24px;margin:18px 0}
-.sintesi table{margin:0} .sintesi tr:last-child td{border-bottom:0;padding-top:14px;font-size:17px}
-.nota{font-size:12.5px;color:var(--faint);max-width:64ch}
-footer{margin-top:42px;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--faint)}
+.nota{font-size:13.5px;color:var(--faint);max-width:66ch;font-style:italic}
+footer{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);
+font-size:14px;color:var(--faint);font-family:"IBM Plex Sans",sans-serif}
 footer a{color:var(--accent)}
 @media print{body{background:#fff}.foglio{border:0;padding:0;max-width:none}h2{page-break-after:avoid}}
 </style></head><body><div class="foglio">
 
-<div class="occhiello">FAB S.r.l. — STAY Apartments · proposta di locazione</div>
+<div class="occhiello">FAB S.r.l. — STAY Apartments</div>
 <h1>Centro Lanza, Opicina</h1>
-<p class="somm">Voi riqualificate l'immobile. Noi lo prendiamo in locazione per vent'anni
-e vi versiamo <b>17.500 € al mese</b> — 210.000 € l'anno — a prescindere da come va.</p>
+<p class="somm">Proposta di locazione ventennale con canone garantito, rivolta alla
+proprietà dell'immobile.</p>
+
+<h2>Premessa</h2>
+<p>Ci rivolgiamo a voi con una proposta che si fonda su una constatazione semplice: il
+Centro Lanza è un immobile di grande superficie che, allo stato attuale, non produce
+reddito, e la cui riqualificazione richiede un investimento significativo. Un investimento
+di quella misura ha senso soltanto se, al termine dei lavori, esiste la certezza di un
+conduttore in grado di remunerarlo con continuità.</p>
+<p>La nostra proposta risponde esattamente a questa esigenza. Non vi chiediamo di
+scommettere sul mercato turistico: vi chiediamo di riqualificare l'immobile a fronte del
+nostro impegno a corrispondervi un canone fisso per vent'anni, indipendente
+dall'andamento della gestione.</p>
+
+<h3>Come si distribuiscono i ruoli</h3>
+<p>La logica dell'operazione è la seguente. Voi disponete di un immobile e della capacità
+di finanziarne la trasformazione; noi disponiamo dell'organizzazione, dell'esperienza e
+della domanda necessarie a metterlo a reddito. La locazione con facoltà di sublocazione
+tiene insieme le due cose, assegnando a ciascuno ciò che sa gestire meglio:</p>
+<ul>
+  <li>alla proprietà restano l'immobile, il suo valore patrimoniale e un flusso di cassa
+  certo e prevedibile;</li>
+  <li>a noi passano per intero il rischio di occupazione, la stagionalità, i costi di
+  gestione e la responsabilità commerciale.</li>
+</ul>
+<p>È una divisione che regge nel tempo perché nessuna delle due parti assume rischi che
+non sia attrezzata a governare.</p>
 
 <h2>La proposta</h2>
 <ul>
   <li>riqualificazione dei 2.400 m² del Centro Lanza in <b>55 unità ricettive</b>;</li>
-  <li>investimento complessivo previsto <b>2.000.000 €</b>, vostra equity più mutuo;</li>
-  <li>canone <b>210.000 € l'anno</b>, 17.500 € al mese, fisso per tutta la durata;</li>
-  <li><b>vent'anni</b> di locazione, allineati al piano di ammortamento del mutuo;</li>
-  <li>gestione, personale, manutenzione ordinaria e commercializzazione interamente a
+  <li>investimento complessivo previsto <b>2.000.000 €</b>, quale somma del capitale proprio
+  della proprietà e del finanziamento bancario;</li>
+  <li>canone annuo di <b>210.000 €</b>, pari a <b>17.500 € mensili</b>, fisso per
+  l'intera durata del contratto;</li>
+  <li>durata di <b>vent'anni</b>, deliberatamente allineata al piano di ammortamento del
+  mutuo;</li>
+  <li>gestione, personale, commercializzazione e manutenzione ordinaria interamente a
   nostro carico.</li>
 </ul>
-<p>L'immobile resta di vostra proprietà. Il rischio di occupazione, di stagionalità e di
-mercato è interamente nostro: il canone non cambia se le unità sono piene o vuote.</p>
 
-<h2>La differenza fra quello che pagate e quello che incassate</h2>
-<p>Con 350.000 € di equity e un mutuo a vent'anni al 4,5%:</p>
+<h2>Il conto della proprietà</h2>
+<p>Il ragionamento economico si riduce a un confronto fra due grandezze: quanto la
+proprietà versa ogni mese alla banca, e quanto riceve ogni mese da noi. Assumiamo un
+capitale proprio di 350.000 € e un mutuo ventennale al 4,5%, ipotesi prudente rispetto
+alle condizioni ordinariamente praticate a fronte di garanzie immobiliari libere.</p>
 <div class="grande">
-  <div><div class="et">Rata mensile</div><div class="n">10.570 €</div><div class="g">che pagate alla banca</div></div>
-  <div><div class="et">Canone mensile</div><div class="n">17.500 €</div><div class="g">che vi versiamo noi</div></div>
+  <div><div class="et">Rata mensile</div><div class="n">10.570 €</div><div class="g">versata alla banca</div></div>
+  <div><div class="et">Canone mensile</div><div class="n">17.500 €</div><div class="g">corrisposto da noi</div></div>
   <div><div class="et">Differenza</div><div class="n">6.930 €</div><div class="g">al mese, ogni mese</div></div>
   <div><div class="et">Su base annua</div><div class="n">83.154 €</div><div class="g">all'anno</div></div>
 </div>
-<p>Su vent'anni la differenza cumulata fra canone incassato e rate pagate è di
-<b>1.663.087 €</b>. Al netto di IMU, assicurazione, imposta di registro e imposte sul
-reddito — stimabili in circa 45.500 € l'anno — restano <b>37.654 € l'anno</b>.</p>
+<p>Nell'arco dei vent'anni la proprietà incassa canoni per <b>4.200.000 €</b> e versa
+rate per <b>2.536.913 €</b>. La differenza cumulata è di <b>1.663.087 €</b>.</p>
+<p class="nota">Gli importi sopra indicati sono al lordo di IMU, premi assicurativi,
+imposta di registro e imposizione diretta, la cui quantificazione compete alla proprietà
+e ai suoi consulenti.</p>
 
-<h2>Il conto, alle diverse quote di capitale proprio</h2>
-<p>Mutuo a vent'anni al 4,5%.</p>
+<h3>Al variare del capitale proprio investito</h3>
 <table>
-<thead><tr><th>Vostra equity</th><th>Mutuo</th><th>Rata/mese</th><th>Differenza/mese</th>
-<th>Differenza/anno</th><th>Netto costi</th></tr></thead>
-<tbody><tr><td>300.000 €</td><td>1.700.000 €</td><td>10.891 €</td><td><b>6.609 €</b></td><td>79.311 €</td><td>33.811 €</td></tr><tr><td>350.000 €</td><td>1.650.000 €</td><td>10.570 €</td><td><b>6.930 €</b></td><td>83.154 €</td><td>37.654 €</td></tr><tr><td>400.000 €</td><td>1.600.000 €</td><td>10.250 €</td><td><b>7.250 €</b></td><td>86.998 €</td><td>41.498 €</td></tr></tbody></table>
+<thead><tr><th>Capitale proprio</th><th>Mutuo</th><th>Rata/mese</th>
+<th>Differenza/mese</th><th>Differenza/anno</th><th>Su vent'anni</th></tr></thead>
+<tbody><tr><td>300.000 €</td><td>1.700.000 €</td><td>10.891 €</td><td><b>6.609 €</b></td><td>79.311 €</td><td>1.586.211 €</td></tr><tr><td>350.000 €</td><td>1.650.000 €</td><td>10.570 €</td><td><b>6.930 €</b></td><td>83.154 €</td><td>1.663.087 €</td></tr><tr><td>400.000 €</td><td>1.600.000 €</td><td>10.250 €</td><td><b>7.250 €</b></td><td>86.998 €</td><td>1.739.963 €</td></tr></tbody></table>
 
-<h2>Il ritorno sull'investimento</h2>
-<p>Con equity di 350.000 €, al variare del tasso che riuscite a spuntare:</p>
+<h3>Al variare del tasso</h3>
+<p>È la sola variabile che non dipende da nessuna delle due parti. Con capitale proprio
+di 350.000 €:</p>
 <table>
-<thead><tr><th>Tasso</th><th>Rata/mese</th><th>Differenza/mese</th><th>Differenza/anno</th>
-<th>Netto costi</th><th>Ritorno</th></tr></thead>
-<tbody><tr><td>3,5%</td><td>9.675 €</td><td>7.825 €</td><td>93.904 €</td><td>48.404 €</td><td><b>13,8%</b></td></tr><tr><td>4,0%</td><td>10.117 €</td><td>7.383 €</td><td>88.590 €</td><td>43.090 €</td><td><b>12,3%</b></td></tr><tr class="ora"><td>4,5%</td><td>10.570 €</td><td>6.930 €</td><td>83.154 €</td><td>37.654 €</td><td><b>10,8%</b></td></tr><tr><td>5,0%</td><td>11.033 €</td><td>6.467 €</td><td>77.600 €</td><td>32.100 €</td><td><b>9,2%</b></td></tr></tbody></table>
-<p class="nota">Il ritorno è la cassa netta del primo anno rapportata al capitale proprio
-investito, al lordo della rivalutazione dell'immobile.</p>
-<p>Con un patrimonio libero da ipoteche da offrire in garanzia collaterale riteniamo
-ottenibile il 4%. <b>Anche al 5% l'operazione resta in positivo dal primo anno</b>: non
-esiste, nell'intervallo plausibile dei tassi, uno scenario in cui andate sotto.</p>
+<thead><tr><th>Tasso</th><th>Rata/mese</th><th>Differenza/mese</th>
+<th>Differenza/anno</th><th>Rendimento lordo</th></tr></thead>
+<tbody><tr><td>3,5%</td><td>9.675 €</td><td>7.825 €</td><td>93.904 €</td><td><b>26,8%</b></td></tr><tr><td>4,0%</td><td>10.117 €</td><td>7.383 €</td><td>88.590 €</td><td><b>25,3%</b></td></tr><tr class="ora"><td>4,5%</td><td>10.570 €</td><td>6.930 €</td><td>83.154 €</td><td><b>23,8%</b></td></tr><tr><td>5,0%</td><td>11.033 €</td><td>6.467 €</td><td>77.600 €</td><td><b>22,2%</b></td></tr></tbody></table>
+<p class="nota">Il rendimento è calcolato rapportando la differenza annua al capitale
+proprio investito, al lordo degli oneri di competenza della proprietà e senza tenere conto
+della rivalutazione dell'immobile.</p>
+<p><b>In nessuno degli scenari considerati il canone risulta inferiore alla rata.</b> Anche
+nell'ipotesi più sfavorevole, con un tasso al 5%, la differenza mensile resta superiore a
+6.000 €.</p>
 
-<div class="sintesi"><table><tbody>
-<tr><td>Vostro capitale proprio</td><td>350.000 €</td></tr>
-<tr><td>Cassa netta incassata in vent'anni</td><td>753.087 €</td></tr>
-<tr><td>Valore dell'immobile a fine piano, capitalizzando il canone al 7%</td><td>3.000.000 €</td></tr>
-<tr><td><b>Risultato complessivo a vent'anni</b></td><td><b>3.403.087 €</b></td></tr>
-</tbody></table></div>
-<p>A fine piano il mutuo è estinto, l'immobile è vostro e libero, e ha una redditività
-dimostrata da vent'anni di canoni incassati.</p>
+<h3>Al termine del piano</h3>
+<p>Trascorsi i vent'anni il mutuo è integralmente rimborsato, l'immobile torna nella piena
+disponibilità della proprietà libero da vincoli finanziari, e ha alle spalle vent'anni di
+redditività documentata. Capitalizzando il canone a un tasso del 7%, il valore
+dell'immobile a fine piano è stimabile in <b>3.000.000 €</b>.</p>
 
-<h2>Chi paga il canone</h2>
+<h2>La scaletta di avviamento</h2>
+<p>Riteniamo corretto dichiarare fin d'ora una circostanza che nessuna struttura ricettiva
+di nuova apertura può evitare: il pieno regime non si raggiunge dal primo giorno. Piuttosto
+che tacerlo e correre il rischio di doverne discutere a contratto firmato, preferiamo
+proporre una modulazione del canone nei primi ventiquattro mesi, costruita in modo che
+<b>il corrispettivo complessivo del ventennio resti invariato</b>.</p>
+<table>
+<thead><tr><th>Periodo</th><th>Canone annuo</th><th>Canone mensile</th><th>Differenza sulla rata</th></tr></thead>
+<tbody>
+<tr><td>Primo anno</td><td>157.500 €</td><td>13.125 €</td><td>30.654 €</td></tr>
+<tr><td>Secondo anno</td><td>189.000 €</td><td>15.750 €</td><td>62.154 €</td></tr>
+<tr class="ora"><td>Dal terzo al ventesimo</td><td>214.083 €</td><td>17.840 €</td><td>87.238 €</td></tr>
+</tbody></table>
+<p>Il totale dei canoni corrisposti nel ventennio ammonta a <b>4.200.000 €</b>,
+identico a quello di un canone piatto di 210.000 €. <b>La proprietà non rinuncia a nulla:
+la minore entrata dei primi due esercizi viene integralmente recuperata nei successivi
+diciotto.</b> E anche nel primo anno, quello meno favorevole, il canone supera la rata di
+30.654 €.</p>
+<p>Resta inteso che, ove preferiate un canone piatto per l'intera durata, la proposta di
+210.000 € annui rimane valida nei termini sopra esposti.</p>
+
+<h2>Il presupposto su cui si fonda la proposta</h2>
+<p>I termini economici qui formulati presuppongono la realizzazione di <b>almeno
+cinquanta unità</b> fra appartamenti e camere effettivamente destinabili alla locazione.
+È il numero al di sotto del quale il nostro piano di gestione non regge il canone
+proposto, ed è pertanto opportuno che la condizione sia recepita nel contratto.</p>
+<p>Ne discende una raccomandazione che riteniamo utile a entrambe le parti: il progetto va
+istruito come <b>struttura ricettiva</b>. È la strada che consente il numero di unità
+previsto sulla metratura disponibile, e che colloca l'immobile fra i beni strumentali,
+con le conseguenze favorevoli in materia di deducibilità che i vostri consulenti sapranno
+valutare meglio di noi.</p>
+
+<h2>Chi corrisponde il canone</h2>
 <p><b>FAB S.r.l.</b> gestisce appartamenti in locazione turistica breve con il marchio
-<b>STAY Apartments</b> fra Trieste, Muggia e Barcola. <b>Dieci anni</b> nel settore,
-quaranta appartamenti a regime, pulizie e lavanderia gestite internamente con personale
-nostro — non appaltate.</p>
-<p>Quattro persone con quattro mestieri distinti: acquisizioni, legale ed economico,
-operations, rapporto con l'ospite. Una società nata fra ex giocatori di rugby
-professionisti, il che spiega parecchio di come lavoriamo.</p>
-<p>Siamo disponibili a discutere le garanzie che rendono il canone certo quanto la rata:
-deposito cauzionale, fideiussione bancaria, bilanci trasmessi con cadenza periodica.
-Su questo siamo aperti a qualunque formula vi metta a vostro agio.</p>
+<b>STAY Apartments</b>, operando fra Trieste, Muggia e Barcola. Contiamo dieci anni di
+attività nel settore e <b>quaranta appartamenti a regime</b>, ai quali se ne aggiungeranno
+<b>altri trenta entro l'inizio del 2027</b>, per operazioni già in corso di
+perfezionamento.</p>
+<p>Pulizie e lavanderia sono servizi interni, svolti con personale e mezzi propri e non
+appaltati a terzi: è la ragione per cui riusciamo a mantenere standard costanti e costi
+prevedibili nel tempo. La società è organizzata in quattro funzioni distinte — sviluppo e
+acquisizioni, area legale ed economica, operations, relazione con l'ospite — affidate a
+quattro persone diverse. Siamo, per inciso, ex giocatori di rugby professionisti, il che
+spiega più di quanto sembri il modo in cui lavoriamo.</p>
+<p>Siamo naturalmente disponibili a discutere le garanzie che rendano il canone certo
+quanto la rata: deposito cauzionale, fideiussione bancaria, trasmissione periodica dei
+bilanci. Su questo punto siamo aperti a qualunque formula riteniate opportuna.</p>
 
 <h2>Cosa chiediamo</h2>
 <ul>
-  <li><b>Vent'anni di durata.</b> Sono ciò che rende sostenibile il canone e allinea il
-  rimborso del mutuo all'ammortamento fiscale dell'immobile.</li>
-  <li><b>Preammortamento durante il cantiere.</b> Nei mesi senza incasso nessuno dei due
-  deve sostenere la rata piena.</li>
-  <li><b>Una scaletta sui primi ventiquattro mesi.</b> Nessuna struttura nuova va a regime
-  dal primo giorno: proponiamo un canone ridotto in avviamento e recuperato negli anni
-  successivi, con il totale del ventennio invariato.</li>
-  <li><b>Istruttoria come struttura ricettiva.</b> È la strada che consente 55 unità su
-  questa metratura e che colloca l'immobile in categoria strumentale.</li>
+  <li><b>Durata ventennale.</b> È ciò che rende sostenibile il canone e allinea il rimborso
+  del finanziamento all'ammortamento fiscale dell'immobile.</li>
+  <li><b>Preammortamento per la durata del cantiere.</b> Nei mesi in cui l'immobile non
+  produce reddito nessuna delle due parti dovrebbe sostenere la rata piena.</li>
+  <li><b>Recepimento della soglia delle cinquanta unità</b> fra le condizioni contrattuali.</li>
 </ul>
 
-<h2>I prossimi passi</h2>
+<h2>I passi successivi</h2>
 <ul>
-  <li>computo metrico su pianta reale, per confermare i 2.000.000 € prima del term sheet;</li>
-  <li>verifica dei requisiti aeroilluminanti, che determinano il numero definitivo di unità;</li>
-  <li>conferma della categoria catastale con i vostri commercialisti;</li>
+  <li>computo metrico estimativo su pianta definitiva, a conferma dell'importo di 2.000.000 €;</li>
+  <li>verifica dei requisiti aeroilluminanti, che determinano il numero effettivo di unità
+  realizzabili;</li>
+  <li>conferma della categoria catastale con i vostri consulenti fiscali;</li>
   <li>term sheet e definizione delle garanzie.</li>
 </ul>
-<p class="nota">Proposta preliminare. Le condizioni di finanziamento indicate sono ipotesi
-di lavoro da confermare con l'istituto erogante; il costo dei lavori va confermato sul
-computo definitivo. Il canone qui indicato è quello su cui siamo disposti a firmare.</p>
+<p class="nota">La presente proposta ha carattere preliminare. Le condizioni di
+finanziamento indicate costituiscono ipotesi di lavoro da verificare con l'istituto
+erogante, e l'importo dei lavori è soggetto a conferma sul computo definitivo. Il canone
+qui proposto è quello sul quale siamo disposti ad assumere impegno contrattuale.</p>
 
-<footer><b>Alex Morsellino</b> · FAB S.r.l. — STAY Apartments<br>
+<footer><b>Alex Morsellino</b><br>FAB S.r.l. — STAY Apartments<br>
 <a href="https://www.stayapartments.it/">www.stayapartments.it</a> · alex@noura.training</footer>
 </div></body></html>
