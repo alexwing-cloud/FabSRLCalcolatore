@@ -187,33 +187,6 @@
   "eur_mq": 10.5
  },
  {
-  "citta": "verona",
-  "titolo": "Appartamento a Verona verona dei mutilati,10",
-  "zona": "",
-  "canone": 2200,
-  "locali": 7,
-  "mq": 195,
-  "tag": [
-   "Arredato",
-   "Ascensore",
-   "Riscaldamento Centralizzato",
-   "Riscaldamento a Gas metano",
-   "Contesto Signorile",
-   "Aria Condizionata"
-  ],
-  "arredato": true,
-  "descrizione": "Agenzia immobiliare Gabetti  Verona  Centro propone a due passi dall'Arena, luminoso tranquillo quarto piano, servito da ascensore, inserito in un contesto signorile.  Appartamento  di 170 mq composto da ingresso, salone, zona pranzo con cucinotto, du...",
-  "privato": false,
-  "url": "https://www.trovacasa.it/annunci/vr-tc-47088-72765346",
-  "foto": "https://cdn.trovacasa.it/annunci/mlis/A_47088_72765346_1253680999/foto.jpg",
-  "camere": 4,
-  "canone_sostenibile": 2905,
-  "margine": 705,
-  "incidenza": 0.7573149741824441,
-  "esito": "passa",
-  "eur_mq": 11.3
- },
- {
   "citta": "trento",
   "titolo": "Appartamento a Trento",
   "zona": "Muralta - Martignano",
@@ -293,32 +266,6 @@
   "incidenza": 0.7885304659498208,
   "esito": "passa",
   "eur_mq": 10.5
- },
- {
-  "citta": "lucca",
-  "titolo": "Appartamento a Lucca via Jacopo della Quercia",
-  "zona": "San Marco - Acquacalda",
-  "canone": 2850,
-  "locali": 7,
-  "mq": 463,
-  "tag": [
-   "Arredato",
-   "Giardino",
-   "Luminoso",
-   "Studio",
-   "Sala da Pranzo"
-  ],
-  "arredato": true,
-  "descrizione": "[ita] Disponibile da: 25/08/2026\nMensilità minime prenotabili: 1\nMensilità massime prenotabili: 18\nPer prenotare l'annuncio clicca sul bottone \"Prenota Qui\"\n\n \n[eng] Available from: 25/08/2026\nMinimum months rental: 1\nMaximum months rental: 18\nTo...",
-  "privato": false,
-  "url": "https://www.trovacasa.it/annunci/lu-tc-79063-72838952",
-  "foto": "https://pic.trovacasa.it/image/1990972028/m-c.jpg",
-  "camere": 6,
-  "canone_sostenibile": 3348,
-  "margine": 498,
-  "incidenza": 0.8512544802867383,
-  "esito": "passa",
-  "eur_mq": 6.2
  },
  {
   "citta": "bari",
