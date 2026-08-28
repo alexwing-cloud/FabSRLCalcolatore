@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Centrale — conto economico</title>
+<meta name="description" content="Conto economico annuale e capacità di buona uscita dell'Hotel Centrale di Trieste.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Palette del marchio STAY Apartments: sabbia #E6DBC9, salvia #7B8275. */
+:root{
+  --carta:#FAF8F4; --foglio:#FFFFFF; --sabbia:#E6DBC9; --sabbia-tenue:#F4EEE4;
+  --linea:#E4DCCE; --linea-forte:#CFC4B2;
+  --inchiostro:#22261F; --testo:#4E5348; --tenue:#8A8E80;
+  --salvia:#7B8275; --salvia-scura:#5C6357;
+  --ok:#4A7A5C; --ok-fondo:#E3EDE5; --male:#9C4A3C; --male-fondo:#F3E2DE;
+  --ombra:0 1px 2px rgba(34,38,31,.05), 0 10px 26px -18px rgba(34,38,31,.35);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --carta:#14160F; --foglio:#1C1F17; --sabbia:#3A3428; --sabbia-tenue:#25281D;
+  --linea:#32362B; --linea-forte:#4A4F42;
+  --inchiostro:#ECE7DC; --testo:#BDC0B3; --tenue:#8A8E80;
+  --salvia:#A8B09C; --salvia-scura:#C2C9B7;
+  --ok:#79B48F; --ok-fondo:#1A2C20; --male:#D08475; --male-fondo:#33201C;
+  --ombra:0 1px 2px rgba(0,0,0,.45), 0 10px 26px -18px rgba(0,0,0,.85);
+}}
+:root[data-theme="dark"]{
+  --carta:#14160F; --foglio:#1C1F17; --sabbia:#3A3428; --sabbia-tenue:#25281D;
+  --linea:#32362B; --linea-forte:#4A4F42;
+  --inchiostro:#ECE7DC; --testo:#BDC0B3; --tenue:#8A8E80;
+  --salvia:#A8B09C; --salvia-scura:#C2C9B7;
+  --ok:#79B48F; --ok-fondo:#1A2C20; --male:#D08475; --male-fondo:#33201C;
+  --ombra:0 1px 2px rgba(0,0,0,.45), 0 10px 26px -18px rgba(0,0,0,.85);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--carta);color:var(--inchiostro);
+font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15px;line-height:1.5}
+h1,h2{font-family:Newsreader,Georgia,serif;font-weight:600;margin:0;text-wrap:balance}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--salvia);outline-offset:2px;border-radius:3px}
+
+header.top{padding:20px clamp(16px,4vw,34px);background:var(--foglio);
+border-bottom:1px solid var(--linea);border-top:5px solid var(--salvia);
+display:flex;flex-wrap:wrap;gap:12px 26px;align-items:baseline}
+.occhiello{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--tenue);font-weight:600}
+header h1{font-size:25px;letter-spacing:-.01em}
+header .sub{color:var(--testo);font-size:13px;flex:1;min-width:240px}
+.btn{background:var(--sabbia-tenue);color:var(--inchiostro);border:1px solid var(--linea-forte);
+border-radius:7px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.btn:hover{background:var(--sabbia)}
+
+.wrap{display:grid;grid-template-columns:minmax(300px,370px) 1fr;gap:clamp(14px,2vw,24px);
+align-items:start;padding:clamp(14px,3vw,26px) clamp(16px,4vw,34px) 70px;max-width:1500px;margin:0 auto}
+@media (max-width:980px){.wrap{grid-template-columns:1fr}.pannello{order:2}.esiti{order:1}}
+.scheda{background:var(--foglio);border:1px solid var(--linea);border-radius:10px;box-shadow:var(--ombra)}
+.pannello{position:sticky;top:14px;display:flex;flex-direction:column}
+@media (max-width:980px){.pannello{position:static}}
+.esiti{display:flex;flex-direction:column;gap:16px;min-width:0}
+
+details.gr{border-bottom:1px solid var(--linea)}
+details.gr:last-of-type{border-bottom:0}
+details.gr>summary{list-style:none;cursor:pointer;padding:11px 15px;font-size:11.5px;font-weight:600;
+letter-spacing:.05em;text-transform:uppercase;color:var(--salvia-scura);
+display:flex;justify-content:space-between;align-items:center}
+details.gr>summary::-webkit-details-marker{display:none}
+details.gr>summary::after{content:"+";color:var(--tenue);font-size:15px}
+details.gr[open]>summary::after{content:"–"}
+.campi{padding:0 15px 14px;display:grid;grid-template-columns:1fr 1fr;gap:9px 10px}
+.campo{display:flex;flex-direction:column;gap:3px;min-width:0}
+.campo--largo{grid-column:1/-1}
+.campo label{font-size:11px;color:var(--tenue)}
+.campo input{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+font-size:13.5px;padding:6px 8px;width:100%;text-align:right;
+background:var(--sabbia-tenue);color:var(--inchiostro);border:1px solid var(--linea);border-radius:6px}
+.campo input:hover{border-color:var(--linea-forte)}
+.nota{margin:0;padding:0 15px 12px;font-size:11px;color:var(--tenue);line-height:1.45}
+
+.sez{padding:16px 20px}
+.sez>header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+flex-wrap:wrap;margin-bottom:12px}
+.sez h2{font-size:17px}
+.sez .hint{font-size:11.5px;color:var(--tenue);max-width:50ch}
+
+table{border-collapse:collapse;width:100%;font-size:14px}
+td{padding:7px 0 7px 12px;text-align:right;border-bottom:1px solid var(--linea);
+font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+td:first-child{text-align:left;padding-left:0;font-family:"IBM Plex Sans",sans-serif}
+tr.tot td{border-top:1px solid var(--linea-forte);border-bottom:0;font-weight:600;padding-top:10px}
+tr.tot.big td{font-size:16px}
+tr.vuota td{border:0;height:8px;padding:0}
+td.q{color:var(--tenue);font-size:12.5px;width:1%;white-space:nowrap}
+
+.kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linea);
+border-radius:10px;overflow:hidden}
+@media (min-width:1150px){.kpi{grid-template-columns:repeat(4,1fr)}}
+.k{background:var(--foglio);padding:13px 15px;display:flex;flex-direction:column;gap:2px}
+.k .et{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--tenue);font-weight:600}
+.k .n{font-family:"IBM Plex Mono",monospace;font-size:21px;font-weight:600;letter-spacing:-.02em}
+.k .g{font-size:11.5px;color:var(--testo)}
+.k.ok .n{color:var(--ok)} .k.male .n{color:var(--male)}
+
+.bu td.anno{font-family:"IBM Plex Sans",sans-serif;text-align:left}
+.bu .si{background:var(--ok-fondo);color:var(--ok)}
+.bu .no{background:var(--male-fondo);color:var(--male)}
+footer.note{padding:0 clamp(16px,4vw,34px) 44px;max-width:80ch;color:var(--tenue);font-size:12px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div>
+    <div class="occhiello">FAB S.r.l. · STAY Apartments</div>
+    <h1>Hotel Centrale</h1>
+  </div>
+  <div class="sub">Conto economico annuale nello schema delle vostre strutture. Cambia una voce qualsiasi e tutto si ricalcola, compresa la buona uscita che l'attività può sostenere.</div>
+  <button class="btn" id="albergo">Com'è oggi</button>
+  <button class="btn" id="aparthotel">Da aparthotel</button>
+  <button class="btn" id="tema">Tema</button>
+</header>
+
+<div class="wrap">
+
+  <form class="pannello scheda" id="form" autocomplete="off">
+
+    <details class="gr" open>
+      <summary>Ricavi</summary>
+      <div class="campi">
+        <div class="campo"><label for="stanze">Stanze</label><input type="number" id="stanze" value="24" step="1"></div>
+        <div class="campo"><label for="letti">Posti letto</label><input type="number" id="letti" value="57" step="1"></div>
+        <div class="campo"><label for="prezzo">Prezzo medio a notte (€)</label><input type="number" id="prezzo" value="91" step="1"></div>
+        <div class="campo"><label for="giorni">Giorni venduti per stanza</label><input type="number" id="giorni" value="343" step="1"></div>
+        <div class="campo"><label for="accessori">Altri ricavi (€/anno)</label><input type="number" id="accessori" value="0" step="1000"></div>
+        <div class="campo"><label for="iva">IVA camera (%)</label><input type="number" id="iva" value="10" step="1"></div>
+      </div>
+      <p class="nota">24 stanze × 343 giorni = 94% di occupazione. Cambiando i giorni cambia l'occupazione, e con essa il numero di cambi da fare.</p>
+    </details>
+
+    <details class="gr" open>
+      <summary>Costi che seguono le notti vendute</summary>
+      <div class="campi">
+        <div class="campo"><label for="soggiorno">Soggiorno medio (notti)</label><input type="number" id="soggiorno" value="4" step="0.1"></div>
+        <div class="campo"><label for="commissioni">Commissioni di vendita (%)</label><input type="number" id="commissioni" value="14" step="0.1"></div>
+        <div class="campo"><label for="pulizie">Pulizie (€/cambio)</label><input type="number" id="pulizie" value="20.4" step="0.5"></div>
+        <div class="campo"><label for="lavanderia">Lavanderia (€/cambio)</label><input type="number" id="lavanderia" value="8.9" step="0.5"></div>
+        <div class="campo"><label for="consumabili">Materiali e consumabili (€/cambio)</label><input type="number" id="consumabili" value="2.9" step="0.5"></div>
+        <div class="campo"><label for="colazione">Colazione (€/notte)</label><input type="number" id="colazione" value="0" step="0.5"></div>
+      </div>
+      <p class="nota">Il soggiorno medio è la voce che pesa di più: allungandolo calano i cambi, e con essi pulizie e lavanderia, a parità di notti vendute.</p>
+    </details>
+
+    <details class="gr" open>
+      <summary>Costi che restano comunque</summary>
+      <div class="campi">
+        <div class="campo campo--largo"><label for="locazione">Locazione immobile + spese condominiali (€/anno)</label><input type="number" id="locazione" value="144000" step="1000"></div>
+        <div class="campo"><label for="energia">Energia e utenze (€/anno)</label><input type="number" id="energia" value="35000" step="1000"></div>
+        <div class="campo"><label for="personale">Personale (€/anno)</label><input type="number" id="personale" value="90000" step="1000"></div>
+        <div class="campo"><label for="assicurazione">Assicurazione (€/anno)</label><input type="number" id="assicurazione" value="4000" step="500"></div>
+        <div class="campo"><label for="wifi">Wi-Fi e gestionali (€/anno)</label><input type="number" id="wifi" value="6000" step="500"></div>
+        <div class="campo"><label for="siae">SIAE e licenze (€/anno)</label><input type="number" id="siae" value="2500" step="500"></div>
+        <div class="campo"><label for="tari">TARI (€/anno)</label><input type="number" id="tari" value="6500" step="500"></div>
+        <div class="campo"><label for="manutenzione">Manutenzione (€/anno)</label><input type="number" id="manutenzione" value="4000" step="500"></div>
+        <div class="campo"><label for="altre">Altre spese (€/anno)</label><input type="number" id="altre" value="2000" step="500"></div>
+        <div class="campo"><label for="tasse">Imposte S.r.l. (%)</label><input type="number" id="tasse" value="27.9" step="0.1"></div>
+      </div>
+    </details>
+
+    <details class="gr" open>
+      <summary>La buona uscita</summary>
+      <div class="campi">
+        <div class="campo"><label for="richiesta">Cifra richiesta (€)</label><input type="number" id="richiesta" value="800000" step="10000"></div>
+        <div class="campo"><label for="tenere">Margine da tenere (€/anno)</label><input type="number" id="tenere" value="80000" step="5000"></div>
+        <div class="campo"><label for="cucinini">Cucinini e conversione (€)</label><input type="number" id="cucinini" value="58500" step="1000"></div>
+        <div class="campo"><label for="ammBu">Ammortamento avviamento (anni)</label><input type="number" id="ammBu" value="18" step="1"></div>
+      </div>
+      <p class="nota">L'avviamento si deduce in diciotto anni (art. 103 TUIR), mentre l'esborso è rateale: cassa e fisco non coincidono, e il calcolo qui sotto ne tiene conto.</p>
+    </details>
+  </form>
+
+  <div class="esiti">
+
+    <div class="kpi" id="kpi"></div>
+
+    <section class="scheda sez">
+      <header>
+        <h2>Conto economico annuale</h2>
+        <div class="hint">Lo schema è quello dei vostri fogli per struttura.</div>
+      </header>
+      <table id="ce"></table>
+    </section>
+
+    <section class="scheda sez">
+      <header>
+        <h2>Quanto possiamo dare di buona uscita</h2>
+        <div class="hint">Quello che l'attività si ripaga da sola, tenendo intatto il margine che hai indicato.</div>
+      </header>
+      <table id="bu" class="bu"></table>
+      <p class="nota" id="verdetto"></p>
+    </section>
+
+    <section class="scheda sez">
+      <header>
+        <h2>La stessa cifra, trasformata in canone</h2>
+        <div class="hint">Muri e attività sono dello stesso soggetto: quello che non paghi come buona uscita puoi riconoscerlo come canone maggiorato.</div>
+      </header>
+      <table id="scambio"></table>
+    </section>
+
+  </div>
+</div>
+
+<footer class="note">
+  Il conto è costruito sulla struttura di costi reale di FAB: pulizie, lavanderia e consumabili valorizzati al costo industriale per cambio, commissioni in percentuale sull'incasso lordo. Le voci fisse sono importi annui, come nei fogli per struttura. La capacità di buona uscita è calcolata sulla cassa netta dopo canone e imposte, tenendo conto che l'avviamento si deduce in diciotto anni mentre l'esborso è rateale.
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const n = id => parseFloat($(id).value) || 0;
+const eur = v => (isFinite(v)?v:0).toLocaleString('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0,useGrouping:'always'});
+const pct = (v,d=1) => (isFinite(v)?v*100:0).toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const num = v => (isFinite(v)?v:0).toLocaleString('it-IT',{maximumFractionDigits:0,useGrouping:'always'});
+/* i costi unitari vanno mostrati coi decimali, altrimenti 2.058 × 20 € non fa 41.983 */
+const eurDec = v => (isFinite(v)?v:0).toLocaleString('it-IT',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2});
+
+function calcola(){
+  const i = {stanze:n('stanze'), letti:n('letti'), prezzo:n('prezzo'), giorni:n('giorni'),
+    accessori:n('accessori'), iva:n('iva')/100, soggiorno:Math.max(1,n('soggiorno')),
+    commissioni:n('commissioni')/100, pulizie:n('pulizie'), lavanderia:n('lavanderia'),
+    consumabili:n('consumabili'), colazione:n('colazione'), locazione:n('locazione'),
+    energia:n('energia'), personale:n('personale'), assicurazione:n('assicurazione'),
+    wifi:n('wifi'), siae:n('siae'), tari:n('tari'), manutenzione:n('manutenzione'),
+    altre:n('altre'), tasse:n('tasse')/100, richiesta:n('richiesta'), tenere:n('tenere'),
+    cucinini:n('cucinini'), ammBu:Math.max(1,n('ammBu'))};
+
+  const r = {};
+  r.notti = i.stanze*i.giorni;
+  r.occ = i.giorni/365;
+  r.cambi = r.notti/i.soggiorno;
+  r.lordoCamera = r.notti*i.prezzo;
+  r.lordo = r.lordoCamera + i.accessori;
+  r.netto = r.lordoCamera/(1+i.iva) + i.accessori;
+
+  r.cCommissioni = r.lordoCamera*i.commissioni;
+  r.cPulizie = r.cambi*i.pulizie;
+  r.cLavanderia = r.cambi*i.lavanderia;
+  r.cConsumabili = r.cambi*i.consumabili;
+  r.cColazione = r.notti*i.colazione;
+  r.cFissi = i.energia+i.personale+i.assicurazione+i.wifi+i.siae+i.tari+i.manutenzione+i.altre;
+  r.costiSenzaCanone = r.cCommissioni+r.cPulizie+r.cLavanderia+r.cConsumabili+r.cColazione+r.cFissi;
+  r.costi = r.costiSenzaCanone + i.locazione;
+
+  r.gopPrimaCanone = r.netto - r.costiSenzaCanone;
+  r.utileLordo = r.netto - r.costi;
+  r.imposteBase = r.utileLordo>0 ? r.utileLordo*i.tasse : 0;
+  r.utileNetto = r.utileLordo - r.imposteBase;
+  r.canoneSuLordo = r.lordo ? i.locazione/r.lordo : 0;
+  r.margineOp = r.lordo ? r.utileLordo/r.lordo : 0;
+  r.nettoSuLordo = r.lordo ? r.utileNetto/r.lordo : 0;
+
+  /* cassa disponibile per la buona uscita: l'avviamento si deduce in ammBu anni,
+     quindi lo scudo fiscale non coincide con l'esborso */
+  r.cassa = bu => {
+    const amm = bu/i.ammBu + (i.cucinini? i.cucinini/8 : 0);
+    return r.utileLordo - Math.max(0, r.utileLordo-amm)*i.tasse;
+  };
+  r.disponibile = r.cassa(i.richiesta) - i.tenere;
+  return {i, r};
+}
+
+function mostra(){
+  const {i, r} = calcola();
+
+  const cls = (v,b,m) => v>=b?'ok':(v>=m?'':'male');
+  $('kpi').innerHTML = [
+    {e:'Incasso lordo', v:eur(r.lordo), g:num(r.notti)+' notti · '+pct(r.occ,0)},
+    {e:'Utile netto annuo', v:eur(r.utileNetto), g:pct(r.nettoSuLordo)+' sul lordo', c:cls(r.nettoSuLordo,.15,.10)},
+    {e:'Canone sul lordo', v:pct(r.canoneSuLordo), g:'soglia 30% per '+num(i.stanze)+' unità', c:r.canoneSuLordo<=.30?'ok':'male'},
+    {e:'Cassa per la buona uscita', v:eur(Math.max(0,r.disponibile)), g:'all’anno, tenendo '+eur(i.tenere), c:r.disponibile>0?'ok':'male'}
+  ].map(k=>`<div class="k ${k.c||''}"><div class="et">${k.e}</div><div class="n">${k.v}</div><div class="g">${k.g}</div></div>`).join('');
+
+  const riga = (lab, val, q='', cls='') =>
+    `<tr class="${cls}"><td>${lab}</td><td class="q">${q}</td><td>${eur(val)}</td></tr>`;
+  $('ce').innerHTML = `
+    ${riga('INCASSO — '+num(i.stanze)+' stanze × '+num(i.giorni)+' giorni × '+eur(i.prezzo), r.lordoCamera)}
+    ${i.accessori? riga('Altri ricavi', i.accessori) : ''}
+    ${riga('RICAVI AL NETTO IVA '+num(i.iva*100)+'%', r.netto, '', 'tot')}
+    <tr class="vuota"><td colspan="3"></td></tr>
+    ${riga('LOCAZIONE IMMOBILE + SPESE CONDOMINIALI', -i.locazione, pct(i.locazione/r.lordo))}
+    ${riga('COMMISSIONI DI VENDITA', -r.cCommissioni, pct(i.commissioni,0)+' sul lordo')}
+    ${riga('SPESE PULIZIE', -r.cPulizie, num(r.cambi)+' cambi × '+eurDec(i.pulizie))}
+    ${riga('SERVIZI DI LAVANDERIA', -r.cLavanderia, num(r.cambi)+' × '+eurDec(i.lavanderia))}
+    ${riga('MATERIALI E CONSUMABILI', -r.cConsumabili, num(r.cambi)+' × '+eurDec(i.consumabili))}
+    ${i.colazione? riga('COLAZIONE', -r.cColazione, num(r.notti)+' × '+eurDec(i.colazione)) : ''}
+    ${riga('ENERGIA E UTENZE', -i.energia)}
+    ${riga('PERSONALE', -i.personale)}
+    ${riga('ASSICURAZIONE', -i.assicurazione)}
+    ${riga('WI-FI E GESTIONALI', -i.wifi)}
+    ${riga('SIAE E LICENZE', -i.siae)}
+    ${riga('TARI', -i.tari)}
+    ${riga('MANUTENZIONE', -i.manutenzione)}
+    ${riga('ALTRE SPESE', -i.altre)}
+    ${riga('TOTALE COSTI', -r.costi, pct(r.costi/r.lordo), 'tot')}
+    <tr class="vuota"><td colspan="3"></td></tr>
+    ${riga('UTILE LORDO ANNUALE', r.utileLordo, pct(r.margineOp)+' sul lordo', 'tot')}
+    ${riga('IMPOSTE SUL REDDITO S.R.L.', -r.imposteBase, pct(i.tasse,1))}
+    ${riga('UTILE NETTO ANNUALE', r.utileNetto, pct(r.nettoSuLordo)+' sul lordo', 'tot big')}`;
+
+  /* capacità di buona uscita per durata */
+  let righe = '<tr><td class="anno">Durata</td><td class="q">rata annua</td><td>massimo pagabile</td><td>la richiesta sta in piedi?</td></tr>';
+  for (const anni of [3,4,5,6,8]){
+    const max = Math.max(0, r.disponibile)*anni;
+    const rataRichiesta = i.richiesta/anni;
+    const ok = r.disponibile >= rataRichiesta;
+    righe += `<tr><td class="anno">${anni} anni</td><td class="q">${eur(rataRichiesta)}</td>`
+      + `<td>${eur(max)}</td><td class="${ok?'si':'no'}">${ok?'sì':'mancano '+eur(rataRichiesta-r.disponibile)+'/anno'}</td></tr>`;
+  }
+  $('bu').innerHTML = righe;
+
+  const anniNecessari = r.disponibile>0 ? i.richiesta/r.disponibile : Infinity;
+  $('verdetto').innerHTML = r.disponibile<=0
+    ? `Con questo margine da tenere non resta nulla per la buona uscita: o si abbassa il margine, o si alza il fatturato, o si tratta il canone.`
+    : `Tenendo <b>${eur(i.tenere)}</b> l’anno di guadagno, l’attività genera <b>${eur(r.disponibile)}</b> l’anno da destinare alla buona uscita. `
+      + `Per pagare i <b>${eur(i.richiesta)}</b> richiesti servirebbero <b>${anniNecessari.toFixed(1)} anni</b>. `
+      + `Aggiungendo i ${eur(i.cucinini)} di conversione, l’investimento complessivo rientra in <b>${((i.richiesta+i.cucinini)/r.cassa(i.richiesta)).toFixed(1)} anni</b>.`;
+
+  /* scambio buona uscita / canone */
+  let s = '<tr><td class="anno">Ipotesi</td><td class="q">buona uscita</td><td>canone/anno</td><td>canone sul lordo</td><td>utile netto</td></tr>';
+  for (const quota of [1, 0.5, 0]){
+    const bu = i.richiesta*quota;
+    const daCanone = (i.richiesta-bu)/12;
+    const can = i.locazione + daCanone;
+    const ul = r.netto - (r.costiSenzaCanone + can);
+    const un = ul>0 ? ul*(1-i.tasse) : ul;
+    const et = quota===1? 'Tutto in buona uscita' : (quota===0? 'Tutto in canone, su 12 anni' : 'Metà e metà');
+    s += `<tr><td class="anno">${et}</td><td class="q">${eur(bu)}</td><td>${eur(can)}</td>`
+       + `<td class="${can/r.lordo<=.30?'si':'no'}">${pct(can/r.lordo)}</td><td>${eur(un)}</td></tr>`;
+  }
+  $('scambio').innerHTML = s;
+}
+
+const PRESET = {
+  albergo:   {prezzo:87, giorni:310, soggiorno:2.2, commissioni:15.8, colazione:4.5,
+              personale:130000, manutenzione:6000, siae:4000, altre:4000, locazione:144000},
+  aparthotel:{prezzo:91, giorni:343, soggiorno:4, commissioni:14, colazione:0,
+              personale:90000, manutenzione:4000, siae:2500, altre:2000, locazione:144000}
+};
+const carica = p => { Object.entries(PRESET[p]).forEach(([k,v])=>{ if($(k)) $(k).value=v; }); mostra(); };
+
+$('form').addEventListener('input', mostra);
+$('albergo').onclick = () => carica('albergo');
+$('aparthotel').onclick = () => carica('aparthotel');
+$('tema').onclick = () => {
+  const ora = document.documentElement.getAttribute('data-theme');
+  const scuro = ora ? ora==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', scuro?'light':'dark');
+};
+mostra();
+</script>
+</body>
+</html>
