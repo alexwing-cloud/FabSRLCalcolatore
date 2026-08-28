@@ -5,46 +5,68 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-:root{--ground:#FAFBFC;--surface:#fff;--surface-2:#F1F4F7;--line:#DCE3EA;--line-2:#B9C6D2;
---text:#131A21;--soft:#4C5A68;--faint:#8794A0;--accent:#17466B;--accent-soft:#E3ECF3}
+:root{
+  /* Palette derivata dal marchio STAY Apartments: sabbia #E6DBC9 e salvia #7B8275.
+     I neutri hanno una vena calda, non grigia, per stare accanto alla sabbia. */
+  --carta:#FBF9F5; --foglio:#FFFFFF; --sabbia:#E6DBC9; --sabbia-tenue:#F4EEE4;
+  --linea:#E4DCCE; --linea-forte:#CFC4B2;
+  --inchiostro:#22261F; --testo:#4E5348; --tenue:#8A8E80;
+  --salvia:#7B8275; --salvia-scura:#5C6357;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --carta:#161814; --foglio:#1D201B; --sabbia:#3A3428; --sabbia-tenue:#262319;
+    --linea:#33372E; --linea-forte:#4A4F42;
+    --inchiostro:#ECE7DC; --testo:#BDC0B3; --tenue:#8A8E80;
+    --salvia:#A8B09C; --salvia-scura:#C2C9B7;
+  }
+}
+:root[data-theme="dark"]{
+  --carta:#161814; --foglio:#1D201B; --sabbia:#3A3428; --sabbia-tenue:#262319;
+  --linea:#33372E; --linea-forte:#4A4F42;
+  --inchiostro:#ECE7DC; --testo:#BDC0B3; --tenue:#8A8E80;
+  --salvia:#A8B09C; --salvia-scura:#C2C9B7;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--ground);color:var(--text);
+body{margin:0;background:var(--carta);color:var(--inchiostro);
 font-family:Newsreader,Charter,Georgia,serif;font-size:17px;line-height:1.68}
-.foglio{max-width:800px;margin:0 auto;background:var(--surface);
-padding:64px clamp(22px,6vw,72px) 64px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.foglio{max-width:800px;margin:0 auto;background:var(--foglio);border-top:5px solid var(--salvia);
+padding:64px clamp(22px,6vw,72px) 64px;border-left:1px solid var(--linea);border-right:1px solid var(--linea)}
 h1,h2,h3{font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;margin:0;text-wrap:balance}
 h1{font-size:33px;letter-spacing:-.02em;line-height:1.12}
-h2{font-size:15px;letter-spacing:.01em;margin:42px 0 14px;padding-top:24px;border-top:1px solid var(--line);
-text-transform:uppercase;font-size:12.5px;letter-spacing:.12em;color:var(--accent)}
+h2{font-size:15px;letter-spacing:.01em;margin:42px 0 14px;padding-top:24px;border-top:1px solid var(--linea);
+text-transform:uppercase;font-size:12.5px;letter-spacing:.12em;color:var(--salvia-scura)}
 h3{font-size:16.5px;margin:26px 0 8px}
 .occhiello{font-family:"IBM Plex Sans",sans-serif;font-size:10.5px;letter-spacing:.16em;
-text-transform:uppercase;color:var(--faint);font-weight:600}
-.somm{font-size:19px;color:var(--soft);margin:18px 0 0;max-width:54ch;line-height:1.5}
-.dest{font-family:"IBM Plex Sans",sans-serif;font-size:14.5px;color:var(--soft);
-margin:26px 0 0;padding-top:20px;border-top:1px solid var(--line);line-height:1.5}
+text-transform:uppercase;color:var(--tenue);font-weight:600}
+.somm{font-size:19px;color:var(--testo);margin:18px 0 0;max-width:54ch;line-height:1.5}
+.dest{font-family:"IBM Plex Sans",sans-serif;font-size:14.5px;color:var(--testo);
+margin:26px 0 0;padding-top:20px;border-top:1px solid var(--linea);line-height:1.5}
 p{margin:0 0 14px;max-width:68ch}
 ul{margin:0 0 14px;padding-left:22px;max-width:68ch} li{margin-bottom:9px}
 b,strong{font-weight:600}
 table{border-collapse:collapse;width:100%;margin:14px 0 18px;font-size:14px;
 font-family:"IBM Plex Sans",sans-serif}
-th{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);
-font-weight:600;text-align:right;padding:0 0 8px 10px;border-bottom:1px solid var(--line-2)}
+th{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--tenue);
+font-weight:600;text-align:right;padding:0 0 8px 10px;border-bottom:1px solid var(--linea-forte)}
 th:first-child,td:first-child{text-align:left;padding-left:0}
-td{padding:10px 0 10px 10px;text-align:right;border-bottom:1px solid var(--line);
+td{padding:10px 0 10px 10px;text-align:right;border-bottom:1px solid var(--linea);
 font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
 td:first-child{font-family:"IBM Plex Sans",sans-serif}
-tr.ora td{background:var(--accent-soft);font-weight:600}
-.grande{background:var(--accent-soft);border-radius:8px;padding:26px 28px;margin:22px 0;
-display:flex;flex-wrap:wrap;gap:28px 46px;font-family:"IBM Plex Sans",sans-serif}
-.grande div{min-width:152px}
-.grande .et{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:600}
+tr.ora td{background:var(--sabbia);font-weight:600;color:var(--inchiostro)}
+.grande{background:var(--sabbia);border:1px solid var(--linea-forte);border-radius:8px;
+padding:26px 28px;margin:22px 0;font-family:"IBM Plex Sans",sans-serif;
+display:grid;grid-template-columns:repeat(4,1fr);gap:26px 30px}
+@media (max-width:640px){.grande{grid-template-columns:repeat(2,1fr)}}
+.grande .n{white-space:nowrap}
+.grande .et{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--testo);font-weight:600}
 .grande .n{font-family:"IBM Plex Mono",monospace;font-size:31px;font-weight:600;
-color:var(--accent);letter-spacing:-.02em;line-height:1.15;margin-top:5px}
-.grande .g{font-size:12.5px;color:var(--soft)}
-.nota{font-size:13.5px;color:var(--faint);max-width:66ch;font-style:italic}
-footer{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);
-font-size:14px;color:var(--faint);font-family:"IBM Plex Sans",sans-serif}
-footer a{color:var(--accent)}
+color:var(--inchiostro);letter-spacing:-.02em;line-height:1.15;margin-top:5px}
+.grande .g{font-size:12.5px;color:var(--testo)}
+.nota{font-size:13.5px;color:var(--tenue);max-width:66ch;font-style:italic}
+footer{margin-top:46px;padding-top:22px;border-top:1px solid var(--linea);
+font-size:14px;color:var(--tenue);font-family:"IBM Plex Sans",sans-serif}
+footer a{color:var(--salvia-scura)}
 @media print{body{background:#fff}.foglio{border:0;padding:0;max-width:none}h2{page-break-after:avoid}}
 </style></head><body><div class="foglio">
 
@@ -123,11 +145,11 @@ e ai suoi consulenti.</p>
 di 350.000 €:</p>
 <table>
 <thead><tr><th>Tasso</th><th>Rata/mese</th><th>Differenza/mese</th>
-<th>Differenza/anno</th><th>Rendimento lordo</th></tr></thead>
-<tbody><tr><td>3,5%</td><td>9.675 €</td><td>7.825 €</td><td>93.904 €</td><td><b>26,8%</b></td></tr><tr><td>4,0%</td><td>10.117 €</td><td>7.383 €</td><td>88.590 €</td><td><b>25,3%</b></td></tr><tr class="ora"><td>4,5%</td><td>10.570 €</td><td>6.930 €</td><td>83.154 €</td><td><b>23,8%</b></td></tr><tr><td>5,0%</td><td>11.033 €</td><td>6.467 €</td><td>77.600 €</td><td><b>22,2%</b></td></tr></tbody></table>
-<p class="nota">Il rendimento è calcolato rapportando la differenza annua al capitale
-proprio investito, al lordo degli oneri di competenza della proprietà e senza tenere conto
-della rivalutazione dell'immobile.</p>
+<th>Differenza/anno</th><th>Su vent'anni</th></tr></thead>
+<tbody><tr><td>3,5%</td><td>9.675 €</td><td>7.825 €</td><td>93.904 €</td><td>1.878.080 €</td></tr><tr><td>4,0%</td><td>10.117 €</td><td>7.383 €</td><td>88.590 €</td><td>1.771.800 €</td></tr><tr class="ora"><td>4,5%</td><td>10.570 €</td><td>6.930 €</td><td>83.154 €</td><td>1.663.080 €</td></tr><tr><td>5,0%</td><td>11.033 €</td><td>6.467 €</td><td>77.600 €</td><td>1.552.000 €</td></tr></tbody></table>
+<p class="nota">Gli importi sono al lordo degli oneri di competenza della proprietà. La
+colonna dei vent'anni assume il canone fermo al valore iniziale: con l'adeguamento ISTAT
+gli importi effettivi risulteranno superiori.</p>
 <p><b>In nessuno degli scenari considerati il canone risulta inferiore alla rata.</b> Anche
 nell'ipotesi più sfavorevole, con un tasso al 5%, la differenza mensile resta superiore a
 6.000 €.</p>
@@ -184,7 +206,7 @@ medesima misura.</p>
 <table>
 <thead><tr><th>Unità realizzate</th><th>Canone annuo</th><th>Canone mensile</th>
 <th>Investimento aggiuntivo finanziabile</th></tr></thead>
-<tbody><tr class="ora"><td>55 <span style="color:var(--faint)">&middot; progetto</span></td><td>210.000 €</td><td>17.500 €</td><td>&mdash;</td></tr><tr><td>65 <span style="color:var(--faint)">&middot; +10</span></td><td>248.182 €</td><td>20.682 €</td><td>496.667 €</td></tr><tr><td>75 <span style="color:var(--faint)">&middot; +20</span></td><td>286.364 €</td><td>23.864 €</td><td>993.333 €</td></tr><tr><td>85 <span style="color:var(--faint)">&middot; +30</span></td><td>324.545 €</td><td>27.045 €</td><td>1.490.000 €</td></tr></tbody></table>
+<tbody><tr class="ora"><td>55 <span style="color:var(--tenue)">&middot; progetto</span></td><td>210.000 €</td><td>17.500 €</td><td>&mdash;</td></tr><tr><td>65 <span style="color:var(--tenue)">&middot; +10</span></td><td>248.182 €</td><td>20.682 €</td><td>496.667 €</td></tr><tr><td>75 <span style="color:var(--tenue)">&middot; +20</span></td><td>286.364 €</td><td>23.864 €</td><td>993.333 €</td></tr><tr><td>85 <span style="color:var(--tenue)">&middot; +30</span></td><td>324.545 €</td><td>27.045 €</td><td>1.490.000 €</td></tr></tbody></table>
 <p>L'ultima colonna merita una nota. Un canone incrementale di 3.818 € annui,
 capitalizzato su vent'anni alle condizioni ipotizzate, sostiene un finanziamento di circa
 <b>49.667 € per unità</b>. È, in sostanza, quanto costa realizzarne una:
