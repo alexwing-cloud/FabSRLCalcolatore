@@ -1,0 +1,568 @@
+<title>Prendere l'Hotel Centrale?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --carta:#FAF8F4; --foglio:#FFFFFF; --sabbia:#E6DBC9; --sabbia-tenue:#F4EEE4;
+  --linea:#E4DCCE; --linea-forte:#CFC4B2;
+  --inchiostro:#22261F; --testo:#4E5348; --tenue:#8A8E80;
+  --salvia:#7B8275; --salvia-scura:#5C6357;
+  --ok:#4A7A5C; --ok-fondo:#E3EDE5;
+  --male:#9C4A3C; --male-fondo:#F3E2DE;
+  --attesa:#8A6520; --attesa-fondo:#F5EBD8;
+  --ombra:0 1px 2px rgba(34,38,31,.05), 0 10px 26px -18px rgba(34,38,31,.35);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --carta:#14160F; --foglio:#1C1F17; --sabbia:#3A3428; --sabbia-tenue:#25281D;
+  --linea:#32362B; --linea-forte:#4A4F42;
+  --inchiostro:#ECE7DC; --testo:#BDC0B3; --tenue:#8A8E80;
+  --salvia:#A8B09C; --salvia-scura:#C2C9B7;
+  --ok:#79B48F; --ok-fondo:#1A2C20;
+  --male:#D08475; --male-fondo:#33201C;
+  --attesa:#D3AC63; --attesa-fondo:#2C2418;
+  --ombra:0 1px 2px rgba(0,0,0,.45), 0 10px 26px -18px rgba(0,0,0,.85);
+}}
+:root[data-theme="dark"]{
+  --carta:#14160F; --foglio:#1C1F17; --sabbia:#3A3428; --sabbia-tenue:#25281D;
+  --linea:#32362B; --linea-forte:#4A4F42;
+  --inchiostro:#ECE7DC; --testo:#BDC0B3; --tenue:#8A8E80;
+  --salvia:#A8B09C; --salvia-scura:#C2C9B7;
+  --ok:#79B48F; --ok-fondo:#1A2C20;
+  --male:#D08475; --male-fondo:#33201C;
+  --attesa:#D3AC63; --attesa-fondo:#2C2418;
+  --ombra:0 1px 2px rgba(0,0,0,.45), 0 10px 26px -18px rgba(0,0,0,.85);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--carta);color:var(--inchiostro);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;font-size:15.5px;line-height:1.62}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.mono{font-family:"IBM Plex Mono","SF Mono",monospace;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--salvia);outline-offset:3px;border-radius:3px}
+
+header.top{background:var(--foglio);border-bottom:1px solid var(--linea);
+  border-top:5px solid var(--salvia);padding:26px clamp(18px,5vw,40px) 24px}
+.top-in{max-width:940px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
+.occhiello{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tenue);font-weight:600}
+header h1{font-size:clamp(27px,4.4vw,37px);line-height:1.16}
+header p{margin:0;color:var(--testo);font-size:14.5px;max-width:66ch}
+
+main{max-width:940px;margin:0 auto;padding:0 clamp(18px,5vw,40px) 80px;
+  display:flex;flex-direction:column;gap:44px}
+section{display:flex;flex-direction:column;gap:15px}
+section>h2{font-size:22px;padding-bottom:9px;border-bottom:2px solid var(--sabbia);
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+section>h2 .coda{font-family:"IBM Plex Sans",sans-serif;font-size:12px;font-weight:400;
+  color:var(--tenue);letter-spacing:0}
+p{margin:0;max-width:68ch;color:var(--testo)}
+p strong{color:var(--inchiostro);font-weight:600}
+a{color:var(--salvia-scura);text-underline-offset:2px}
+
+/* ---- verdetto ---- */
+.verdetto{background:var(--foglio);border:1px solid var(--linea);border-left:5px solid var(--salvia);
+  border-radius:10px;box-shadow:var(--ombra);padding:24px clamp(18px,3vw,30px);
+  margin-top:34px;display:flex;flex-direction:column;gap:16px}
+.verdetto h2{font-size:26px;line-height:1.24;border:0;padding:0}
+.verdetto>p{font-size:16px}
+.cond{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+.cond li{display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:start;
+  padding-top:11px;border-top:1px solid var(--linea)}
+.cond li:first-child{border-top:0;padding-top:0}
+.segno{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;
+  font-size:13px;font-weight:700;margin-top:1px;
+  background:var(--ok-fondo);color:var(--ok)}
+.cond .t{font-size:14.6px;color:var(--testo)}
+.cond .t b{color:var(--inchiostro);font-weight:600}
+
+/* ---- kpi ---- */
+.kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linea);
+  border:1px solid var(--linea);border-radius:10px;overflow:hidden}
+@media (min-width:760px){.kpi{grid-template-columns:repeat(4,1fr)}}
+.k{background:var(--foglio);padding:15px 17px;display:flex;flex-direction:column;gap:3px}
+.k .et{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--tenue);font-weight:600}
+.k .n{font-family:"IBM Plex Mono",monospace;font-size:23px;font-weight:600;letter-spacing:-.025em;
+  font-variant-numeric:tabular-nums}
+.k .g{font-size:11.5px;color:var(--testo);line-height:1.45}
+.k.buono .n{color:var(--ok)} .k.brutto .n{color:var(--male)} .k.giallo .n{color:var(--attesa)}
+
+/* ---- tabelle ---- */
+.tabw{overflow-x:auto;background:var(--foglio);border:1px solid var(--linea);
+  border-radius:10px;box-shadow:var(--ombra)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+caption{text-align:left;padding:14px 17px 0;font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--tenue);font-weight:600}
+th{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--tenue);
+  font-weight:600;text-align:right;padding:12px 14px 8px;border-bottom:1px solid var(--linea-forte)}
+th:first-child{text-align:left}
+td{padding:8px 14px;text-align:right;border-bottom:1px solid var(--linea);
+  font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+td:first-child{text-align:left;font-family:"IBM Plex Sans",sans-serif;white-space:normal}
+tbody tr:last-child td{border-bottom:0}
+tr.tot td{border-top:1px solid var(--linea-forte);font-weight:600;background:var(--sabbia-tenue)}
+tr.sub td{color:var(--tenue)}
+td.dett{font-size:12px;color:var(--tenue);font-family:"IBM Plex Mono",monospace}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11.5px;
+  font-weight:600;font-family:"IBM Plex Sans",sans-serif;letter-spacing:.01em}
+.pill.si{background:var(--ok-fondo);color:var(--ok)}
+.pill.no{background:var(--male-fondo);color:var(--male)}
+.pill.forse{background:var(--attesa-fondo);color:var(--attesa)}
+
+/* ---- grafico ---- */
+figure{margin:0;background:var(--foglio);border:1px solid var(--linea);border-radius:10px;
+  box-shadow:var(--ombra);padding:18px clamp(14px,2.5vw,20px) 14px;
+  display:flex;flex-direction:column;gap:10px}
+figure .titolo{font-family:Newsreader,Georgia,serif;font-size:17px;font-weight:600}
+figure .sotto{font-size:12.5px;color:var(--tenue);max-width:62ch}
+.svgw{overflow-x:auto}
+svg{display:block;width:100%;min-width:560px;height:auto}
+figcaption{font-size:12px;color:var(--tenue);line-height:1.55;border-top:1px solid var(--linea);
+  padding-top:10px}
+.g-linea{fill:none;stroke:var(--salvia);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.g-area{fill:var(--salvia);opacity:.09}
+.g-griglia{stroke:var(--linea);stroke-width:1}
+.g-zero{stroke:var(--linea-forte);stroke-width:1.5}
+.g-et{font-family:"IBM Plex Mono",monospace;font-size:10.5px;fill:var(--tenue)}
+.g-et-f{font-family:"IBM Plex Sans",sans-serif;font-size:11px;fill:var(--testo)}
+.g-banda{fill:var(--sabbia);opacity:.42}
+.g-tratto{stroke:var(--tenue);stroke-width:1;stroke-dasharray:3 3}
+.g-punto{fill:var(--salvia);stroke:var(--foglio);stroke-width:2}
+.g-punto-r{fill:var(--male);stroke:var(--foglio);stroke-width:2}
+
+/* ---- note / avvertenze ---- */
+.avviso{background:var(--sabbia-tenue);border:1px solid var(--linea);
+  border-left:3px solid var(--attesa);border-radius:8px;padding:15px 18px;
+  display:flex;flex-direction:column;gap:7px}
+.avviso .cap{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--attesa);font-weight:700}
+.avviso p{font-size:14px;max-width:none}
+.lista{margin:0;padding-left:20px;color:var(--testo);display:flex;flex-direction:column;gap:8px;
+  max-width:68ch;font-size:14.6px}
+.lista b{color:var(--inchiostro)}
+.chiedi{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;
+  background:var(--linea);border:1px solid var(--linea);border-radius:10px;overflow:hidden}
+.chiedi li{background:var(--foglio);padding:14px 17px;display:grid;
+  grid-template-columns:1fr auto;gap:6px 18px;align-items:baseline}
+.chiedi .dom{font-size:14.6px;color:var(--inchiostro);font-weight:500}
+.chiedi .perche{grid-column:1/-1;font-size:12.5px;color:var(--tenue);max-width:64ch}
+.chiedi .peso{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--tenue);white-space:nowrap}
+footer{border-top:1px solid var(--linea);margin-top:8px;padding-top:18px;
+  font-size:12.5px;color:var(--tenue);line-height:1.6;max-width:74ch}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <div class="occhiello">FAB S.r.l. · STAY Apartments · istruttoria acquisizione</div>
+    <h1>Hotel Centrale, Trieste: prendere o lasciare</h1>
+    <p>24 stanze, 57 posti letto. Cosa cambia davvero passando da albergo tre stelle ad aparthotel
+       gestito da remoto, voce di costo per voce di costo. Aggiornato al 28 agosto 2026.</p>
+  </div>
+</header>
+
+<div class="verdetto" style="max-width:940px;margin-left:auto;margin-right:auto;
+     margin-top:34px;width:calc(100% - 2*clamp(18px,5vw,40px))">
+  <div class="occhiello">Il verdetto</div>
+  <h2>Sì, e il conto regge bene. Ma il margine se ne va in commissioni, non in costi di gestione.</h2>
+  <p>Da aparthotel l'utile netto è <b>172.827 €</b>, il <b>23,1% del lordo</b>: sopra Le Residenze
+     dei Serravallo, appena sotto Muggia 2. Il pareggio sta al <b>44,4%</b> di occupazione, trenta
+     punti sotto il vostro peggior anno. Ma la prima voce di costo dell'operazione non è il
+     personale, non sono le pulizie: sono le <b>commissioni, 134.840 €</b>, quasi quanto il canone.</p>
+  <ul class="cond">
+    <li><span class="segno">1</span><span class="t">
+      <b>Due stelle, non tre.</b> L'allegato B chiede il ricevimento «16/24 ore <i>con un
+      addetto</i>» a tre stelle, «12/24 ore» senza addetto a due. Da tre stelle con personale
+      in loco l'utile crolla a <b>79.097 €</b>, il 10,6%: sotto ogni struttura del portafoglio.
+      È il vincolo che decide l'operazione.</span></li>
+    <li><span class="segno">2</span><span class="t">
+      <b>Il diretto vale più di qualunque taglio di costi.</b> Portandolo dal 10% al 25% delle
+      prenotazioni, l'utile sale a <b>189.030 €</b> e la regola del 25% è raggiunta. Nessun'altra
+      leva in questo conto vale 16.000 € l'anno.</span></li>
+    <li><span class="segno">3</span><span class="t">
+      <b>L'offerta: 650.000 € chiusi entro il 2032, canone fermo a 144.000.</b>
+      75.000 nel 2027, poi 120.201 nel 2029 e 151.600 nel 2030, 2031 e 2032. Vale per loro
+      <b>566.695 €</b> attualizzati, non chiede equity oltre l'acconto, ma <b>tiene il margine
+      a 33.438 € l'anno</b> fino al 2032 invece degli 80.000 abituali. Gli 800.000 in contanti
+      non ci sono in nessuno scenario.</span></li>
+  </ul>
+</div>
+
+<main>
+
+<section>
+  <h2>Tutte le voci, affiancate <span class="coda">albergo 3 stelle di oggi · aparthotel RTA 2 stelle da remoto · occ. 94%</span></h2>
+  <div class="kpi">
+    <div class="k"><span class="et">Fatturato lordo</span><span class="n">749.112 €</span>
+      <span class="g">8.232 notti a 91 € medi</span></div>
+    <div class="k buono"><span class="et">GOP, prima del canone</span><span class="n">383.704 €</span>
+      <span class="g">quello che la struttura produce</span></div>
+    <div class="k buono"><span class="et">Guadagno lordo</span><span class="n">239.704 €</span>
+      <span class="g">dopo il canone, prima delle imposte</span></div>
+    <div class="k buono"><span class="et">Utile netto</span><span class="n">172.827 €</span>
+      <span class="g">23,1% del fatturato lordo</span></div>
+  </div>
+  <p>Questo è il cuore della valutazione: non il totale, ma <strong>quali voci cambiano e di
+     quanto</strong>. Tre di esse peggiorano passando ad aparthotel, e vanno messe a bilancio
+     adesso invece di scoprirle dopo.</p>
+  <div class="tabw">
+    <table>
+      <caption>Conto economico a voci esplose — nessuna aggregazione</caption>
+      <thead><tr><th>Voce</th><th>Albergo</th><th>Aparthotel</th><th>Differenza</th><th>Perché</th></tr></thead>
+      <tbody>
+        <tr><td>Notti vendute</td><td>7.440</td><td>8.232</td><td>+792</td><td class="dett">310 giorni contro 343</td></tr>
+        <tr><td>Cambi all'anno</td><td>3.382</td><td>4.573</td><td>+1.192</td><td class="dett">soggiorno 2,2 contro 1,8 notti</td></tr>
+        <tr class="tot"><td>Ricavi lordi</td><td>647.280 €</td><td>749.112 €</td><td>+101.832 €</td><td class="dett">87 € contro 91 € medi</td></tr>
+        <tr class="sub"><td>meno IVA 10%</td><td>−58.844 €</td><td>−68.101 €</td><td>−9.257 €</td><td class="dett"></td></tr>
+        <tr class="tot"><td>Ricavi netti</td><td>588.436 €</td><td>681.011 €</td><td>+92.575 €</td><td class="dett"></td></tr>
+
+        <tr><td colspan="5" style="background:var(--sabbia-tenue);font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--tenue);font-weight:600;text-align:left">Costi che seguono le notti vendute</td></tr>
+        <tr><td>Commissioni di vendita</td><td>116.510 €</td><td>134.840 €</td><td><span class="pill no">+18.330 €</span></td><td class="dett">20% sul 90% delle prenotazioni = 18% effettivo. Più notti, più commissioni</td></tr>
+        <tr><td>Pulizia al cambio</td><td>68.989 €</td><td>45.733 €</td><td>−23.256 €</td><td class="dett">20,40 € a camera in appalto contro 10 € a costo industriale FAB</td></tr>
+        <tr><td>Riassetto giornaliero</td><td>32.465 €</td><td>18.293 €</td><td>−14.172 €</td><td class="dett">obbligatorio in tutti e due i casi — allegato B, punto 1.162</td></tr>
+        <tr><td>Lavanderia</td><td>30.098 €</td><td>22.867 €</td><td>−7.232 €</td><td class="dett">8,90 € a cambio in appalto contro 2,50 € a persona in casa</td></tr>
+        <tr><td>Materiali e consumabili</td><td>9.807 €</td><td>4.573 €</td><td>−5.234 €</td><td class="dett">cortesia d'albergo contro kit essenziale</td></tr>
+        <tr><td>Colazione</td><td>33.480 €</td><td>—</td><td>−33.480 €</td><td class="dett">materie prime e servizio: sparisce del tutto</td></tr>
+        <tr class="tot"><td>Totale variabili</td><td>291.350 €</td><td>226.307 €</td><td>−65.044 €</td><td class="dett"></td></tr>
+
+        <tr><td colspan="5" style="background:var(--sabbia-tenue);font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--tenue);font-weight:600;text-align:left">Costi che restano comunque</td></tr>
+        <tr><td>Personale in loco</td><td>130.000 €</td><td>—</td><td><span class="pill si">−130.000 €</span></td><td class="dett">a 2 stelle il ricevimento è 12/24 senza addetto, la notte è a chiamata</td></tr>
+        <tr><td>Energia e utenze</td><td>35.000 €</td><td>35.000 €</td><td>—</td><td class="dett">gli ospiti cucinano, ma sparisce la cucina di servizio: si compensano <b>da verificare</b></td></tr>
+        <tr><td>Gestionali e tecnologia</td><td>6.000 €</td><td>11.000 €</td><td><span class="pill no">+5.000 €</span></td><td class="dett">PMS, channel manager, serrature smart, check-in da remoto: comprano il personale che non assumi</td></tr>
+        <tr><td>Manutenzione</td><td>6.000 €</td><td>9.000 €</td><td><span class="pill no">+3.000 €</span></td><td class="dett">24 cucinini, frigo e piani cottura in mano agli ospiti: più guasti, non meno</td></tr>
+        <tr><td>Assicurazione</td><td>4.000 €</td><td>5.000 €</td><td><span class="pill no">+1.000 €</span></td><td class="dett">RC più alta con cucine in uso agli ospiti</td></tr>
+        <tr><td>SIAE e licenze</td><td>4.000 €</td><td>2.500 €</td><td>−1.500 €</td><td class="dett">cadono la musica nelle aree comuni e la licenza di somministrazione</td></tr>
+        <tr><td>TARI</td><td>6.500 €</td><td>6.500 €</td><td>—</td><td class="dett">la categoria può cambiare da albergo a residence <b>da verificare</b></td></tr>
+        <tr><td>Altre spese</td><td>4.000 €</td><td>2.000 €</td><td>−2.000 €</td><td class="dett">cancelleria, contributi, minuterie</td></tr>
+        <tr class="tot"><td>Totale fissi</td><td>195.500 €</td><td>71.000 €</td><td>−124.500 €</td><td class="dett">nessuna quota di struttura FAB: il lavoro lo assorbe la squadra</td></tr>
+
+        <tr class="tot"><td>GOP prima del canone</td><td>101.586 €</td><td>383.704 €</td><td>+282.118 €</td><td class="dett"></td></tr>
+        <tr><td>Canone</td><td>−144.000 €</td><td>−144.000 €</td><td>—</td><td class="dett">22,2% contro 19,2% del lordo</td></tr>
+        <tr><td>Imposte 27,9%</td><td>—</td><td>−66.877 €</td><td>−66.877 €</td><td class="dett">da albergo non c'è imponibile</td></tr>
+        <tr class="tot"><td>Utile netto</td><td>−42.414 €<br><span class="pill no">−6,6%</span></td><td>172.827 €<br><span class="pill si">23,1%</span></td><td>+215.241 €</td><td class="dett"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Le tre voci che peggiorano <span class="coda">quello che il piano precedente non contava</span></h2>
+  <p>Il racconto comodo dice che l'aparthotel è più leggero dell'albergo su tutto. Non è vero:
+     <strong>tre voci salgono</strong>, e insieme fanno 9.000 € l'anno. Poco rispetto ai 130.000
+     di personale risparmiato, ma vanno messe adesso.</p>
+  <ul class="lista">
+    <li><b>Gestionali e tecnologia, da 6.000 a 11.000 €.</b> Se togli la reception devi comprare
+      quello che faceva: PMS e channel manager per tenere allineati i portali, serrature smart
+      sulle 24 unità, sistema di check-in da remoto con riconoscimento documenti, e la
+      comunicazione alloggiati e WebTur automatizzata. <b>La tecnologia non è un extra: è il
+      sostituto del personale</b>, e senza quella il modello «solo online» non sta in piedi.</li>
+    <li><b>Manutenzione, da 6.000 a 9.000 €.</b> È il contrario di quello che si pensa. In albergo
+      la camera ha un letto e un bagno; nell'unità abitativa ci sono piano cottura, forno,
+      frigorifero, lavello e stoviglie, usati da ospiti che cambiano ogni 1,8 notti. Più pezzi,
+      più rotture, e ogni intervento su una struttura senza presidio richiede una trasferta.</li>
+    <li><b>Assicurazione, da 4.000 a 5.000 €.</b> Ventiquattro cucine in uso a persone che non
+      conosci alzano il premio di responsabilità civile. È una stima: va chiesta una quotazione
+      vera al broker prima di chiudere il conto.</li>
+  </ul>
+  <div class="avviso">
+    <div class="cap">Una voce che nel conto non c'è ancora, e va verificata</div>
+    <p>Con 57 posti letto la struttura ricade nell'attività 66 del DPR 151/2011 e ha già una
+      pratica antincendio. <b>Introdurre 13 o più cucine cambia il carico d'incendio</b> e può
+      obbligare ad aggiornare la valutazione del rischio, con possibili opere: rilevazione,
+      compartimentazioni, o l'obbligo di piani a induzione al posto del gas.</p>
+    <p>Non è un costo che so quantificare senza vedere la pratica esistente. <b>Va chiesto al
+      tecnico antincendio prima della firma</b>, insieme al parere SUAP: sono la stessa istruttoria
+      e si fanno nella stessa settimana. Scegliere l'induzione fin da subito toglie di mezzo
+      quasi tutto il problema, e costa poco di più al pezzo.</p>
+  </div>
+</section>
+
+<section>
+  <h2>La prima voce di costo <span class="coda">e la leva che nessun'altra eguaglia</span></h2>
+  <p>Con il 20% di commissione sul 90% delle prenotazioni, i portali si prendono
+     <strong>134.840 € l'anno</strong>: più delle pulizie, della lavanderia, delle utenze e della
+     manutenzione <em>messe insieme</em>, e quasi quanto il canone che paghiamo alla proprietà.
+     Ogni punto di prenotazioni spostato sul diretto vale 1.080 € netti.</p>
+  <div class="tabw">
+    <table>
+      <caption>Cosa succede spostando prenotazioni sul canale diretto</caption>
+      <thead><tr><th>Quota diretto</th><th>Commissione effettiva</th><th>Costo commissioni</th><th>Utile netto</th><th>Su lordo</th><th>Regola 25%</th></tr></thead>
+      <tbody>
+        <tr><td>10% <span class="pill forse">oggi</span></td><td>18,0%</td><td>134.840 €</td><td>172.827 €</td><td>23,1%</td><td><span class="pill forse">quasi</span></td></tr>
+        <tr><td>15%</td><td>17,0%</td><td>127.349 €</td><td>178.228 €</td><td>23,8%</td><td><span class="pill forse">quasi</span></td></tr>
+        <tr><td>20%</td><td>16,0%</td><td>119.858 €</td><td>183.629 €</td><td>24,5%</td><td><span class="pill forse">quasi</span></td></tr>
+        <tr><td>25% <span class="pill si">obiettivo</span></td><td>15,0%</td><td>112.367 €</td><td>189.030 €</td><td>25,2%</td><td><span class="pill si">raggiunta</span></td></tr>
+        <tr><td>30%</td><td>14,0%</td><td>104.876 €</td><td>194.431 €</td><td>26,0%</td><td><span class="pill si">raggiunta</span></td></tr>
+        <tr><td>40%</td><td>12,0%</td><td>89.893 €</td><td>205.233 €</td><td>27,4%</td><td><span class="pill si">raggiunta</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>A un quarto di prenotazioni dirette la regola del 25% è raggiunta</strong>, e l'Hotel
+     Centrale diventa la struttura più redditizia del portafoglio. Vale più di qualunque taglio
+     ai costi operativi: per ottenere gli stessi 16.000 € dovresti azzerare la manutenzione e
+     dimezzare le utenze. Su ventiquattro unità in centro a Trieste, con un marchio che già
+     esiste, è un obiettivo ragionevole — ed è la ragione per cui i gestionali a 11.000 € vanno
+     spesi bene e non tagliati.</p>
+</section>
+
+<section>
+  <h2>La tenuta <span class="coda">quanto può andare storto prima che faccia male</span></h2>
+  <figure>
+    <div class="titolo">Utile netto al variare dell'occupazione</div>
+    <div class="sotto">Aparthotel, canone 144.000 €, commissioni al 18% effettivo.
+      La banda chiara è dove girano oggi le strutture FAB.</div>
+    <div class="svgw">
+      <svg viewBox="0 0 720 320" role="img"
+           aria-label="Curva dell'utile netto in funzione dell'occupazione: pareggio al 44,4%, 117.390 € al 78%, 172.827 € al 94%.">
+        <rect x="464.3" y="20" width="126.4" height="256" class="g-banda"></rect>
+        <line x1="64" y1="241.1" x2="696" y2="241.1" class="g-zero"></line>
+        <line x1="64" y1="182.9" x2="696" y2="182.9" class="g-griglia"></line>
+        <line x1="64" y1="124.7" x2="696" y2="124.7" class="g-griglia"></line>
+        <line x1="64" y1="66.5" x2="696" y2="66.5" class="g-griglia"></line>
+        <text x="56" y="244.6" text-anchor="end" class="g-et">0</text>
+        <text x="56" y="186.4" text-anchor="end" class="g-et">50.000</text>
+        <text x="56" y="128.2" text-anchor="end" class="g-et">100.000</text>
+        <text x="56" y="70" text-anchor="end" class="g-et">150.000</text>
+        <text x="64" y="14" class="g-et-f">utile netto, €/anno</text>
+
+        <path class="g-area" d="M64.0,266.1 L121.7,236.8 L179.4,214.6 L237.2,192.4 L294.9,170.1 L352.6,147.9 L410.3,125.6 L468.0,103.4 L525.7,81.1 L583.5,58.9 L641.2,36.6 L698.9,14.4 L698.9,241.1 L64.0,241.1 Z"></path>
+        <path class="g-linea" d="M64.0,266.1 L121.7,236.8 L179.4,214.6 L237.2,192.4 L294.9,170.1 L352.6,147.9 L410.3,125.6 L468.0,103.4 L525.7,81.1 L583.5,58.9 L641.2,36.6 L698.9,14.4"></path>
+
+        <line x1="110.3" y1="241.1" x2="110.3" y2="276" class="g-tratto"></line>
+        <circle cx="110.3" cy="241.1" r="4.5" class="g-punto-r"></circle>
+        <text x="118" y="233" class="g-et-f" fill="var(--male)">pareggio 44,4%</text>
+
+        <circle cx="464.3" cy="104.5" r="4.5" class="g-punto"></circle>
+        <text x="472" y="109" class="g-et-f">78% → 117.390 €</text>
+        <circle cx="632.8" cy="40" r="4.5" class="g-punto"></circle>
+        <text x="625" y="44" text-anchor="end" class="g-et-f">piano, 94% → 172.827 €</text>
+
+        <line x1="64" y1="276" x2="696" y2="276" class="g-griglia"></line>
+        <text x="64" y="292" text-anchor="middle" class="g-et">40%</text>
+        <text x="169.3" y="292" text-anchor="middle" class="g-et">50%</text>
+        <text x="274.7" y="292" text-anchor="middle" class="g-et">60%</text>
+        <text x="380" y="292" text-anchor="middle" class="g-et">70%</text>
+        <text x="485.3" y="292" text-anchor="middle" class="g-et">80%</text>
+        <text x="590.7" y="292" text-anchor="middle" class="g-et">90%</text>
+        <text x="696" y="292" text-anchor="middle" class="g-et">100%</text>
+        <text x="527.5" y="310" text-anchor="middle" class="g-et-f">banda in cui girano oggi le strutture FAB (78–90%)</text>
+      </svg>
+    </div>
+    <figcaption>Il canone da 144.000 € è coperto fino a un'occupazione del <strong>44,4%</strong>:
+      quindici punti sotto la mediana di mercato di Trieste, che è il 59%. All'estremo basso della
+      vostra banda — 78% — restano 117.390 € di utile netto.
+      <strong>Sull'occupazione questo deal non ha praticamente rischio.</strong></figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Il calendario <span class="coda">contratto 9+9 dal 1° gennaio 2028 · acconti 75.000 + 75.000</span></h2>
+  <p>Con il contratto che decorre da inizio 2028 e i due acconti da 75.000 €, il primo esborso
+     cade <strong>a struttura ferma</strong>: a fine 2027 escono 75.000 € senza che sia ancora
+     entrato un euro. Il 2028 è l'anno pesante — secondo acconto, i 58.500 € di cucinini e
+     l'attività ancora in rodaggio.</p>
+  <div class="tabw">
+    <table>
+      <caption>Flusso di cassa 2027–2045 — avviamento al 70% nel 2028, 85% nel 2029, a regime dal 2030</caption>
+      <thead><tr><th>Anno</th><th>Occup.</th><th>Fatturato lordo</th><th>Utile lordo</th><th>Imposte</th><th>Acconti e capex</th><th>Cassa</th><th>Cumulata</th></tr></thead>
+      <tbody>
+        <tr><td>2027</td><td>—</td><td>—</td><td>—</td><td>—</td><td>−75.000 €</td><td>−75.000 €</td><td><span class="pill no">−75.000 €</span></td></tr>
+        <tr><td>2028</td><td>70%</td><td>558.012 €</td><td>123.708 €</td><td>−30.149 €</td><td>−133.500 €</td><td>−39.941 €</td><td><span class="pill no">−114.941 €</span></td></tr>
+        <tr><td>2029</td><td>85%</td><td>677.586 €</td><td>196.288 €</td><td>−50.399 €</td><td>—</td><td>145.889 €</td><td><span class="pill si">30.948 €</span></td></tr>
+        <tr><td>2030</td><td>94%</td><td>749.330 €</td><td>239.837 €</td><td>−62.549 €</td><td>—</td><td>177.287 €</td><td>208.235 €</td></tr>
+        <tr class="sub"><td>2031–2045</td><td>94%</td><td>749.330 €/anno</td><td>239.837 €/anno</td><td>−62.549 €/anno</td><td>—</td><td>177.287 €/anno</td><td>—</td></tr>
+        <tr class="tot"><td>Totale a fine contratto</td><td></td><td></td><td></td><td></td><td>−208.500 €</td><td></td><td>2.867.547 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Il punto da tenere a mente non è il totale, è <strong>il buco: 114.941 € di equity FAB</strong>
+     da mettere fra fine 2027 e tutto il 2028, prima che l'operazione cominci a restituire.
+     Dal 2029 la cassa è già positiva in cumulata, e da lì in poi genera 177.287 € l'anno.</p>
+</section>
+
+<section>
+  <h2>La buona uscita sostenibile <span class="coda">oltre ai 150.000 di acconti, tenendo 80.000 €/anno di margine</span></h2>
+  <p>Con la cassa che l'operazione produce dal 2029, e trattenendo 80.000 € l'anno di margine
+     in casa, ecco quanto si può pagare in più dei due acconti:</p>
+  <div class="tabw">
+    <table>
+      <caption>Buona uscita massima pagabile con la sola cassa, rate a partire dal 2029</caption>
+      <thead><tr><th>Piano di rate</th><th>Rata annua</th><th>In più dei 150.000</th><th>Buona uscita totale</th><th>Copre gli 800.000?</th></tr></thead>
+      <tbody>
+        <tr><td>3 rate, 2029–2031</td><td>69.102 €</td><td>207.307 €</td><td>357.307 €</td><td><span class="pill no">45%</span></td></tr>
+        <tr><td>5 rate, 2029–2033</td><td>71.425 €</td><td>357.123 €</td><td><b>507.123 €</b></td><td><span class="pill no">63%</span></td></tr>
+        <tr><td>7 rate, 2029–2035</td><td>73.908 €</td><td>517.357 €</td><td>667.357 €</td><td><span class="pill forse">83%</span></td></tr>
+        <tr><td>9 rate, 2029–2037</td><td>76.571 €</td><td>689.137 €</td><td>839.137 €</td><td><span class="pill si">105%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>La cifra da tenere è <strong>507.123 € in cinque rate</strong>: è il punto in cui il piano
+     resta comodo, l'esposizione finisce nel 2033 e restano 80.000 € l'anno intatti. Spingersi a
+     nove rate copre nominalmente gli 800.000, ma significa <strong>tenere impegnata la cassa
+     fino al 2037</strong> su un'operazione che dipende da un'autorizzazione: non vale la pena.</p>
+</section>
+
+<section>
+  <h2>Il canone al posto della buona uscita <span class="coda">e un errore da non fare in trattativa</span></h2>
+  <div class="avviso">
+    <div class="cap">Correzione a quello che avevo scritto prima</div>
+    <p>Avevo detto che un canone a 215.000 € «dà loro 1,4 milioni, quasi il doppio degli 800.000
+      che chiedono». <b>È un confronto sbagliato</b>, e se lo usi in trattativa te lo smontano
+      subito: 1,4 milioni incassati in diciotto anni non valgono 1,4 milioni oggi. Attualizzati,
+      valgono molto meno — e quanto meno dipende dal tasso che usa la proprietà.</p>
+  </div>
+  <div class="tabw">
+    <table>
+      <caption>Valore attuale per la proprietà del canone maggiorato, su 18 anni</caption>
+      <thead><tr><th>Canone</th><th>In più all'anno</th><th>Nominale su 18 anni</th><th>Al 4,5%</th><th>Al 5,5%</th><th>Al 7%</th></tr></thead>
+      <tbody>
+        <tr><td>185.667 €</td><td>+41.667 €</td><td>750.006 €</td><td>506.712 €</td><td>468.590 €</td><td>419.132 €</td></tr>
+        <tr><td>200.000 €</td><td>+56.000 €</td><td>1.008.000 €</td><td>681.084 €</td><td>629.780 €</td><td>563.309 €</td></tr>
+        <tr><td>215.000 €</td><td>+71.000 €</td><td>1.278.000 €</td><td><span class="pill si">863.359 €</span></td><td><span class="pill si">798.471 €</span></td><td><span class="pill forse">714.195 €</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Il tasso è la vera leva negoziale.</strong> Se la proprietà ragiona al costo del
+     proprio mutuo — 4,5%, come nel conto di Centrolanza — allora un canone a 215.000 € vale
+     <strong>863.359 €</strong> e copre abbondantemente la richiesta. Se ragionano al 7%, si
+     ferma a 714.195 € e non basta. Vale la pena chiedergli esplicitamente a che tasso valutano:
+     è una domanda tecnica innocua che decide un quarto di milione.</p>
+  <div class="tabw">
+    <table>
+      <caption>Lo schema misto: 150.000 € di acconti più canone che copre il resto</caption>
+      <thead><tr><th>Se attualizzano al</th><th>Canone necessario</th><th>Su lordo</th><th>Soglia 30%</th><th>Nostro utile lordo</th><th>Utile netto / lordo</th></tr></thead>
+      <tbody>
+        <tr><td>4,5%</td><td>197.454 €</td><td>26,4%</td><td><span class="pill si">dentro</span></td><td>186.383 €</td><td>17,9%</td></tr>
+        <tr><td>7,0%</td><td>208.618 €</td><td>27,8%</td><td><span class="pill si">dentro</span></td><td>175.218 €</td><td>16,9%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Questa strada è stata scartata:</b> il canone resta a 144.000 €. Il conto qui sopra
+     serve comunque a due cose. La prima è sapere <strong>quanto vale davvero quello che
+     offriamo</strong>: se in trattativa dicono «650.000 sono pochi», la risposta non è alzare
+     la cifra ma chiedere a che tasso la stanno valutando. La seconda è tenere pronta una
+     contromossa: se si bloccano sul prezzo, <strong>spostare una parte sul canone è la
+     concessione che costa meno</strong> — ogni 10.000 € l'anno in più valgono per loro
+     100.000 € attualizzati al 7%, e ci porterebbero solo dal 19,2% al 20,6% del lordo.</p>
+</section>
+
+<section>
+  <h2>La proposta a 650.000, chiusa in quattro anni <span class="coda">canone fermo a 144.000 · acconto 2027, saldo 2029–2032</span></h2>
+  <p>Compattare in quattro anni ha un vantaggio reale: <strong>quello che offri vale di più</strong>.
+     Gli stessi 650.000 spalmati su sette anni valgono per loro 504.859 € attualizzati al 7%;
+     chiusi entro il 2032 ne valgono <strong>527.482 €</strong>, e al 4,5% arrivano a
+     <strong>566.695 €</strong>. In più «chiudiamo entro il 2032» pesa in trattativa più della
+     differenza in sé.</p>
+  <p>Col canone fermo a 144.000 €, tutta la buona uscita passa dalla cassa. La chiave è
+     <strong>non fare rate uguali</strong>: il 2029 gira ancora all'85% e ha meno cassa degli
+     anni successivi. Con la scaletta giusta il margine resta identico tutti e quattro gli anni,
+     invece di crollare nel primo.</p>
+  <div class="tabw">
+    <table>
+      <caption>Acconto 75.000 nel 2027, saldo in quattro rate — scaletta che pareggia il margine</caption>
+      <thead><tr><th>Buona uscita</th><th>Rata 2029</th><th>Rate 2030–2032</th><th>Margine annuo 2029–32</th><th>Valore attuale per loro</th></tr></thead>
+      <tbody>
+        <tr><td><b>650.000 €</b></td><td>120.201 €</td><td>151.600 €</td><td><span class="pill forse">33.438 €</span></td><td>566.695 €</td></tr>
+        <tr><td>600.000 €</td><td>107.701 €</td><td>139.100 €</td><td><span class="pill forse">45.163 €</span></td><td>523.782 €</td></tr>
+        <tr><td>550.000 €</td><td>95.201 €</td><td>126.600 €</td><td><span class="pill forse">56.888 €</span></td><td>480.869 €</td></tr>
+        <tr><td>500.000 €</td><td>82.701 €</td><td>114.100 €</td><td><span class="pill forse">68.613 €</span></td><td>437.956 €</td></tr>
+        <tr><td>425.182 €</td><td>63.997 €</td><td>95.395 €</td><td><span class="pill si">86.158 €</span></td><td>373.743 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="mono" style="color:var(--tenue);font-size:12.5px">Valore attuale al 4,5%. Dal 2033,
+     finite le rate, la cassa torna a 185.037 € l'anno in tutti gli scenari.</p>
+
+  <div class="avviso">
+    <div class="cap">Il prezzo dei 650.000 in quattro anni</div>
+    <p><b>Non serve equity oltre i 75.000 € dell'acconto</b>: l'operazione si autofinanzia anche
+      a 650.000. Ma per quattro anni il margine scende da 80.000 a <b>33.438 € l'anno</b> —
+      circa 187.000 € di cassa in meno complessivamente rispetto a fermarsi a 425.000.</p>
+    <p>È una scelta legittima: quattro anni magri e poi tutto libero dal 2033. Ma cade
+      <b>esattamente negli anni in cui entrano i trenta appartamenti</b>. La domanda da farsi non
+      è se l'Hotel Centrale regge — regge — ma se regge insieme al resto del piano di crescita.</p>
+  </div>
+
+  <p><strong>Se il margine di 80.000 € è intoccabile</strong>, la cifra massima chiusa in quattro
+     anni è <strong>425.182 €</strong>: acconto 75.000, poi 63.997 nel 2029 e 95.395 negli altri
+     tre. Per loro vale 373.743 € attualizzati, meno della metà degli 800.000 richiesti: è
+     un'offerta che difficilmente passa da sola.</p>
+  <p><strong>Se invece i 650.000 sono il numero</strong>, la struttura è quella della prima riga:
+     <strong>75.000 nel 2027, 120.201 nel 2029, 151.600 nel 2030, 2031 e 2032</strong>. Chiude
+     dove volevi, non chiede equity aggiuntiva, e lascia 33.438 € l'anno di respiro. Il modo di
+     presentarla che vale di più è dire subito la scaletta insieme alla cifra: rateizzata senza
+     spiegazioni verrà letta come 650.000 in contanti, e la trattativa ripartirà da capo quando
+     scopriranno le rate.</p>
+</section>
+
+<section>
+  <h2>Le nostre regole, applicate</h2>
+  <div class="tabw">
+    <table>
+      <caption>Ogni scenario contro i due knock-out — soglia canone al 30%, siamo a 24 unità</caption>
+      <thead><tr><th>Scenario</th><th>Canone / lordo</th><th>Regola canone</th><th>Utile netto / lordo</th><th>Regola 25%</th></tr></thead>
+      <tbody>
+        <tr><td>Aparthotel, canone 144.000, diretto 25%</td><td>19,2%</td><td><span class="pill si">passa</span></td><td>25,2%</td><td><span class="pill si">passa</span></td></tr>
+        <tr><td>Aparthotel, canone 144.000, occ. 94%</td><td>19,2%</td><td><span class="pill si">passa</span></td><td>23,1%</td><td><span class="pill forse">quasi</span></td></tr>
+        <tr><td>Aparthotel, canone 144.000, occ. 85%</td><td>21,3%</td><td><span class="pill si">passa</span></td><td>20,9%</td><td><span class="pill forse">quasi</span></td></tr>
+        <tr><td>Aparthotel, canone 144.000, occ. 78%</td><td>23,1%</td><td><span class="pill si">passa</span></td><td>18,9%</td><td><span class="pill no">no</span></td></tr>
+        <tr><td>Tutto in canone 215.000, occ. 94%</td><td>28,7%</td><td><span class="pill si">al limite</span></td><td>16,2%</td><td><span class="pill no">no</span></td></tr>
+        <tr><td>Se costretti a tre stelle, personale in loco</td><td>19,2%</td><td><span class="pill si">passa</span></td><td>10,6%</td><td><span class="pill no">no</span></td></tr>
+        <tr><td>Nessuna conversione, resta albergo</td><td>22,2%</td><td><span class="pill si">passa</span></td><td>−6,6%</td><td><span class="pill no">in perdita</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Il canone passa dappertutto, anche a 215.000 €: su quel fronte c'è solo spazio di manovra.
+     La regola del <strong>25% di utile netto si raggiunge solo con il canale diretto al 25%</strong>,
+     ed è lì che va messo l'obiettivo contrattuale interno.</p>
+  <p>Le ultime due righe sono lo stesso rischio visto da due lati. <strong>Senza gestione online
+     il deal vale 10,6%</strong>, sotto ogni struttura in portafoglio. <strong>Senza conversione
+     va in perdita di 42.414 € l'anno.</strong> Tutto il valore sta nel poter gestire ventiquattro
+     unità da remoto a due stelle — e questo va messo per iscritto col SUAP prima di firmare,
+     non dopo.</p>
+</section>
+
+<section>
+  <h2>Cosa chiedere, e in che ordine</h2>
+  <ul class="chiedi">
+    <li><span class="dom">Al SUAP: il ricevimento da remoto soddisfa il punto 1.012?</span>
+        <span class="peso">decide il deal</span>
+        <span class="perche">Prima di tutto il resto, e in forma scritta. Se la risposta è no
+          servono due addetti, tornano 130.000 € di costo e l'operazione scende al 10,6%.</span></li>
+    <li><span class="dom">Al tecnico antincendio: cosa comporta introdurre 13 cucine</span>
+        <span class="peso">non quantificabile oggi</span>
+        <span class="perche">57 posti letto significano attività 66 del DPR 151/2011. Il carico
+          d'incendio cambia, e le opere richieste possono essere l'unico costo capace di
+          ribaltare il conto. Da chiedere nella stessa settimana del SUAP.</span></li>
+    <li><span class="dom">Alla proprietà: girano la buona uscita in canone?</span>
+        <span class="peso">e a che tasso valutano</span>
+        <span class="perche">Un canone a 215.000 € vale 863.000 € se attualizzano al 4,5%, ma
+          solo 714.000 € se usano il 7%. Chiedere il tasso è una domanda tecnica innocua che
+          sposta un quarto di milione.</span></li>
+    <li><span class="dom">Le bollette di energia e utenze, dodici mesi</span>
+        <span class="peso">±14.400 €/anno</span>
+        <span class="perche">Unica voce di costo rimasta stimata e mai verificata: 35.000 € su
+          24 stanze in un edificio da riqualificare è ottimistico.</span></li>
+    <li><span class="dom">Quante camere hanno già il bagno privato completo</span>
+        <span class="peso">soglia 80%</span>
+        <span class="perche">A due stelle ne basta l'80%. Sotto quella soglia il capex cresce e
+          va sommato ai 58.500 € dei cucinini.</span></li>
+  </ul>
+</section>
+
+<footer>
+  <p>Costruito sui costi industriali dichiarati da FAB: pulizie 10 € a stanza per cambio,
+     lavanderia 2,50 € a persona, consumabili 1 € a soggiorno, nessuna colazione, soggiorno medio
+     1,8 notti, commissioni del 20% sul 90% delle prenotazioni, imposte al 27,9%, nessuna quota di
+     struttura addebitata all'operazione. La lavanderia assume 2 persone medie per unità occupata.
+     Il riassetto giornaliero a 5 € è una stima; il requisito 1.162 che lo impone non lo è.
+     Gestionali, manutenzione e assicurazione dell'aparthotel sono stime da confermare con
+     preventivi. Requisiti verificati il 28 agosto 2026 sull'allegato B della L.R. FVG 21/2016,
+     applicabile in via transitoria ai sensi dell'art. 139 c. 9 della L.R. 17/2025 finché non è
+     emanato il decreto dell'art. 89, che a quella data non risultava emanato. Il calcolatore
+     interattivo è su
+     <a href="https://alexwing-cloud.github.io/FabSRLCalcolatore/hotel-centrale.html">hotel-centrale.html</a>,
+     ancora impostato sui parametri precedenti.</p>
+</footer>
+
+</main>
