@@ -414,3 +414,22 @@ vetrina: /Users/alexmors/fab-vaglio-deal/report/ULTIMO.html — 0 immobili
 miniature incorporate: 0/16 — 0 MB
 pronti 16 immobili, 0 MB di foto
 vetrina pubblicabile: /Users/alexmors/fab-vaglio-deal/report/ULTIMO-web.html — 0 immobili, 0 MB
+fatal: unable to access 'https://github.com/alexwing-cloud/FabSRLCalcolatore.git/': Could not resolve host: github.com
+!! push fallito
+-- fine
+===== 2026-09-03 07:38:24  modo=giornaliero
+-- annunci
+Traceback (most recent call last):
+  File "/Users/alexmors/fab-vaglio-deal/dati/annunci.py", line 213, in <module>
+    main()
+  File "/Users/alexmors/fab-vaglio-deal/dati/annunci.py", line 165, in main
+    citta = [s for s, c in mercato.items() if c["vs25"] >= -4]
+  File "/Users/alexmors/fab-vaglio-deal/dati/annunci.py", line 165, in <listcomp>
+    citta = [s for s, c in mercato.items() if c["vs25"] >= -4]
+KeyError: 'vs25'
+!! annunci.py ha avuto problemi
+-- report
+vetrina: /Users/alexmors/fab-vaglio-deal/report/ULTIMO.html — 0 immobili
+miniature incorporate: 16/16 — 0 MB
+pronti 16 immobili, 0 MB di foto
+vetrina pubblicabile: /Users/alexmors/fab-vaglio-deal/report/ULTIMO-web.html — 0 immobili, 0 MB
