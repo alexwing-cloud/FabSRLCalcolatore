@@ -672,3 +672,80 @@ vetrina: /Users/alexmors/fab-vaglio-deal/report/ULTIMO.html — 0 immobili
 miniature incorporate: 16/16 — 0 MB
 pronti 16 immobili, 0 MB di foto
 vetrina pubblicabile: /Users/alexmors/fab-vaglio-deal/report/ULTIMO-web.html — 0 immobili, 0 MB
+-- pushato
+-- fine
+===== 2026-09-13 20:12:25  modo=settimanale
+-- dati di mercato
+  trieste          adr=119.0 occ=62.0 ricavo=27116.0 annunci=1364.0
+  torino           adr=96.0 occ=61.0 ricavo=21308.0 annunci=4337.0
+  bergamo          adr=116.0 occ=67.0 ricavo=28171.0 annunci=1248.0
+  verona           adr=155.0 occ=60.0 ricavo=33798.0 annunci=2708.0
+  padova           adr=104.0 occ=66.0 ricavo=25155.0 annunci=791.0
+  brescia          adr=91.0 occ=63.0 ricavo=20872.0 annunci=343.0
+  parma            adr=85.0 occ=59.0 ricavo=18456.0 annunci=631.0
+  modena           adr=110.0 occ=59.0 ricavo=23787.0 annunci=522.0
+  bolzano          adr=173.0 occ=66.0 ricavo=41901.0 annunci=247.0
+  trento           adr=124.0 occ=59.0 ricavo=26826.0 annunci=379.0
+  udine            adr=96.0 occ=63.0 ricavo=21907.0 annunci=287.0
+  vicenza          adr=97.0 occ=61.0 ricavo=21550.0 annunci=357.0
+  treviso          adr=115.0 occ=59.0 ricavo=24905.0 annunci=372.0
+  ferrara          adr=95.0 occ=56.0 ricavo=19337.0 annunci=325.0
+  ravenna          adr=127.0 occ=59.0 ricavo=27223.0 annunci=675.0
+  rimini           adr=134.0 occ=54.0 ricavo=26555.0 annunci=1019.0
+  perugia          adr=125.0 occ=55.0 ricavo=25028.0 annunci=939.0
+  livorno          adr=102.0 occ=63.0 ricavo=23454.0 annunci=657.0
+  pisa             adr=117.0 occ=65.0 ricavo=27549.0 annunci=1106.0
+  lucca            adr=175.0 occ=57.0 ricavo=36479.0 annunci=1745.0
+  genova           adr=111.0 occ=58.0 ricavo=23490.0 annunci=2898.0
+  la-spezia        adr=128.0 occ=60.0 ricavo=28074.0 annunci=1629.0
+  salerno          adr=122.0 occ=61.0 ricavo=27168.0 annunci=941.0
+  lecce            adr=118.0 occ=60.0 ricavo=25945.0 annunci=1334.0
+  bari             adr=117.0 occ=68.0 ricavo=29043.0 annunci=2760.0
+  cagliari         adr=123.0 occ=66.0 ricavo=29423.0 annunci=1725.0
+  catania          adr=87.0 occ=61.0 ricavo=19227.0 annunci=3009.0
+  siracusa         adr=147.0 occ=60.0 ricavo=32378.0 annunci=2841.0
+  como             adr=186.0 occ=61.0 ricavo=41077.0 annunci=1889.0
+  varese           adr=102.0 occ=60.0 ricavo=22469.0 annunci=173.0
+  novara           adr=79.0 occ=63.0 ricavo=18208.0 annunci=132.0
+  piacenza         adr=88.0 occ=62.0 ricavo=20044.0 annunci=139.0
+  ancona           adr=96.0 occ=65.0 ricavo=22671.0 annunci=266.0
+  pescara          adr=114.0 occ=59.0 ricavo=24400.0 annunci=637.0
+  reggio-emilia    ERR HTTP Error 502: Bad Gateway
+  mantova          adr=103.0 occ=53.0 ricavo=19784.0 annunci=190.0
+  cremona          adr=91.0 occ=59.0 ricavo=19464.0 annunci=180.0
+  pavia            adr=88.0 occ=67.0 ricavo=21548.0 annunci=184.0
+  siena            adr=159.0 occ=57.0 ricavo=33109.0 annunci=1065.0
+  arezzo           adr=183.0 occ=51.0 ricavo=33940.0 annunci=598.0
+  monza            adr=106.0 occ=61.0 ricavo=23513.0 annunci=275.0
+  alessandria      adr=141.0 occ=51.0 ricavo=26041.0 annunci=991.0
+  pordenone        adr=96.0 occ=57.0 ricavo=19869.0 annunci=340.0
+  gorizia          adr=100.0 occ=56.0 ricavo=20335.0 annunci=114.0
+  rovigo           adr=130.0 occ=57.0 ricavo=26824.0 annunci=904.0
+  belluno          adr=113.0 occ=55.0 ricavo=22771.0 annunci=141.0
+  forli            adr=92.0 occ=66.0 ricavo=22233.0 annunci=106.0
+  cuneo            adr=70.0 occ=62.0 ricavo=15796.0 annunci=148.0
+  asti             adr=101.0 occ=50.0 ricavo=18409.0 annunci=253.0
+  savona           adr=115.0 occ=56.0 ricavo=23425.0 annunci=350.0
+
+salvate 49 citta su 50
+Traceback (most recent call last):
+  File "/Users/alexmors/fab-vaglio-deal/dati/genera.py", line 38, in <module>
+    ev = "ok" if c["vs25"] >= 4 else "warn" if c["vs25"] > -4 else "ko"
+KeyError: 'vs25'
+!! genera.py fallito
+===== 2026-09-14 07:36:24  modo=giornaliero
+-- annunci
+Traceback (most recent call last):
+  File "/Users/alexmors/fab-vaglio-deal/dati/annunci.py", line 213, in <module>
+    main()
+  File "/Users/alexmors/fab-vaglio-deal/dati/annunci.py", line 165, in main
+    citta = [s for s, c in mercato.items() if c["vs25"] >= -4]
+  File "/Users/alexmors/fab-vaglio-deal/dati/annunci.py", line 165, in <listcomp>
+    citta = [s for s, c in mercato.items() if c["vs25"] >= -4]
+KeyError: 'vs25'
+!! annunci.py ha avuto problemi
+-- report
+vetrina: /Users/alexmors/fab-vaglio-deal/report/ULTIMO.html — 0 immobili
+miniature incorporate: 16/16 — 0 MB
+pronti 16 immobili, 0 MB di foto
+vetrina pubblicabile: /Users/alexmors/fab-vaglio-deal/report/ULTIMO-web.html — 0 immobili, 0 MB
